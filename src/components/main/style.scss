@@ -1,8 +1,9 @@
 .select-choise-param{
     width: 20%;
     border: none;
-    position: relative;
-    top: 33px;
+    display: block;
+    position: absolute;
+    top: 10px;
     left: 305px;
     font-size: 15px;
     line-height: 1.2;
@@ -88,4 +89,45 @@
     .cacl-fat-form-btn:hover .login-form-bgbtn {
         left: 0;
       }
+}
+.wrap-input{
+    .select-item::before{
+        display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+
+    background: #d9c10e;
+    background: -webkit-linear-gradient(left, #e1e138, #45da48);
+    background: -o-linear-gradient(left, #80807e, #f9fffc);
+    background: -moz-linear-gradient(left, #80807e, #f9fffc);
+    background: linear-gradient(left, #80807e, #f9fffc);
+    }
+    .select-item::after{
+        content: "";
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    padding-left: 5px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    }
+    .has-val.input + .select-item::before{
+        width: 100%;
+      }
+    .select-input.has-val{
+        color: black;
+    }
 }

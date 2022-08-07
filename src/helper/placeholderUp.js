@@ -4,12 +4,7 @@ const placeholderClickUp = ()=>{
     input.forEach(function(elem){
         elem.addEventListener('blur', function(e){
             let target = e.target
-            if(target && elem.value != ''){
-                elem.classList.add('has-val')
-            }
-            else{
-                elem.classList.remove('has-val')
-            }
+            target && elem.value != '' ? elem.classList.add('has-val') : elem.classList.remove('has-val')
         })
     })
 }
@@ -19,4 +14,13 @@ const placeholderUp = ()=>{
     input.forEach( elem => elem.value != '' ? elem.classList.add('has-val') : elem.classList.remove('has-val'))
 }
 
-export {placeholderClickUp, placeholderUp}
+const selectHasVal = ()=>{
+    const select = document.querySelectorAll('.select-input')
+    select.forEach(elem =>{
+        elem.value != 'choise' ? elem.classList.add('has-val') : null
+        elem.addEventListener('change', ()=>{
+            elem.value != 'choise' ? elem.classList.add('has-val') : null
+        })
+    })
+}
+export {placeholderClickUp, placeholderUp, selectHasVal}

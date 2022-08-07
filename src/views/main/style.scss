@@ -5,4 +5,14 @@
         font-size: 20px;
         text-align: center;
     }
+    .chart-wrap{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .chart-label{
+            font-size: 22px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
 }
