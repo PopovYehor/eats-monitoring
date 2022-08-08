@@ -7,6 +7,7 @@ import { createChartWeightIndex } from "../../components/main/charts/weightIndex
 import { createFatPercentChart } from "../../components/main/charts/fatPercentChart/fatPercent-chart"
 import { createCaloriesChart } from "../../components/main/charts/caloriesChart/calories-Chart"
 import { createPerfectWeightChart } from "../../components/main/charts/idealWeightChart/calories-Chart"
+import { heightData, weightIndex } from "../../components/main/formCalculate/formCalculate-index"
 const main = ()=>{
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)

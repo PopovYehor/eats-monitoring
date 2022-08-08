@@ -46,8 +46,8 @@ const mainComponent = ()=>{
               <select name="activeLevel" id="active-level" class="select-input" required>
                 <option class="lang" value="choise"  disabled key = "choiseActiv" >Оберіть рівень активності</option>
                 <option class="lang" value="none" key = 'noneActiv'>Немає активності (паралізований)</option>
-                <option class="lang" value="low" key = 'lowActiv' selected>Мала активність (Сидячий спосіб життя)</option>
-                <option class="lang" value="middle" key = 'middleActiv'>Середня активність (1-2 тренування на тиждень)</option>
+                <option class="lang" value="low" key = 'lowActiv' >Мала активність (Сидячий спосіб життя)</option>
+                <option class="lang" value="middle" key = 'middleActiv' selected>Середня активність (1-2 тренування на тиждень)</option>
                 <option class="lang" value="hight" key = 'higthActiv'>Висока активність (3-5 тренувань на тиждень)</option>
                 <option class="lang" value="very hight" key = 'veryHightActiv'>Дуже висока активність</option>
               </select>
