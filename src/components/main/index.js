@@ -59,12 +59,12 @@ const mainComponent = ()=>{
                 <option value="kg">Кг</option>
                 <option value="pounds">Фунти</option>
               </select>
-              <input class="input" type="text" name="wantWeight" required value="86">
+              <input class="input" type="text" name="wantWeight" required value="80">
               <span class="focus-input span-choise-param" key = 'wantWeight' data-placeholder="Бажана вага"></span>
             </div>
             <!--Кількість днів-->
             <div class="wrap-input validate-input" id = 'want-day-input' key = 'wantDay' data-validate="Кількість днів">
-              <input class="input" type="text" name="wantDay" required value="7"> 
+              <input class="input" type="text" name="wantDay" required value="90"> 
               <span class="focus-input" key = 'wantDay' data-placeholder="Кількість днів до цілі"></span>
             </div>
             <!--Кнопка регистрации-->

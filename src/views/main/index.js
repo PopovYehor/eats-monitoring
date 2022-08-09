@@ -6,8 +6,9 @@ import { createChartProgres } from "../../components/main/charts/progresChart/da
 import { createChartWeightIndex } from "../../components/main/charts/weightIndexChart/weightIndex-chart"
 import { createFatPercentChart } from "../../components/main/charts/fatPercentChart/fatPercent-chart"
 import { createCaloriesChart } from "../../components/main/charts/caloriesChart/calories-Chart"
-import { createPerfectWeightChart } from "../../components/main/charts/idealWeightChart/calories-Chart"
-import { heightData, weightIndex } from "../../components/main/formCalculate/formCalculate-index"
+import { createPerfectWeightChart } from "../../components/main/charts/idealWeightChart/idealWeight-Chart"
+
+
 const main = ()=>{
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)
@@ -17,7 +18,7 @@ const main = ()=>{
     createFatPercentChart()
     createCaloriesChart()
     createPerfectWeightChart()
-   /*  createChartProgres() */
+    createChartProgres()
     
 
 

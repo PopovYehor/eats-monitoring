@@ -28,5 +28,42 @@ const activity = ()=>{
     return active
 }
 
+const fatProcentDescription = (sex, count)=>{
+    let element = ''
+ const correlationFat = [
+    [
+        'добрий показник','середній показник','поганий показник'
+    ],
+    {
+        goodForMan : {from : 11, to : 16},
+        normalForMan : {from : 17, to : 22},
+        badForMan : {from : 22, to : 100}
+    },
+    {
+        goodForWoman : {from : 17, to : 22},
+        normalForWoman : {from : 22, to : 27},
+        badForWoman : {from : 27, to : 100}
+    }
+    ]
+    for (let i = 0 ; i< correlationFat[0].length; i++){
+        if (sex == 'male'){
+            if (count >= Object.values(correlationFat[1])[i].from && count <= Object.values(correlationFat[1])[i].to){
+                element = correlationFat[0][i]
+                break
+            }else{
+                element = 'замалий результат, наберіть вагу!'
+            }
+        }else {
+            if (count >= Object.values(correlationFat[2])[i].from && count <= Object.values(correlationFat[2])[i].to){
+                element = correlationFat[0][i]
+                break
+            }else{
+                element = 'замалий результат, наберіть вагу!'
+            }
+        }
+    }
+    return element
+}
 
-export {coefficientWeightIndex, activity}
+
+export {coefficientWeightIndex, activity, fatProcentDescription}

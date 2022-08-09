@@ -5,6 +5,11 @@ const formsData = ()=>{
     return form
 }
 
+const wantDay = () =>{
+    const wantDay = formsData().wantDay.value
+    return wantDay
+}
+
 const yearData = ()=>{
     const year = formsData().age.value
     return year
@@ -38,7 +43,6 @@ const sexData = ()=>{
 //------------------------------Wight Index---------------------------------//
 const weightIndex = ()=>{
     const weightIndex = Math.round(weightData()/(Math.pow((heightData()/100), 2)))
-    console.log(sexData())
     return weightIndex
 }
 
@@ -76,4 +80,13 @@ const fatWeight = ()=>{
     choiseWeightOption.value == 'pounds' ? fatWeight = Math.floor((weightData() * (fatPercent()/100))*2.54) : fatWeight = Math.floor(weightData() * (fatPercent()/100))
     return fatWeight
 }
-export {weightIndex, formsData, caloriesFormula, calculateWantCalories, calculatePartOfWantCalories, fatPercent, fatWeight}
+
+
+//--------------------------------Ideal Weight -------------------------------//
+const perfectWeight = () => {
+    let perfectWeight = ''
+    let optionSex = selectParam(formsData().sex)
+    optionSex == 'male' ? perfectWeight = Math.round(52+1.9*((heightData()/2.54)-60)) : perfectWeight = Math.round(49+1.7*((heightData()/2.54)-60))
+    return perfectWeight
+}
+export {weightIndex, formsData, caloriesFormula, calculateWantCalories, calculatePartOfWantCalories, fatPercent, fatWeight, sexData, perfectWeight, weightData, wantWeightData, wantDay}
