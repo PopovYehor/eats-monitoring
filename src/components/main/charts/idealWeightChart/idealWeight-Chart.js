@@ -1,12 +1,13 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { weightData, perfectWeight } from "../../formCalculate/formCalculate-index";
+import { perfectWeight } from "../../../../helper/formCalculate-index";
+import { defWeight } from "../../../../helper/formTranformationData";
 const DATA_COUNT = 3;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
 const idealWeightData = ()=>{
   let remainder = ''
-  weightData() > perfectWeight() ? remainder = weightData() - perfectWeight() : remainder = perfectWeight() - weightData()
+  defWeight() > perfectWeight() ? remainder = defWeight() - perfectWeight() : remainder = perfectWeight() - defWeight()
 
   const data = {
     labels: ['Ідеальна вага', 'Ваша вага', 'До ідеальної ваги'],
@@ -17,7 +18,7 @@ const idealWeightData = ()=>{
       },
       {
         backgroundColor: ['#AAA', '#777'],
-        data: [weightData(), remainder]
+        data: [defWeight(), remainder]
       },
     ]
   };
@@ -78,7 +79,7 @@ const idealWeightData = ()=>{
   return config
 }
 const createPerfectWeightChart = ()=>{
-    const wrap = document.querySelector('.canvas-container')
+    const wrap = document.querySelector('.canvas-chart-index-wrap')
     const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
     const canvasTitle = createElem('h1', 'canvas-title', 'Ваша ідеальна вага', weightIndexChartWrap)
     const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)

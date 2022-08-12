@@ -10,14 +10,25 @@ import { createPerfectWeightChart } from "../../components/main/charts/idealWeig
 
 
 const main = ()=>{
+
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)
     mainComponent()
+
+    const container = document.querySelector('.container-login')
+    const chartContainer = createElem('div', 'chart-container', null, container)
+
+    const chartCaloriesWrap =  createElem('div', 'chart-calories-wrap', null, chartContainer)
+    createElem('div', 'canvas-chart-calories-wrap', null, chartCaloriesWrap)
+    createCaloriesChart()
     createChartProtein()
+
+    const chartIndexWrap = createElem('div', 'chart-index-wrap', null, chartContainer)
+    createElem('div', 'canvas-chart-index-wrap', null, chartIndexWrap)
     createChartWeightIndex()
     createFatPercentChart()
-    createCaloriesChart()
     createPerfectWeightChart()
+    
     createChartProgres()
     
 

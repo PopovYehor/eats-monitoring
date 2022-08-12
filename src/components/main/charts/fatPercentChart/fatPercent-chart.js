@@ -1,8 +1,8 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { fatPercent, fatWeight } from "../../formCalculate/formCalculate-index";
+import { fatPercent,  fatWeight } from "../../../../helper/formCalculate-index";
 import { fatProcentDescription } from "../../../../helper/CalculateCoefficient";
-import { sexData } from "../../formCalculate/formCalculate-index";
+import { sexData } from "../../../../helper/formTranformationData";
 const fatChartData = ()=>{
   const remainder = 100 - fatPercent()
 const data = {
@@ -27,7 +27,7 @@ const config = {
   return config
 }
 const createFatPercentChart = ()=>{
-    const wrap = document.querySelector('.canvas-container')
+    const wrap = document.querySelector('.canvas-chart-index-wrap')
     const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
     const canvasTitle = createElem('h1', 'canvas-title', 'Процент жиру в організмі', weightIndexChartWrap)
     const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)

@@ -1,7 +1,7 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { weightIndex } from "../../formCalculate/formCalculate-index";
 import { coefficientWeightIndex } from "../../../../helper/CalculateCoefficient";
+import { weightIndex } from "../../../../helper/formCalculate-index";
 
 const weightIndexData = ()=>{
 const residue = 100 - weightIndex()
@@ -28,7 +28,7 @@ return config
 }
 
 const createChartWeightIndex = ()=>{
-    const wrap = document.querySelector('.canvas-container')
+    const wrap = document.querySelector('.canvas-chart-index-wrap')
     const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
     createElem('h1', 'canvas-title', 'Індекс маси тіла', weightIndexChartWrap)
     const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)

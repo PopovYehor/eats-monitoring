@@ -36,9 +36,9 @@ const mainComponent = ()=>{
             <div class="wrap-input validate-input" id = 'weight-input' key = 'weight' data-validate="Від 40 до 199 кг">
               <select class="choise-weight select-choise-param" name="choiseWeight" id="">
                 <option value="kg">Кг</option>
-                <option value="pounds">Фунти</option>
+                <option value="pounds" selected>Фунти</option>
               </select>
-              <input class="input" type="text" name="weight" required value="85">
+              <input class="input" type="text" name="weight" required value="190">
               <span class="focus-input span-choise-param" key = 'weight' data-placeholder="Вага (кг)"></span>
             </div>
             <!--Уровень активности-->
@@ -57,9 +57,9 @@ const mainComponent = ()=>{
             <div class="wrap-input validate-input" id = 'want-weight-input' key = 'wantWeight' data-validate="Від 40 до 199 кг">
               <select class="choise-weight select-choise-param" name="wantWeightSelect" id="">
                 <option value="kg">Кг</option>
-                <option value="pounds">Фунти</option>
+                <option value="pounds" selected>Фунти</option>
               </select>
-              <input class="input" type="text" name="wantWeight" required value="80">
+              <input class="input" type="text" name="wantWeight" required value="170">
               <span class="focus-input span-choise-param" key = 'wantWeight' data-placeholder="Бажана вага"></span>
             </div>
             <!--Кількість днів-->

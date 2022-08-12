@@ -1,6 +1,5 @@
 import moment from 'moment'
-import { formsData, weightData, wantWeightData, wantDay} from '../../formCalculate/formCalculate-index'
-
+import { formsData, wantDay, defWantWeight, defWeight } from '../../../../helper/formTranformationData'
 const dateData = ()=>{
     let dateArr = [] 
     for (let i = 0; i < wantDay() ; i++){
@@ -10,15 +9,15 @@ const dateData = ()=>{
 }
 
 const dateWeightData = ()=>{ 
-    const bettwenWeight = (weightData()-wantWeightData())/(formsData().wantDay.value)
-    let dayWeight = 85
+    const bettwenWeight = (defWeight()-defWantWeight())/(formsData().wantDay.value)
+    let dayWeight = Number(defWeight())
     let dayWeightArr = []
     for (let i = 0; i < wantDay() ;i++){
         dayWeight = dayWeight.toFixed(2) - bettwenWeight.toFixed(2)
         dayWeightArr.push((dayWeight.toFixed(2)))
     }
 
-    let weightDayArr = [`${weightData()}`]
+    let weightDayArr = [`${defWeight()}`]
     let arr = weightDayArr.concat(dayWeightArr)
     return arr
 }

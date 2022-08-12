@@ -1,6 +1,6 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { calculatePartOfWantCalories } from "../../formCalculate/formCalculate-index";
+import { calculatePartOfWantCalories } from "../../../../helper/formCalculate-index";
 const proteinData = ()=>{
   const coeff = {
     protein : 0.30,
@@ -33,9 +33,10 @@ const config = {
   return config
 }
 const createChartProtein = ()=>{
-    const canvasContainer = document.querySelector('.canvas-container')
-    const canvasTitle = createElem('h1', 'canvas-title', 'Кількість калорій у білках, жирах та вугливодах', canvasContainer)
-    const chartWrap = createElem('div', 'chart-wrap', null, canvasContainer)
+    const canvasContainer = document.querySelector('.canvas-chart-calories-wrap')
+    const proteinChartWrap = createElem('div', 'calories-chart-wrap', null, canvasContainer)
+    const canvasTitle = createElem('h1', 'canvas-title', 'Кількість калорій у білках, жирах та вугливодах', proteinChartWrap)
+    const chartWrap = createElem('div', 'chart-wrap', null, proteinChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
     /* const label = createElem('span', 'chart-label', 'Норма', canvasContainer) */
     const myChart = new Chart(canvasProtein, proteinData())

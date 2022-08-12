@@ -1,5 +1,5 @@
 import { selectParam } from "./formChangeParametr"
-import { formsData } from "../components/main/formCalculate/formCalculate-index"
+import { formsData } from "./formTranformationData"
 
 
 const coefficientWeightIndex = (index)=>{

@@ -1,6 +1,6 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { caloriesFormula, calculateWantCalories } from "../../formCalculate/formCalculate-index";
+import { caloriesFormula, calculateWantCalories  } from "../../../../helper/formCalculate-index";
 const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
@@ -78,10 +78,10 @@ const CaloriesChartData = ()=>{
   return config
 }
 const createCaloriesChart = ()=>{
-    const wrap = document.querySelector('.canvas-container')
-    const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
-    const canvasTitle = createElem('h1', 'canvas-title', 'Розрахунок калорій', weightIndexChartWrap)
-    const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)
+    const wrap = document.querySelector('.canvas-chart-calories-wrap')
+    const caloriesChartWrap = createElem('div', 'calories-chart-wrap', null, wrap)
+    const canvasTitle = createElem('h1', 'canvas-title', 'Розрахунок калорій', caloriesChartWrap)
+    const chartWrap = createElem('div', 'chart-wrap', null, caloriesChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
     /* const label = createElem('span', 'chart-label weight-index', '16 % (13 кг)- Спортивна людина', chartWrap) */
     const myChart = new Chart(canvasProtein, CaloriesChartData())
