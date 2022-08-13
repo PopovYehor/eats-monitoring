@@ -1,31 +1,123 @@
 
 .chart-container{
     display: flex;
-    flex-direction: column;
-    .chart-calories-wrap, .chart-index-wrap{
-        width: 600px;
-        height: 400px;
-        margin: 0 0 20px 50px;
-        background: #fff;
-        border-radius: 10px;
-        overflow: hidden;
-        padding: 47px 55px 33px 55px;
-
-        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-
-        .canvas-chart-index-wrap, .canvas-chart-calories-wrap{
-            display: flex;
-            flex-direction: row;
-            .weight-index-chart-wrap, .calories-chart-wrap{
-                h1{
-                    font-size: 20px;
+    flex-direction: row;
+    .column-chart-container{
+        display: flex;
+        flex-direction: column;
+        #calories-wrap{
+            margin-top: 35px;
+            height: 350px;
+        }
+        .chart-progres-wrap{
+            .canvas-chart-wrap{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                .chart-data-container{
+                    width: 65%;
                 }
-                .chart-wrap{
-                    width: 210px;
+            }
+        }
+        .chart-wrap, .chart-progres-wrap{
+            width: 820px;
+            display: flex;
+            margin: 0 0 20px 30px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px 20px 10px 20px;
+            box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+
+            .canvas-chart-wrap{
+                display: flex;
+                flex-direction: row;
+                .chart-data-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.15);
+                    margin: 10px;
+                    padding: 15px;
+                    .canvas-title{
+                        font-size: 20px;
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+                    .chart-wrapper{
+                        width: 210px;
+                    }
+                }
+            }
+        }
+    }
+    .row-chart-container{
+        #index-wrap{
+            margin-top: 35px;
+            height: 715px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .chart-wrap{
+            width: 300px;
+            margin: 0 0 20px 30px;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            padding: 20px;
+            box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+
+            .canvas-chart-wrap{
+                display: flex;
+                flex-direction: column;
+                .chart-data-container{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.15);
+                    margin: 10px;
+                    padding: 15px;
+                    .canvas-title{
+                        font-size: 20px;
+                        text-align: center;
+                        margin-bottom: 5px;
+                    }
+                    .chart-wrapper{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        width: 210px;
+                        .label-wrap{
+                            width: 155px;
+                            margin-top: 5px;
+                            text-align: center;
+                            .chart-label{
+                                
+                                font-weight: 600;
+                                line-height: 1.4;
+                                .label-fullDef{color: purple;}
+                                .label-def{color: blue}
+                                .label-normal{color: green;}
+                                .label-middle{color: yellowgreen;}
+                                .label-bad{color:orange}
+                                .label-very-bad{color: rgb(255, 0, 13);}
+                                .label-so-bad{color: rgb(128, 2, 2);}
+                            }
+                        }
+                    }
                 }
             }
         }

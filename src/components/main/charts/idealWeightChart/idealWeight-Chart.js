@@ -79,10 +79,10 @@ const idealWeightData = ()=>{
   return config
 }
 const createPerfectWeightChart = ()=>{
-    const wrap = document.querySelector('.canvas-chart-index-wrap')
-    const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
+    const wrap = document.getElementById('canvas-calories-wrap')
+    const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-perfect-container')
     const canvasTitle = createElem('h1', 'canvas-title', 'Ваша ідеальна вага', weightIndexChartWrap)
-    const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)
+    const chartWrap = createElem('div', 'chart-wrapper', null, weightIndexChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
     /* const label = createElem('span', 'chart-label weight-index', '16 % (13 кг)- Спортивна людина', chartWrap) */
     const myChart = new Chart(canvasProtein, idealWeightData())

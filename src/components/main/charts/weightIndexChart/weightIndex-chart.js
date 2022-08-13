@@ -28,12 +28,16 @@ return config
 }
 
 const createChartWeightIndex = ()=>{
-    const wrap = document.querySelector('.canvas-chart-index-wrap')
-    const weightIndexChartWrap = createElem('div', 'weight-index-chart-wrap', null, wrap)
+    const wrap = document.getElementById('canvas-index-wrap')
+    const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-index-chart-container')
     createElem('h1', 'canvas-title', 'Індекс маси тіла', weightIndexChartWrap)
-    const chartWrap = createElem('div', 'chart-wrap', null, weightIndexChartWrap)
+    const chartWrap = createElem('div', 'chart-wrapper', null, weightIndexChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
-    createElem('span', 'chart-label weight-index', `${weightIndex()} - ${coefficientWeightIndex(weightIndex())}`, chartWrap)
+    const labelWrap = createElem('div', 'label-wrap', null, chartWrap)
+    const labelItem = `
+    <span class = "chart-label weight-index">  ${weightIndex()} - <span class = "chart-label-desription">${coefficientWeightIndex(weightIndex())}</span>
+    `
+    labelWrap.innerHTML = labelItem
     new Chart(canvasProtein, weightIndexData())
 }
 

@@ -28,9 +28,10 @@ const progresChartData = ()=>{
   return config
 }
 const createChartProgres = ()=>{
-    const canvasContainer = document.querySelector('.canvas-container')
-    const canvasTitle = createElem('h1', 'canvas-title', 'Прогрес вашої ваги', canvasContainer)
-    const canvasProgres = createElem('canvas', null, null, canvasContainer, 'id', 'myChart')
+    const canvasContainer = document.getElementById('canvas-progres-wrap')
+    const ChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'progres-container')
+    const canvasTitle = createElem('h1', 'canvas-title', 'Прогрес вашої ваги', ChartWrap)
+    const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'myChart')
     const myChart = new Chart(canvasProgres, progresChartData())
 }
 

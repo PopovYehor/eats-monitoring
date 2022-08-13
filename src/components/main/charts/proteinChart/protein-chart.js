@@ -33,10 +33,10 @@ const config = {
   return config
 }
 const createChartProtein = ()=>{
-    const canvasContainer = document.querySelector('.canvas-chart-calories-wrap')
-    const proteinChartWrap = createElem('div', 'calories-chart-wrap', null, canvasContainer)
+    const canvasContainer = document.getElementById('canvas-calories-wrap')
+    const proteinChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'protein-chart-container')
     const canvasTitle = createElem('h1', 'canvas-title', 'Кількість калорій у білках, жирах та вугливодах', proteinChartWrap)
-    const chartWrap = createElem('div', 'chart-wrap', null, proteinChartWrap)
+    const chartWrap = createElem('div', 'chart-wrapper', null, proteinChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
     /* const label = createElem('span', 'chart-label', 'Норма', canvasContainer) */
     const myChart = new Chart(canvasProtein, proteinData())

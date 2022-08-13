@@ -5,11 +5,14 @@ const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
 const CaloriesChartData = ()=>{
-  let remainder = ''
-  calculateWantCalories() > caloriesFormula() ? remainder = calculateWantCalories() - caloriesFormula() : remainder = caloriesFormula() - calculateWantCalories()
-
+  
+  const wantCalories = Number(calculateWantCalories()).toFixed(0)
+  const remainder = wantCalories - caloriesFormula()
+  console.log(remainder)
+  let betweenLabel = ''
+  remainder > 0 ? betweenLabel = 'Додаткові калорії' : betweenLabel = 'Зайві калорії'
   const data = {
-    labels: ['Ваша кількість калорій', 'Додаткові калорії', 'Загальна кількість калорій'],
+    labels: ['Ваша кількість калорій', betweenLabel, 'Загальна кількість калорій'],
     datasets: [
       {
         backgroundColor: ['#AAA', '#777'],
@@ -17,7 +20,7 @@ const CaloriesChartData = ()=>{
       },
       {
         backgroundColor: ['hsl(0, 100%, 60%)'],
-        data: [calculateWantCalories()]
+        data: [wantCalories]
       },
     ]
   };
@@ -78,12 +81,11 @@ const CaloriesChartData = ()=>{
   return config
 }
 const createCaloriesChart = ()=>{
-    const wrap = document.querySelector('.canvas-chart-calories-wrap')
-    const caloriesChartWrap = createElem('div', 'calories-chart-wrap', null, wrap)
+    const wrap = document.getElementById('canvas-calories-wrap')
+    const caloriesChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'calories-chart-container')
     const canvasTitle = createElem('h1', 'canvas-title', 'Розрахунок калорій', caloriesChartWrap)
-    const chartWrap = createElem('div', 'chart-wrap', null, caloriesChartWrap)
+    const chartWrap = createElem('div', 'chart-wrapper', null, caloriesChartWrap)
     const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
-    /* const label = createElem('span', 'chart-label weight-index', '16 % (13 кг)- Спортивна людина', chartWrap) */
     const myChart = new Chart(canvasProtein, CaloriesChartData())
 }
 
