@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { formsData, wantDay, defWantWeight, defWeight } from '../../../../helper/formTranformationData'
+import { formsData, wantDay, defWantWeight, defWeight } from '../../../../helper/form-canculate/formTranformationData'
 const dateData = ()=>{
     let dateArr = [] 
     for (let i = 0; i < wantDay() ; i++){

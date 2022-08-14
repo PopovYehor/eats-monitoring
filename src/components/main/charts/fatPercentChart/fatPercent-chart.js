@@ -1,10 +1,10 @@
 import { createElem } from "../../../../helper/createElement";
-import {selectParam} from "../../../../helper/formChangeParametr"
-import { formsData } from "../../../../helper/formTranformationData";
+import {selectParam} from "../../../../helper/form-canculate/formChangeParametr"
+import { formsData } from "../../../../helper/form-canculate/formTranformationData";
 import Chart from 'chart.js/auto'
-import { fatPercent,  fatWeight } from "../../../../helper/formCalculate-index";
-import { fatProcentDescription } from "../../../../helper/CalculateCoefficient";
-import { sexData } from "../../../../helper/formTranformationData";
+import { fatPercent,  fatWeight } from "../../../../helper/form-canculate/formCalculate-index";
+import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
+import { sexData } from "../../../../helper/form-canculate/formTranformationData";
 
 
 const fatChartData = ()=>{

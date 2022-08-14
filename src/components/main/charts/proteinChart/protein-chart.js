@@ -1,6 +1,6 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { calculatePartOfWantCalories } from "../../../../helper/formCalculate-index";
+import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/formCalculate-index";
 const proteinData = ()=>{
   const coeff = {
     protein : 0.30,

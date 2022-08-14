@@ -1,7 +1,7 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { perfectWeight } from "../../../../helper/formCalculate-index";
-import { defWeight } from "../../../../helper/formTranformationData";
+import { perfectWeight } from "../../../../helper/form-canculate/formCalculate-index";
+import { defWeight } from "../../../../helper/form-canculate/formTranformationData";
 const DATA_COUNT = 3;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
