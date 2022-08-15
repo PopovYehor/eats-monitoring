@@ -1,6 +1,7 @@
 import "./style.scss"
 import "./check-style.scss"
 import createAllCharts from "./charts/createAllCharts"
+import { verAll, valueVer} from "../../helper/validation/main-form-validation"
 const mainComponent = ()=>{
     const elem = `
     <div class="container-login">
@@ -19,13 +20,13 @@ const mainComponent = ()=>{
               <span class= 'select-item'></span>
             </div>
             <!--Возраст-->
-            <div class="wrap-input validate-input" id = 'age-input' key = 'age' data-validate="Від 18 до 99 років">
+            <div class="wrap-input validate-input" id = 'age-input' key = 'age' data-validate="Введіть ваш вік">
               <input class="input" type="text" name="age" required value=""> 
               <span class="focus-input" key = 'age' data-placeholder="Вік"></span>
             </div>
           <!--Рост-->
-            <div class="wrap-input validate-input" id = 'height-input' key = 'height' data-validate="Від 100 до 250 см">
-              <select class="choise-height select-choise-param" name="choiseHeight" id="">
+            <div class="wrap-input validate-input" id = 'height-input' key = 'height' data-validate="Ввеіть ваш зріст">
+              <select class="choise-height select-choise-param" name="choiseHeight" id="" tabindex="-1">
                 <option value="sm">См</option>
                 <option value="inches">Дюйми</option>
               </select>
@@ -33,8 +34,8 @@ const mainComponent = ()=>{
               <span class="focus-input span-choise-param" key = 'height' data-placeholder="Зріст"></span>
             </div>
             <!--Вес-->
-            <div class="wrap-input validate-input" id = 'weight-input' key = 'weight' data-validate="Від 40 до 199 кг">
-              <select class="choise-weight select-choise-param" name="choiseWeight" id="">
+            <div class="wrap-input validate-input" id = 'weight-input' key = 'weight' data-validate="Введіть вашу вагу">
+              <select class="choise-weight select-choise-param" name="choiseWeight" id="" tabindex="-1">
                 <option value="kg">Кг</option>
                 <option value="pounds">Фунти</option>
               </select>
@@ -54,8 +55,8 @@ const mainComponent = ()=>{
               <span class= 'select-item'></span>
             </div>
             <!--Желаемое количество веса-->
-            <div class="wrap-input validate-input" id = 'want-weight-input' key = 'wantWeight' data-validate="Від 40 до 199 кг">
-              <select class="choise-weight select-choise-param" name="wantWeightSelect" id="">
+            <div class="wrap-input validate-input" id = 'want-weight-input' key = 'wantWeight' data-validate="Введіть вашу бажану вагу">
+              <select class="choise-weight select-choise-param" name="wantWeightSelect" id="" tabindex="-1">
                 <option value="kg">Кг</option>
                 <option value="pounds">Фунти</option>
               </select>
@@ -63,7 +64,7 @@ const mainComponent = ()=>{
               <span class="focus-input span-choise-param" key = 'wantWeight' data-placeholder="Бажана вага"></span>
             </div>
             <!--Кількість днів-->
-            <div class="wrap-input validate-input" id = 'want-day-input' key = 'wantDay' data-validate="Кількість днів">
+            <div class="wrap-input validate-input" id = 'want-day-input' key = 'wantDay' data-validate="Введіть бажану кількість днів">
               <input class="input" type="text" name="wantDay" required value=""> 
               <span class="focus-input" key = 'wantDay' data-placeholder="Кількість днів до цілі"></span>
             </div>
@@ -83,10 +84,13 @@ const mainComponent = ()=>{
     const wrap = document.querySelector('.limiter')
     wrap.innerHTML = elem
 
+    verAll()
+
+    const dontValid = document.querySelectorAll('.alert-validate')
     const calcBtn = document.querySelector('.login-form-btn')
     calcBtn.addEventListener('click', (e)=>{
       e.preventDefault()
-      createAllCharts()
+      valueVer() == true ? createAllCharts() : console.log('no ok')
     })
 }
 

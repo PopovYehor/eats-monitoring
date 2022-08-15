@@ -1,5 +1,4 @@
 import { selectParam, InchesToSm, PoundToKg } from "./formChangeParametr";
-import { activity } from "./CalculateCoefficient";
 
 const formsData = ()=>{
     const form = document.forms.singUpForm
