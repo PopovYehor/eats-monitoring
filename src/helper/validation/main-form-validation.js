@@ -1,5 +1,6 @@
 import { formsData } from "../form-canculate/formTranformationData"
-
+import { callArrLangPlaceholder } from "../translate/translate-array"
+import { translateCount } from "../translate/translate"
 const addOrRemoveAlertValidate = (flag, elem)=>{
     flag == false ? elem.classList.add('alert-validate') : elem.classList.remove('alert-validate')
 }
@@ -16,6 +17,9 @@ const regAge = /^[3-9]$|^[1-9][0-9]$/
 const ageUser = formsData().age
 const vereficationAge = ()=>{
     const ageForm = document.getElementById('age-input')
+    console.log(callArrLangPlaceholder(translateCount))
+    /* const key = ageForm.getAttribute('key')
+    console.log(arrLangPlaceholder.uk[key]) */
     let flag = ''
     regAge.test(ageUser.value) ? (addOrRemoveAlertValidate(true, ageForm), flag = true) : (addOrRemoveAlertValidate(false, ageForm), flag = false);
     if (flag == false){

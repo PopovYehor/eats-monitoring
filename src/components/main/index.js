@@ -27,8 +27,8 @@ const mainComponent = ()=>{
           <!--Рост-->
             <div class="wrap-input validate-input" id = 'height-input' key = 'height' data-validate="Ввеіть ваш зріст">
               <select class="choise-height select-choise-param" name="choiseHeight" id="" tabindex="-1">
-                <option value="sm">См</option>
-                <option value="inches">Дюйми</option>
+                <option class = "lang" value="sm" key="sm">См</option>
+                <option class = "lang" value="inches" key="inches">Дюйми</option>
               </select>
               <input class="input" type="text" name="height" required value="">
               <span class="focus-input span-choise-param" key = 'height' data-placeholder="Зріст"></span>
@@ -36,8 +36,8 @@ const mainComponent = ()=>{
             <!--Вес-->
             <div class="wrap-input validate-input" id = 'weight-input' key = 'weight' data-validate="Введіть вашу вагу">
               <select class="choise-weight select-choise-param" name="choiseWeight" id="" tabindex="-1">
-                <option value="kg">Кг</option>
-                <option value="pounds">Фунти</option>
+                <option class = "lang" value="kg" key="kg">Кг</option>
+                <option class = "lang" value="pounds" key="pound">Фунти</option>
               </select>
               <input class="input" type="text" name="weight" required value="">
               <span class="focus-input span-choise-param" key = 'weight' data-placeholder="Вага"></span>
@@ -46,10 +46,10 @@ const mainComponent = ()=>{
             <div class="wrap-input validate-input" id = 'activ-input' key = 'activ' data-validate="Оберіть рівень активності">
               <select name="activeLevel" id="active-level" class="select-input" required>
                 <option class="lang" value="choise"  disabled key = "choiseActiv" selected>Оберіть рівень активності</option>
-                <option class="lang" value="none" key = 'noneActiv'>Немає активності (паралізований)</option>
-                <option class="lang" value="low" key = 'lowActiv' >Мала активність (Сидячий спосіб життя)</option>
-                <option class="lang" value="middle" key = 'middleActiv'>Середня активність (1-2 тренування на тиждень)</option>
-                <option class="lang" value="hight" key = 'higthActiv'>Висока активність (3-5 тренувань на тиждень)</option>
+                <option class="lang" value="none" key = 'noneActiv'>Малорухливий спосіб життя</option>
+                <option class="lang" value="low" key = 'lowActiv' >Мала активність (1-3 тренування на тиждень)</option>
+                <option class="lang" value="middle" key = 'middleActiv'>Середня активність (3-5 тренувань на тиждень)</option>
+                <option class="lang" value="hight" key = 'higthActiv'>Висока активність (5-7 тренувань на тиждень)</option>
                 <option class="lang" value="very hight" key = 'veryHightActiv'>Дуже висока активність</option>
               </select>
               <span class= 'select-item'></span>
@@ -57,8 +57,8 @@ const mainComponent = ()=>{
             <!--Желаемое количество веса-->
             <div class="wrap-input validate-input" id = 'want-weight-input' key = 'wantWeight' data-validate="Введіть вашу бажану вагу">
               <select class="choise-weight select-choise-param" name="wantWeightSelect" id="" tabindex="-1">
-                <option value="kg">Кг</option>
-                <option value="pounds">Фунти</option>
+                <option class = "lang" value="kg" key="kg">Кг</option>
+                <option class = "lang" value="pounds" key="pound">Фунти</option>
               </select>
               <input class="input" type="text" name="wantWeight" required value="">
               <span class="focus-input span-choise-param" key = 'wantWeight' data-placeholder="Бажана вага"></span>
@@ -72,7 +72,7 @@ const mainComponent = ()=>{
             <div class="container-login-form-btn">
               <div class="wrap-login-form-btn">
                 <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn lang" key="SingUp" type="button" form="singUpForm">
+                <button class="login-form-btn lang" key="calculate" type="button" form="singUpForm">
                   Розрахувати
                 </button>
               </div>
