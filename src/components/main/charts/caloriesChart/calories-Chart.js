@@ -1,18 +1,23 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { caloriesFormula, calculateWantCalories  } from "../../../../helper/form-canculate/formCalculate-index";
+import { translateText, translateCount } from "../../../../helper/translate/translate";
 const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
+
 
 const CaloriesChartData = ()=>{
   
   const wantCalories = Number(calculateWantCalories()).toFixed(0)
   const remainder = wantCalories - caloriesFormula()
-  console.log(remainder)
+
   let betweenLabel = ''
-  remainder > 0 ? betweenLabel = 'Додаткові калорії' : betweenLabel = 'Зайві калорії'
+  remainder > 0 ? betweenLabel = translateText(translateCount, 'Додаткові калорії', 'Extra Calories') : betweenLabel = translateText(translateCount, 'Зайві калорії', 'Extra Calories')
+  const labelCaloriesCount = translateText(translateCount, 'Ваша кількість калорій', 'Your Calorie Count')
+  const labelCalTotal = translateText(translateCount, 'Загальна кількість калорій', 'Total Calories')
+
   const data = {
-    labels: ['Ваша кількість калорій', betweenLabel, 'Загальна кількість калорій'],
+    labels: [labelCaloriesCount, betweenLabel, labelCalTotal],
     datasets: [
       {
         backgroundColor: ['#AAA', '#777'],
@@ -81,12 +86,14 @@ const CaloriesChartData = ()=>{
   return config
 }
 const createCaloriesChart = ()=>{
-    const wrap = document.getElementById('canvas-calories-wrap')
-    const caloriesChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'calories-chart-container')
-    const canvasTitle = createElem('h1', 'canvas-title', 'Розрахунок калорій', caloriesChartWrap)
-    const chartWrap = createElem('div', 'chart-wrapper', null, caloriesChartWrap)
-    const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
-    const myChart = new Chart(canvasProtein, CaloriesChartData())
+  const title = translateText(translateCount, 'Розрахунок калорій', 'Calculating Calories')
+
+  const wrap = document.getElementById('canvas-calories-wrap')
+  const caloriesChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'calories-chart-container')
+  const canvasTitle = createElem('h1', 'canvas-title', title, caloriesChartWrap)
+  const chartWrap = createElem('div', 'chart-wrapper', null, caloriesChartWrap)
+  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
+  const myChart = new Chart(canvasProtein, CaloriesChartData())
 }
 
 export {createCaloriesChart}

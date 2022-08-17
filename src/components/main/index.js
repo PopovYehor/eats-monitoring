@@ -7,7 +7,7 @@ const mainComponent = ()=>{
     <div class="container-login">
         <div class="wrap-login">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
-            <span class="login-form-title p-b-26 lang" key = 'title'>
+            <span class="login-form-title p-b-26">
               Eats Monitoring
             </span>
             <!--Пол-->
@@ -90,7 +90,7 @@ const mainComponent = ()=>{
     const calcBtn = document.querySelector('.login-form-btn')
     calcBtn.addEventListener('click', (e)=>{
       e.preventDefault()
-      valueVer() == true ? createAllCharts() : console.log('no ok')
+      valueVer() == true ? createAllCharts() : null
     })
 }
 

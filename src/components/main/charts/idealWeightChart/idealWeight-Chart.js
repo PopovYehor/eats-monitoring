@@ -2,6 +2,7 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { perfectWeight } from "../../../../helper/form-canculate/formCalculate-index";
 import { defWeight } from "../../../../helper/form-canculate/formTranformationData";
+import { translateText, translateCount } from "../../../../helper/translate/translate";
 const DATA_COUNT = 3;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
@@ -9,8 +10,12 @@ const idealWeightData = ()=>{
   let remainder = ''
   defWeight() > perfectWeight() ? remainder = defWeight() - perfectWeight() : remainder = perfectWeight() - defWeight()
 
+  const labelPerfectWeight = translateText(translateCount, 'Ідеальна вага', 'Perfect weight')
+  const labelYourWeight = translateText(translateCount, 'Ваша вага', 'Your weight')
+  const labelToPerfectWeight = translateText(translateCount, 'До ідеальної ваги', "To the perfect weight")
+
   const data = {
-    labels: ['Ідеальна вага', 'Ваша вага', 'До ідеальної ваги'],
+    labels: [labelPerfectWeight, labelYourWeight, labelToPerfectWeight],
     datasets: [
       {
         backgroundColor: ['hsl(0, 100%, 60%)' ],
@@ -79,13 +84,14 @@ const idealWeightData = ()=>{
   return config
 }
 const createPerfectWeightChart = ()=>{
-    const wrap = document.getElementById('canvas-calories-wrap')
-    const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-perfect-container')
-    const canvasTitle = createElem('h1', 'canvas-title', 'Ваша ідеальна вага', weightIndexChartWrap)
-    const chartWrap = createElem('div', 'chart-wrapper', null, weightIndexChartWrap)
-    const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
-    /* const label = createElem('span', 'chart-label weight-index', '16 % (13 кг)- Спортивна людина', chartWrap) */
-    const myChart = new Chart(canvasProtein, idealWeightData())
+  const title = translateText(translateCount, 'Ваша ідеальна вага', 'Your Perfect Weight')
+
+  const wrap = document.getElementById('canvas-calories-wrap')
+  const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-perfect-container')
+  const canvasTitle = createElem('h1', 'canvas-title', title, weightIndexChartWrap)
+  const chartWrap = createElem('div', 'chart-wrapper', null, weightIndexChartWrap)
+  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
+  const myChart = new Chart(canvasProtein, idealWeightData())
 }
 
 export {createPerfectWeightChart}

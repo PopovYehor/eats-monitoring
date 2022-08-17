@@ -55,6 +55,8 @@ const arrLangPlaceholder = {
         'age': "Вік",
         'height': "Зріст",
         'weight': "Вага",
+        'wantDay': 'Кількість днів до цілі',
+        'wantWeight': 'Важана вага',
     },
     'en':{
         'login': 'Login',
