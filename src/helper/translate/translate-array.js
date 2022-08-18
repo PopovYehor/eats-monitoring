@@ -20,7 +20,11 @@ const arrLangText = {
         'kg': 'Кг',
         'pound': 'Фунтів',
         'sm': 'См',
-        'inches': 'Дюймів'
+        'inches': 'Дюймів',
+        'forGetPass': 'Забули пароль?',
+        'havntAcc': 'Не маєте акаунту?',
+        'regist': 'Зареєструватися',
+
     },
     en:{
         'title': 'Sing Up',
@@ -33,16 +37,19 @@ const arrLangText = {
         'middleActiv': 'Moderate activity (3-5 training sessions per week)',
         'higthActiv': 'High activity (5-7 training sessions per week)',
         'veryHightActiv': 'Very high activity',
-        "SingUp": 'Sign up',
+        "SingUp": 'Sign Up',
         "haveAcc": 'Already have an account?',
-        "login": 'Login',
+        "login": 'Log In',
         'calculate': 'Calculate',
-        'headerEnter': 'Sing In',
-        'headerSingUp': 'Sing Up',
+        'headerEnter': 'Sign In',
+        'headerSingUp': 'Sign Up',
         'kg': 'Kg',
         'pound': 'Pound',
         'sm': 'Sm',
-        'inches': 'Inches'
+        'inches': 'Inches',
+        'forGetPass': 'Forgot your password?',
+        'havntAcc': `Don't have an account?`,
+        'regist': 'Sing Up',
     }
 }
 const arrLangPlaceholder = {

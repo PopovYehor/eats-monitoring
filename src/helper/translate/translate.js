@@ -6,7 +6,6 @@ let translateCount = 0
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
     const translateItem = document.querySelectorAll('.lang')
-    console.log(translateItem)
 
     const translateBtn = document.querySelectorAll('.translate')
     translateBtn.forEach(elem =>{
@@ -16,13 +15,13 @@ const translate = ()=>{
                 translateCount = 1
                 translateItem.forEach(elem => elem.textContent = arrLangText.en[elem.getAttribute('key')])
                 placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
-                console.log(translateCount)
+
             }
             if (target.id == 'uk'){
                 translateCount = 0
                 translateItem.forEach(elem => elem.textContent = arrLangText.uk[elem.getAttribute('key')])
                 placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
-                console.log(translateCount)
+
             }
 
             const chartContainer = document.querySelector('.chart-container')

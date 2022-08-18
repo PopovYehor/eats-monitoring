@@ -1,0 +1,58 @@
+.login-btn-wrap{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 140px;
+    margin-right: 50px;
+    .login-btn-user{
+        font-family: "FontAwesome";
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    #user-list{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        width: 131px;
+        padding: 10px;
+        height: 0px;
+        top: 60px;
+        visibility: hidden;
+        transition: none;
+        background: rgb(141,210,133);
+        background: -moz-radial-gradient(circle, rgba(141,210,133,0.36458333333333337) 0%, rgba(197,233,4,0.3477766106442577) 100%);
+        background: -webkit-radial-gradient(circle, rgba(141,210,133,0.36458333333333337) 0%, rgba(197,233,4,0.3477766106442577) 100%);
+        background: radial-gradient(circle, rgba(141,210,133,0.36458333333333337) 0%, rgba(197,233,4,0.3477766106442577) 100%);
+
+        box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+
+        border-radius: 0 0 10px 10px;
+
+        .translate{
+            margin: 10px;
+            a{
+                font-family: "FontAwesome";
+                font-size: 15px;
+                color: #000;
+                text-decoration: none;
+                span{
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+    #user-list.active{
+        position: absolute;
+        height: 120px;
+        top: 60px;
+        visibility: visible;
+    }
+}
