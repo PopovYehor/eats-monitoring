@@ -5,6 +5,30 @@ const formsData = ()=>{
     return form
 }
 
+const loginData = ()=>{
+    const login = formsData().login.value
+    return login
+}
+const passwordData = () =>{
+    const password = formsData().pass.value
+    return password
+}
+const repeatPaaswordData = ()=>{
+    const repeatPassword = formsData().repeatPassword.value
+    return repeatPassword
+}
+const nameData = ()=>{
+    const name = formsData().name.value
+    return name
+}
+const surnameData = ()=>{
+    const surname = formsData().surname.value
+    return surname
+}
+const activData = ()=>{
+    const activ = selectParam(formsData().activeLevel)
+    return activ.value
+}
 const wantDay = () =>{
     const wantDay = formsData().wantDay.value
     return wantDay
@@ -19,6 +43,10 @@ const heightData = ()=>{
     let height = formsData().height.value
     const choiseHeightOption = selectParam(formsData().choiseHeight)
     choiseHeightOption.value == 'inches' ? height = InchesToSm(height) :height = formsData().height.value
+    return height
+}
+const defheight = ()=>{
+    let height = formsData().height.value
     return height
 }
 const weightData = ()=>{
@@ -48,4 +76,4 @@ const sexData = ()=>{
     return sexes.value
 }
 
-export {formsData, wantDay, yearData, heightData, weightData, defWeight, wantWeightData, defWantWeight, sexData}
+export {formsData,defheight, wantDay, yearData, heightData, weightData, defWeight, wantWeightData, defWantWeight, sexData, loginData, passwordData,repeatPaaswordData, nameData, surnameData, activData}

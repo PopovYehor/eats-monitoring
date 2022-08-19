@@ -234,15 +234,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endCo
   padding: 0 5px;
 }
 
-#sex{
-  border: none;
-  color: #999999;
-}
-#active-level{
-  border: none;
-  color: #999999;
-}
-
 
 
 /*---------------------------------------------*/ 
@@ -512,4 +503,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endCo
   height: 15px;
   right: 6px;
   top: 46%;
+}
+.select-choise-param{
+  width: 22%;
+  border: none;
+  display: block;
+  position: absolute;
+  top: 14px;
+  left: 155px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.select-input.has-val{
+  color: black;
 }

@@ -1,23 +1,34 @@
 import {formsData} from "../form-canculate/formTranformationData"
 let countEyes = 0
-
+let countRepeatEyes = 0
 const changePassType = ()=>{
-    const imgEyes = document.querySelector('.eyes-pass')
-    const buttonPass = document.querySelector('.btn-show-pass')
+    const imgEyes = document.querySelectorAll('.eyes-pass')
+    const buttonPass = document.querySelectorAll('.btn-show-pass')
     
-    buttonPass.addEventListener('click', (e)=>{
+    buttonPass.forEach(elem => elem.addEventListener('click', (e)=>{
     const target = e.target
-    if (target && countEyes==0){
-        formsData().pass.type = 'text'
-        imgEyes.src = 'https://i.ibb.co/1sJ76MF/eye1.png'
-        countEyes = 1
+    if (target.classList.contains('first-pass')){
+        if (countEyes==0){
+            formsData().pass.type = 'text'
+            imgEyes[0].src = 'https://i.ibb.co/1sJ76MF/eye1.png'
+            countEyes = 1
+        }else{
+            formsData().pass.type = 'password'
+            imgEyes[0].src = 'https://i.ibb.co/YNDnt4y/eye2.png'
+            countEyes = 0
+        }
+    }else if (target.classList.contains('repeat-pass')){
+        if (countRepeatEyes==0){
+            formsData().repeatPassword.type = 'text'
+            imgEyes[1].src = 'https://i.ibb.co/1sJ76MF/eye1.png'
+            countRepeatEyes = 1
+        }else{
+            formsData().repeatPassword.type = 'password'
+            imgEyes[1].src = 'https://i.ibb.co/YNDnt4y/eye2.png'
+            countRepeatEyes = 0
+        }
     }
-    else if (target && countEyes==1){
-        formsData().pass.type = 'password'
-        imgEyes.src = 'https://i.ibb.co/YNDnt4y/eye2.png'
-        countEyes = 0
-    }
-    })
+    }))
 }
 
 export {changePassType}
