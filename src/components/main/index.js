@@ -89,8 +89,9 @@ const mainComponent = ()=>{
     const dontValid = document.querySelectorAll('.alert-validate')
     const calcBtn = document.querySelector('.login-form-btn')
     calcBtn.addEventListener('click', (e)=>{
+      console.log(dontValid)
       e.preventDefault()
-      valueVer() == true ? createAllCharts() : null
+      valueVer() == true && dontValid.length == 0 ? createAllCharts() : null
     })
 }
 

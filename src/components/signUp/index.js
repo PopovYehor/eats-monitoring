@@ -35,7 +35,7 @@ const signUpComponent = ()=>{
             </div>
             <!--имя-->
             <div class="wrap-input validate-input" id = 'name-input' key = 'name' data-validate="Некоректне ім'я">
-              <input class="input" type="text" name="name" value = "Єгор" required>
+              <input class="input" type="text" name="userName" value = "Єгор" required>
               <span class="focus-input" key = 'name' data-placeholder="Ім'я"></span>
             </div>
             <!--Фамилия-->
