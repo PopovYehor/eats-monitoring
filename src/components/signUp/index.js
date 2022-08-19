@@ -45,7 +45,7 @@ const signUpComponent = ()=>{
             </div>
             <!--Возраст-->
             <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="Від 18 до 99 років">
+            <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="Від 3 до 99 років">
               <input class="input" type="text" name="age" value = "25" required> 
               <span class="focus-input" key = 'age' data-placeholder="Вік"></span>
             </div>
@@ -61,7 +61,7 @@ const signUpComponent = ()=>{
           </div>
           <!--Рост-->
           <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'height-input' key = 'height' data-validate="Від 100 до 250 см">
+            <div class="wrap-input validate-input wrap-input-row" id = 'height-input' key = 'height' data-validate="Введіть значення від 30 до 250">
               <select class="choise-height select-choise-param" name="choiseHeight" tabindex="-1">
                 <option class = "lang" value="sm" key="sm">См</option>
                 <option class = "lang" value="inches" key="inches">Дюйми</option>
@@ -70,7 +70,7 @@ const signUpComponent = ()=>{
               <span class="focus-input" key = 'height' data-placeholder="Зріст"></span>
             </div>
             <!--Вес-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'weight-input' key = 'weight' data-validate="Від 40 до 199 кг">
+            <div class="wrap-input validate-input wrap-input-row" id = 'weight-input' key = 'weight' data-validate="Некоректна вага">
               <select class="choise-weight select-choise-param" name="choiseWeight" tabindex="-1">
                   <option class = "lang" value="kg" key="kg">Кг</option>
                   <option class = "lang" value="pounds" key="pound">Фунти</option>
@@ -81,7 +81,7 @@ const signUpComponent = ()=>{
           </div>
           <!--Желаемые данные-->
           <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'want-weight-input' key = 'wantWeight' data-validate="Введіть вашу бажану вагу">
+            <div class="wrap-input validate-input wrap-input-row" id = 'want-weight-input' key = 'wantWeight' data-validate="Некоректна вага">
               <input class="input" type="text" name="wantWeight" value = "80" required>
               <span class="focus-input" key = 'wantWeight' data-placeholder="Бажана вага"></span>
               <select class="choise-weight select-choise-param" name="wantWeightSelect"  tabindex="-1">
@@ -90,7 +90,7 @@ const signUpComponent = ()=>{
               </select>
             </div>
             <!--желаемое количество дней-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="Введіть бажану кількість днів">
+            <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="Некоректна кількість днів">
               <input class="input" type="text" name="wantDay" value = "90" required>
               <span class="focus-input" key = 'weight' data-placeholder="Кількість днів до цілі"></span>
             </div>

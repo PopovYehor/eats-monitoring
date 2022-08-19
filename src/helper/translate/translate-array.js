@@ -1,4 +1,4 @@
-import { translateCount } from "./translate"
+
 const arrLangText = {
     uk:{
         'title': 'Реєстрація',
@@ -101,7 +101,7 @@ const arrLangValidate = {
     'en': {
         'login': 'The login must be longer than 6 characters and must not contain any special characters (!@#$%^&*?/,.)',
         'password': 'Minimum of 8 characters, uppercase letter and number',
-        'repeatPassword': "Passwords must be repeated",
+        'repeatPassword': "Passwords must be the same",
         'name': "Invalid name",
         'surname': "Incorrect last name",
         'age': "At this age, it is better to consult a doctor",

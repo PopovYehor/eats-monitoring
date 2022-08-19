@@ -1,5 +1,5 @@
 import "./style.scss"
-import { langRotate, userRotate} from "../../helper/style"
+import { rotateList,langIconIndex, userIconIndex} from "../../helper/style"
 import { createElem } from "../../helper/createElement"
 import LangHeader from "./laguage"
 import HeaderSwitch from "./login"
@@ -18,13 +18,17 @@ const Header = ()=>{
     HeaderSwitch()
     
     const LangBtn = document.querySelector('.language-btn')
+    const langList = document.getElementById('lang-list')
+
     const userBtn = document.querySelector('.login-btn-user')
+    const userList = document.getElementById('user-list')
     
     LangBtn.addEventListener('click', ()=>{
-        langRotate('#lang-list')
+        rotateList(langList, langIconIndex)
+
     })
     userBtn.addEventListener('click', ()=>{
-        userRotate('#user-list')
+        rotateList(userList, userIconIndex)
     })
 }
 

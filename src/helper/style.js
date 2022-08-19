@@ -1,19 +1,21 @@
 let langIconIndex = 0
 let userIconIndex = 0
 
-const langRotate = (selector)=>{
-    let elem = document.querySelector(selector)
-    if( langIconIndex == 0){
+const rotateList = (elem, index)=>{
+    if( index == 0){
         elem.classList.add('active')
-        langIconIndex = 1
+        index = 1
+        elem.addEventListener('mouseleave', (e)=>{
+            if (e.isTrusted == true) {
+                setTimeout( ()=>{
+                elem.classList.remove('active')
+                index = 0}, 300)
+            }
+        })
     }
-    else if (langIconIndex == 1){
-        elem.classList.remove('active')
-        langIconIndex = 0
-    } 
 }
 
-const userRotate = (selector)=>{
+const userRotate = (selector, index)=>{
     let elem = document.querySelector(selector)
     if( userIconIndex == 0){
         elem.classList.add('active')
@@ -26,4 +28,4 @@ const userRotate = (selector)=>{
     
 }
 
-export {langRotate, userRotate}
+export {rotateList, langIconIndex, userIconIndex}

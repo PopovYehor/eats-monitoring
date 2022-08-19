@@ -5,7 +5,9 @@ let translateCount = 0
 
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
+    const progressInput = document.querySelectorAll('.progress-input')
     const translateItem = document.querySelectorAll('.lang')
+    const inputWrap = document.querySelectorAll('.wrap-input')
 
     const translateBtn = document.querySelectorAll('.translate')
     translateBtn.forEach(elem =>{
@@ -15,13 +17,15 @@ const translate = ()=>{
                 translateCount = 1
                 translateItem.forEach(elem => elem.textContent = arrLangText.en[elem.getAttribute('key')])
                 placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
-
+                progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
+                inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate['en'][elem.getAttribute('key')])
             }
             if (target.id == 'uk'){
                 translateCount = 0
                 translateItem.forEach(elem => elem.textContent = arrLangText.uk[elem.getAttribute('key')])
                 placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
-
+                progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
+                inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate.uk[elem.getAttribute('key')])
             }
 
             const chartContainer = document.querySelector('.chart-container')

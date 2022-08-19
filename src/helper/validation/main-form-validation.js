@@ -1,7 +1,5 @@
 import { formsData } from "../form-canculate/formTranformationData"
-
-/* const regLogin = /(?=[a-zа-яёі0-9]{6,})/im */
-
+import { translateText, translateCount } from "../translate/translate"
 const addEvent = (elem, func, elem2)=>{
     if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
 }
@@ -41,7 +39,10 @@ const veref = (elem, id, item)=>{
             const form = document.getElementById(id)
             let flag = ''
             findReg(item).test(element.value) ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false, form, item), flag = false)
-            if(flag == false) addEvent(element, verefFunction, form.classList.contains('alert-validate'))
+            if(flag == false) {
+                addEvent(element, verefFunction, form.classList.contains('alert-validate'))
+                if(element.value == "") form.dataset.validate = translateText(translateCount, `Обов'язкове поле`, 'Required field')
+            }
         }
         addBlur(element, verefFunction)
     }
