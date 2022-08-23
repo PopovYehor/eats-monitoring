@@ -7,7 +7,7 @@ const Login = ()=>{
     createElem('div', 'limiter', null, root)
     LoginComponent()
     changePassType()
-    logIn()
+    /* logIn() */
 }
 
 export default Login

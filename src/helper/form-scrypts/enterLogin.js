@@ -1,29 +1,27 @@
 import { formsData } from "../form-canculate/formTranformationData"
 import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
+
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 const API = `${cors}${urlData}`
 
+const login = 'Pavuk'
+const password = 'qwertY21'
 
 const logIn = ()=>{
-    const btn = document.querySelector('.login-form-btn')
+    /* const btn = document.querySelector('.login-form-btn')
     btn.addEventListener('click', ()=>{
         const formLogin = formsData().login.value
-        const formPass = formsData().pass.value
+        const formPass = formsData().pass.value */
         fetch(urlData)
             .then(res => res)
                 .then(res =>res.json())
-                    .then(res=>{
-                        console.log(res)
-                        /* res.forEach(elem =>{
-                            if(elem.userName == formLogin && elem.password == formPass){
-                                console.log('ok')
-                            }
-                        }) */
-
+                    .then(json=>{
+                        json[1].forEach(elem => {
+                            localStorage.setItem(Object.keys(elem), Object.values(elem))
+                        })
                     })
-    })
 }
 
 const postSignUp = ()=>{

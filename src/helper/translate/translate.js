@@ -1,7 +1,7 @@
 import createAllCharts from "../../components/main/charts/createAllCharts"
 import {arrLangText, arrLangPlaceholder, arrLangValidate } from "./translate-array"
-
-let translateCount = 0
+import {localStorageUser} from "../account-scripts/user-data"
+let translateCount = Number(localStorageUser('languageCount')) || 0
 
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
@@ -27,7 +27,7 @@ const translate = ()=>{
                 progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate.uk[elem.getAttribute('key')])
             }
-
+            localStorage.setItem('languageCount', translateCount)
             const chartContainer = document.querySelector('.chart-container')
             if(chartContainer) createAllCharts()
         })
