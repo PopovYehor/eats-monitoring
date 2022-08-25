@@ -6,9 +6,6 @@ const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 const API = `${cors}${urlData}`
 
-const login = 'Pavuk'
-const password = 'qwertY21'
-
 const logIn = ()=>{
     /* const btn = document.querySelector('.login-form-btn')
     btn.addEventListener('click', ()=>{
@@ -18,6 +15,7 @@ const logIn = ()=>{
             .then(res => res)
                 .then(res =>res.json())
                     .then(json=>{
+                        console.log(json)
                         json[1].forEach(elem => {
                             localStorage.setItem(Object.keys(elem), Object.values(elem))
                         })

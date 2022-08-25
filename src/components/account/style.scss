@@ -102,8 +102,9 @@
             padding-right: 5px;
           }
         }
-        dt {
+        .profile-description {
           width: 55%;
+          height: auto;
           padding-right: 10px;
           font-weight: bold;
           
@@ -115,6 +116,9 @@
           width: 45%;
           text-align: right;
           padding-right: 10px;
+        }
+        #regist-day-item{
+          height: 50px;
         }
         #want-day-item{
         height: 54px;

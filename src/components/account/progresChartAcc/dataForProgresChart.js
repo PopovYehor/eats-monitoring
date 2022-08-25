@@ -1,8 +1,6 @@
 import moment from 'moment'
 import { formsData, wantDay, defWantWeight, defWeight } from '../../../../helper/form-canculate/formTranformationData'
-
-const weightDate = []
-const dateData = ()=>{
+const dateDataAcc = ()=>{
     let dateArr = [] 
     for (let i = 0; i < wantDay() ; i++){
        dateArr.push((moment().add(i,'d').format('DD/MM/YY')))
@@ -10,7 +8,7 @@ const dateData = ()=>{
     return dateArr
 }
 
-const dateWeightData = ()=>{ 
+const dateWeightDataAcc = ()=>{ 
     const bettwenWeight = (defWeight()-defWantWeight())/(formsData().wantDay.value)
     let dayWeight = Number(defWeight())
     let dayWeightArr = []
@@ -24,4 +22,4 @@ const dateWeightData = ()=>{
     return arr
 }
 
-export {dateData, dateWeightData}
+export {dateDataAcc, dateWeightDataAcc}

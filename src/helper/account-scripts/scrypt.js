@@ -1,24 +1,10 @@
 import {translateText, translateCount} from "../translate/translate"
 import {createOption, createInput, createSelectParam} from "../createElement"
 import {localStorageUser} from "./user-data"
-let countProfile = 0
+import {account} from "../../components/account/index"
 
-const upAccount = ()=>{
-const openProf = document.getElementById('view_details')
-const main = document.querySelector('.mainen')
-const profile = document.querySelector('.profile')
-    openProf.addEventListener('click', ()=>{
-    if(countProfile == 0){
-        countProfile = 1
-        main.classList.add('active')
-        profile.classList.add('active')
-    }else{
-        countProfile = 0
-        main.classList.remove('active')
-        profile.classList.remove('active')
-    }
-    })
-}
+
+
 
 
 const arrSex = {
@@ -94,8 +80,18 @@ const addInputForChange = ()=>{
     let selectActive = createInput('select', 'select-active select-item', null, null, activItem, 'active')
     arrActiv.value.forEach((elem, i)=>{createOption('activ-item', elem , arrActiv.text[i] , selectActive, userObjectValue('active'))})
     
-    
 }
+const sameHeightTable = ()=>{
+    const profileDescription = document.querySelectorAll('.profile-description')
+    const profileItem = document.querySelectorAll('.profile-item')
+    const active = document.getElementById('activ')
+    profileDescription.forEach((elem , i) => {
+        elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
+        if (active.style.height == `${72.1719}px`) {
+            active.style.height = 109+'px'
+        }
+        })
+    }
 
 
 const loadFile = (event)=> {
@@ -107,27 +103,23 @@ const loadFile = (event)=> {
     
 }
 
-const changeAccountData = (e)=>{
+const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
+    profile.classList.add('change')
+    addImgInput.addEventListener('change', (e)=>{loadFile(e)})
+    profileItem.forEach(elem => elem.textContent = '')
+    labelChangePhoto.classList.add('active')
+    addInputForChange()
+    sameHeightTable()
+    changeBtn.textContent = 'Save'
+}
 
-    const changeBtn = document.querySelector('.changeBtn')
-    const profile = document.querySelector('.profile')
-    const profileItem = document.querySelectorAll('.profile-item')
-    const addImgInput = document.querySelector('.add-img')
-    const labelChangePhoto = document.querySelector('.label-change')
-    const target = e.target
-
-    if (target.textContent == 'Change'){
-        profile.classList.add('change')
-        addImgInput.addEventListener('change', (e)=>{loadFile(e)})
-        profileItem.forEach(elem => elem.textContent = '')
-        labelChangePhoto.classList.add('active')
-        addInputForChange()
-        changeBtn.textContent = 'Save'
-    }else{
+const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addImgInput)=>{
+    const itemInput = document.querySelectorAll('.item-input')
+    if (itemInput.length > 0) {
         profile.classList.remove('change')
         labelChangePhoto.classList.remove('active')
         changeBtn.textContent = 'Change'
-        addImgInput.removeEventListener('change', (e)=>loadFile(e))
+        if (addImgInput) addImgInput.removeEventListener('change', (e)=>loadFile(e))
         profileItem.forEach(elem=> {
             const child = elem.childNodes
         if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){ 
@@ -139,7 +131,7 @@ const changeAccountData = (e)=>{
             }
         }
         if (child[1] != undefined){
-             for (let i = 0; i< user.length; i++){
+            for (let i = 0; i< user.length; i++){
                 if (child[1].getAttribute('key') == Object.keys(user[i])){
                     const UserValue = child[1].getAttribute('key')
                     user[i][UserValue] = child[1].value
@@ -147,10 +139,49 @@ const changeAccountData = (e)=>{
             }
         }
         })
+        user.forEach(elem => {
+            localStorage.setItem(`${Object.keys(elem)}`, Object.values(elem))
+        })
+        profile.innerHTML = ''
+        account()
+        sameHeightTable()
     }
-    user.forEach(elem => {
-        localStorage.setItem(`${Object.keys(elem)}`, Object.values(elem))
-    })
 }
 
-export {upAccount, changeAccountData, arrSex, arrActiv}
+const changeAccountData = (e)=>{
+
+    const changeBtn = document.querySelector('.changeBtn')
+    const profile = document.querySelector('.profile')
+    const profileItem = document.querySelectorAll('.profile-item')
+    const addImgInput = document.querySelector('.add-img')
+    const labelChangePhoto = document.querySelector('.label-change')
+    const target = e.target
+    if (target.textContent == 'Change'){
+        changeProfileData(profile, addImgInput, labelChangePhoto, changeBtn, profileItem)
+    }else{
+        saveProfileData(profile, labelChangePhoto, changeBtn, profileItem, addImgInput)
+    }
+}
+
+const upAccount = ()=>{
+    const openProf = document.getElementById('view_details')
+    const main = document.querySelector('.mainen')
+    const profile = document.querySelector('.profile')
+    const labelChangePhoto = document.querySelector('.label-change')
+    const changeBtn = document.querySelector('.changeBtn')
+    const profileItem = document.querySelectorAll('.profile-item')
+        openProf.addEventListener('click', ()=>{
+        if(!profile.classList.contains('active') && !main.classList.contains('active') ){
+            main.classList.add('active')
+            profile.classList.add('active')
+
+        }else{
+
+            main.classList.remove('active')
+            profile.classList.remove('active')
+            saveProfileData(profile, labelChangePhoto, changeBtn, profileItem)
+        }
+        })
+    }
+
+export {upAccount, changeAccountData, arrSex, arrActiv, sameHeightTable}

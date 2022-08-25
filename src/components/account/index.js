@@ -2,13 +2,13 @@ import "./style.scss"
 import { changeAccountData } from "../../helper/account-scripts/scrypt"
 import { localStorageUser } from "../../helper/account-scripts/user-data"
 import { translateText, translateCount } from "../../helper/translate/translate.js"
-import { arrSex, arrActiv } from "../../helper/account-scripts/scrypt"
+import { arrSex, arrActiv, sameHeightTable, upAccount } from "../../helper/account-scripts/scrypt"
 import { logIn } from "../../helper/form-scrypts/enterLogin"
 const userSelectParam = (arr, item, arrText)=>{
     let element = ''
     arr.forEach((elem, i) => {
         if (elem == localStorageUser(item)){
-            element = arrText[i]
+            element = arrText[i].replace(/\((.*?)\)/, '')
         }
     })
     return element
@@ -21,6 +21,7 @@ const userParam = (store, item, text1, text2, text3, text4)=>{
 } 
 const account = ()=>{
     logIn()
+    console.log(arrActiv.text[1].replace(/\((.*?)\)/, ''))
     const elem = `
         <figure class="figure-img-profile">
             <img class="img-profile" src= '${localStorageUser('photo') || 'https://i.ibb.co/G5VTwDZ/1625890.png'}'>
@@ -39,54 +40,54 @@ const account = ()=>{
         <div class="mainen active">
             <dl class="list">
             <tr>
-                <dt id="Login">Login</dt>
+                <dt class= "profile-description" id="Login">Login</dt>
                     <dd class="profile-item" id="login-item">${localStorageUser('userName')}</dd>
             </tr>
             <tr>        
-                <dt id="age">Age</dt>
+                <dt class= "profile-description" id="age">Age</dt>
                     <dd class="profile-item" id="age-item">${localStorageUser('age')} ${translateText(translateCount, 'років', 'old years')}</dd>
             </tr>
             <tr>   
-                <dt id="sex">Sex</dt>
+                <dt class= "profile-description" id="sex">Sex</dt>
                     <dd class="profile-item" id="sex-item">${userSelectParam(arrSex.value, 'sex', arrSex.text, )}</dd>
             </tr>
             <tr>        
-                <dt id="height">Height</dt>
+                <dt class= "profile-description" id="height">Height</dt>
                     <dd class="profile-item" id="height-item">${localStorageUser('height')} ${userParam('heightParam', 'sm', 'см', 'sm', 'дюймів', 'inches')}</dd>
             </tr>
                     
             <tr>    
-                <dt id="weight">Weight</dt>
+                <dt class= "profile-description" id="weight">Weight</dt>
                     <dd class="profile-item" id="weight-item">${localStorageUser('weight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
             </tr>
             <tr>    
-                <dt id="wantWeight">Want weight</dt>
+                <dt class= "profile-description" id="wantWeight">Want weight</dt>
                     <dd class="profile-item" id="want-weight-item">${localStorageUser('wantWeight')} ${userParam('wantWeightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
             </tr>
             <tr>
-                <dt id="activ">Activity level</dt>
+                <dt class= "profile-description" id="activ">Activity level</dt>
                     <dd class="profile-item" id="activ-item">${userSelectParam(arrActiv.value, 'active', arrActiv.text)}</dd>
             </tr>
             <tr>       
-                <dt id="dataRegistr">Date of registration</dt>
+                <dt class= "profile-description" id="dataRegistr">Date of registration</dt>
                     <dd class="profile-item" id="regist-day-item">${localStorageUser('dateRegist')}</dd>
             </tr>
             <tr>    
-                <dt id="wantDay">Desired weight loss date</dt>
+                <dt class= "profile-description" id="wantDay">Desired weight loss date</dt>
                     <dd class="profile-item" id="want-day-item">${localStorageUser('wantDate')}</dd> 
             </tr>
             </dl>
             <a class="changeBtn">Change</a>
         </div>
     `
+    
     const wrap = document.querySelector('.profile')
     wrap.innerHTML = elem
-
+    upAccount()
     const changeBtn = document.querySelector('.changeBtn')
     changeBtn.addEventListener('click', (e)=>{changeAccountData(e)})
 
-    const activeItem = document.querySelectorAll()
-    console.log(activeItem.getBoundingClientRect().height)
+    sameHeightTable()
 }
 
 export {account}
