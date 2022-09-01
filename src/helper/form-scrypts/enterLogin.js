@@ -15,9 +15,12 @@ const logIn = ()=>{
             .then(res => res)
                 .then(res =>res.json())
                     .then(json=>{
-                        console.log(json)
-                        json[1].forEach(elem => {
-                            localStorage.setItem(Object.keys(elem), Object.values(elem))
+                        [json[1]].forEach((elem, i) =>{
+                            let key = Object.keys(elem)
+                            let value = Object.values(elem)
+                            for (let j = 0; j<key.length; j++){
+                                localStorage.setItem(key[j], value[j])
+                            }
                         })
                     })
 }
@@ -42,4 +45,20 @@ const postSignUp = ()=>{
     })
 }
 
-export {logIn, postSignUp}
+
+const changeAccount = (data, id)=>{
+    
+fetch(`${urlData}/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify(data),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+    },
+})
+.then(res => res.json())
+    .then(res =>{
+        console.log(res)
+    })  
+}
+
+export {logIn, postSignUp, changeAccount}

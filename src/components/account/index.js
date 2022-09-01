@@ -4,6 +4,7 @@ import { localStorageUser } from "../../helper/account-scripts/user-data"
 import { translateText, translateCount } from "../../helper/translate/translate.js"
 import { arrSex, arrActiv, sameHeightTable, upAccount } from "../../helper/account-scripts/scrypt"
 import { logIn } from "../../helper/form-scrypts/enterLogin"
+
 const userSelectParam = (arr, item, arrText)=>{
     let element = ''
     arr.forEach((elem, i) => {
@@ -21,7 +22,6 @@ const userParam = (store, item, text1, text2, text3, text4)=>{
 } 
 const account = ()=>{
     logIn()
-    console.log(arrActiv.text[1].replace(/\((.*?)\)/, ''))
     const elem = `
         <figure class="figure-img-profile">
             <img class="img-profile" src= '${localStorageUser('photo') || 'https://i.ibb.co/G5VTwDZ/1625890.png'}'>
@@ -31,7 +31,7 @@ const account = ()=>{
             </label>
         </figure>
         <div class="title-name">
-            <h1 class="profile-item" id="name">${localStorageUser('name')} ${localStorageUser('name')}</h1>
+            <h1 class="profile-item" id="name" data-validate = "${translateText(translateCount, `Некоректне ім'я або призвище`, "Incorrect name or surname")}">${localStorageUser('name')} ${localStorageUser('surname')}</h1>
         </div>
         <div class="toggle">
             <input class="view_details dropdown-toggle" id="view_details" type="checkbox">
@@ -40,41 +40,41 @@ const account = ()=>{
         <div class="mainen active">
             <dl class="list">
             <tr>
-                <dt class= "profile-description" id="Login">Login</dt>
-                    <dd class="profile-item" id="login-item">${localStorageUser('userName')}</dd>
+                <dt class= "profile-description" id="Login" key = "login">${translateText(translateCount, 'Логін', "Login")}</dt>
+                    <dd class="profile-item" id="login-item"  data-validate = "${translateText(translateCount, 'Має бути більше 6 символів та без !@#$%^&*?/,.', "Must be more than 6 characters and without !@#$%^&*?/,.")}" >${localStorageUser('userName')}</dd>
             </tr>
             <tr>        
-                <dt class= "profile-description" id="age">Age</dt>
-                    <dd class="profile-item" id="age-item">${localStorageUser('age')} ${translateText(translateCount, 'років', 'old years')}</dd>
+                <dt class= "profile-description" id="age" key = "age">${translateText(translateCount, 'Вік', "Age")}</dt>
+                    <dd class="profile-item" id="age-item"   data-validate = "${translateText(translateCount, 'Некоректний вік', "Incorrect age")}">${localStorageUser('age')} ${translateText(translateCount, 'років', 'old years')}</dd>
             </tr>
             <tr>   
-                <dt class= "profile-description" id="sex">Sex</dt>
+                <dt class= "profile-description" id="sex" key = "sex">${translateText(translateCount, 'Стать', "Sex")}</dt>
                     <dd class="profile-item" id="sex-item">${userSelectParam(arrSex.value, 'sex', arrSex.text, )}</dd>
             </tr>
             <tr>        
-                <dt class= "profile-description" id="height">Height</dt>
-                    <dd class="profile-item" id="height-item">${localStorageUser('height')} ${userParam('heightParam', 'sm', 'см', 'sm', 'дюймів', 'inches')}</dd>
+                <dt class= "profile-description" id="height" key = "height">${translateText(translateCount, 'Зріст', "Height")}</dt>
+                    <dd class="profile-item" id="height-item" data-validate = "${translateText(translateCount, 'Некоректний зріст', "Incorrect height")}">${localStorageUser('height')} ${userParam('heightParam', 'sm', 'см', 'sm', 'дюймів', 'inches')}</dd>
             </tr>
                     
             <tr>    
-                <dt class= "profile-description" id="weight">Weight</dt>
-                    <dd class="profile-item" id="weight-item">${localStorageUser('weight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+                <dt class= "profile-description" id="weight" key = "weight">${translateText(translateCount, 'Вага', "Weight")}</dt>
+                    <dd class="profile-item" id="weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('weight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
             </tr>
             <tr>    
-                <dt class= "profile-description" id="wantWeight">Want weight</dt>
-                    <dd class="profile-item" id="want-weight-item">${localStorageUser('wantWeight')} ${userParam('wantWeightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+                <dt class= "profile-description" id="wantWeight" key = "wantWeight">${translateText(translateCount, 'Бажана вага', "Want weight")}</dt>
+                    <dd class="profile-item" id="want-weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('wantWeight')} ${userParam('wantWeightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
             </tr>
             <tr>
-                <dt class= "profile-description" id="activ">Activity level</dt>
+                <dt class= "profile-description" id="activ" key = "activ">${translateText(translateCount, 'Рівень активності', "Activity level")}</dt>
                     <dd class="profile-item" id="activ-item">${userSelectParam(arrActiv.value, 'active', arrActiv.text)}</dd>
             </tr>
             <tr>       
-                <dt class= "profile-description" id="dataRegistr">Date of registration</dt>
-                    <dd class="profile-item" id="regist-day-item">${localStorageUser('dateRegist')}</dd>
+                <dt class= "profile-description" id="dataRegistr" key = "dataRegistr">${translateText(translateCount, 'Дата реєстрації', "Date of registration")}</dt>
+                    <dd class="profile-item" id="regist-day-item" data-validate = "${translateText(translateCount, 'Не вірний формат (ДД/ММ/РР)', "Invalid format (DD/MM/YY)")}">${localStorageUser('dateRegist')}</dd>
             </tr>
             <tr>    
-                <dt class= "profile-description" id="wantDay">Desired weight loss date</dt>
-                    <dd class="profile-item" id="want-day-item">${localStorageUser('wantDate')}</dd> 
+                <dt class= "profile-description" id="wantDay" key = "wantDay">${translateText(translateCount, 'Бажана дата схуднення', "Desired date to lose weight")}</dt>
+                    <dd class="profile-item" id="want-day-item" data-validate = "${translateText(translateCount, 'Не вірний формат (ДД/ММ/РР)', "Invalid format (DD/MM/YY)")}"  >${localStorageUser('wantDate')}</dd> 
             </tr>
             </dl>
             <a class="changeBtn">Change</a>

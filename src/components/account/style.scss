@@ -60,8 +60,9 @@
       display: flex;
       flex-direction: row;
       margin: 10px 0;
+      position: relative;
       .item-input{
-        width: 47%;
+        width: 207px;
         margin-right: 10px;
         border: .5px solid rgba(0, 0, 0, 0.253);
         border-radius: 5px;
@@ -171,6 +172,63 @@
 }
 .profile.active.change{
   min-width: 500px;
+  .alert-validate::before {
+    content: attr(data-validate);
+    position: absolute;
+    max-width: 55%;
+    background-color: #fff;
+    border: 1px solid #c80000;
+    border-radius: 2px;
+    padding: 4px 25px 4px 10px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 10px;
+    pointer-events: none;
+  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #c80000;
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 1.4;
+    text-align: left;
+  
+    visibility: hidden;
+    opacity: 0;
+  
+    -webkit-transition: opacity 0.4s;
+    -o-transition: opacity 0.4s;
+    -moz-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+  }
+  
+  .alert-validate::after {
+    content: "\f06a";
+    font-family: FontAwesome;
+    font-size: 18px;
+    color: #c80000;
+    font-weight: normal;
+    font-style: normal;
+  
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 15px;
+  }
+  
+  .alert-validate:hover:before {
+    visibility: visible;
+    opacity: 1;
+  }
   dl{
     dt{
       width: 45%;
@@ -180,11 +238,13 @@
       width: 55%;
       min-height: 47px;
       padding-bottom: 7px;
+      position: relative;
       .height-item-input, .weight-item-input, .want-weight-input{
         width: 50%;
         margin-right: 45px;
       }
     }
+    
     
     .item-input{
       width: 70%;

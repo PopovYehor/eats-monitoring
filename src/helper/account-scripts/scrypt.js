@@ -2,8 +2,8 @@ import {translateText, translateCount} from "../translate/translate"
 import {createOption, createInput, createSelectParam} from "../createElement"
 import {localStorageUser} from "./user-data"
 import {account} from "../../components/account/index"
-
-
+import { changeAccount } from "../form-scrypts/enterLogin"
+import {validationAccount} from "../validation/main-form-validation"
 
 
 
@@ -22,29 +22,29 @@ const arrActiv = {
     ]
 }
 
-const user = [
-    {id: localStorageUser('id') || 0},
-    {userName: localStorageUser('userName') || ''},
-    {name: localStorageUser('name') || ''},
-    {surname: localStorageUser('surname') || ''},
-    {sex: localStorageUser('sex') || ''},
-    {age: localStorageUser('age') || ''},
-    {height: localStorageUser('height') || ''},
-    {heightParam: localStorageUser('heightParam') || ''},
-    {weight: localStorageUser('weight') || ''},
-    {weightParam: localStorageUser('weightParam') || ''},
-    {wantWeight: localStorageUser('wantWeight') || ''},
-    {wantWeightParam: localStorageUser('wantWeightParam') || ''},
-    {active: localStorageUser('active') || ''},
-    {photo: localStorageUser('photo') || ''},
-    {dateRegist: localStorageUser('dateRegist') || ''},
-    {wantDate: localStorageUser('wantDate') || ''},
-    {languageCount: localStorageUser('languageCount') || ''},
-]
+const user = {
+    id: localStorageUser('id') || 0,
+    userName: localStorageUser('userName') || '',
+    password: localStorageUser('password') || '',
+    name: localStorageUser('name') || '',
+    surname: localStorageUser('surname') || '',
+    sex: localStorageUser('sex') || '',
+    age: localStorageUser('age') || '',
+    height: localStorageUser('height') || '',
+    heightParam: localStorageUser('heightParam') || '',
+    weight: localStorageUser('weight') || '',
+    weightParam: localStorageUser('weightParam') || '',
+    wantWeight: localStorageUser('wantWeight') || '',
+    wantWeightParam: localStorageUser('wantWeightParam') || '',
+    active: localStorageUser('active') || '',
+    photo: localStorageUser('photo') || '',
+    dateRegist: localStorageUser('dateRegist') || '',
+    wantDate: localStorageUser('wantDate') || '',
+    languageCount: localStorageUser('languageCount') || '',
+}
 
 const userObjectValue = (keys)=>{
-    let element = ''
-    user.forEach(elem => {if (Object.keys(elem) == keys) element = Object.values(elem)})
+    let element = user[keys]
     return element
 }
 
@@ -71,7 +71,6 @@ const addInputForChange = ()=>{
     createInput('input', 'age-item-input item-input', null, userObjectValue('age'), ageItem, 'age')
     createInput('input', 'want-weight-input item-input', null, userObjectValue('wantWeight'), wantWeightItem, 'wantWeight')
     createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds', translateText(translateCount, 'Кг', 'Kg'),translateText(translateCount, 'Фунти', 'Pounds'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
-    createInput('input', 'regist-day-input item-input', null, userObjectValue('dateRegist'), dateReist, 'dateRegist')
     createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
@@ -84,13 +83,11 @@ const addInputForChange = ()=>{
 const sameHeightTable = ()=>{
     const profileDescription = document.querySelectorAll('.profile-description')
     const profileItem = document.querySelectorAll('.profile-item')
-    const active = document.getElementById('activ')
     profileDescription.forEach((elem , i) => {
-        elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
-        if (active.style.height == `${72.1719}px`) {
-            active.style.height = 109+'px'
-        }
-        })
+        setTimeout(()=>{
+            elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
+        }, 250)
+    })
     }
 
 
@@ -106,10 +103,11 @@ const loadFile = (event)=> {
 const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
     profile.classList.add('change')
     addImgInput.addEventListener('change', (e)=>{loadFile(e)})
-    profileItem.forEach(elem => elem.textContent = '')
+    profileItem.forEach(elem =>{ if(elem.id != 'regist-day-item') elem.textContent = ''})
     labelChangePhoto.classList.add('active')
     addInputForChange()
     sameHeightTable()
+    validationAccount()
     changeBtn.textContent = 'Save'
 }
 
@@ -122,26 +120,22 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
         if (addImgInput) addImgInput.removeEventListener('change', (e)=>loadFile(e))
         profileItem.forEach(elem=> {
             const child = elem.childNodes
-        if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){ 
-            for (let i = 0; i< user.length; i++){
-                if (child[0].getAttribute('key') == Object.keys(user[i])){
-                    const UserValue = child[0].getAttribute('key')
-                    user[i][UserValue] = child[0].value
-                }
+            if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){
+                const keyInput = child[0].getAttribute('key')
+                const valueInput = child[0].value
+                user[keyInput] = valueInput   
+                localStorage.setItem(keyInput, valueInput)
             }
-        }
-        if (child[1] != undefined){
-            for (let i = 0; i< user.length; i++){
-                if (child[1].getAttribute('key') == Object.keys(user[i])){
-                    const UserValue = child[1].getAttribute('key')
-                    user[i][UserValue] = child[1].value
-                }
+            if (child[1] != undefined){
+                const keySelect = child[1].getAttribute('key')
+                const valueSelect = child[1].value
+                user[keySelect] = valueSelect
+                localStorage.setItem(keySelect, valueSelect)
             }
-        }
+
         })
-        user.forEach(elem => {
-            localStorage.setItem(`${Object.keys(elem)}`, Object.values(elem))
-        })
+        
+        changeAccount(user, (user.id)) 
         profile.innerHTML = ''
         account()
         sameHeightTable()

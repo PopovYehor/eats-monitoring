@@ -10,26 +10,21 @@ const addOrRemoveAlertValidate = (flag, elem)=>{
     flag == false ? elem.classList.add('alert-validate') : elem.classList.remove('alert-validate')
 }
 
-const regArr = [
-    {login : /(?=[a-zа-яёі0-9]{6,})/im},
-    {password: /((?=.*([a-z]|[а-яё]))(?=.*([A-Z]|[А-ЯЁ]))(?=.*\d)(?=.*[!@#$%^&*]{0,})){8,}/},
-    {name: /^([A-Z]{1})([a-z]{1,}$)|^([А-ЯЁІЇЄ]{1})([а-яёіїє]{1,}$)/},
-    {surname : /^([A-Z]{1})([a-z]{1,}$)|^([А-ЯЁІЇЄ]{1})([а-яёіїє]{1,}$)/},
-    {age: /^[3-9]$|^[1-9][0-9]$/},
-    {height: /^([3-9][0-9])$|^1([0-9][0-9])$|^2([0-4][0-9])$|^250$/},
-    {weight: /^\d{2,3}([\.,][\d]){0,1}$/},
-    {wantWeight: /^\d{2,3}([\.,][\d]){0,1}$/},
-    {wantDay: /^\d+$/}
-]
+const regArr = {
+    login : /(?=[a-zа-яёі0-9]{5,})/im,
+    password: /((?=.*([a-z]|[а-яё]))(?=.*([A-Z]|[А-ЯЁ]))(?=.*\d)(?=.*[!@#$%^&*]{0,})){8,}/,
+    name: /^([A-Z]{1})([a-z]{1,}$)|^([А-ЯЁІЇЄ]{1})([а-яёіїє]{1,}$)/,
+    age: /^[3-9]$|^[1-9][0-9]$/,
+    height: /^([3-9][0-9])$|^1([0-9][0-9])$|^2([0-4][0-9])$|^250$/,
+    weight: /^\d{2,3}([\.,][\d]){0,1}$/,
+    wantWeight: /^\d{2,3}([\.,][\d]){0,1}$/,
+    wantDay: /^\d+$/,
+    date: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/
+}
+
 const findReg = (item)=>{
     let regEx = ''
-    for (let i = 0; i< regArr.length; i++){
-        const [key] = Object.keys(regArr[i])
-        if (item == key) {
-            [regEx] = Object.values(regArr[i])
-            break
-        }
-    }
+    regEx = regArr[item]
     return regEx
 }
 const veref = (elem, id, item)=>{
@@ -99,7 +94,7 @@ const verAll = ()=>{
     veref(formsData().pass, 'password-input', 'password')
     verRepeatPassword()
     veref(formsData().userName, 'name-input', 'name')
-    veref(formsData().surname, 'surname-input', 'surname')
+    veref(formsData().surname, 'surname-input', 'name')
     veref(formsData().age, 'age-input', 'age')
     veref(formsData().height, 'height-input', 'height')
     veref(formsData().weight, 'weight-input', 'weight')
@@ -109,8 +104,24 @@ const verAll = ()=>{
     verefSelect(formsData().sex, 'sex-input', 'sex')
 }
 
-const valueVer = ()=>{
-    const inputes = document.querySelectorAll('.input')
+const findSelector = (tag)=>{
+    const element = document.querySelector(tag)
+    return element
+}
+const validationAccount = ()=>{
+    veref(findSelector('.name-item-input'), 'name', 'name')
+    veref(findSelector('.surname-item-input'), 'name', 'name')
+    veref(findSelector('.login-item-input'), 'login-item', 'login')
+    veref(findSelector('.age-item-input'), 'age-item', 'age')
+    veref(findSelector('.height-item-input'), 'height-item', 'height')
+    veref(findSelector('.weight-item-input'), 'weight-item', 'weight')
+    veref(findSelector('.want-weight-input'), 'want-weight-item', 'weight')
+    veref(findSelector('.regist-day-input'), 'regist-day-item', 'date')
+    veref(findSelector('.want-day-input'), 'want-day-item', 'date')
+}
+
+const valueVer = (input)=>{
+    const inputes = document.querySelectorAll(input)
     let flagInput = ''
     for (let i = 0; i< inputes.length; i++){
         if (inputes[i].value == ""){
@@ -134,4 +145,4 @@ const valueVer = ()=>{
     return sumFlag
 }
 
-export {verAll, valueVer}
+export {verAll, valueVer, validationAccount}
