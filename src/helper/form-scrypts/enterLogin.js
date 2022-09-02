@@ -15,13 +15,14 @@ const logIn = ()=>{
             .then(res => res)
                 .then(res =>res.json())
                     .then(json=>{
-                        [json[1]].forEach((elem, i) =>{
+                        console.log(json)
+                        /* [json[1]].forEach((elem, i) =>{
                             let key = Object.keys(elem)
                             let value = Object.values(elem)
                             for (let j = 0; j<key.length; j++){
                                 localStorage.setItem(key[j], value[j])
                             }
-                        })
+                        }) */
                     })
 }
 

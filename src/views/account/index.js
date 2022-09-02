@@ -2,7 +2,7 @@ import { account } from "../../components/account"
 import {createElem} from "../../helper/createElement"
 const Account = ()=>{
     const root = document.getElementById('root')
-    createElem('div', 'profile active', null, root)
+    createElem('div', 'profile', null, root)
     account()
 }
 

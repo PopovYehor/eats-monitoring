@@ -1,8 +1,7 @@
 import "./style.scss"
-import { changeAccountData } from "../../helper/account-scripts/scrypt"
-import { localStorageUser } from "../../helper/account-scripts/user-data"
 import { translateText, translateCount } from "../../helper/translate/translate.js"
-import { arrSex, arrActiv, sameHeightTable, upAccount } from "../../helper/account-scripts/scrypt"
+import { changeAccountData, sameHeightTable, upAccount,  arrSex, arrActiv } from "../../helper/account-scripts/changeDataUser"
+import { localStorageUser, dateFormat } from "../../helper/account-scripts/user-data"
 import { logIn } from "../../helper/form-scrypts/enterLogin"
 
 const userSelectParam = (arr, item, arrText)=>{
@@ -37,7 +36,7 @@ const account = ()=>{
             <input class="view_details dropdown-toggle" id="view_details" type="checkbox">
             <label for="view_details">☰</label>
         </div>
-        <div class="mainen active">
+        <div class="mainen">
             <dl class="list">
             <tr>
                 <dt class= "profile-description" id="Login" key = "login">${translateText(translateCount, 'Логін', "Login")}</dt>
@@ -86,8 +85,8 @@ const account = ()=>{
     upAccount()
     const changeBtn = document.querySelector('.changeBtn')
     changeBtn.addEventListener('click', (e)=>{changeAccountData(e)})
-
     sameHeightTable()
+    dateFormat()
 }
 
 export {account}
