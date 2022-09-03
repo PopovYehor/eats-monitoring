@@ -15,8 +15,9 @@ Header()
 /* signUp() */
 /* main() */
 Account()
-translate()
 placeholderUp()
 placeholderClickUp()
 selectHasVal()
-translate()
+setTimeout(()=>{
+    translate()
+}, 1050) 

@@ -1,16 +1,18 @@
 import "./style.scss"
 import { translateText, translateCount } from "../../helper/translate/translate.js"
-import { changeAccountData, sameHeightTable, upAccount,  arrSex, arrActiv } from "../../helper/account-scripts/changeDataUser"
-import { localStorageUser, dateFormat } from "../../helper/account-scripts/user-data"
-import { logIn } from "../../helper/form-scrypts/enterLogin"
+import { changeAccountData, upAccount,  arrSex, arrActiv } from "../../helper/account-scripts/changeDataUser"
+import {sameHeightTable} from "../../helper/account-scripts/table-script"
+import { localStorageUser} from "../../helper/account-scripts/user-data"
+
 
 const userSelectParam = (arr, item, arrText)=>{
     let element = ''
-    arr.forEach((elem, i) => {
-        if (elem == localStorageUser(item)){
-            element = arrText[i].replace(/\((.*?)\)/, '')
-        }
-    })
+        arr.forEach((elem, i) => {
+            if (elem == localStorageUser(item)){
+                element = arrText[i].replace(/\((.*?)\)/, '')
+            }
+        })
+    
     return element
 }
 
@@ -20,7 +22,6 @@ const userParam = (store, item, text1, text2, text3, text4)=>{
     return elem
 } 
 const account = ()=>{
-    logIn()
     const elem = `
         <figure class="figure-img-profile">
             <img class="img-profile" src= '${localStorageUser('photo') || 'https://i.ibb.co/G5VTwDZ/1625890.png'}'>
@@ -36,10 +37,10 @@ const account = ()=>{
             <input class="view_details dropdown-toggle" id="view_details" type="checkbox">
             <label for="view_details">☰</label>
         </div>
-        <div class="mainen">
+        <div class="mainen active">
             <dl class="list">
             <tr>
-                <dt class= "profile-description" id="Login" key = "login">${translateText(translateCount, 'Логін', "Login")}</dt>
+                <dt class= "profile-description" id="Login" key = "logins">${translateText(translateCount, 'Логін', "Login")}</dt>
                     <dd class="profile-item" id="login-item"  data-validate = "${translateText(translateCount, 'Має бути більше 6 символів та без !@#$%^&*?/,.', "Must be more than 6 characters and without !@#$%^&*?/,.")}" >${localStorageUser('userName')}</dd>
             </tr>
             <tr>        
@@ -58,6 +59,14 @@ const account = ()=>{
             <tr>    
                 <dt class= "profile-description" id="weight" key = "weight">${translateText(translateCount, 'Вага', "Weight")}</dt>
                     <dd class="profile-item" id="weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('weight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+            </tr>
+            <tr>    
+                <dt class= "profile-description" id="last-weight" key = "lastWeight">${translateText(translateCount, 'Останнє зважування', "Last weighing")}</dt>
+                    <dd class="profile-item" id="last-weight-item">${localStorageUser('lastWeighing')}</dd>
+            </tr>
+            <tr>    
+                <dt class= "profile-description" id="perfect-weight" key = "perfectWeight">${translateText(translateCount, 'Ідеальна вага', "Perfect weight")}</dt>
+                    <dd class="profile-item" id="perfect-weight-item">${localStorageUser('perfectWeight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
             </tr>
             <tr>    
                 <dt class= "profile-description" id="wantWeight" key = "wantWeight">${translateText(translateCount, 'Бажана вага', "Want weight")}</dt>
@@ -79,14 +88,13 @@ const account = ()=>{
             <a class="changeBtn">Change</a>
         </div>
     `
-    
     const wrap = document.querySelector('.profile')
     wrap.innerHTML = elem
     upAccount()
     const changeBtn = document.querySelector('.changeBtn')
     changeBtn.addEventListener('click', (e)=>{changeAccountData(e)})
     sameHeightTable()
-    dateFormat()
+
 }
 
 export {account}

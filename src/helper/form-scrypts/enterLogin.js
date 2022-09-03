@@ -1,7 +1,7 @@
 import { formsData } from "../form-canculate/formTranformationData"
 import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
-
+import { user } from "../account-scripts/user-data"
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 const API = `${cors}${urlData}`
@@ -15,14 +15,16 @@ const logIn = ()=>{
             .then(res => res)
                 .then(res =>res.json())
                     .then(json=>{
-                        console.log(json)
-                        /* [json[1]].forEach((elem, i) =>{
+                        [json[1]].forEach((elem, i) =>{
                             let key = Object.keys(elem)
                             let value = Object.values(elem)
+                            const lastWeighingIndex = elem.dataDate.length - 1
+                            localStorage.setItem('lastWeighing', JSON.stringify(elem.dataDate[lastWeighingIndex]))
                             for (let j = 0; j<key.length; j++){
-                                localStorage.setItem(key[j], value[j])
+                                user[key[j]] = value[j]
+                                localStorage.setItem(key[j], JSON.stringify(value[j]))
                             }
-                        }) */
+                        })
                     })
 }
 

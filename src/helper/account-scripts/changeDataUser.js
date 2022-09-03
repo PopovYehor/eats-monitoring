@@ -1,9 +1,11 @@
 import {translateText, translateCount} from "../translate/translate"
-import {localStorageUser, user, userObjectValue} from "./user-data"
+import {localStorageUser, userObjectValue, user} from "./user-data"
 import {createOption, createInput, createSelectParam} from "../createElement"
 import {account} from "../../components/account/index"
 import { changeAccount } from "../form-scrypts/enterLogin"
 import {validationAccount} from "../validation/main-form-validation"
+import { sameHeightTable } from "./table-script"
+import moment from "moment"
 
 const arrSex = {
     value :['male', 'female'],
@@ -20,7 +22,6 @@ const arrActiv = {
 }
 
 const addInputForChange = ()=>{
-
     const heightItem = document.getElementById('height-item')
     const weightItem = document.getElementById('weight-item')
     const wantWeightItem = document.getElementById('want-weight-item')
@@ -30,7 +31,6 @@ const addInputForChange = ()=>{
     const sexItem = document.getElementById('sex-item')
     const activItem = document.getElementById('activ-item')
     const wantDate = document.getElementById('want-day-item')
-
     createInput('input', 'name-item-input item-input', null, userObjectValue('name'), nameItem, 'name')
     createInput('input', 'surname-item-input item-input', null, userObjectValue('surname'), nameItem, 'surname')
     createInput('input', 'height-item-input item-input', null, userObjectValue('height'), heightItem, 'height')
@@ -50,15 +50,7 @@ const addInputForChange = ()=>{
     arrActiv.value.forEach((elem, i)=>{createOption('activ-item', elem , arrActiv.text[i] , selectActive, userObjectValue('active'))})
     
 }
-const sameHeightTable = ()=>{
-    const profileDescription = document.querySelectorAll('.profile-description')
-    const profileItem = document.querySelectorAll('.profile-item')
-    profileDescription.forEach((elem , i) => {
-        setTimeout(()=>{
-            elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
-        }, 250)
-    })
-    }
+
 
 
 const loadFile = (event)=> {
@@ -73,7 +65,7 @@ const loadFile = (event)=> {
 const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
     profile.classList.add('change')
     addImgInput.addEventListener('change', (e)=>{loadFile(e)})
-    profileItem.forEach(elem =>{ if(elem.id != 'regist-day-item') elem.textContent = ''})
+    profileItem.forEach(elem =>{ if(elem.id != 'regist-day-item' && elem.id != 'perfect-weight-item' && elem.id != 'last-weight-item') elem.textContent = ''})
     labelChangePhoto.classList.add('active')
     addInputForChange()
     sameHeightTable()
@@ -85,30 +77,48 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
     const itemInput = document.querySelectorAll('.item-input')
     if (itemInput.length > 0) {
         profile.classList.remove('change')
+        profile.classList.remove('active')
         labelChangePhoto.classList.remove('active')
         changeBtn.textContent = 'Change'
-        if (addImgInput) addImgInput.removeEventListener('change', (e)=>loadFile(e))
+        if (addImgInput){ addImgInput.removeEventListener('change', (e)=>loadFile(e))}
+        const wightInput = document.querySelector('.weight-item-input').value
+        if (wightInput != localStorageUser('weight')) {
+            let weightDataDete = localStorageUser('dataDate')
+            const today = moment().format('DD/MM/YY')
+            weightDataDete.push(today)
+            localStorage.setItem('dataDate', JSON.stringify(weightDataDete))
+            localStorage.setItem('lastWeighing', JSON.stringify(today))
+            user.dataDate = weightDataDete
+            user.lastWeighing = today
+
+            let weightData = localStorageUser('dataWeight')
+            weightData.push(wightInput)
+            localStorage.setItem('dataWeight', JSON.stringify(weightData))
+            user.dataWeight = weightData
+        }
         profileItem.forEach(elem=> {
             const child = elem.childNodes
             if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){
                 const keyInput = child[0].getAttribute('key')
                 const valueInput = child[0].value
                 user[keyInput] = valueInput   
-                localStorage.setItem(keyInput, valueInput)
+                localStorage.setItem(keyInput, JSON.stringify(valueInput))
             }
             if (child[1] != undefined){
                 const keySelect = child[1].getAttribute('key')
                 const valueSelect = child[1].value
                 user[keySelect] = valueSelect
-                localStorage.setItem(keySelect, valueSelect)
+                localStorage.setItem(keySelect, JSON.stringify(valueSelect))
             }
 
         })
-        
         changeAccount(user, (user.id)) 
         profile.innerHTML = ''
-        account()
-        sameHeightTable()
+        setTimeout(()=>{
+            account()
+            sameHeightTable()
+        }, 1000)
+        
     }
 }
 
@@ -147,4 +157,4 @@ const upAccount = ()=>{
     })
 }
 
-export {upAccount, changeAccountData, sameHeightTable, arrActiv, arrSex}
+export {upAccount, changeAccountData, arrActiv, arrSex}

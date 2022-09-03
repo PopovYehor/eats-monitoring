@@ -4,7 +4,6 @@ import { createElem } from "../../helper/createElement"
 import LangHeader from "./laguage"
 import HeaderSwitch from "./login"
 const Header = ()=>{
-    
     const wrap = document.querySelector('header')
 
     const mainIcon = createElem('div', 'main-icon', null, wrap)
