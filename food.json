@@ -1,0 +1,1946 @@
+[
+    {
+    "alcohol":[
+        {
+        "name": "wine semi-dry",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 11,
+        "calories": 78,
+        "id": 1,
+        "ukText": "Вино напівсухе",
+        "enText": "Wine Semi-Dry"
+        },
+        {
+        "name": "dessert wine",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 82,
+        "calories": 175,
+        "id": 2,
+        "ukText": "Десертне вино",
+        "enText": "Dessert Wine"
+        },
+        {
+        "name": "wine semi-sweet",
+        "protein": 1,
+        "fats": 0,
+        "carbonaries": 21,
+        "calories": 88,
+        "id": 3,
+        "ukText": "Вино напівсолодке",
+        "enText": "Wine Semi-Sweet"
+        },
+        {
+        "name": "whiskey",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 222,
+        "id": 4,
+        "ukText": "Віскі",
+        "enText": "Whiskey"
+        },
+        {
+        "name": "vodka",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 1,
+        "calories": 234,
+        "id": 5,
+        "ukText": "Горілка",
+        "enText": "Vodka"
+        },
+        {
+        "name": "gin",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 223,
+        "id": 6,
+        "ukText": "Джин",
+        "enText": "Gin"
+        },
+        {
+        "name": "brandy",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 1,
+        "calories": 240,
+        "id": 7,
+        "ukText": "Бренді",
+        "enText": "Brandy"
+        },
+        {
+        "name": "liqueur",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 218,
+        "calories": 344,
+        "id": 8,
+        "ukText": "Лікер",
+        "enText": "Liqueur"
+        },
+        {
+        "name": "light beer",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 15,
+        "calories": 37,
+        "id": 9,
+        "ukText": "Світле пиво",
+        "enText": "Light Beer"
+        },
+        {
+        "name": "dark beer",
+        "protein": 1,
+        "fats": 0,
+        "carbonaries": 17,
+        "calories": 39,
+        "id": 10,
+        "ukText": "Темне пиво",
+        "enText": "Dark Beer"
+        },
+        {
+        "name": "rum",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 217,
+        "id": 11,
+        "ukText": "Ром",
+        "enText": "Rum"
+        },
+        {
+        "name": "champagne",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 22,
+        "calories": 88,
+        "id": 12,
+        "ukText": "Шампанське",
+        "enText": "Champagne"
+        }
+    ],
+
+    "nonAlcohol":[
+        {
+        "name": "pineapple juice",
+        "protein": 1,
+        "fats": 2,
+        "carbonaries": 47,
+        "calories": 48,
+        "id": 13,
+        "ukText": "Ананасовий сік",
+        "enText": "Pineapple Juice"
+        },
+        {
+        "name": "orange juice",
+        "protein": 4,
+        "fats": 1,
+        "carbonaries": 35,
+        "calories": 36,
+        "id": 14,
+        "ukText": "Апельсиновий сік",
+        "enText": "Orange Juice"
+        },
+        {
+        "name": "grape juice",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 60,
+        "calories": 56,
+        "id": 15,
+        "ukText": "Виноградний сік",
+        "enText": "Grape Juice"
+        },
+        {
+        "name": "cherry juice",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 44,
+        "calories": 49,
+        "id": 16,
+        "ukText": "Вишневий сік",
+        "enText": "Cherry Juice"
+        },
+        {
+        "name": "cocoa",
+        "protein": 99,
+        "fats": 159,
+        "carbonaries": 136,
+        "calories": 377,
+        "id": 17,
+        "ukText": "Какао",
+        "enText": "Cocoa In Milk"
+        },
+        {
+        "name": "coca cola",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 41,
+        "calories": 40,
+        "id": 18,
+        "ukText": "Кока-Кола",
+        "enText": "Coca Cola"
+        },
+        {
+        "name": "coffee",
+        "protein": 4,
+        "fats": 10,
+        "carbonaries": 46,
+        "calories": 56,
+        "id": 19,
+        "ukText": "Кава",
+        "enText": "Coffee With Milk"
+        },
+        {
+        "name": "lemonade",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 26,
+        "calories": 24,
+        "id": 20,
+        "ukText": "Лимонад",
+        "enText": "Lemonade"
+        },
+        {
+        "name": "lemon juice",
+        "protein": 5,
+        "fats": 1,
+        "carbonaries": 14,
+        "calories": 18,
+        "id": 21,
+        "ukText": "Лимонний сік",
+        "enText": "Lemon Juice"
+        },
+        {
+        "name": "non-alcoholic beer",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 17,
+        "calories": 22,
+        "id": 22,
+        "ukText": "Безалкогольне пиво",
+        "enText": "Non-Alcohol Beer"
+        },
+        {
+        "name": "green tea",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 0,
+        "id": 23,
+        "ukText": "Зелений чай",
+        "enText": "Green Tea"
+        },
+        {
+        "name": "black tea",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 0,
+        "id": 24,
+        "ukText": "Чорний чай",
+        "enText": "Black Tea"
+        },
+        {
+        "name": "energy drink",
+        "protein": 0,
+        "fats": 0,
+        "carbonaries": 47,
+        "calories": 47,
+        "id": 25,
+        "ukText": "Енергетичний напій",
+        "enText": "Energy Drink"
+        }
+    ],
+    "porridge":[
+        {
+        "name": "buckwheat porridge",
+        "protein": 19,
+        "fats": 15,
+        "carbonaries": 113,
+        "calories": 137,
+        "id": 26,
+        "ukText": "Гречана каша",
+        "enText": "Buckwheat Porridge"
+        },
+        {
+        "name": "cornflakes",
+        "protein": 27,
+        "fats": 27,
+        "carbonaries": 344,
+        "calories": 372,
+        "id": 27,
+        "ukText": "Кукурудзяні пластівці",
+        "enText": "Cornflakes"
+        },
+        {
+        "name": "semolina porridge",
+        "protein": 11,
+        "fats": 3,
+        "carbonaries": 68,
+        "calories": 77,
+        "id": 28,
+        "ukText": "Манна каша",
+        "enText": "Semolina Porridge"
+        },
+        {
+        "name": "oatmeal",
+        "protein": 14,
+        "fats": 17,
+        "carbonaries": 64,
+        "calories": 93,
+        "id": 29,
+        "ukText": "Вівсянка",
+        "enText": "Oatmeal"
+        },
+        {
+        "name": "oat flakes",
+        "protein": 49,
+        "fats": 70,
+        "carbonaries": 284,
+        "calories": 358,
+        "id": 30,
+        "ukText": "Вівсяні пластівці",
+        "enText": "Oat Flakes"
+        },
+        {
+        "name": "millet porridge",
+        "protein": 13,
+        "fats": 8,
+        "carbonaries": 71,
+        "calories": 92,
+        "id": 31,
+        "ukText": "Пшоняна каша",
+        "enText": "Millet Porridge"
+        },
+        {
+        "name": "rice porridge",
+        "protein": 7,
+        "fats": 2,
+        "carbonaries": 71,
+        "calories": 79,
+        "id": 32,
+        "ukText": "Рисова каша",
+        "enText": "Rice Porridge"
+        },
+        {
+        "name": "barley porridge",
+        "protein": 6,
+        "fats": 3,
+        "carbonaries": 77,
+        "calories": 84,
+        "id": 33,
+        "ukText": "Ячна Каша",
+        "enText": "Barley Porridge"
+        },
+        {
+        "name": "barley flakes",
+        "protein": 38,
+        "fats": 30,
+        "carbonaries": 327,
+        "calories": 345,
+        "id": 34,
+        "ukText": "Ячмінні пластівці",
+        "enText": "Barley Flakes"
+        }
+    ],
+ 
+    "mashrooms":[
+    {
+    "name": "white mushrooms",
+    "protein": 14,
+    "fats": 14,
+    "carbonaries": 10,
+    "calories": 32,
+    "id": 35,
+    "ukText": "Білі гриби",
+    "enText": "White Mushrooms"
+    },
+    {
+    "name": "chanterelle mushrooms",
+    "protein": 7,
+    "fats": 10,
+    "carbonaries": 10,
+    "calories": 22,
+    "id": 36,
+    "ukText": "Гриби лисички",
+    "enText": "Chanterelle Mushrooms"
+    },
+    {
+    "name": "buttercup mushrooms",
+    "protein": 11,
+    "fats": 7,
+    "carbonaries": 7,
+    "calories": 12,
+    "id": 37,
+    "ukText": "Гриби маслюки",
+    "enText": "Buttercup Mushrooms"
+    },
+    {
+    "name": "honey mushrooms",
+    "protein": 10,
+    "fats": 10,
+    "carbonaries": 11,
+    "calories": 25,
+    "id": 38,
+    "ukText": "Опеньки",
+    "enText": "Honey Mushrooms"
+    },
+    {
+    "name": "champignons",
+    "protein": 18,
+    "fats": 9,
+    "carbonaries": 6,
+    "calories": 29,
+    "id": 39,
+    "ukText": "Шампіньйони",
+    "enText": "Champignons"
+    }
+    ],
+    "oil":[
+        {
+        "name": "margarine",
+        "protein": 3,
+        "fats": 766,
+        "carbonaries": 0,
+        "calories": 746,
+        "id": 40,
+        "ukText": "Маргарин",
+        "enText": "Margarine"
+        },
+        {
+        "name": "mayonnaise",
+        "protein": 14,
+        "fats": 624,
+        "carbonaries": 10,
+        "calories": 624,
+        "id": 41,
+        "ukText": "Майонез",
+        "enText": "Mayonnaise"
+        },
+        {
+        "name": "linseed oil",
+        "protein": 0,
+        "fats": 929,
+        "carbonaries": 0,
+        "calories": 898,
+        "id": 42,
+        "ukText": "Лляне масло",
+        "enText": "Linseed Oil"
+        },
+        {
+        "name": "olive oil",
+        "protein": 0,
+        "fats": 929,
+        "carbonaries": 0,
+        "calories": 898,
+        "id": 43,
+        "ukText": "Оливкова олія",
+        "enText": "Olive Oil"
+        },
+        {
+        "name": "sunflower oil",
+        "protein": 0,
+        "fats": 930,
+        "carbonaries": 0,
+        "calories": 899,
+        "id": 44,
+        "ukText": "Соняшникова олія",
+        "enText": "Sunflower Oil"
+        },
+        {
+        "name": "butter",
+        "protein": 3,
+        "fats": 768,
+        "carbonaries": 5,
+        "calories": 747,
+        "id": 45,
+        "ukText": "Вершкове масло",
+        "enText": "Butter"
+        }
+    ],
+    "milk":[
+        {
+        "name": "yogurt",
+        "protein": 21,
+        "fats": 30,
+        "carbonaries": 37,
+        "calories": 87,
+        "id": 46,
+        "ukText": "Йогурт",
+        "enText": "Yogurt"
+        },
+        {
+        "name": "kefir",
+        "protein": 14,
+        "fats": 30,
+        "carbonaries": 17,
+        "calories": 57,
+        "id": 47,
+        "ukText": "Кефір",
+        "enText": "Kefir"
+        },
+        {
+        "name": "milk 3.2%",
+        "protein": 12,
+        "fats": 30,
+        "carbonaries": 19,
+        "calories": 58,
+        "id": 48,
+        "ukText": "Молоко 3,2%",
+        "enText": "Milk 3.2%"
+        },
+        {
+        "name": "goat's milk",
+        "protein": 13,
+        "fats": 40,
+        "carbonaries": 20,
+        "calories": 71,
+        "id": 49,
+        "ukText": "Козяче молоко",
+        "enText": "Goat'S Milk"
+        },
+        {
+        "name": "cow's milk",
+        "protein": 14,
+        "fats": 34,
+        "carbonaries": 20,
+        "calories": 63,
+        "id": 50,
+        "ukText": "`Коров'яче Молоко`",
+        "enText": "Cow'S Milk"
+        },
+        {
+        "name": "milk 0%",
+        "protein": 9,
+        "fats": 1,
+        "carbonaries": 19,
+        "calories": 30,
+        "id": 51,
+        "ukText": "Молоко 0%",
+        "enText": "Milk 0%"
+        },
+        {
+        "name": "dry milk ",
+        "protein": 104,
+        "fats": 233,
+        "carbonaries": 163,
+        "calories": 477,
+        "id": 52,
+        "ukText": "Сухе молоко",
+        "enText": "Dry Milk "
+        },
+        {
+        "name": "condensed milk",
+        "protein": 30,
+        "fats": 72,
+        "carbonaries": 40,
+        "calories": 139,
+        "id": 53,
+        "ukText": "Згущене молоко",
+        "enText": "Condensed Milk"
+        },
+        {
+        "name": "baked milk",
+        "protein": 12,
+        "fats": 24,
+        "carbonaries": 17,
+        "calories": 53,
+        "id": 54,
+        "ukText": "Пряжене молоко",
+        "enText": "Baked Milk"
+        },
+        {
+        "name": "cream 10%",
+        "protein": 12,
+        "fats": 93,
+        "carbonaries": 17,
+        "calories": 121,
+        "id": 55,
+        "ukText": "Вершки 10%",
+        "enText": "Cream 10%"
+        },
+        {
+        "name": "cream 20%",
+        "protein": 12,
+        "fats": 186,
+        "carbonaries": 16,
+        "calories": 209,
+        "id": 56,
+        "ukText": "Вершки 20%",
+        "enText": "Cream 20%"
+        },
+        {
+        "name": "sour cream 10%",
+        "protein": 13,
+        "fats": 93,
+        "carbonaries": 12,
+        "calories": 118,
+        "id": 57,
+        "ukText": "Сметана 10%",
+        "enText": "Sour Cream 10%"
+        },
+        {
+        "name": "sour cream 15%",
+        "protein": 13,
+        "fats": 140,
+        "carbonaries": 12,
+        "calories": 163,
+        "id": 58,
+        "ukText": "Сметана 15%",
+        "enText": "Sour Cream 15%"
+        },
+        {
+        "name": "sour cream 20%",
+        "protein": 13,
+        "fats": 186,
+        "carbonaries": 12,
+        "calories": 208,
+        "id": 59,
+        "ukText": "Сметана 20%",
+        "enText": "Sour Cream 20%"
+        },
+        {
+        "name": "glazed curd",
+        "protein": 30,
+        "fats": 214,
+        "carbonaries": 114,
+        "calories": 344,
+        "id": 60,
+        "ukText": "Глазурований сирок",
+        "enText": "Glazed Curd"
+        },
+        {
+        "name": "dutch cheese",
+        "protein": 109,
+        "fats": 247,
+        "carbonaries": 0,
+        "calories": 352,
+        "id": 61,
+        "ukText": "Голландський сир",
+        "enText": "Dutch Cheese"
+        },
+        {
+        "name": "poshekhon cheese",
+        "protein": 109,
+        "fats": 245,
+        "carbonaries": 0,
+        "calories": 348,
+        "id": 62,
+        "ukText": "Сир Пошехонський",
+        "enText": "Poshekhon Cheese"
+        },
+        {
+        "name": "cheese is hard",
+        "protein": 99,
+        "fats": 278,
+        "carbonaries": 2,
+        "calories": 366,
+        "id": 63,
+        "ukText": "Сир твердий",
+        "enText": "Cheese Is Hard"
+        },
+        {
+        "name": "suluguni cheese",
+        "protein": 82,
+        "fats": 226,
+        "carbonaries": 0,
+        "calories": 293,
+        "id": 64,
+        "ukText": "Сир Сулугуні",
+        "enText": "Suluguni Cheese"
+        }
+    ],
+    "egg":[
+        {
+        "name": "omelet",
+        "protein": 40,
+        "fats": 145,
+        "carbonaries": 7,
+        "calories": 181,
+        "id": 65,
+        "ukText": "Омлет",
+        "enText": "Omelet"
+        },
+        {
+        "name": "chicken egg",
+        "protein": 53,
+        "fats": 104,
+        "carbonaries": 3,
+        "calories": 153,
+        "id": 66,
+        "ukText": "Яйце куряче",
+        "enText": "Chicken Egg"
+        },
+        {
+        "name": "quail egg",
+        "protein": 49,
+        "fats": 124,
+        "carbonaries": 4,
+        "calories": 170,
+        "id": 67,
+        "ukText": "Перепелине яйце",
+        "enText": "Quail Egg"
+        },
+        {
+        "name": "ostrich egg",
+        "protein": 51,
+        "fats": 107,
+        "carbonaries": 4,
+        "calories": 118,
+        "id": 68,
+        "ukText": "Яйце страуса",
+        "enText": "Ostrich Egg"
+        },
+        {
+        "name": "duck egg",
+        "protein": 56,
+        "fats": 132,
+        "carbonaries": 1,
+        "calories": 176,
+        "id": 69,
+        "ukText": "Качине яйце",
+        "enText": "Duck Egg"
+        },
+        {
+        "name": "egg powder",
+        "protein": 186,
+        "fats": 347,
+        "carbonaries": 21,
+        "calories": 545,
+        "id": 70,
+        "ukText": "Яєчний порошок",
+        "enText": "Egg Powder"
+        }
+    ],
+    "sausege":[
+ 
+        {
+        "name": "cooked sausage ",
+        "protein": 55,
+        "fats": 213,
+        "carbonaries": 0,
+        "calories": 257,
+        "id": 71,
+        "ukText": "Варена ковбаса",
+        "enText": "Cooked Sausage "
+        },
+        {
+        "name": "semi-smoked sausage",
+        "protein": 73,
+        "fats": 364,
+        "carbonaries": 0,
+        "calories": 428,
+        "id": 72,
+        "ukText": "Напівкопчена ковбаса",
+        "enText": "Semi-Smoked Sausage"
+        },
+        {
+        "name": "raw-smoked sausage",
+        "protein": 85,
+        "fats": 445,
+        "carbonaries": 0,
+        "calories": 511,
+        "id": 73,
+        "ukText": "Сирокопчена ковбаса",
+        "enText": "Raw-Smoked Sausage"
+        },
+        {
+        "name": "hunting sausages",
+        "protein": 112,
+        "fats": 229,
+        "carbonaries": 0,
+        "calories": 325,
+        "id": 74,
+        "ukText": "Мисливські ковбаски",
+        "enText": "Hunting Sausages"
+        },
+        {
+        "name": "salami",
+        "protein": 88,
+        "fats": 499,
+        "carbonaries": 5,
+        "calories": 576,
+        "id": 75,
+        "ukText": "Салямі",
+        "enText": "Salami"
+        },
+        {
+        "name": "beef sausages",
+        "protein": 43,
+        "fats": 189,
+        "carbonaries": 4,
+        "calories": 229,
+        "id": 76,
+        "ukText": "Яловичі сосиски",
+        "enText": "Beef Sausages"
+        },
+        {
+        "name": "chicken sausages",
+        "protein": 44,
+        "fats": 206,
+        "carbonaries": 14,
+        "calories": 242,
+        "id": 77,
+        "ukText": "Курячі сосиски",
+        "enText": "Chicken Sausages"
+        },
+        {
+        "name": "milk sausages",
+        "protein": 47,
+        "fats": 223,
+        "carbonaries": 5,
+        "calories": 260,
+        "id": 78,
+        "ukText": "Молочні сосиски",
+        "enText": "Milk Sausages"
+        },
+        {
+        "name": "pork sausages",
+        "protein": 38,
+        "fats": 216,
+        "carbonaries": 19,
+        "calories": 284,
+        "id": 79,
+        "ukText": "Свинячі сосиски",
+        "enText": "Pork Sausages"
+        }
+    ],
+    "meat":[
+        {
+        "name": "mutton",
+        "protein": 67,
+        "fats": 143,
+        "carbonaries": 0,
+        "calories": 201,
+        "id": 82,
+        "ukText": "Баранина",
+        "enText": "Mutton"
+        },
+        {
+        "name": "beef",
+        "protein": 77,
+        "fats": 118,
+        "carbonaries": 0,
+        "calories": 191,
+        "id": 83,
+        "ukText": "Яловичина",
+        "enText": "Beef"
+        },
+        {
+        "name": "beef brains",
+        "protein": 39,
+        "fats": 90,
+        "carbonaries": 0,
+        "calories": 126,
+        "id": 84,
+        "ukText": "Яловичі Мізки",
+        "enText": "Beef Brains"
+        },
+        {
+        "name": "horsemeat",
+        "protein": 84,
+        "fats": 67,
+        "carbonaries": 0,
+        "calories": 149,
+        "id": 85,
+        "ukText": "Конина",
+        "enText": "Horsemeat"
+        },
+        {
+        "name": "rabbit",
+        "protein": 85,
+        "fats": 120,
+        "carbonaries": 0,
+        "calories": 197,
+        "id": 86,
+        "ukText": "Кролик",
+        "enText": "Rabbit"
+        },
+        {
+        "name": "pork is lean",
+        "protein": 67,
+        "fats": 260,
+        "carbonaries": 0,
+        "calories": 318,
+        "id": 87,
+        "ukText": "Свинина нежирна",
+        "enText": "Pork Is Lean"
+        },
+        {
+        "name": "pork is fatty",
+        "protein": 48,
+        "fats": 457,
+        "carbonaries": 0,
+        "calories": 484,
+        "id": 88,
+        "ukText": "Свинина жирна",
+        "enText": "Pork Is Fatty"
+        },
+        {
+        "name": "veal",
+        "protein": 82,
+        "fats": 11,
+        "carbonaries": 0,
+        "calories": 91,
+        "id": 89,
+        "ukText": "Телятина",
+        "enText": "Veal"
+        },
+        {
+        "name": "goose meat",
+        "protein": 68,
+        "fats": 308,
+        "carbonaries": 0,
+        "calories": 359,
+        "id": 90,
+        "ukText": "`Гусяче м'ясо`",
+        "enText": "Goose Meat"
+        },
+        {
+        "name": "turkey",
+        "protein": 87,
+        "fats": 115,
+        "carbonaries": 3,
+        "calories": 192,
+        "id": 91,
+        "ukText": "Індичка",
+        "enText": "Turkey"
+        },
+        {
+        "name": "chickens",
+        "protein": 84,
+        "fats": 80,
+        "carbonaries": 4,
+        "calories": 161,
+        "id": 92,
+        "ukText": "Кура",
+        "enText": "Chickens"
+        },
+        {
+        "name": "ducks",
+        "protein": 68,
+        "fats": 571,
+        "carbonaries": 0,
+        "calories": 348,
+        "id": 93,
+        "ukText": "Качки",
+        "enText": "Ducks"
+        }
+    ],
+    "fish":[
+        {
+        "name": "squid",
+        "protein": 75,
+        "fats": 2,
+        "carbonaries": 0,
+        "calories": 77,
+        "id": 95,
+        "ukText": "Кальмари",
+        "enText": "Squid"
+        },
+        {
+        "name": "flounder",
+        "protein": 66,
+        "fats": 24,
+        "carbonaries": 0,
+        "calories": 86,
+        "id": 96,
+        "ukText": "Камбала",
+        "enText": "Flounder"
+        },
+        {
+        "name": "anchovy",
+        "protein": 59,
+        "fats": 86,
+        "carbonaries": 0,
+        "calories": 142,
+        "id": 97,
+        "ukText": "Хамса",
+        "enText": "Anchovy"
+        },
+        {
+        "name": "crab meat",
+        "protein": 66,
+        "fats": 9,
+        "carbonaries": 0,
+        "calories": 67,
+        "id": 98,
+        "ukText": "Краб",
+        "enText": "Crab Meat"
+        },
+        {
+        "name": "crab sticks",
+        "protein": 74,
+        "fats": 20,
+        "carbonaries": 0,
+        "calories": 73,
+        "id": 99,
+        "ukText": "Крабові палички",
+        "enText": "Crab Sticks"
+        },
+        {
+        "name": "shrimp",
+        "protein": 74,
+        "fats": 9,
+        "carbonaries": 0,
+        "calories": 85,
+        "id": 100,
+        "ukText": "Креветки",
+        "enText": "Shrimp"
+        },
+        {
+        "name": "salmon",
+        "protein": 79,
+        "fats": 129,
+        "carbonaries": 0,
+        "calories": 200,
+        "id": 101,
+        "ukText": "Лосось",
+        "enText": "Salmon"
+        },
+        {
+        "name": "mussels",
+        "protein": 40,
+        "fats": 15,
+        "carbonaries": 0,
+        "calories": 53,
+        "id": 102,
+        "ukText": "Мідії",
+        "enText": "Mussels"
+        },
+        {
+        "name": "cape",
+        "protein": 54,
+        "fats": 109,
+        "carbonaries": 0,
+        "calories": 159,
+        "id": 103,
+        "ukText": "Мис",
+        "enText": "Cape"
+        },
+        {
+        "name": "sturgeon",
+        "protein": 68,
+        "fats": 98,
+        "carbonaries": 0,
+        "calories": 161,
+        "id": 104,
+        "ukText": "Осетрових",
+        "enText": "Sturgeon"
+        },
+        {
+        "name": "octopus",
+        "protein": 76,
+        "fats": 0,
+        "carbonaries": 0,
+        "calories": 74,
+        "id": 105,
+        "ukText": "Восьминіг",
+        "enText": "Octopus"
+        },
+        {
+        "name": "crayfish",
+        "protein": 84,
+        "fats": 12,
+        "carbonaries": 5,
+        "calories": 96,
+        "id": 106,
+        "ukText": "Раки",
+        "enText": "Crayfish"
+        },
+        {
+        "name": "herring",
+        "protein": 71,
+        "fats": 186,
+        "carbonaries": 0,
+        "calories": 248,
+        "id": 107,
+        "ukText": "Оселедець",
+        "enText": "Herring"
+        },
+        {
+        "name": "salmon",
+        "protein": 86,
+        "fats": 143,
+        "carbonaries": 0,
+        "calories": 222,
+        "id": 108,
+        "ukText": "Лосось",
+        "enText": "Salmon"
+        },
+        {
+        "name": "mackerel",
+        "protein": 74,
+        "fats": 89,
+        "carbonaries": 0,
+        "calories": 158,
+        "id": 109,
+        "ukText": "Скумбрія",
+        "enText": "Mackerel"
+        },
+        {
+        "name": "catfish",
+        "protein": 69,
+        "fats": 79,
+        "carbonaries": 0,
+        "calories": 141,
+        "id": 110,
+        "ukText": "Сом",
+        "enText": "Catfish"
+        },
+        {
+        "name": "cod",
+        "protein": 73,
+        "fats": 5,
+        "carbonaries": 0,
+        "calories": 76,
+        "id": 111,
+        "ukText": "Тріска",
+        "enText": "Cod"
+        },
+        {
+        "name": "tuna",
+        "protein": 89,
+        "fats": 13,
+        "carbonaries": 0,
+        "calories": 95,
+        "id": 112,
+        "ukText": "Тунець",
+        "enText": "Tuna"
+        },
+        {
+        "name": "sea eel",
+        "protein": 59,
+        "fats": 286,
+        "carbonaries": 0,
+        "calories": 331,
+        "id": 113,
+        "ukText": "Морський вугор",
+        "enText": "Sea Eel"
+        },
+        {
+        "name": "oysters",
+        "protein": 60,
+        "fats": 3,
+        "carbonaries": 26,
+        "calories": 91,
+        "id": 114,
+        "ukText": "Устриці",
+        "enText": "Oysters"
+        },
+        {
+        "name": "trout",
+        "protein": 81,
+        "fats": 20,
+        "carbonaries": 0,
+        "calories": 99,
+        "id": 115,
+        "ukText": "Форель",
+        "enText": "Trout"
+        },
+        {
+        "name": "hake",
+        "protein": 68,
+        "fats": 22,
+        "carbonaries": 0,
+        "calories": 84,
+        "id": 116,
+        "ukText": "Хек",
+        "enText": "Hake"
+        }
+    ],
+    "vegetables":[
+        {
+        "name": "eggplants",
+        "protein": 3,
+        "fats": 1,
+        "carbonaries": 31,
+        "calories": 22,
+        "id": 117,
+        "ukText": "Баклажани",
+        "enText": "Eggplants"
+        },
+        {
+        "name": "beans",
+        "protein": 26,
+        "fats": 1,
+        "carbonaries": 34,
+        "calories": 59,
+        "id": 118,
+        "ukText": "Квасоля",
+        "enText": "Beans"
+        },
+        {
+        "name": "peas",
+        "protein": 23,
+        "fats": 2,
+        "carbonaries": 56,
+        "calories": 75,
+        "id": 119,
+        "ukText": "Горох",
+        "enText": "Peas"
+        },
+        {
+        "name": "zucchini",
+        "protein": 4,
+        "fats": 3,
+        "carbonaries": 25,
+        "calories": 30,
+        "id": 120,
+        "ukText": "Цукіні",
+        "enText": "Zucchini"
+        },
+        {
+        "name": "cabbage",
+        "protein": 8,
+        "fats": 0,
+        "carbonaries": 24,
+        "calories": 31,
+        "id": 121,
+        "ukText": "Капуста",
+        "enText": "Cabbage"
+        },
+        {
+        "name": "boiled potatoes",
+        "protein": 9,
+        "fats": 3,
+        "carbonaries": 68,
+        "calories": 80,
+        "id": 122,
+        "ukText": "Відварена картопля",
+        "enText": "Boiled Potatoes"
+        },
+        {
+        "name": "fried potatoes",
+        "protein": 11,
+        "fats": 91,
+        "carbonaries": 97,
+        "calories": 198,
+        "id": 123,
+        "ukText": "Смажена картопля",
+        "enText": "Fried Potatoes"
+        },
+        {
+        "name": "green onion",
+        "protein": 6,
+        "fats": 0,
+        "carbonaries": 18,
+        "calories": 21,
+        "id": 124,
+        "ukText": "Зелена цибуля",
+        "enText": "Green Onion"
+        },
+        {
+        "name": "leeks",
+        "protein": 14,
+        "fats": 0,
+        "carbonaries": 30,
+        "calories": 38,
+        "id": 125,
+        "ukText": "Цибуля Порей",
+        "enText": "Leeks"
+        },
+        {
+        "name": "onions",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 39,
+        "calories": 41,
+        "id": 126,
+        "ukText": "Цибуля",
+        "enText": "Onions"
+        },
+        {
+        "name": "carrot",
+        "protein": 6,
+        "fats": 1,
+        "carbonaries": 26,
+        "calories": 29,
+        "id": 127,
+        "ukText": "Морква",
+        "enText": "Carrot"
+        },
+        {
+        "name": "cucumbers",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 13,
+        "calories": 15,
+        "id": 128,
+        "ukText": "Огірки",
+        "enText": "Cucumbers"
+        },
+        {
+        "name": "olives",
+        "protein": 3,
+        "fats": 95,
+        "carbonaries": 28,
+        "calories": 111,
+        "id": 129,
+        "ukText": "Оливки",
+        "enText": "Olives"
+        },
+        {
+        "name": "sweet pepper ",
+        "protein": 5,
+        "fats": 0,
+        "carbonaries": 20,
+        "calories": 24,
+        "id": 130,
+        "ukText": "Солодкий перець",
+        "enText": "Sweet Pepper "
+        },
+        {
+        "name": "parsley",
+        "protein": 16,
+        "fats": 0,
+        "carbonaries": 33,
+        "calories": 45,
+        "id": 131,
+        "ukText": "Петрушка",
+        "enText": "Parsley"
+        },
+        {
+        "name": "radish",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 18,
+        "calories": 22,
+        "id": 132,
+        "ukText": "Редька",
+        "enText": "Radish"
+        },
+        {
+        "name": "radish",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 30,
+        "calories": 33,
+        "id": 133,
+        "ukText": "Редька",
+        "enText": "Radish"
+        },
+        {
+        "name": "turnip",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 24,
+        "calories": 27,
+        "id": 134,
+        "ukText": "Ріпа",
+        "enText": "Turnip"
+        },
+        {
+        "name": "salad",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 9,
+        "calories": 15,
+        "id": 135,
+        "ukText": "Салат",
+        "enText": "Salad"
+        },
+        {
+        "name": "beet",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 44,
+        "calories": 46,
+        "id": 136,
+        "ukText": "Буряк",
+        "enText": "Beet"
+        },
+        {
+        "name": "tomatoes",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 17,
+        "calories": 19,
+        "id": 137,
+        "ukText": "Помідори",
+        "enText": "Tomatoes"
+        },
+        {
+        "name": "bean",
+        "protein": 19,
+        "fats": 0,
+        "carbonaries": 19,
+        "calories": 36,
+        "id": 138,
+        "ukText": "Квасоля",
+        "enText": "Bean"
+        },
+        {
+        "name": "horseradish",
+        "protein": 11,
+        "fats": 0,
+        "carbonaries": 67,
+        "calories": 70,
+        "id": 139,
+        "ukText": "Хрін",
+        "enText": "Horseradish"
+        },
+        {
+        "name": "garlic",
+        "protein": 28,
+        "fats": 0,
+        "carbonaries": 87,
+        "calories": 103,
+        "id": 140,
+        "ukText": "Часник",
+        "enText": "Garlic"
+        },
+        {
+        "name": "spinach",
+        "protein": 11,
+        "fats": 0,
+        "carbonaries": 11,
+        "calories": 22,
+        "id": 141,
+        "ukText": "Шпинат",
+        "enText": "Spinach"
+        }
+    ],
+    "fruit":[
+        {
+        "name": "apricots",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 42,
+        "calories": 44,
+        "id": 142,
+        "ukText": "Абрикоси",
+        "enText": "Apricots"
+        },
+        {
+        "name": "alycha",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 32,
+        "calories": 35,
+        "id": 143,
+        "ukText": "Алича",
+        "enText": "Alycha"
+        },
+        {
+        "name": "pineapple",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 49,
+        "calories": 49,
+        "id": 144,
+        "ukText": "Ананас",
+        "enText": "Pineapple"
+        },
+        {
+        "name": "orange",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 36,
+        "calories": 38,
+        "id": 145,
+        "ukText": "Апельсин",
+        "enText": "Orange"
+        },
+        {
+        "name": "bananas",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 91,
+        "calories": 87,
+        "id": 146,
+        "ukText": "Банани",
+        "enText": "Bananas"
+        },
+        {
+        "name": "grape",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 73,
+        "calories": 73,
+        "id": 147,
+        "ukText": "Виноград",
+        "enText": "Grape"
+        },
+        {
+        "name": "cherry",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 46,
+        "calories": 46,
+        "id": 148,
+        "ukText": "Вишня",
+        "enText": "Cherry"
+        },
+        {
+        "name": "garnet",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 49,
+        "calories": 53,
+        "id": 149,
+        "ukText": "Гранат",
+        "enText": "Garnet"
+        },
+        {
+        "name": "grapefruit",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 31,
+        "calories": 37,
+        "id": 150,
+        "ukText": "Грейпфрут",
+        "enText": "Grapefruit"
+        },
+        {
+        "name": "pear",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 44,
+        "calories": 41,
+        "id": 151,
+        "ukText": "Груша",
+        "enText": "Pear"
+        },
+        {
+        "name": "lokhina",
+        "protein": 5,
+        "fats": 0,
+        "carbonaries": 31,
+        "calories": 35,
+        "id": 152,
+        "ukText": "Лохіна",
+        "enText": "Lokhina"
+        },
+        {
+        "name": "melon",
+        "protein": 4,
+        "fats": 3,
+        "carbonaries": 30,
+        "calories": 34,
+        "id": 153,
+        "ukText": "Диня",
+        "enText": "Melon"
+        },
+        {
+        "name": "blackberry",
+        "protein": 8,
+        "fats": 0,
+        "carbonaries": 21,
+        "calories": 31,
+        "id": 154,
+        "ukText": "Ожина",
+        "enText": "Blackberry"
+        },
+        {
+        "name": "strawberry",
+        "protein": 8,
+        "fats": 0,
+        "carbonaries": 30,
+        "calories": 40,
+        "id": 155,
+        "ukText": "Полуниця",
+        "enText": "Strawberry"
+        },
+        {
+        "name": "kiwi",
+        "protein": 5,
+        "fats": 7,
+        "carbonaries": 40,
+        "calories": 46,
+        "id": 156,
+        "ukText": "Ківі",
+        "enText": "Kiwi"
+        },
+        {
+        "name": "strawberries",
+        "protein": 3,
+        "fats": 4,
+        "carbonaries": 29,
+        "calories": 30,
+        "id": 157,
+        "ukText": "Полуниця",
+        "enText": "Strawberries"
+        },
+        {
+        "name": "lemon",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 14,
+        "calories": 30,
+        "id": 158,
+        "ukText": "Лимон",
+        "enText": "Lemon"
+        },
+        {
+        "name": "raspberry",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 38,
+        "calories": 43,
+        "id": 159,
+        "ukText": "Малина",
+        "enText": "Raspberry"
+        },
+        {
+        "name": "tangerine",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 37,
+        "calories": 39,
+        "id": 160,
+        "ukText": "Мандарин",
+        "enText": "Tangerine"
+        },
+        {
+        "name": "mango",
+        "protein": 3,
+        "fats": 4,
+        "carbonaries": 49,
+        "calories": 69,
+        "id": 161,
+        "ukText": "Манго",
+        "enText": "Mango"
+        },
+        {
+        "name": "peaches",
+        "protein": 4,
+        "fats": 0,
+        "carbonaries": 42,
+        "calories": 42,
+        "id": 162,
+        "ukText": "Персики",
+        "enText": "Peaches"
+        },
+        {
+        "name": "pamela",
+        "protein": 3,
+        "fats": 1,
+        "carbonaries": 26,
+        "calories": 29,
+        "id": 163,
+        "ukText": "Памела",
+        "enText": "Pamela"
+        },
+        {
+        "name": "currant",
+        "protein": 2,
+        "fats": 0,
+        "carbonaries": 35,
+        "calories": 37,
+        "id": 164,
+        "ukText": "Смородина",
+        "enText": "Currant"
+        },
+        {
+        "name": "bilberry",
+        "protein": 5,
+        "fats": 0,
+        "carbonaries": 37,
+        "calories": 41,
+        "id": 165,
+        "ukText": "Чорниця",
+        "enText": "Bilberry"
+        },
+        {
+        "name": "mulberry",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 52,
+        "calories": 50,
+        "id": 166,
+        "ukText": "Шовковиця",
+        "enText": "Mulberry"
+        },
+        {
+        "name": "apples",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 47,
+        "calories": 48,
+        "id": 167,
+        "ukText": "Яблука",
+        "enText": "Apples"
+        }
+    ],
+    "nut":[
+        {
+        "name": "peanut",
+        "protein": 108,
+        "fats": 422,
+        "carbonaries": 41,
+        "calories": 555,
+        "id": 170,
+        "ukText": "Арахіс",
+        "enText": "Peanut"
+        },
+        {
+        "name": "walnut",
+        "protein": 56,
+        "fats": 572,
+        "carbonaries": 44,
+        "calories": 662,
+        "id": 171,
+        "ukText": "Волоський горіх",
+        "enText": "Walnut"
+        },
+        {
+        "name": "raisins",
+        "protein": 7,
+        "fats": 0,
+        "carbonaries": 290,
+        "calories": 273,
+        "id": 172,
+        "ukText": "Родзинки",
+        "enText": "Raisins"
+        },
+        {
+        "name": "cashew",
+        "protein": 106,
+        "fats": 505,
+        "carbonaries": 55,
+        "calories": 647,
+        "id": 173,
+        "ukText": "Кешью",
+        "enText": "Cashew"
+        },
+        {
+        "name": "dried apricots",
+        "protein": 24,
+        "fats": 0,
+        "carbonaries": 268,
+        "calories": 270,
+        "id": 174,
+        "ukText": "Кураги",
+        "enText": "Dried Apricots"
+        },
+        {
+        "name": "almond",
+        "protein": 76,
+        "fats": 539,
+        "carbonaries": 55,
+        "calories": 643,
+        "id": 175,
+        "ukText": "Мигдаль",
+        "enText": "Almond"
+        },
+        {
+        "name": "sunflower seeds",
+        "protein": 86,
+        "fats": 489,
+        "carbonaries": 23,
+        "calories": 582,
+        "id": 176,
+        "ukText": "Насіння соняшника",
+        "enText": "Sunflower Seeds"
+        },
+        {
+        "name": "dates fruit",
+        "protein": 11,
+        "fats": 4,
+        "carbonaries": 286,
+        "calories": 277,
+        "id": 177,
+        "ukText": "Фініки",
+        "enText": "Dates Fruit"
+        },
+        {
+        "name": "pistachios",
+        "protein": 82,
+        "fats": 470,
+        "carbonaries": 30,
+        "calories": 555,
+        "id": 178,
+        "ukText": "Фісташки",
+        "enText": "Pistachios"
+        },
+        {
+        "name": "hazelnut",
+        "protein": 67,
+        "fats": 621,
+        "carbonaries": 41,
+        "calories": 701,
+        "id": 179,
+        "ukText": "Лісові горіхи",
+        "enText": "Hazelnut"
+        },
+        {
+        "name": "prunes",
+        "protein": 12,
+        "fats": 0,
+        "carbonaries": 268,
+        "calories": 262,
+        "id": 180,
+        "ukText": "Чорнослив",
+        "enText": "Prunes"
+        },
+        {
+        "name": "dried apples",
+        "protein": 13,
+        "fats": 0,
+        "carbonaries": 281,
+        "calories": 275,
+        "id": 181,
+        "ukText": "Сушені яблука",
+        "enText": "Dried Apples"
+        }
+    ],
+    "shugar":[
+        {
+        "name": "jam",
+        "protein": 2,
+        "fats": 2,
+        "carbonaries": 306,
+        "calories": 286,
+        "id": 182,
+        "ukText": "Варення",
+        "enText": "Jam"
+        },
+        {
+        "name": "waffles",
+        "protein": 34,
+        "fats": 185,
+        "carbonaries": 218,
+        "calories": 425,
+        "id": 183,
+        "ukText": "Вафлі",
+        "enText": "Waffles"
+        },
+        {
+        "name": "marshmallow",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 317,
+        "calories": 295,
+        "id": 184,
+        "ukText": "Зефір",
+        "enText": "Marshmallow"
+        },
+        {
+        "name": "chocolate candies",
+        "protein": 16,
+        "fats": 370,
+        "carbonaries": 224,
+        "calories": 576,
+        "id": 185,
+        "ukText": "Шоколадні цукерки",
+        "enText": "Chocolate Candies"
+        },
+        {
+        "name": "marmalade",
+        "protein": 0,
+        "fats": 2,
+        "carbonaries": 317,
+        "calories": 289,
+        "id": 186,
+        "ukText": "Мармелад",
+        "enText": "Marmalade"
+        },
+        {
+        "name": "honey",
+        "protein": 3,
+        "fats": 0,
+        "carbonaries": 331,
+        "calories": 312,
+        "id": 187,
+        "ukText": "Мед",
+        "enText": "Honey"
+        },
+        {
+        "name": "ice cream",
+        "protein": 15,
+        "fats": 141,
+        "carbonaries": 85,
+        "calories": 223,
+        "id": 188,
+        "ukText": "Морозиво",
+        "enText": "Ice Cream"
+        },
+        {
+        "name": "cookies",
+        "protein": 27,
+        "fats": 132,
+        "carbonaries": 293,
+        "calories": 430,
+        "id": 189,
+        "ukText": "Печево",
+        "enText": "Cookies"
+        },
+        {
+        "name": "puff pastry",
+        "protein": 24,
+        "fats": 357,
+        "carbonaries": 192,
+        "calories": 543,
+        "id": 190,
+        "ukText": "Листове тістечко",
+        "enText": "Puff Pastry"
+        },
+        {
+        "name": "sponge cake",
+        "protein": 21,
+        "fats": 85,
+        "carbonaries": 345,
+        "calories": 338,
+        "id": 191,
+        "ukText": "Бісквіт",
+        "enText": "Sponge Cake"
+        },
+        {
+        "name": "sugar",
+        "protein": 1,
+        "fats": 0,
+        "carbonaries": 409,
+        "calories": 377,
+        "id": 192,
+        "ukText": "Цукор",
+        "enText": "Sugar"
+        },
+        {
+        "name": "chocolate",
+        "protein": 22,
+        "fats": 332,
+        "carbonaries": 215,
+        "calories": 546,
+        "id": 193,
+        "ukText": "Шоколад",
+        "enText": "Chocolate"
+        }
+    ],
+    "bread":[
+    {
+    "name": "bun",
+    "protein": 31,
+    "fats": 17,
+    "carbonaries": 180,
+    "calories": 218,
+    "id": 194,
+    "ukText": "Булочка",
+    "enText": "But"
+    },
+    {
+    "name": "pita",
+    "protein": 32,
+    "fats": 11,
+    "carbonaries": 196,
+    "calories": 239,
+    "id": 195,
+    "ukText": "Лаваш",
+    "enText": "Pita"
+    },
+    {
+    "name": "bread",
+    "protein": 20,
+    "fats": 6,
+    "carbonaries": 203,
+    "calories": 210,
+    "id": 196,
+    "ukText": "Хліб",
+    "enText": "Bread"
+    }
+  ]
+}]
