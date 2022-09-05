@@ -1,0 +1,84 @@
+.food-item-container{
+    width: 80%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: beige;
+    box-shadow: 0 0px 20px -3px #b7b7b7;
+    .food-item-img-wrap{
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        .food-item-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .food-item-name-wrap{
+        width: 100px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        font-weight: 500;
+    }
+    .calories-count-wrap{
+        width: 200px;
+        height: 100%;
+        padding: 10px 0;
+        display: flex;
+        flex-direction: column;
+        .calories-count{
+            margin: 5px 0;
+            display: flex;
+            flex-direction: row;
+            .caloties-item-title{
+                margin-right: 10px;
+                font-size: 14px;
+            }
+            .caloties-item-data{
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+    }
+    .calories-input-wrap{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .calories-input{
+            background-color: transparent;
+            padding: 0 10px;
+            font-size: 14px;
+            width: 100%;
+            height: 50%;
+            margin-right: 10px;
+        }
+        .calories-input-desc{
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+    .calories-add-btn-wrap{
+        width: 50px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .calories-add-btn{
+            width: 100%;
+            height: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: aquamarine;
+            font-size: 16px;
+        }
+    }
+}

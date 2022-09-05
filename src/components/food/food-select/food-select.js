@@ -1,6 +1,7 @@
 import { translateCount, translateText } from "../../../helper/translate/translate"
 import { selectParam } from "../../../helper/form-canculate/formChangeParametr"
 import { createElem } from "../../../helper/createElement"
+import FoodItem from "../food-item"
 import "./style"
 const apiFood = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const token = 'm7ysw5zozkwk8m7wakyk22o83d8sxsy7x3jdmdh8'
@@ -8,9 +9,11 @@ const getFood = (item)=>{
     fetch(`${apiFood}?access_token=${token}`)
     .then(res => res.json())
     .then(res =>{
+        const wrap = document.querySelector('.food-element-wrap')
+        wrap.innerHTML = ''
         res[item].map(elem =>{
-            const wrap = document.querySelector('.food-element-wrap')
-            createElem('li', 'item', elem.name, wrap)
+            createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)
+            FoodItem(elem, elem.id)
         })
     })
 }
