@@ -1,0 +1,41 @@
+.food-wrap{
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .food-container{
+        width: 1300px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 100px;
+    }
+    .food-chart-wrap{
+        width: 400px;
+        height: 600px;
+        background-color: white;
+        border-radius: 20px;
+    }
+    .food-select-wrap{
+        width: 600px;
+        height: 600px;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .food-select-container{
+            width: 80%;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+            box-shadow: 0 0px 20px -3px #b7b7b7;
+            border-radius: 10px;
+        }
+    }
+}

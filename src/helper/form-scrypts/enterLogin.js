@@ -4,6 +4,7 @@ import { valueVer } from "../validation/main-form-validation"
 import { user } from "../account-scripts/user-data"
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
+
 const API = `${cors}${urlData}`
 
 const logIn = ()=>{

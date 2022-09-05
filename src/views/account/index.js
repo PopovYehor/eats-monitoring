@@ -1,6 +1,6 @@
 import { account } from "../../components/account"
 import {createElem} from "../../helper/createElement"
-import { logIn } from "../../helper/form-scrypts/enterLogin"
+import { logIn} from "../../helper/form-scrypts/enterLogin"
 import CreateAllChartsUser from "../../components/account/charts/createAllChartsUser"
 const Account = ()=>{
     const root = document.getElementById('root')
