@@ -1,5 +1,6 @@
 import { createElem } from "../../helper/createElement"
 import { foodSelect } from "../../components/food/food-select/food-select"
+import { createChartCaloriesCount } from "../../components/food/proteinChart/calorieschart"
 import "./style"
 const Foods = ()=>{
     const root = document.getElementById('root')
@@ -17,6 +18,7 @@ const Foods = ()=>{
     foodSelect()
     createElem('div', 'food-element-wrap', null, foodSelects)
     localStorage.setItem('calories', '1000')
+    createChartCaloriesCount()
 }
 
 export default Foods

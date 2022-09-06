@@ -2,6 +2,7 @@ import { translateCount, translateText } from "../../../helper/translate/transla
 import { selectParam } from "../../../helper/form-canculate/formChangeParametr"
 import { createElem } from "../../../helper/createElement"
 import FoodItem from "../food-item"
+
 import "./style"
 const apiFoodSelect = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const apiAllFoods = 'https://api.json-generator.com/templates/CLp6e4tG98eK/data'
@@ -56,9 +57,21 @@ const getAllFood = (filter = null) =>{
 const getSelected = ()=>{
     const select = document.querySelector('.food-select-item')
     getAllFood()
+    
     select.addEventListener('change', ()=>{
         const selectValue = selectParam(select).value
-        selectValue == 'choise' ? getAllFood() : getFoodSelect(selectValue)
+        if (selectValue == 'selected'){
+            const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
+            console.log(selectedItem)
+            const wrap = document.querySelector('.food-element-wrap')
+            wrap.innerHTML = ''
+            selectedItem.map(elem =>{
+                createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)
+                FoodItem(elem, elem.id)
+            })
+        }else{
+            selectValue == 'choise' ? getAllFood() : getFoodSelect(selectValue)
+        }
     })
 }
 
@@ -84,6 +97,7 @@ const foodSelect = ()=>{
             <option class= "food-select-option" value = "oil">${translateText(translateCount, `Олія`, 'Оil')}</option>
             <option class= "food-select-option" value = "shugar">${translateText(translateCount, `Солодощі`, 'Sweets')}</option>
             <option class= "food-select-option" value = "bread">${translateText(translateCount, `Хлібні вироби`, 'Bread products')}</option>
+            <option class = "food-select-option" value = "selected"> ${translateText(translateCount, `Обрані продукти`, 'Selected products')}</option>
         </select>
      </div>
      <div class="search-food-item-wrap">

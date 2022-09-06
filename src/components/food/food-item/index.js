@@ -1,5 +1,10 @@
 import { translateCount, translateText } from "../../../helper/translate/translate"
+import { createChartCaloriesCount } from "../proteinChart/calorieschart";
 import "./style"
+localStorage.setItem('selectedItem', JSON.stringify([]))
+
+
+
 const FoodItem = (data, id)=>{
     const elemName = translateCount == 0 ? data.ukText : data.enText;
     const element = `
@@ -29,7 +34,7 @@ const FoodItem = (data, id)=>{
             </div>
         </div>
         <div class= "calories-input-wrap">
-            <input class= "calories-input" type="text" value = "100">
+            <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
             <span class= "calories-input-desc">${translateText(translateCount, 'грамів', 'grams')}</span>
         </div>
         <div class="calories-add-btn-wrap">
@@ -37,18 +42,60 @@ const FoodItem = (data, id)=>{
         </div>
     </div>
     `
+    
     const wrap = document.getElementById(`food-item-${id}`)
     wrap.innerHTML = element
     const btn = document.getElementById(`btn-${id}`)
     btn.addEventListener('click', ()=>{
-        const chart = document.querySelector('.food-chart-wrap')
+
+        
+
+        
+
+        const selectedItems = JSON.parse(localStorage.getItem('selectedItem'))
+        const input = document.getElementById(`calories-input-${id}`).value
+        const perscent = Number(input)/100
+        let check = true
+
+        let defaultItem = {
+            value : Number(input),
+            id: data.id,
+            name: data.name,
+            calories: data.calories*perscent,
+            carbonaries: data.carbonaries*perscent,
+            fats: data.fats*perscent,
+            protein: data.protein*perscent,
+            enText: data.enText,
+            ukText: data.ukText,
+        }
+        if (selectedItems.length > 0) selectedItems.forEach((elem) => elem.name == data.name ? check = false : check = true)
+            
+        if (check == true){
+            selectedItems.push(defaultItem)
+            localStorage.setItem('selectedItem', JSON.stringify(selectedItems))
+        }else{
+            selectedItems.forEach((elem) =>{
+                if(elem.name == data.name){
+                    elem.value = elem.value+Number(input)
+                    elem.calories = elem.calories + data.calories*perscent
+                    elem.carbonaries = elem.carbonaries + data.carbonaries*perscent
+                    elem.fats = elem.fats + data.fats*perscent
+                    elem.protein = elem.protein + data.protein*perscent
+                    console.log(elem)
+                    selectedItems.map(item => item.id == data.id ? elem : item)
+                    localStorage.setItem('selectedItem', JSON.stringify(selectedItems))
+                }
+            })
+        }
+
         let changeCalories = localStorage.getItem('calories')
-        console.log(changeCalories)
-        changeCalories = changeCalories - data.calories
-        chart.textContent = changeCalories
+        changeCalories = changeCalories - data.calories*perscent
         localStorage.setItem('calories', changeCalories)
-        console.log(localStorage.getItem('calories'))
+        createChartCaloriesCount()
+            
     })
+
+    
 }
 
 export default FoodItem
