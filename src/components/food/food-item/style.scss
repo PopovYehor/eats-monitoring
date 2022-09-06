@@ -1,84 +1,103 @@
-.food-item-container{
-    width: 80%;
-    height: 60px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: beige;
-    box-shadow: 0 0px 20px -3px #b7b7b7;
-    .food-item-img-wrap{
-        width: 50px;
-        height: 50px;
-        border-radius: 10px;
-        .food-item-img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-    .food-item-name-wrap{
-        width: 100px;
-        height: 100%;
+.food-item-wrap{
+    margin-top: 20px;
+    .food-item-container{
+        width: 100%;
+        height: 115px;
         display: flex;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        font-weight: 500;
-    }
-    .calories-count-wrap{
-        width: 200px;
-        height: 100%;
-        padding: 10px 0;
-        display: flex;
-        flex-direction: column;
-        .calories-count{
-            margin: 5px 0;
-            display: flex;
-            flex-direction: row;
-            .caloties-item-title{
-                margin-right: 10px;
-                font-size: 14px;
+        background-color: beige;
+        box-shadow: 0 0px 20px -3px #b7b7b7;
+        .food-item-img-wrap{
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            margin: 0 20px;
+            .food-item-img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border: 1px solid gray;
             }
-            .caloties-item-data{
-                font-size: 14px;
+        }
+        .food-item-name-wrap{
+            width: 110px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            margin-right: 65px;
+            .food-item-name{
+                font-size: 25px;
                 font-weight: 600;
             }
         }
-    }
-    .calories-input-wrap{
-        width: 50px;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        .calories-input{
-            background-color: transparent;
-            padding: 0 10px;
-            font-size: 14px;
-            width: 100%;
-            height: 50%;
-            margin-right: 10px;
+        .calories-count-wrap{
+            width: 130px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-right: 35px;
+            .calories-count{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                .caloties-item-title{
+                    font-size: 15px;
+                }
+                #total-calories-title{
+                    font-weight: 600;
+                }
+                .caloties-item-data{
+                    font-size: 14px;
+                    font-weight: 400;
+                    margin-bottom: 3px;
+                }
+                #total-calories{
+                    font-weight: 600;
+                }
+            }
         }
-        .calories-input-desc{
-            font-size: 12px;
-            font-weight: 600;
+        .calories-input-wrap{
+            width: 120px;
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-right: 30px;
+            .calories-input{
+                padding: 0 10px;
+                font-size: 20px;
+                font-weight: 600;
+                width: 58px;
+                height: 50%;
+                margin-right: 10px;
+                border: 1px solid gray;
+                border-radius: 6px;
+            }
+            .calories-input-desc{
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
         }
-    }
-    .calories-add-btn-wrap{
-        width: 50px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .calories-add-btn{
-            width: 100%;
-            height: 20px;
-            border: none;
-            border-radius: 10px;
-            background-color: aquamarine;
-            font-size: 16px;
+        .calories-add-btn-wrap{
+            width: 75px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            .calories-add-btn{
+                width: 60px;
+                height: 60px;
+                border: 1px solid gray;
+                border-radius: 50%;
+                background-color: white;
+                font-size: 18px;
+            }
         }
     }
 }

@@ -1,5 +1,8 @@
-.food-select-item{
-    width: 40%;
+.food-select-item-wrap{
+    width: 230px;
+    margin-right: 40px;
+    .food-select-item{
+    width: 100%;
     height: 40px;
     font-size: 18px;
     font-weight: 600;
@@ -7,4 +10,29 @@
     border: none;
     outline: none;
     background-color: transparent;
+    }
+}
+.search-food-item-wrap{
+    width: 380px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    .search-food-input{
+        width: 100%;
+        font-size: 17px;
+        padding: 5px 10px;
+        box-shadow: 0 0px 20px -3px #b7b7b7;
+    }
+    .find-btn{
+        font-family: Verdana, FontAwesome;
+        position: absolute;
+        right: 15px;
+        font-size: 15px;
+        color:#b7b7b7;
+        cursor: pointer;
+    }
+    .search-food-input:focus + .find-btn{
+        color: black;
+    }
 }
