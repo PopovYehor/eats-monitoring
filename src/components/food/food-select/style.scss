@@ -1,6 +1,6 @@
 .food-select-item-wrap{
-    width: 230px;
-    margin-right: 40px;
+    width: 190px;
+    margin-right: 20px;
     .food-select-item{
     width: 100%;
     height: 40px;
@@ -13,7 +13,7 @@
     }
 }
 .search-food-item-wrap{
-    width: 380px;
+    width: 330px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -34,5 +34,27 @@
     }
     .search-food-input:focus + .find-btn{
         color: black;
+    }
+}
+.plate-wrap{
+    width: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .plate-btn{
+        width: 48px;
+        height: 48px;
+        margin-right: 10px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .plate-count{
+        font-size: 22px;
+        font-weight: 700;
+        font-family: cursive;
+        color: #6dcb6d;
     }
 }

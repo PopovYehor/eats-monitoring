@@ -1,19 +1,7 @@
-import { translateCount, translateText } from "../../../helper/translate/translate"
-import { addFoodItem } from "../../../helper/food-script/add-item-script"
-import "./style"
+import { translateCount, translateText } from "../../../helper/translate/translate";
+import { changeFoodItem, deleteFoodItem } from "../../../helper/food-script/basket-script";
 
-localStorage.setItem('selectedItem', JSON.stringify([]))
-
-localStorage.setItem('calories', '1000')
-localStorage.setItem('fats', '400')
-localStorage.setItem('protein', '350')
-localStorage.setItem('carbohydrates', '250')
-
-localStorage.setItem('plateCount', 0)
-
-
-
-const FoodItem = (data, id)=>{
+const basketItem = (data, id)=> {
     const elemName = translateCount == 0 ? data.ukText : data.enText;
     const element = `
     <div class = "food-item-container">
@@ -45,20 +33,25 @@ const FoodItem = (data, id)=>{
             <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
             <span class= "calories-input-desc">${translateText(translateCount, 'грамів', 'grams')}</span>
         </div>
-        <div class="calories-add-btn-wrap">
-            <button class="calories-add-btn" id="btn-${id}">&#x2b</button>
+        <div class="calories-delete-btn-wrap">
+            <button class="calories-btn delete" id="btn-delete-${id}">&#xf1f8;</button>
+            <button class="calories-btn change" id="btn-change-${id}">&#xf362</button>
         </div>
     </div>
     `
-    
     const wrap = document.getElementById(`food-item-${id}`)
     wrap.innerHTML = element
-    const btn = document.getElementById(`btn-${id}`)
-    btn.addEventListener('click', ()=>{
-        addFoodItem(data, id)
+//delete
+    const btnDelete = document.getElementById(`btn-delete-${id}`)
+    btnDelete.addEventListener('click', ()=>{
+        deleteFoodItem(data)
     })
 
-    
+//change
+const btnChange = document.getElementById(`btn-change-${id}`)
+    btnChange.addEventListener('click', ()=>{
+        changeFoodItem(data, id)
+    })
 }
 
-export default FoodItem
+export default basketItem

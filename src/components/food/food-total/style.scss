@@ -1,0 +1,26 @@
+.total-food-items{
+    width: 90%;
+    height: 50px;
+    box-shadow: 0 0px 11px 0px #b7b7b7;
+    margin-bottom: 20px;
+    .total-food-container{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .total-item{
+            .total-text, .total-count{
+                font-size: 19px;
+                font-weight: 500;
+            }
+            .total-text::after{
+                content: ":";
+                margin-left: 2px;
+            }
+            .total-count{
+                margin-left: 3px;
+            }
+        }
+    }
+}

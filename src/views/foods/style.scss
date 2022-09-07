@@ -1,8 +1,7 @@
 .food-wrap{
     width: 100%;
     height: 100%;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    margin: 75px 0;
     .food-container{
         width: 1300px;
         height: 100%;
@@ -14,11 +13,38 @@
     }
     .food-chart-wrap{
         width: 400px;
-        height: 600px;
+        height: 775px;
         background-color: white;
         border-radius: 20px;
         position: sticky;
-        top: 100px;
+        top: 75px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        .chart-data-container{
+            width: 80%;
+            height: 265px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 25px 0;
+            .canvas-title{
+                font-size: 24px;
+                font-weight: 700;
+                margin: 10px 0;
+                text-align: center;
+            }
+            .chart-wrapper{
+                canvas{
+                    width: 270px !important;
+                    height: 270px !important;
+                }
+                #proteinChart{
+                    width: 330px !important;
+                    height: 330px !important;
+                }
+            }
+        }
     }
     .food-select-wrap{
         width: 900px;
