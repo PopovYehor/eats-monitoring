@@ -2,6 +2,8 @@ import moment from 'moment'
 import { localStorageUser } from '../../../../helper/account-scripts/user-data'
 const differentDay = ()=>{
     const arrDate = localStorageUser('dataDate')
+    const wantDate = localStorageUser('wantDate')
+    arrDate.push(wantDate)
     let arrDiffDay = []
     for (let i = 0; i<arrDate.length-1; i++){
         arrDiffDay.push((moment(arrDate[i], "DD/MM/YY").diff(moment(arrDate[i+1], "DD/MM/YY"), 'days'))*(-1))
@@ -11,7 +13,8 @@ const differentDay = ()=>{
 
 const everyDayData=()=>{
     const arrDate = localStorageUser('dataDate')
-
+    const wantDate = localStorageUser('wantDate')
+    arrDate.push(wantDate)
     let arrEveryDay = []
     differentDay().forEach((elem, i)=>{
         for(let j = 0; j< elem; j++){
@@ -23,7 +26,11 @@ const everyDayData=()=>{
 
 const weightDayData = ()=>{
     const arrDate = localStorageUser('dataDate')
+    const wantDate = localStorageUser('wantDate')
+    arrDate.push(wantDate)
     const arrWeight= localStorageUser('dataWeight')
+    const wantWeight = localStorageUser('wantWeight')
+    arrWeight.push(wantWeight)
     let arrBettwenWeight = []
     for (let i = 0; i<arrWeight.length-1; i++){
         arrBettwenWeight.push(arrWeight[i]-arrWeight[i+1])

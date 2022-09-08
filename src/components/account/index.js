@@ -10,9 +10,17 @@ const userSelectParam = (arr, item, arrText)=>{
         arr.forEach((elem, i) => {
             if (elem == localStorageUser(item)){
                 element = arrText[i].replace(/\((.*?)\)/, '')
+                
             }
         })
-    
+        if (item == 'active'){
+            arr.forEach((element, i) => {
+                if (element == localStorageUser(item)){
+                    const [userActiveCoef] = Object.values(arrActiv.coef[i])
+                    localStorage.setItem('activeCoef', JSON.stringify(userActiveCoef))
+                }
+            })
+        }
     return element
 }
 

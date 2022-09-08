@@ -8,7 +8,7 @@ import { translateText, translateCount } from "../../../../helper/translate/tran
 const progresChartData = ()=>{
   let paramLabel = ''
   const choiseWeightOption = localStorageUser('weightParam')
-  choiseWeightOption.value == 'pounds' ? paramLabel = translateText(translateCount, 'фунти', 'pounds') : paramLabel = translateText(translateCount, 'кілограми', 'kilograms')
+  choiseWeightOption == 'pounds' ? paramLabel = translateText(translateCount, 'фунти', 'pounds') : paramLabel = translateText(translateCount, 'кілограми', 'kilograms')
 
   const data = {
       labels: everyDayData(),
@@ -29,8 +29,9 @@ const progresChartData = ()=>{
       type: 'line',
       data: data,
       options: {
-        responsive: true,
-      }
+      responsive: false,
+      maintainAspectRatio: false,
+    }
   };
   return config
 }
@@ -40,7 +41,7 @@ const CreateChartProgresUser = ()=>{
   const canvasContainer = document.querySelector('.progres-chart-user')
   const ChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'progres-container')
   const canvasTitle = createElem('h1', 'canvas-title', title, ChartWrap)
-  const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'myChart')
+  const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'progress-account-chart')
   const myChart = new Chart(canvasProgres, progresChartData())
 }
 

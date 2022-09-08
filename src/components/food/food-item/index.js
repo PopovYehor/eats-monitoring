@@ -1,17 +1,10 @@
 import { translateCount, translateText } from "../../../helper/translate/translate"
 import { addFoodItem } from "../../../helper/food-script/add-item-script"
+import { validationFoodCount } from "../../../helper/validation/main-form-validation"
 import "./style"
 
 localStorage.setItem('selectedItem', JSON.stringify([]))
-
-localStorage.setItem('calories', '1000')
-localStorage.setItem('fats', '400')
-localStorage.setItem('protein', '350')
-localStorage.setItem('carbohydrates', '250')
-
 localStorage.setItem('plateCount', 0)
-
-
 
 const FoodItem = (data, id)=>{
     const elemName = translateCount == 0 ? data.ukText : data.enText;
@@ -41,7 +34,7 @@ const FoodItem = (data, id)=>{
                 <span class= "caloties-item-data" id="total-carbohydrates">${data.carbonaries}</span>
             </div>
         </div>
-        <div class= "calories-input-wrap">
+        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${translateText(translateCount, 'Введіть число', 'Enter a number')}">
             <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
             <span class= "calories-input-desc">${translateText(translateCount, 'грамів', 'grams')}</span>
         </div>
@@ -53,9 +46,12 @@ const FoodItem = (data, id)=>{
     
     const wrap = document.getElementById(`food-item-${id}`)
     wrap.innerHTML = element
+
+    validationFoodCount(id)
     const btn = document.getElementById(`btn-${id}`)
     btn.addEventListener('click', ()=>{
-        addFoodItem(data, id)
+        const inputWrap = document.getElementById(`calories-input-wrap-${id}`)
+        if (!inputWrap.classList.contains('alert-validate')) addFoodItem(data, id)
     })
 
     

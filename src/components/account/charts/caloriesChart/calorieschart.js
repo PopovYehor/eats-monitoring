@@ -1,7 +1,7 @@
-import { createElem } from "../../../helper/createElement";
+import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
-import { translateText, translateCount } from "../../../helper/translate/translate";
-import { localStorageUser } from "../../../helper/account-scripts/user-data";
+import { translateCount, translateText } from '../../../../helper/translate/translate';
+import { localStorageUser } from '../../../../helper/account-scripts/user-data';
 
 const caloriesData = ()=>{
 
@@ -31,21 +31,25 @@ const data = {
 const config = {
     type: 'doughnut',
     data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+  }
   };
   return config
 }
-const createChartCaloriesCount = ()=>{
+const createChartCaloriesCountAccount = ()=>{
   const title = translateText(translateCount, 'Добова норма калорій', "Daily caloric intake")
   
-  const canvasContainer = document.querySelector('.food-chart-wrap')
-  const chartWraper = document.getElementById('calories-chart-container')
+  const canvasContainer = document.querySelector('.account-charts-wrap')
+  const chartWraper = document.getElementById('calories-chart-container-account')
   if (chartWraper) chartWraper.remove()
-  const proteinChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'calories-chart-container')
+  const proteinChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'calories-chart-container-account')
   proteinChartWrap.innerHTML = ''
   const canvasTitle = createElem('h1', 'canvas-title', title, proteinChartWrap)
   const chartWrap = createElem('div', 'chart-wrapper', null, proteinChartWrap)
-  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
+  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'account-calories-chart')
   const myChart = new Chart(canvasProtein, caloriesData())
 }
 
-export {createChartCaloriesCount}
+export {createChartCaloriesCountAccount}

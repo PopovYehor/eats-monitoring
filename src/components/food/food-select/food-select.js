@@ -23,6 +23,7 @@ const foodSelect = ()=>{
             <option class= "food-select-option" value = "oil">${translateText(translateCount, `Олія`, 'Оil')}</option>
             <option class= "food-select-option" value = "shugar">${translateText(translateCount, `Солодощі`, 'Sweets')}</option>
             <option class= "food-select-option" value = "bread">${translateText(translateCount, `Хлібні вироби`, 'Bread products')}</option>
+            <option class= "food-select-option" value = "selected">${translateText(translateCount, `Обрані товари`, 'Selected products')}</option>
         </select>
      </div>
      <div class="search-food-item-wrap">

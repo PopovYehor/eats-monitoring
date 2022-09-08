@@ -120,6 +120,11 @@ const validationAccount = ()=>{
     veref(findSelector('.want-day-input'), 'want-day-item', 'date')
 }
 
+const validationFoodCount = (id)=>{
+    const caloriesInput = document.getElementById(`calories-input-${id}`)
+    veref(caloriesInput, `calories-input-wrap-${id}`, 'wantDay')
+}
+
 const valueVer = (input)=>{
     const inputes = document.querySelectorAll(input)
     let flagInput = ''
@@ -145,4 +150,4 @@ const valueVer = (input)=>{
     return sumFlag
 }
 
-export {verAll, valueVer, validationAccount}
+export {verAll, valueVer, validationAccount, validationFoodCount}

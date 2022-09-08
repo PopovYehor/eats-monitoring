@@ -83,5 +83,19 @@ const changeFoodItem = (data, id)=>{
     TotalFood()
 }
 
+const createBasketItems = ()=>{
+    const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
+    const wrap = document.querySelector('.food-element-wrap')
+    const select = document.querySelector('.food-select-item')
+    if (selectedItem.length > 0){
+        wrap.innerHTML = ''
+        selectedItem.map(elem =>{
+            select.value = 'selected'
+            createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)
+            basketItem(elem, elem.id)
+        })
+    }
+}
 
-export {changeFoodItem, deleteFoodItem}
+
+export {changeFoodItem, deleteFoodItem, createBasketItems}

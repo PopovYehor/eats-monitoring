@@ -1,5 +1,5 @@
-import { createElem } from "../../../helper/createElement"
-import basketItem from "../food-item/basket-item"
+import { createBasketItems } from "../../../helper/food-script/basket-script"
+
 const foodCount = ()=>{
     const count = localStorage.getItem('plateCount')
     const element = `
@@ -12,13 +12,7 @@ const foodCount = ()=>{
 
     const plateBtn = document.querySelector('.plate-btn')
     plateBtn.addEventListener('click', ()=>{
-        const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
-        const wrap = document.querySelector('.food-element-wrap')
-        wrap.innerHTML = ''
-        selectedItem.map(elem =>{
-            createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)
-            basketItem(elem, elem.id)
-        })
+        createBasketItems()
     })
 }
 

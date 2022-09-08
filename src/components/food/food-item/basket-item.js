@@ -1,6 +1,6 @@
 import { translateCount, translateText } from "../../../helper/translate/translate";
 import { changeFoodItem, deleteFoodItem } from "../../../helper/food-script/basket-script";
-
+import { validationFoodCount } from "../../../helper/validation/main-form-validation";
 const basketItem = (data, id)=> {
     const elemName = translateCount == 0 ? data.ukText : data.enText;
     const element = `
@@ -29,7 +29,7 @@ const basketItem = (data, id)=> {
                 <span class= "caloties-item-data" id="total-carbohydrates">${data.carbonaries}</span>
             </div>
         </div>
-        <div class= "calories-input-wrap">
+        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${translateText(translateCount, 'Введіть число', 'Enter a number')}">
             <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
             <span class= "calories-input-desc">${translateText(translateCount, 'грамів', 'grams')}</span>
         </div>
@@ -41,6 +41,7 @@ const basketItem = (data, id)=> {
     `
     const wrap = document.getElementById(`food-item-${id}`)
     wrap.innerHTML = element
+    validationFoodCount(id)
 //delete
     const btnDelete = document.getElementById(`btn-delete-${id}`)
     btnDelete.addEventListener('click', ()=>{
@@ -50,7 +51,8 @@ const basketItem = (data, id)=> {
 //change
 const btnChange = document.getElementById(`btn-change-${id}`)
     btnChange.addEventListener('click', ()=>{
-        changeFoodItem(data, id)
+        const inputWrap = document.getElementById(`calories-input-wrap-${id}`)
+        if (!inputWrap.classList.contains('alert-validate')) changeFoodItem(data, id)
     })
 }
 

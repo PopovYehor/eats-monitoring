@@ -2,6 +2,7 @@ import foodCount from "../../components/food/food-count"
 import { createChartCaloriesCount } from "../../components/food/caloriesChart/calorieschart"
 import { createChartProteinCount } from "../../components/food/proteinsChart/protein-chart-food"
 import TotalFood from "../../components/food/food-total"
+
 const defaultItem = (data, perscent, input)=>{
     let defaultItem = {
         value : Number(input),

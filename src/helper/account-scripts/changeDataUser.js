@@ -13,6 +13,7 @@ const arrSex = {
 }
 const arrActiv = {
     value: ["none","low","middle","hight", "veryHight"],
+    coef: [{none: 1.2}, {low: 1.375}, {middle: 1.55}, {hight: 1.725},{veryHight: 1.9}, ],
     text : [translateText(translateCount,'Малорухливий спосіб життя', 'Sedentary lifestyle'),
     translateText(translateCount,'Мала активність (1-3 тренування на тиждень)', 'Low activity (1-3 workouts per week)'),
     translateText(translateCount,'Середня активність (3-5 тренувань на тиждень)', 'Moderate activity (3-5 training sessions per week)'),

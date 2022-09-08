@@ -13,7 +13,7 @@ const root = document.getElementById('root')
 
 createElem('header', 'header', null, root)
 Header()
-Foods()
+Account()
 setTimeout(()=>{
     translate()
 }, 1050) 
