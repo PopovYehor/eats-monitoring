@@ -1,21 +1,124 @@
 @import "normolize.scss";
-$first-color: #45da48;
-$second-color: #e1e138;
 
-$base-text-color: #151515;
-$base-link-color: #1daaff;
-$base-hover-color: darken($base-link-color, 20);
 
-$profile-card-size: 305px;
-$profile-avatar-size: 150px;
+*, html, body {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
 
-@mixin obj-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+body{
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    background: rgb(10, 10, 10);
+    background: -moz-radial-gradient(circle, rgb(59, 59, 59) 0%, rgba(197,233,4,0.16290266106442575) 100%);
+    background: -webkit-radial-gradient(circle, rgb(48, 51, 47) 0%, rgba(197,233,4,0.16290266106442575) 100%);
+    background: radial-gradient(circle, rgb(101, 102, 101) 0%, rgba(197,233,4,0.16290266106442575) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endColorstr="#c5e904",GradientType=1);
+}
+
+
+/*---------------------------------------------*/
+a {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #6a7dfe;
+  color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
+  color: -o-linear-gradient(left, #21d4fd, #b721ff);
+  color: -moz-linear-gradient(left, #21d4fd, #b721ff);
+  color: linear-gradient(left, #21d4fd, #b721ff);
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #adadad;}
+input:-moz-placeholder { color: #adadad;}
+input::-moz-placeholder { color: #adadad;}
+input:-ms-input-placeholder { color: #adadad;}
+
+textarea::-webkit-input-placeholder { color: #adadad;}
+textarea:-moz-placeholder { color: #adadad;}
+textarea::-moz-placeholder { color: #adadad;}
+textarea:-ms-input-placeholder { color: #adadad;}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
 #root{
     width: 100%;
+    height: 100%;
 }
 select{
     background-color: transparent;
@@ -23,20 +126,14 @@ select{
 header{
     display: flex;
     flex-direction: row;
-    height: 60px;
+    height: 6%;
     width: 100%;
-    background: rgb(141,210,133);
-    background: -moz-radial-gradient(circle, rgba(141,210,133,0.36458333333333337) 0%, rgba(197,233,4,0.3477766106442577) 100%);
-    background: -webkit-radial-gradient(circle, rgba(141,210,133,0.36458333333333337) 0%, rgba(197,233,4,0.3477766106442577) 100%);
-    background: radial-gradient(circle, rgb(143, 201, 135) 0%, rgb(222, 236, 140) 100%);
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB); 
+
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endColorstr="#c5e904",GradientType=1);
     
-    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-    
-    z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 

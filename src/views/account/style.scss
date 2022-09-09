@@ -1,6 +1,5 @@
 .container-user{
     width: 1050px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
@@ -13,10 +12,29 @@
         background-color: #fff;
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 0 0px 20px -3px #b7b7b7;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        gap: 10px;
         .chart-data-container{
             width: 300px;
             height: 275px;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            border-radius: 20px;
+            padding: 10px 0;
+            position: relative;
+            .count-calories-account-btn{
+                position: absolute;
+                bottom: 9px;
+                left: 8px;
+                width: 90px;
+                height: 30px;
+                border-radius: 10px;
+                font-size: 15px;
+                background-color: #bcf9ce;
+                box-shadow: 0 0px 16px -3px #bcf9ce;
+                font-weight: bold;
+                margin-top: 10px;
+                cursor: pointer;
+            }
             .canvas-title{
                 font-size: 20px;
                 text-align: center;
@@ -35,12 +53,12 @@
                     height: 200px !important;
                 }
                 #index-chart-account{
-                    width: 205px !important;
-                    height: 190px !important;
+                    width: 195px !important;
+                    height: 195px !important;
                 }
                 #fat-chart-account{
-                    width: 175px !important;
-                    height: 165px !important;
+                    width: 170px !important;
+                    height: 170px !important;
                 }
                 .label-wrap{
                     width: 80%;
@@ -68,10 +86,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #fff;
+        background-color: rgb(255, 255, 255);
         padding: 20px;
         border-radius: 20px;
-        box-shadow: 0 0px 20px -3px #b7b7b7;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
         margin-top: 50px;
         .chart-data-container{
             width: 80%;
@@ -80,15 +98,23 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            border-radius: 20px;
+            padding: 15px 0 0 0;
+            position: relative;
+            background-color: #fff;
             .canvas-title{
-                font-size: 24px;
+                font-size: 22px;
                 text-align: center;
                 margin: 0;
+                position: absolute;
+                top: 5px;
+                left: 275px;
             }
             #progress-account-chart{
                 margin-top: 10px;
-                height: 340px !important;
-                width: 680px !important;
+                height: 325px !important;
+                width: 665px !important;
             }
         }
     }

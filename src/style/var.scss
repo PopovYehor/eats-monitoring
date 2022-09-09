@@ -1,0 +1,15 @@
+$first-color: #45da48;
+$second-color: #e1e138;
+
+$base-text-color: #151515;
+$base-link-color: #1daaff;
+$base-hover-color: darken($base-link-color, 20);
+
+$profile-card-size: 305px;
+$profile-avatar-size: 150px;
+
+@mixin obj-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

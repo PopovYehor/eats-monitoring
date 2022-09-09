@@ -16,8 +16,8 @@ const data = {
       label: 'My First Dataset',
       data: [weightIndex, residue,],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        '#E2E2E2',
+        'rgb(231, 76, 60, 80%)',
+        '#edeff0',
       ],
       hoverOffset: 4
     }]

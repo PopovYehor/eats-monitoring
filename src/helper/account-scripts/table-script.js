@@ -23,7 +23,7 @@ const caloriesFormulaAccount = ()=>{
     const years = Number(localStorageUser('age'))
     const active = Number(localStorageUser('activeCoef'))
     let calcCalories = ''
-    sex == 'male' ? calcCalories = (((10*weight) + (6.25*height) + (5*years) - 161)*active) : calcCalories = (((10*weight) + (6.25*height) + (5*years) + 5)*active)
+    sex == 'female' ? calcCalories = (((10*weight) + (6.25*height) + (5*years) - 161)*active) : calcCalories = (((10*weight) + (6.25*height) + (5*years) + 5)*active)
     
     localStorage.setItem('needCalories', Math.round(calcCalories))
     localStorage.setItem('calories', Math.round(calcCalories))
@@ -76,4 +76,4 @@ const fatWeightAccount = ()=>{
     return fatWeight
 }
 
-export {sameHeightTable}
+export {sameHeightTable, caloriesFormulaAccount, fatWeightAccount}

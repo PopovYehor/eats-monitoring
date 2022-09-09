@@ -66,8 +66,8 @@ const fatProcentDescription = (sex, count)=>{
     {
         noneWoman : {from : 10, to : 13},
         sportWoman : {from : 14, to : 20},
-        fitnesWoman : {from : 21, to : 24},
-        middleWoman : {from : 25, to : 31},
+        fitnesWoman : {from : 21, to : 25},
+        middleWoman : {from : 26, to : 31},
         badWoman : {from : 32, to : 100}
     },
     [

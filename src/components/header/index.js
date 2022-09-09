@@ -16,19 +16,6 @@ const Header = ()=>{
     createElem('div', 'login-btn-wrap', null, wrap)
     HeaderSwitch()
     
-    const LangBtn = document.querySelector('.language-btn')
-    const langList = document.getElementById('lang-list')
-
-    const userBtn = document.querySelector('.login-btn-user')
-    const userList = document.getElementById('user-list')
-    
-    LangBtn.addEventListener('click', ()=>{
-        rotateList(langList, langIconIndex)
-
-    })
-    userBtn.addEventListener('click', ()=>{
-        rotateList(userList, userIconIndex)
-    })
 }
 
 export default Header

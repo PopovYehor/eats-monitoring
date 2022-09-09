@@ -1,7 +1,6 @@
-import { account } from "../../components/account"
+import Preloader from "../../components/preloader"
 import {createElem} from "../../helper/createElement"
 import { logIn} from "../../helper/form-scrypts/enterLogin"
-import CreateAllChartsUser from "../../components/account/charts/createAllChartsUser"
 import "./style.scss"
 const Account = ()=>{
     const root = document.getElementById('root')
@@ -11,12 +10,12 @@ const Account = ()=>{
     const container = createElem('div', 'container-user', null, containerAccount)
     
     createElem('div', 'profile active', null, containerProfile)
-    logIn()
-    setTimeout(()=>{
-        account()
-    }, 1000)
     createElem('div', 'account-charts-wrap', null, container)
-    CreateAllChartsUser()
+    createElem('div', 'progres-chart-user', null, container) 
+
+    const preloadWrap =  createElem('div', 'preload-account-page', null, wrap)
+    Preloader(preloadWrap)
+    logIn()
 }
 
 export default Account

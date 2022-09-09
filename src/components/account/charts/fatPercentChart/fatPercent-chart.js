@@ -16,8 +16,8 @@ const data = {
       label: 'My First Dataset',
       data: [fatPercent, remainder,],
       backgroundColor: [
-        'rgb(255, 205, 86)',
-        '#E2E2E2',
+        '#F7DC6F',
+        '#edeff0',
       ],
       hoverOffset: 4
     }]

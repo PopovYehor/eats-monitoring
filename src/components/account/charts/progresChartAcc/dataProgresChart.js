@@ -16,9 +16,9 @@ const progresChartData = ()=>{
         {
           label: `${translateText(translateCount, 'Вага', 'Weight')}, ${paramLabel} `,
           data: weightDayData(),
-          borderColor: 'red',
-          backgroundColor: 'red',
-          pointStyle: 'circle',
+          borderColor: '#F44336',
+          backgroundColor: '#F44336',
+          pointStyle: 'line',
           pointRadius: 3,
           pointHoverRadius: 4
         }
@@ -37,8 +37,10 @@ const progresChartData = ()=>{
 }
 const CreateChartProgresUser = ()=>{
   const title = translateText(translateCount, 'Прогрес вашої ваги', 'Your Weight Progress')
-
+  
   const canvasContainer = document.querySelector('.progres-chart-user')
+  const chartWraper = document.getElementById('progres-container')
+  if (chartWraper) chartWraper.remove()
   const ChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'progres-container')
   const canvasTitle = createElem('h1', 'canvas-title', title, ChartWrap)
   const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'progress-account-chart')

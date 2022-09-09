@@ -1,11 +1,12 @@
 import {translateText, translateCount} from "../translate/translate"
 import {localStorageUser, userObjectValue, user} from "./user-data"
-import {createOption, createInput, createSelectParam} from "../createElement"
-import {account} from "../../components/account/index"
+import {createOption, createInput, createSelectParam, createElem} from "../createElement"
 import { changeAccount } from "../form-scrypts/enterLogin"
 import {validationAccount} from "../validation/main-form-validation"
 import { sameHeightTable } from "./table-script"
 import moment from "moment"
+import Preloader from "../../components/preloader"
+
 
 const arrSex = {
     value :['male', 'female'],
@@ -32,6 +33,7 @@ const addInputForChange = ()=>{
     const sexItem = document.getElementById('sex-item')
     const activItem = document.getElementById('activ-item')
     const wantDate = document.getElementById('want-day-item')
+
     createInput('input', 'name-item-input item-input', null, userObjectValue('name'), nameItem, 'name')
     createInput('input', 'surname-item-input item-input', null, userObjectValue('surname'), nameItem, 'surname')
     createInput('input', 'height-item-input item-input', null, userObjectValue('height'), heightItem, 'height')
@@ -71,91 +73,77 @@ const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, pr
     addInputForChange()
     sameHeightTable()
     validationAccount()
-    changeBtn.textContent = 'Save'
+    changeBtn.textContent = translateText(translateCount, 'Зберегти', 'Save')
+}
+
+const saveWeight = (wightInput)=>{
+    let weightDataDete = localStorageUser('dataDate')
+    const today = moment().format('DD/MM/YY')
+    weightDataDete.push(today)
+    localStorage.setItem('dataDate', JSON.stringify(weightDataDete))
+    localStorage.setItem('lastWeighing', JSON.stringify(today))
+    user.dataDate = weightDataDete
+    user.lastWeighing = today
+
+    let weightData = localStorageUser('dataWeight')
+    weightData.push(wightInput)
+    localStorage.setItem('dataWeight', JSON.stringify(weightData))
+    user.dataWeight = weightData
+}
+
+const saveInputData = (child, i)=>{
+    const keyInput = child[i].getAttribute('key')
+    const valueInput = child[i].value
+    user[keyInput] = valueInput   
+    localStorage.setItem(keyInput, JSON.stringify(valueInput))
 }
 
 const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addImgInput)=>{
     const itemInput = document.querySelectorAll('.item-input')
-    if (itemInput.length > 0) {
+    if (itemInput.length > 0 ) {
         profile.classList.remove('change')
-        profile.classList.remove('active')
         labelChangePhoto.classList.remove('active')
         changeBtn.textContent = 'Change'
         if (addImgInput){ addImgInput.removeEventListener('change', (e)=>loadFile(e))}
         const wightInput = document.querySelector('.weight-item-input').value
         if (wightInput != localStorageUser('weight')) {
-            let weightDataDete = localStorageUser('dataDate')
-            const today = moment().format('DD/MM/YY')
-            weightDataDete.push(today)
-            localStorage.setItem('dataDate', JSON.stringify(weightDataDete))
-            localStorage.setItem('lastWeighing', JSON.stringify(today))
-            user.dataDate = weightDataDete
-            user.lastWeighing = today
-
-            let weightData = localStorageUser('dataWeight')
-            weightData.push(wightInput)
-            localStorage.setItem('dataWeight', JSON.stringify(weightData))
-            user.dataWeight = weightData
+            saveWeight(wightInput)
         }
         profileItem.forEach(elem=> {
             const child = elem.childNodes
             if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){
-                const keyInput = child[0].getAttribute('key')
-                const valueInput = child[0].value
-                user[keyInput] = valueInput   
-                localStorage.setItem(keyInput, JSON.stringify(valueInput))
+                saveInputData(child, 0)
             }
             if (child[1] != undefined){
-                const keySelect = child[1].getAttribute('key')
-                const valueSelect = child[1].value
-                user[keySelect] = valueSelect
-                localStorage.setItem(keySelect, JSON.stringify(valueSelect))
+                saveInputData(child, 1)
             }
 
         })
-        changeAccount(user, (user.id)) 
-        profile.innerHTML = ''
-        setTimeout(()=>{
-            account()
-            sameHeightTable()
-        }, 1000)
-        
+            profile.innerHTML = ''
+            const preloaderWrap = createElem('div', 'profile-preloader-wrap', null, profile)
+            Preloader(preloaderWrap)
+            changeAccount(user, (user.id)) 
     }
 }
 
-const changeAccountData = (e)=>{
+const changeAccountData = ()=>{
 
     const changeBtn = document.querySelector('.changeBtn')
     const profile = document.querySelector('.profile')
     const profileItem = document.querySelectorAll('.profile-item')
     const addImgInput = document.querySelector('.add-img')
     const labelChangePhoto = document.querySelector('.label-change')
-    const target = e.target
-    if (target.textContent == 'Change'){
+    const alert = document.querySelectorAll('.alert-validate')
+
+    if (!changeBtn.classList.contains('change')){
         changeProfileData(profile, addImgInput, labelChangePhoto, changeBtn, profileItem)
-    }else{
+        changeBtn.classList.add('change')
+    }else if (alert.length == 0 && changeBtn.classList.contains('change')){
         saveProfileData(profile, labelChangePhoto, changeBtn, profileItem, addImgInput)
+        changeBtn.classList.remove('change')
     }
 }
 
-const upAccount = ()=>{
-    const openProf = document.getElementById('view_details')
-    const main = document.querySelector('.mainen')
-    const profile = document.querySelector('.profile')
-    const labelChangePhoto = document.querySelector('.label-change')
-    const changeBtn = document.querySelector('.changeBtn')
-    const profileItem = document.querySelectorAll('.profile-item')
-    openProf.addEventListener('click', ()=>{
-        if(!profile.classList.contains('active') && !main.classList.contains('active') ){
-            main.classList.add('active')
-            profile.classList.add('active')
 
-        }else{
-            main.classList.remove('active')
-            profile.classList.remove('active')
-            saveProfileData(profile, labelChangePhoto, changeBtn, profileItem)
-        }
-    })
-}
 
-export {upAccount, changeAccountData, arrActiv, arrSex}
+export { changeAccountData, arrActiv, arrSex}

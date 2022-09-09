@@ -5,13 +5,14 @@ const rotateList = (elem, index)=>{
     if( index == 0){
         elem.classList.add('active')
         index = 1
-        elem.addEventListener('mouseleave', (e)=>{
-            if (e.isTrusted == true) {
-                setTimeout( ()=>{
-                elem.classList.remove('active')
-                index = 0}, 300)
-            }
-        })
+        setTimeout(()=>{
+            elem.addEventListener('mouseleave', (e)=>{
+                if (e.isTrusted == true) {
+                    elem.classList.remove('active')
+                    index = 0
+                }
+            })
+        }, 1000)
     }
 }
 
