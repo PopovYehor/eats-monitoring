@@ -1,17 +1,18 @@
 import './style.scss'
+import { createElem } from "../../../helper/createElement"
+
 const LangHeader = ()=>{
-    let elem =
-    `<div class = "choise-lang">
-        <div class="lang-img"> 
-            <button class = "language-btn">&#xf7a2</button>
-        </div>
-        <div class="language-list" id = "lang-list">
-            <button class="translate"><img id="en" src="https://i.ibb.co/X7nDYRp/en.png" alt="ukflag"></button>
-            <button class="translate"><img id="uk" src="https://i.ibb.co/vD8gbMv/uk.png" alt="ukrflag"></button>
-        </div>
-    </div>`
-    const wrap = document.querySelector('.language')
-    wrap.innerHTML = elem
+    const menuWrap = document.querySelector('.language')
+    const languageMenu = createElem('ul', 'menu', null, menuWrap, 'id', 'language-menu')
+    const languageDropDown = createElem('li', 'dropdown dropdown-6', null, languageMenu)
+    const languageBtn = `<button class = "language-btn">&#xf7a2</button>`
+    languageDropDown.innerHTML = languageBtn
+    const LanguageDropdownMenu = createElem('ul', 'dropdown_menu dropdown_menu--animated dropdown_menu-6', null, languageDropDown)
+    const LanguageElement = `
+    <div class="dropdown_item"><img class = "dorp-item-img translate" src ="https://i.ibb.co/DDPtQjW/uk.png" id = "uk"></div>
+    <div class="dropdown_item"><img class = "dorp-item-img translate" src ="https://i.ibb.co/TYgkb1g/en.png" id = "en" ></div>
+    `
+    LanguageDropdownMenu.innerHTML = LanguageElement
 }
 
 export default LangHeader

@@ -1,10 +1,14 @@
-import { translateCount, translateText } from "../../../helper/translate/translate"
+import { translateCount} from "../../../helper/translate/translate"
 import { addFoodItem } from "../../../helper/food-script/add-item-script"
 import { validationFoodCount } from "../../../helper/validation/main-form-validation"
 import "./style"
+import { localStorageUser } from "../../../helper/account-scripts/user-data"
+import { translateText } from "../../../helper/translate/translateText"
 
-localStorage.setItem('selectedItem', JSON.stringify([]))
-localStorage.setItem('plateCount', 0)
+const plateCount = localStorageUser('plateCount')
+const selectItem = localStorageUser('selectedItem')
+if (!selectItem) localStorage.setItem('selectedItem', JSON.stringify([]))
+if (!plateCount) localStorage.setItem('plateCount', 0)
 
 const FoodItem = (data, id)=>{
     const elemName = translateCount == 0 ? data.ukText : data.enText;

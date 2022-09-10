@@ -1,7 +1,8 @@
 import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { translateText, translateCount } from "../../../helper/translate/translate";
-
+import { translateCount } from "../../../helper/translate/translate";
+import { localStorageUser } from "../../../helper/account-scripts/user-data";
+import { translateText } from "../../../helper/translate/translateText";
 const proteinDataFood = ()=>{
 
   const labelProtein = translateText(translateCount, 'Залишок білків', 'Remainder of proteins')
@@ -14,17 +15,17 @@ const proteinDataFood = ()=>{
 
   
   let needProtein = localStorage.getItem('protein')
-  const normalProtein = 350
+  const normalProtein = localStorageUser('needProtein')
   const addProtein = (needProtein - normalProtein)*(-1)
   if (needProtein <= 0) needProtein = 0
 
   let needFats = localStorage.getItem('fats')
-  const normalFats = 400
+  const normalFats = localStorageUser('needFats')
   const addFats = (needFats - normalFats)*(-1)
   if (needFats <= 0) needFats = 0
 
   let needCarbohydrates = localStorage.getItem('carbohydrates')
-  const normalCarbohydrates = 250
+  const normalCarbohydrates = localStorageUser('needCarbohydrates')
   const addCarbohydrates = (needCarbohydrates - normalCarbohydrates)*(-1)
   if (needCarbohydrates <= 0) needCarbohydrates = 0
 

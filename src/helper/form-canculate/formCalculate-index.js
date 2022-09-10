@@ -1,4 +1,4 @@
-import { selectParam, InchesToSm, PoundToKg } from "./formChangeParametr"
+import { selectParam} from "./formChangeParametr"
 import { activity } from "./CalculateCoefficient"
 import { formsData, yearData, heightData, weightData, wantWeightData, sexData  } from "./formTranformationData"
 

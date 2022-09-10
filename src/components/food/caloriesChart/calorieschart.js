@@ -1,8 +1,8 @@
 import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { translateText, translateCount } from "../../../helper/translate/translate";
+import { translateCount } from "../../../helper/translate/translate";
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
-
+import { translateText } from "../../../helper/translate/translateText";
 const caloriesData = ()=>{
 
   const labelCalories= translateText(translateCount, 'Залишок Калорій', 'Remainder of calories')

@@ -1,4 +1,5 @@
-import { translateText, translateCount } from "../../../helper/translate/translate"
+import { translateCount } from "../../../helper/translate/translate"
+import { translateText } from "../../../helper/translate/translateText"
 import "./style"
 localStorage.setItem('totalCalories', 0)
 localStorage.setItem('totalProtein', 0)

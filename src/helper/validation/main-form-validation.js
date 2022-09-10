@@ -1,5 +1,6 @@
 import { formsData } from "../form-canculate/formTranformationData"
-import { translateText, translateCount } from "../translate/translate"
+import { translateCount } from "../translate/translate"
+import { translateText } from "../translate/translateText"
 const addEvent = (elem, func, elem2)=>{
     if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
 }

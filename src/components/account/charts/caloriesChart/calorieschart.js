@@ -1,10 +1,10 @@
 import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
-import { translateCount, translateText } from '../../../../helper/translate/translate';
+import { translateCount} from '../../../../helper/translate/translate';
+import { translateText } from '../../../../helper/translate/translateText';
 import { localStorageUser } from '../../../../helper/account-scripts/user-data';
 
 const caloriesData = ()=>{
-
   const labelCalories= translateText(translateCount, 'Залишок Калорій', 'Remainder of calories')
   const labelNeedCalories= translateText(translateCount, 'Додано Калорій', 'Added calories')
 

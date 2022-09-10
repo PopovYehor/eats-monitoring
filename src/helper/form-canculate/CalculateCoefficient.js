@@ -1,7 +1,7 @@
 import { selectParam } from "./formChangeParametr"
 import { formsData } from "./formTranformationData"
-import { translateText, translateCount } from "../translate/translate"
-
+import { translateCount } from "../translate/translate"
+import { translateText } from "../translate/translateText"
 const coefficientWeightIndex = (index)=>{
 let elem = ''
  const coefWeightIndex = [

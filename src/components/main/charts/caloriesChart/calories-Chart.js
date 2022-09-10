@@ -1,7 +1,8 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { caloriesFormula, calculateWantCalories  } from "../../../../helper/form-canculate/formCalculate-index";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 

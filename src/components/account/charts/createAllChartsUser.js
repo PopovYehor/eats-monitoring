@@ -3,7 +3,7 @@ import { createChartCaloriesCountAccount } from "./caloriesChart/calorieschart"
 import { createChartProteinCountAccount } from "./proteinsChart/protein-chart-food"
 import { createChartWeightIndexAccount } from "./weightIndexChart/weightIndex-chart"
 import { createFatPercentChartAccount } from "./fatPercentChart/fatPercent-chart"
-const CreateAllChartsUser = ()=>{
+const createAllChartsUser = ()=>{
     createChartCaloriesCountAccount()
     createChartProteinCountAccount()
     createChartWeightIndexAccount()
@@ -11,4 +11,4 @@ const CreateAllChartsUser = ()=>{
     CreateChartProgresUser()
 }
 
-export default CreateAllChartsUser
+export {createAllChartsUser}

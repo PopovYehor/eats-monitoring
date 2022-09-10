@@ -5,8 +5,8 @@ import Chart from 'chart.js/auto'
 import { fatPercent,  fatWeight } from "../../../../helper/form-canculate/formCalculate-index";
 import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { sexData } from "../../../../helper/form-canculate/formTranformationData";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
-
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 const fatChartData = ()=>{
   const remainder = 100 - fatPercent()
   const labelFatPerent = translateText(translateCount, 'Процент жиру, %', 'Percentage of fat, %')

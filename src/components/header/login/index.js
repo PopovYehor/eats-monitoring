@@ -1,18 +1,21 @@
 import "../laguage/style"
+import { createElem } from "../../../helper/createElement"
+import { translateCount } from "../../../helper/translate/translate"
+import { translateText } from "../../../helper/translate/translateText"
 const HeaderSwitch = ()=>{
-    const elem = `
-    <div class = "choise-lang">
-        <div class="lang-img"> 
-            <button class = "language-btn">&#xf7a2</button>
-        </div>
-        <div class="language-list" id = "lang-list">
-            <button class="translate"><a href="#">&#xf2f6 <span class= 'lang' key = 'headerEnter'>Вхід</span></a></button>
-            <button class="translate"><a href="#">&#xf234 <span class= 'lang' key = 'headerSingUp'>Реєстрація</span></a></button>
-        </div>
-    </div>
+    const menuWrap = document.querySelector('.language')
+    const routeMenu = createElem('ul', 'menu', null, menuWrap, 'id', 'route-menu')
+    const routeDropDown = createElem('li', 'dropdown dropdown-6', null, routeMenu)
+    const routeBtn = `<button class = "language-btn">&#xf007</button>`
+    routeDropDown.innerHTML = routeBtn
+    const routeDropdownMenu = createElem('ul', 'dropdown_menu dropdown_menu--animated dropdown_menu-6', null, routeDropDown)
+    const routeElement =  !localStorage.getItem('userName') ? `
+    <div class="dropdown_item">&#xf2f6<a class = "dorp-item-img" >${translateText(translateCount, 'Вхід', 'Log In')}</a></div>
+    <div class="dropdown_item">&#xf234 <a class = "dorp-item-img" >${translateText(translateCount, 'Реєстрація', 'Sing In')}</a></div>
+    ` : `
+    <div class="dropdown_item">&#xf52b <a class = "dorp-item-img" >${translateText(translateCount, 'Вихід', 'Sign Out')}</a></div>
     `
-    const wrap = document.querySelector('.login-btn-wrap')
-    wrap.innerHTML= elem
+    routeDropdownMenu.innerHTML = routeElement
 }
 
 export default HeaderSwitch

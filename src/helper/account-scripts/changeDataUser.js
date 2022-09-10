@@ -1,4 +1,4 @@
-import {translateText, translateCount} from "../translate/translate"
+import {translateCount} from "../translate/translate"
 import {localStorageUser, userObjectValue, user} from "./user-data"
 import {createOption, createInput, createSelectParam, createElem} from "../createElement"
 import { changeAccount } from "../form-scrypts/enterLogin"
@@ -6,7 +6,7 @@ import {validationAccount} from "../validation/main-form-validation"
 import { sameHeightTable } from "./table-script"
 import moment from "moment"
 import Preloader from "../../components/preloader"
-
+import { translateText } from "../translate/translateText"
 
 const arrSex = {
     value :['male', 'female'],

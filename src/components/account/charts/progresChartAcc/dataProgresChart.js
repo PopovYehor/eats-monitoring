@@ -2,8 +2,8 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { everyDayData, weightDayData } from "./dataForProgresChart";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
-
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from '../../../../helper/translate/translateText';
 
 const progresChartData = ()=>{
   let paramLabel = ''

@@ -1,8 +1,8 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/formCalculate-index";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
-
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 const proteinData = ()=>{
 
   const labelProtein = translateText(translateCount, 'Білків', 'Proteins')

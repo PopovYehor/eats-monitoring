@@ -1,384 +1,126 @@
-@import "../../style/var.scss";
-.user-wrap{
-width: 100%;
-height: 94%;
-position: relative;
-
-.account-container-wrap{
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-}
-  .container-profile{
-    width: 500px;
-    max-height: 100%;
+.container-user{
+    width: 1050px;
     display: flex;
-    flex-direction: row;
-    margin-right: 50px;
-    .profile {
-      max-width: $profile-card-size;
-      height: 100%;
-      padding: 2em 2em 1em 2em ;
-      display: flex;
-      flex-flow: row wrap;
-      flex-direction: column;
-      justify-content: space-between;
-      align-content: center;
-      position: relative;
-      background-color: rgb(212 211 221 / 80%);
-      transition: all .4s;
-      box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
-      figure {
-          margin: 0;
-          box-sizing: border-box;
-          img {
-            position: absolute;
-            min-width: $profile-avatar-size;
-            max-height: $profile-avatar-size;
-            border-radius: 50%;
-            padding: 10px;
-            box-shadow: 0px 0px 20px rgba($base-text-color, .15);
-            z-index: 0;
-          }
-          .add-img{
-            display: none;
-            position: absolute;
-          }
-          .label-change{
-            margin: 0;
-            padding: 0;
-            display: none;
-            visibility: hidden;
-            @include obj-center();
-            color: rgb(255, 255, 255);
-            
-            width: $profile-avatar-size;
-            height: $profile-avatar-size;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 2;
-            
-          }
-          &:hover{
-            .label-change.active{
-              position: relative;
-              @include obj-center();
-              visibility: visible;
-              background-color: #0c0c0c46;
-              transition: background-color .3s ease-in-out;
-              z-index: 2;
-            }
-          }
-      } 
-        .title-name {
-          display: flex;
-          flex-direction: row;
-          margin: 10px 0;
-          position: relative;
-          .item-input{
-            width: 207px;
-            margin-right: 10px;
-            border: .5px solid rgb(137 137 137 / 25%);
-            border-radius: 5px;
-            padding: 5px 10px;
-            background: rgb(161 179 213 / 15%);
-          }
-          h1 {
-            margin: 0;
-            padding: 0;
-            line-height: 1;
-            small {
-              display: block;
-              clear: both;
-              font-size: 18px;
-              opacity: 0.6;
-              
-            }
-          }
-        }
-          
-      .mainen {
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-          opacity: 0;
-          height: 0;
-          transition: all 1s ease-out;
-          dl {
-            display: block;
-            width: 100%;
-            background: transparent;
-            dt, dd {
-              position: relative;
-              padding: 12.5px 5px;
-              margin: 0;
-              border-bottom: 1px solid rgba(140, 128, 204, 0.466);
-              float: left;
-              a {
-                padding-right: 5px;
-              }
-            }
-            .profile-description {
-              width: 55%;
-              height: auto;
-              padding-right: 10px;
-              font-weight: bold;
-              
-              &:after {
-                content: ":"
-              }
-            }
-            dd {
-              width: 45%;
-              text-align: right;
-              padding-right: 10px;
-            }
-            #regist-day-item{
-              height: 50px;
-            }
-            #want-day-item{
-            height: 54px;
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            }
-          }
-      }
-      .mainen.active{
-          opacity: 1;
-          height: auto;
-      }
-    
-        .toggle {
-          position: absolute;
-          background: #fff;
-          top: 30px;
-          left: 30px;
-          width: 40px;
-          height: 40px;
-          line-height: 40px;
-          font-size: 24px;
-          text-align: center;
-          z-index: 20;
-          vertical-align: middle;
-          box-shadow: 0px 0px 10px rgba($base-text-color, .15);
-          cursor: pointer;
-          border-radius: 20px;
-          user-select: none;
-          transition: box-shadow 300ms ease;
-          &:hover {
-            box-shadow: 0px 0px 10px rgba($base-text-color, .25);
-          }
-          main {
-            font-size: 16px;
-          }
-        }
-        .changeBtn{
-          width: 100px;
-          height: 30px;
-          border-radius: 10px;
-          font-size: 17px;
-          background-color: #bcf9ce;
-          box-shadow: 0 0px 16px -3px #bcf9ce;
-          font-weight: bold;
-          margin-top: 10px;
-          cursor: pointer;
-        }
-    }
-    .profile.active{
-      min-width: 350px;
-      border-radius: 0 0 20px 0;
-    }
-    .profile.active.change{
-      min-width: 500px;
-      padding: 1.2em;
-      #name{
+    flex-direction: column;
+    margin-top: 50px;
+    .account-charts-wrap{
+        width: 100%;
+        height: 300px;
         display: flex;
-        .item-input{
-          margin-right: 22px;
-        }
-      }
-      .alert-validate::before {
-        content: attr(data-validate);
-        position: absolute;
-        max-width: 55%;
+        align-items: center;
+        justify-content: space-between;
         background-color: #fff;
-        border: 1px solid #ee6969;
-        border-radius: 2px;
-        padding: 4px 25px 4px 10px;
-        top: 55%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-        right: 10px;
-        pointer-events: none;
-      
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #ff0000;
-        font-size: 13px;
-        font-weight: 100;
-        line-height: 1.4;
-        text-align: left;
-      
-        visibility: hidden;
-        opacity: 0;
-      
-        -webkit-transition: opacity 0.4s;
-        -o-transition: opacity 0.4s;
-        -moz-transition: opacity 0.4s;
-        transition: opacity 0.4s;
-      }
-      
-      .alert-validate::after {
-        content: "\f06a";
-        font-family: FontAwesome;
-        font-size: 18px;
-        color: #ee6969;
-        font-weight: normal;
-        font-style: normal;
-      
-        display: block;
-        position: absolute;
-        background-color: transparent;
-        top: 55%;
-        -webkit-transform: translateY(-50%);
-        -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        -o-transform: translateY(-50%);
-        transform: translateY(-50%);
-        right: 15px;
-      }
-      
-      .alert-validate:hover:before {
-        visibility: visible;
-        opacity: 1;
-      }
-      dl{
-        dt{
-          width: 45%;
-          min-height: 47px;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        gap: 10px;
+        .chart-data-container{
+            width: 300px;
+            height: 275px;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            border-radius: 20px;
+            padding: 10px 0;
+            position: relative;
+            .count-calories-account-btn{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.822);
+                position: absolute;
+                bottom: 9px;
+                left: 8px;
+                width: 90px;
+                height: 30px;
+                border-radius: 10px;
+                font-size: 15px;
+                background-color: #bcf9ce;
+                box-shadow: 0 0px 16px -3px #bcf9ce;
+                font-weight: bold;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+            .canvas-title{
+                font-size: 20px;
+                text-align: center;
+            }
+            .chart-wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                #account-calories-chart{
+                    width: 240px !important;
+                    height: 220px !important;
+                }
+                #protein-chart-account{
+                    width: 300px !important;
+                    height: 200px !important;
+                }
+                #index-chart-account{
+                    width: 195px !important;
+                    height: 195px !important;
+                }
+                #fat-chart-account{
+                    width: 170px !important;
+                    height: 170px !important;
+                }
+                .label-wrap{
+                    width: 80%;
+                    margin-top: 10px;
+                    text-align: center;
+                    .chart-label{
+                        font-size: 18px;
+                        font-weight: 600;
+                        line-height: 1.4;
+                        .label-fullDef{color: purple;}
+                        .label-def{color: blue}
+                        .label-normal{color: green;}
+                        .label-middle{color: yellowgreen;}
+                        .label-bad{color:orange}
+                        .label-very-bad{color: rgb(255, 0, 13);}
+                        .label-so-bad{color: rgb(128, 2, 2);}
+                    }
+                }
+            }
         }
-        dd{
-          width: 55%;
-          min-height: 47px;
-          padding-bottom: 7px;
-          position: relative;
-          .height-item-input, .weight-item-input, .want-weight-input{
-            width: 50%;
-            margin-right: 45px;
-          }
-        }
-        
-        .select-choise-param{
-          right: -4px;
-          outline: none;
-          option{
-            background: rgba(114, 127, 141, 0.281);
-          }
-        }
-        .item-input{
-          width: 70%;
-          border: .5px solid rgb(137 137 137 / 25%);
-          border-radius: 5px;
-          padding: 5px 10px;
-          background: rgb(161 179 213 / 15%);
-        }
-        .select-item{
-          width: 70%;
-          margin-right: 5px;
-          border: none;
-          white-space: pre;
-          text-overflow: ellipsis;
-          outline: none;
-          .activ-item, .sex-item{
-            background: rgba(114, 127, 141, 0.281);
-          }
-        }
-      }
     }
-    
-    .view_details {position: absolute; top: -5000px; left: -5000px;}
-    label {display: block; cursor: pointer;}
-    
-    @media screen and (max-width: 520px) {
-      .profile {
-        padding: 1em;
-        margin: 1em;
-      }
-      .profile img {
-        max-width: 100%;
-        height: auto;
-      }
-      .profile main dl,
-      .profile main dl dt,
-      .profile main dl dd {
-        display: block;
+    .progres-chart-user{
         width: 100%;
-        float: none;
-      }
-      .profile main dl dt {
-        border-bottom: none;
-      }
-      .profile main dl dd {
-        margin-bottom: 10px;
-      }
-    
-      .profile .toggle {
-        top: 15px;
-        left: 15px;
-      }
-      .profile-preloader-wrap{
-        width: 100%;
-        height: 800px;
+        height: 400px;
         display: flex;
         align-items: center;
         justify-content: center;
-      }
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        margin-top: 50px;
+        .chart-data-container{
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+            border-radius: 20px;
+            padding: 15px 0 0 0;
+            position: relative;
+            background-color: #fff;
+            .canvas-title{
+                font-size: 22px;
+                text-align: center;
+                margin: 0;
+                position: absolute;
+                top: 5px;
+                left: 275px;
+            }
+            #progress-account-chart{
+                margin-top: 10px;
+                height: 325px !important;
+                width: 665px !important;
+            }
+        }
     }
-  }
-  .preload-account-page{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    .lds-spinner div:after{
-      background: #333633;
-    } 
-  }
-  .preload-account-page::after{
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-image: url("../../assets/preloader-background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute; 
-  }
-}
-.user-wrap::after{
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-image: url("../../assets/preloader-background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1; 
 }

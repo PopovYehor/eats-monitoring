@@ -1,5 +1,6 @@
-import { translateCount, translateText } from "../../../helper/translate/translate"
+import { translateCount } from "../../../helper/translate/translate"
 import { getAllFood, getSelected } from "../../../helper/food-script/select-items-script"
+import { translateText } from "../../../helper/translate/translateText"
 import foodCount from "../food-count"
 import "./style"
 

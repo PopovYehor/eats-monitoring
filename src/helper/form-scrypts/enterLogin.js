@@ -2,9 +2,9 @@ import { formsData } from "../form-canculate/formTranformationData"
 import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
 import { user } from "../account-scripts/user-data"
-import { account } from "../../components/account"
+import { account } from "../../components/account/profile"
 import { caloriesFormulaAccount, fatWeightAccount, sameHeightTable } from "../account-scripts/table-script"
-import CreateAllChartsUser from "../../components/account/charts/createAllChartsUser"
+import {createAllChartsUser} from "../../components/account/charts/createAllChartsUser"
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
@@ -35,7 +35,7 @@ const logIn = ()=>{
                         account()
                         caloriesFormulaAccount()
                         fatWeightAccount()
-                        CreateAllChartsUser()
+                        createAllChartsUser()
                     })
 }
 
@@ -78,7 +78,7 @@ fetch(`${urlData}/${id}`, {
         sameHeightTable()
         caloriesFormulaAccount()
         fatWeightAccount()
-        CreateAllChartsUser()
+        createAllChartsUser()
     })  
 }
 

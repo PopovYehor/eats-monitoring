@@ -1,10 +1,10 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { dateData, dateWeightData } from "./dataForProgresChart";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
+import { translateCount } from "../../../../helper/translate/translate";
 import { formsData } from "../../../../helper/form-canculate/formTranformationData";
 import { selectParam } from "../../../../helper/form-canculate/formChangeParametr";
-
+import { translateText } from "../../../../helper/translate/translateText";
 const progresChartData = ()=>{
   let paramLabel = ''
   const choiseWeightOption = selectParam(formsData().choiseWeight)

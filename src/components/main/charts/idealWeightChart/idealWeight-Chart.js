@@ -2,7 +2,8 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { perfectWeight } from "../../../../helper/form-canculate/formCalculate-index";
 import { defWeight } from "../../../../helper/form-canculate/formTranformationData";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 const DATA_COUNT = 3;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 

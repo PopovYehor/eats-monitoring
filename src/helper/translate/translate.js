@@ -2,7 +2,11 @@ import createAllCharts from "../../components/main/charts/createAllCharts"
 import {arrLangText, arrLangPlaceholder, arrLangValidate } from "./translate-array"
 import {localStorageUser} from "../account-scripts/user-data"
 import Foods from "../../views/foods"
+
+
 let translateCount = setTimeout(()=>Number(localStorageUser('languageCount')), 500) || 0
+
+
 
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
@@ -27,7 +31,6 @@ const translate = ()=>{
                         elem.style.height = 55+ 'px'
                     }
                     })
-                 
             }
             if (target.id == 'uk'){
                 translateCount = 0
@@ -47,16 +50,16 @@ const translate = ()=>{
             localStorage.setItem('languageCount', translateCount)
             const chartContainer = document.querySelector('.chart-container')
             const food = document.querySelector('.food-wrap')
+            const userWrap = document.querySelector('.container-user')
             if(chartContainer) createAllCharts()
             if (food) Foods()
+            if (userWrap){
+                
+            }
         })
     })
 }
 
-const translateText = (index, textUK, TextEn)=>{
-    let text = ''
-    index == 0 ? text = textUK : text = TextEn
-    return text
-}
 
-export {translate, translateCount, translateText}
+
+export {translate, translateCount}

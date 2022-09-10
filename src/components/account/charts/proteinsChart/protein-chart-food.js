@@ -1,7 +1,8 @@
 import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
-import { translateCount, translateText } from "../../../../helper/translate/translate";
-
+import { translateCount} from "../../../../helper/translate/translate";
+import { onHandleRoute } from '../../../../helper/route';
+import { translateText } from '../../../../helper/translate/translateText';
 const proteinDataFood = ()=>{
 
   const labelProtein = translateText(translateCount, 'Залишок білків', 'Proteins left')
@@ -78,7 +79,8 @@ const createChartProteinCountAccount = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'protein-chart-account')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  createElem('button', 'count-calories-account-btn', translateText(translateCount, 'Розрахувати', 'Calculate'), proteinChartWrap)
+  const canculateBtn = createElem('a', 'count-calories-account-btn', translateText(translateCount, 'Розрахувати', 'Calculate'), proteinChartWrap, 'href', '/food')
+  canculateBtn.addEventListener('click', (e)=>{onHandleRoute(e)})
 }
 
 export {createChartProteinCountAccount}

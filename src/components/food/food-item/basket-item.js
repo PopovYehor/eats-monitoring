@@ -1,6 +1,7 @@
-import { translateCount, translateText } from "../../../helper/translate/translate";
+import { translateCount } from "../../../helper/translate/translate";
 import { changeFoodItem, deleteFoodItem } from "../../../helper/food-script/basket-script";
 import { validationFoodCount } from "../../../helper/validation/main-form-validation";
+import { translateText } from "../../../helper/translate/translateText";
 const basketItem = (data, id)=> {
     const elemName = translateCount == 0 ? data.ukText : data.enText;
     const element = `

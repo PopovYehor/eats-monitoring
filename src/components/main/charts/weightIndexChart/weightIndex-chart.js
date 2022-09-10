@@ -2,7 +2,8 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { coefficientWeightIndex } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { weightIndex } from "../../../../helper/form-canculate/formCalculate-index";
-import { translateText, translateCount } from "../../../../helper/translate/translate";
+import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 const weightIndexData = ()=>{
 const residue = 100 - weightIndex()
 
