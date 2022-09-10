@@ -1,7 +1,7 @@
 import createAllCharts from "../../components/main/charts/createAllCharts"
 import {arrLangText, arrLangPlaceholder, arrLangValidate } from "./translate-array"
 import {localStorageUser} from "../account-scripts/user-data"
-import Foods from "../../views/foods"
+/* import Foods from "../../views/foods" */
 
 
 let translateCount = setTimeout(()=>Number(localStorageUser('languageCount')), 500) || 0
@@ -52,10 +52,10 @@ const translate = ()=>{
             const food = document.querySelector('.food-wrap')
             const userWrap = document.querySelector('.container-user')
             if(chartContainer) createAllCharts()
-            if (food) Foods()
+            /* if (food) Foods()
             if (userWrap){
                 
-            }
+            } */
         })
     })
 }

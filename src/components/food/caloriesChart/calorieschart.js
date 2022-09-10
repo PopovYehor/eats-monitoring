@@ -31,6 +31,10 @@ const data = {
 const config = {
     type: 'doughnut',
     data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+  }
   };
   return config
 }

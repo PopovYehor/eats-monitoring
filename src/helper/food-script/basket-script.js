@@ -89,6 +89,8 @@ const createBasketItems = ()=>{
     const select = document.querySelector('.food-select-item')
     if (selectedItem.length > 0){
         wrap.innerHTML = ''
+        const paginationWrap = document.querySelector('.food-pagination-wrap')
+        paginationWrap.innerHTML = ""
         selectedItem.map(elem =>{
             select.value = 'selected'
             createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)

@@ -1,12 +1,14 @@
 import "./style.scss"
 import { createElem } from "../../helper/createElement"
 import { mainComponent } from "../../components/main"
+import Header from "../../components/header"
 
 
 
-const main = ()=>{
+const Main = ()=>{
+    Header()
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)
     mainComponent()
 }
-export default main
+export default Main

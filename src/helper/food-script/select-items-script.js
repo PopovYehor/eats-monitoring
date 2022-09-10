@@ -2,7 +2,7 @@ import { createElem } from "../createElement"
 import { selectParam } from "../form-canculate/formChangeParametr"
 import FoodItem from "../../components/food/food-item"
 import { createBasketItems } from "./basket-script"
-
+import { paginationFood, paginationCreatingElement } from "./paginationFood"
 const apiFoodSelect = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const apiAllFoods = 'https://api.json-generator.com/templates/CLp6e4tG98eK/data'
 const token = 'm7ysw5zozkwk8m7wakyk22o83d8sxsy7x3jdmdh8'
@@ -17,6 +17,8 @@ const getFoodSelect = (item)=>{
     .then(res =>{
         const wrap = document.querySelector('.food-element-wrap')
         wrap.innerHTML = ''
+        const paginationWrap = document.querySelector('.food-pagination-wrap')
+        paginationWrap.innerHTML = ''
         res[item].map(elem =>{
             createFoodItem(elem, wrap)
         })
@@ -30,12 +32,22 @@ const getAllFood = (filter = null) =>{
         const wrap = document.querySelector('.food-element-wrap')
         const searchInput = document.querySelector('.search-food-input').value
         wrap.innerHTML = ''
+
+        paginationFood.item = res
+        paginationFood.page = 1
+        paginationFood.offset = 10
+        const sliceRes = res.slice((paginationFood.offset-paginationFood.limit), paginationFood.offset)
+
+        
         if(!filter){
-            res.map(elem =>{
-                createFoodItem(elem, wrap)
-            })
+            sliceRes.map(elem => createFoodItem(elem, wrap))
+            const paginationWrap = document.querySelector('.food-pagination-wrap')
+            paginationWrap.innerHTML = ""
+            paginationCreatingElement()
         }else{
             res.filter(elem =>{
+                const paginationWrap = document.querySelector('.food-pagination-wrap')
+                paginationWrap.innerHTML = ""
                 if(translateCount == 0 && elem.ukText.toLowerCase() == searchInput.toLocaleLowerCase()){
                     createFoodItem(elem, wrap)
                 }else if (translateCount == 1 && elem.enText.toLowerCase() == searchInput.toLocaleLowerCase()){
@@ -50,6 +62,8 @@ const getSelected = ()=>{
     const select = document.querySelector('.food-select-item')
     getAllFood()
     select.addEventListener('change', ()=>{
+        const paginationWrap = document.querySelector('.food-pagination-wrap')
+        paginationWrap.innerHTML = ""
         const selectValue = selectParam(select).value
 
         selectValue == 'selected' ? createBasketItems() : selectValue == 'choise' ? getAllFood() : getFoodSelect(selectValue)
@@ -57,4 +71,4 @@ const getSelected = ()=>{
 }
 
 
-export {getSelected, getAllFood}
+export {getSelected, getAllFood, createFoodItem}

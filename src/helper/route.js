@@ -9,8 +9,8 @@ const onHandleRoute = (e) => {
 }
 
 const routes = {
-    '/': Account,
-    '/food': Foods,
+    '/': Foods,
+    '/food': Account,
 }
 
 const onLocation = () => {

@@ -19,6 +19,7 @@ const Food = ()=>{
     createElem('div', 'food-select-container', null, foodSelects)
     foodSelect()
     createElem('div', 'food-element-wrap', null, foodSelects)
+    createElem('div', 'food-pagination-wrap', null, foodSelects)
     createElem('div', 'total-food-items', null, foodSelects)
     TotalFood()
     createChartCaloriesCount()

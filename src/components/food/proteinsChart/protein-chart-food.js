@@ -3,11 +3,12 @@ import Chart from 'chart.js/auto'
 import { translateCount } from "../../../helper/translate/translate";
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
 import { translateText } from "../../../helper/translate/translateText";
+import { onHandleRoute } from "../../../helper/route";
 const proteinDataFood = ()=>{
 
-  const labelProtein = translateText(translateCount, 'Залишок білків', 'Remainder of proteins')
-  const labelFats = translateText(translateCount, 'Залишок жирів', 'Remainder of fats')
-  const labelCarbohydrates = translateText(translateCount, 'Залишок вуглеводів', 'Remainder of carbohydrates')
+  const labelProtein = translateText(translateCount, 'Залишок білків', 'Left proteins')
+  const labelFats = translateText(translateCount, 'Залишок жирів', 'Left fats')
+  const labelCarbohydrates = translateText(translateCount, 'Залишок вуглеводів', 'Left carbohydrates')
 
   const labelNeedProtein = translateText(translateCount, 'Додано білків', 'Added proteins')
   const labelNeedFats = translateText(translateCount, 'Додано жирів', 'Added fats')
@@ -59,6 +60,10 @@ const data = {
 const config = {
     type: 'doughnut',
     data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+  }
   };
   return config
 }
@@ -74,6 +79,9 @@ const createChartProteinCount = ()=>{
   const chartWrap = createElem('div', 'chart-wrapper', null, proteinChartWrap)
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'proteinChart')
   const myChart = new Chart(canvasProtein, proteinDataFood())
+
+  const saveChangeBtn = createElem('a', 'save-change-btn', `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}`, proteinChartWrap, 'href', '/')
+  saveChangeBtn.addEventListener('click', (e)=>{onHandleRoute(e)})
 }
 
 export {createChartProteinCount}

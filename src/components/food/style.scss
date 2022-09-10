@@ -12,7 +12,7 @@
     }
     .food-chart-wrap{
         width: 400px;
-        height: 775px;
+        height: 750px;
         background-color: white;
         border-radius: 20px;
         position: sticky;
@@ -26,21 +26,39 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 25px 0;
+            margin: 20px 0;
+            position: relative;
+            .save-change-btn{
+                position: absolute;
+                bottom: -145px;
+                left: -20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 120px;
+                height: 30px;
+                border-radius: 10px;
+                font-size: 15px;
+                background-color: #bcf9ce;
+                box-shadow: 0 0px 16px -3px #bcf9ce;
+                font-weight: bold;
+                text-decoration: none;
+                color: rgba(0, 0, 0, 0.671);
+            }
             .canvas-title{
-                font-size: 24px;
+                font-size: 22px;
                 font-weight: 700;
                 margin: 10px 0;
                 text-align: center;
             }
             .chart-wrapper{
                 canvas{
-                    width: 270px !important;
-                    height: 270px !important;
+                    width: 250px !important;
+                    height: 250px !important;
                 }
                 #proteinChart{
-                    width: 330px !important;
-                    height: 330px !important;
+                    width: 300px !important;
+                    height: 300px !important;
                 }
             }
         }
@@ -54,6 +72,31 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+        .food-pagination-wrap{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            margin-bottom: 20px;
+            .page-count{
+                width: 20px;
+                text-align: center;
+                margin: 0 20px ;
+                font-size: 20px;
+            }
+            .btn-pag{ 
+            font-size: 17px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            width: 60px;
+            display: flex;
+            height: 30px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            cursor: pointer;
+            }
+        }
         .food-select-container{
             width: 700px;
             height: 50px;
@@ -63,11 +106,12 @@
             margin-top: 30px;
             box-shadow: 0 0px 20px -3px #b7b7b7;
             border-radius: 10px;
+            
         }
     }
     .food-element-wrap{
         width: 700px;
-        margin: 35px 0;
+        margin: 20px 0;
     }
 }
 .food-wrap::after{
