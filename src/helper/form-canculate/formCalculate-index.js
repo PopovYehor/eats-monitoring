@@ -33,6 +33,7 @@ const calculatePartOfWantCalories = (part)=>{
 const fatPercent = ()=>{
     let fatPercent = ''
     sexData() == 'male' ? fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-16.2) : fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-5.4)
+    console.log(fatPercent)
     return fatPercent
 }
 

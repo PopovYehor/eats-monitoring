@@ -2,7 +2,9 @@ import "./style.scss"
 import "./check-style.scss"
 import createAllCharts from "./charts/createAllCharts"
 import { verAll, valueVer} from "../../helper/validation/main-form-validation"
+import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/form-scrypts/placeholderUp"
 const mainComponent = ()=>{
+  localStorage.setItem('languageCount', 0)
     const elem = `
     <div class="container-login">
         <div class="wrap-login">
@@ -45,12 +47,12 @@ const mainComponent = ()=>{
             <!--Уровень активности-->
             <div class="wrap-input validate-input" id = 'activ-input' key = 'activ' data-validate="Оберіть рівень активності">
               <select name="activeLevel" id="active-level" class="select-input" required>
-                <option class="lang" value="choise"  disabled key = "choiseActiv" selected>Оберіть рівень активності</option>
-                <option class="lang" value="none" key = 'noneActiv'>Малорухливий спосіб життя</option>
-                <option class="lang" value="low" key = 'lowActiv' >Мала активність (1-3 тренування на тиждень)</option>
-                <option class="lang" value="middle" key = 'middleActiv'>Середня активність (3-5 тренувань на тиждень)</option>
-                <option class="lang" value="hight" key = 'higthActiv'>Висока активність (5-7 тренувань на тиждень)</option>
-                <option class="lang" value="very hight" key = 'veryHightActiv'>Дуже висока активність</option>
+                <option class="lang" value="choise"  disabled key = "choise" selected>Оберіть рівень активності</option>
+                <option class="lang" value="none" key = 'none'>Малорухливий спосіб життя</option>
+                <option class="lang" value="low" key = 'low' >Мала активність (1-3 тренування на тиждень)</option>
+                <option class="lang" value="middle" key = 'middle'>Середня активність (3-5 тренувань на тиждень)</option>
+                <option class="lang" value="hight" key = 'higth'>Висока активність (5-7 тренувань на тиждень)</option>
+                <option class="lang" value="very hight" key = 'veryHight'>Дуже висока активність</option>
               </select>
               <span class= 'select-item'></span>
             </div>
@@ -83,15 +85,17 @@ const mainComponent = ()=>{
     `
     const wrap = document.querySelector('.limiter')
     wrap.innerHTML = elem
-
+    placeholderUp()
+    placeholderClickUp()
+    selectHasVal()
     verAll()
 
-    const dontValid = document.querySelectorAll('.alert-validate')
+    
     const calcBtn = document.querySelector('.login-form-btn')
     calcBtn.addEventListener('click', (e)=>{
-      console.log(dontValid)
-      e.preventDefault()
-      valueVer() == true && dontValid.length == 0 ? createAllCharts() : null
+      const dontValid = document.querySelectorAll('.alert-validate')
+      const inputes = document.querySelectorAll('.input')
+      if (valueVer(inputes) == true && dontValid.length == 0) createAllCharts()
     })
 }
 

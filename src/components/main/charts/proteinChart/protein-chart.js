@@ -4,7 +4,7 @@ import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/f
 
 import { translateText } from "../../../../helper/translate/translateText";
 const proteinData = ()=>{
-  let translateCount = localStorageUser('languageCount')
+  let translateCount = localStorage.getItem('languageCount')
   const labelProtein = translateText(translateCount, 'Білків', 'Proteins')
   const labelFats = translateText(translateCount, 'Жирів', 'Fats')
   const labelCarbohydrates = translateText(translateCount, 'Вуглеводів', 'Carbohydrates')
@@ -29,9 +29,9 @@ const data = {
       label: 'My First Dataset',
       data: [proteins, fats, carbohydrates],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 86)'
+        'rgb(171, 235, 198, 80% )',
+        'rgb(245, 203, 167, 80% )',
+        'rgb(195, 155, 211, 80% )'
       ],
       hoverOffset: 4
     }]
@@ -44,7 +44,7 @@ const config = {
   return config
 }
 const createChartProtein = ()=>{
-  let translateCount = localStorageUser('languageCount')
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Кількість калорій у білках, жирах та вугливодах', "Number of calories in proteins, fats and carbohydrates")
 
   const canvasContainer = document.getElementById('canvas-calories-wrap')

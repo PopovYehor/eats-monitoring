@@ -88,7 +88,7 @@ const arrLangPlaceholder = {
         'height': "Зріст",
         'weight': "Вага",
         'wantDay': 'Кількість днів до цілі',
-        'wantWeight': 'Важана вага',
+        'wantWeight': 'Бажана вага',
     },
     'en':{
         'login': 'Login',

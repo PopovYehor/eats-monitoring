@@ -13,6 +13,8 @@ const LangHeader = ()=>{
     <div class="dropdown_item"><img class = "dorp-item-img translate" src ="https://i.ibb.co/TYgkb1g/en.png" id = "en" ></div>
     `
     LanguageDropdownMenu.innerHTML = LanguageElement
+    let translateCount = localStorage.getItem('languageCount')
+    if (!translateCount) localStorage.setItem('languageCount', 0)
 }
 
 export default LangHeader

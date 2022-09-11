@@ -127,8 +127,7 @@ const validationFoodCount = (id)=>{
     veref(caloriesInput, `calories-input-wrap-${id}`, 'wantDay')
 }
 
-const valueVer = (input)=>{
-    const inputes = document.querySelectorAll(input)
+const valueVer = (inputes)=>{
     let flagInput = ''
     for (let i = 0; i< inputes.length; i++){
         if (inputes[i].value == ""){
@@ -146,7 +145,7 @@ const valueVer = (input)=>{
             break
         }else{flagSelectInput = true}
     }
-
+    
     let sumFlag = ''
     flagInput == true && flagSelectInput == true ? sumFlag = true : sumFlag = false
     return sumFlag

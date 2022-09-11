@@ -45,6 +45,25 @@
                     box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.15);
                     margin: 10px;
                     padding: 15px;
+                    position: relative;
+                    .count-calories-account-btn{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: rgba(0, 0, 0, 0.822);
+                        position: absolute;
+                        bottom: 5px;
+                        left: 6px;
+                        width: 90px;
+                        height: 30px;
+                        border-radius: 10px;
+                        font-size: 12px;
+                        background-color: #bcf9ce;
+                        box-shadow: 0 0px 16px -3px #bcf9ce;
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
                     .canvas-title{
                         font-size: 20px;
                         text-align: center;
@@ -89,6 +108,7 @@
                     box-shadow: 0px 20px 52px -8px rgba(0, 0, 0, 0.15);
                     margin: 10px;
                     padding: 15px;
+                    
                     .canvas-title{
                         font-size: 20px;
                         text-align: center;

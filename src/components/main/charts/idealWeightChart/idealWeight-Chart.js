@@ -20,11 +20,11 @@ const idealWeightData = ()=>{
     labels: [labelPerfectWeight, labelYourWeight, labelToPerfectWeight],
     datasets: [
       {
-        backgroundColor: ['hsl(0, 100%, 60%)' ],
+        backgroundColor: ['#ffc0eb' ],
         data: [perfectWeight()]
       },
       {
-        backgroundColor: ['#AAA', '#777'],
+        backgroundColor: ['#eeabc0', '#dd9595'],
         data: [defWeight(), remainder]
       },
     ]

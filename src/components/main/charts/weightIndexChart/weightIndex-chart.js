@@ -5,7 +5,7 @@ import { weightIndex } from "../../../../helper/form-canculate/formCalculate-ind
 
 import { translateText } from "../../../../helper/translate/translateText";
 const weightIndexData = ()=>{
-  let translateCount = localStorageUser('languageCount')
+  let translateCount = localStorage.getItem('languageCount')
 const residue = 100 - weightIndex()
 
 const labelWeightIndex = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
@@ -17,8 +17,8 @@ const data = {
       label: 'My First Dataset',
       data: [weightIndex(), residue,],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        '#E2E2E2',
+        'rgb(231, 76, 60, 80%)',
+        '#edeff0',
       ],
       hoverOffset: 4
     }]
@@ -32,9 +32,8 @@ return config
 }
 
 const createChartWeightIndex = ()=>{
-  let translateCount = localStorageUser('languageCount')
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
-
   const wrap = document.getElementById('canvas-index-wrap')
   const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-index-chart-container')
   createElem('h1', 'canvas-title', title, weightIndexChartWrap)

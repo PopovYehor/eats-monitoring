@@ -10,8 +10,8 @@ const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 const CaloriesChartData = ()=>{
   let translateCount = localStorage.getItem('languageCount')
   const wantCalories = Number(calculateWantCalories()).toFixed(0)
-  const remainder = wantCalories - caloriesFormula()
-
+  let remainder = wantCalories - caloriesFormula()
+  if (remainder < 0) remainder = remainder*(-1)
   let betweenLabel = ''
   remainder > 0 ? betweenLabel = translateText(translateCount, 'Додаткові калорії', 'Extra Calories') : betweenLabel = translateText(translateCount, 'Зайві калорії', 'Extra Calories')
   const labelCaloriesCount = translateText(translateCount, 'Ваша кількість калорій', 'Your Calorie Count')
@@ -21,11 +21,11 @@ const CaloriesChartData = ()=>{
     labels: [labelCaloriesCount, betweenLabel, labelCalTotal],
     datasets: [
       {
-        backgroundColor: ['#AAA', '#777'],
+        backgroundColor: ['#ffd0b4', '#d7d8cc'],
         data: [caloriesFormula(), remainder]
       },
       {
-        backgroundColor: ['hsl(0, 100%, 60%)'],
+        backgroundColor: ['#cdffdb'],
         data: [wantCalories]
       },
     ]
@@ -96,6 +96,8 @@ const createCaloriesChart = ()=>{
   const chartWrap = createElem('div', 'chart-wrapper', null, caloriesChartWrap)
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
   const myChart = new Chart(canvasProtein, CaloriesChartData())
+
+  const canculateBtn = createElem('a', 'count-calories-account-btn', translateText(translateCount, 'Розрахувати', 'Calculate'), caloriesChartWrap, 'href', '/food')
 }
 
 export {createCaloriesChart}
