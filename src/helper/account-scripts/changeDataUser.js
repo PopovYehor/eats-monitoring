@@ -1,4 +1,4 @@
-import {translateCount} from "../translate/translate"
+
 import {localStorageUser, userObjectValue, user} from "./user-data"
 import {createOption, createInput, createSelectParam, createElem} from "../createElement"
 import { changeAccount } from "../form-scrypts/enterLogin"
@@ -7,7 +7,7 @@ import { sameHeightTable } from "./table-script"
 import moment from "moment"
 import Preloader from "../../components/preloader"
 import { translateText } from "../translate/translateText"
-
+let translateCount = localStorage.getItem('languageCount')
 const arrSex = {
     value :['male', 'female'],
     text: [ translateText(translateCount,'Чоловік', 'Male'),translateText(translateCount,'Жінка', 'Female')]
@@ -24,6 +24,7 @@ const arrActiv = {
 }
 
 const addInputForChange = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     const heightItem = document.getElementById('height-item')
     const weightItem = document.getElementById('weight-item')
     const wantWeightItem = document.getElementById('want-weight-item')
@@ -66,6 +67,7 @@ const loadFile = (event)=> {
 }
 
 const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
+    let translateCount = localStorage.getItem('languageCount')
     profile.classList.add('change')
     addImgInput.addEventListener('change', (e)=>{loadFile(e)})
     profileItem.forEach(elem =>{ if(elem.id != 'regist-day-item' && elem.id != 'perfect-weight-item' && elem.id != 'last-weight-item') elem.textContent = ''})

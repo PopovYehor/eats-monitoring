@@ -35,6 +35,8 @@ const arrLangText = {
         'sex' : 'Стать',
         'height': 'Зріст',
         'weight' : 'Вага',
+        'changeBtn': 'Змінити',
+        'oldYears': 'роки(ів)',
     },
     en:{
         'title': 'Sing Up',
@@ -71,6 +73,8 @@ const arrLangText = {
         'sex' : 'Sex',
         'height': 'Height',
         'weight' : 'Weight',
+        'changeBtn': 'Change',
+        'oldYears': 'years old',
     }
 }
 const arrLangPlaceholder = {

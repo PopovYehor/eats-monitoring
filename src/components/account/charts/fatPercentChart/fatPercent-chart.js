@@ -1,10 +1,11 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
-import { translateCount } from "../../../../helper/translate/translate";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
 import { translateText } from '../../../../helper/translate/translateText';
 const fatChartData = ()=>{
+  let translateCount = localStorageUser('translateCount')
+
   const fatPercent = localStorageUser('fatPercent')
   const remainder = 100 - fatPercent
   const labelFatPerent = translateText(translateCount, 'Процент жиру, %', 'Percentage of fat, %')
@@ -34,6 +35,8 @@ const config = {
   return config
 }
 const createFatPercentChartAccount = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
+
   let paramLabel = ''
   let weightFat = ''
   const weightParam = localStorageUser('weightParam')

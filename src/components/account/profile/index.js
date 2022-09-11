@@ -1,5 +1,4 @@
 import "./style.scss"
-import { translateCount } from "../../../helper/translate/translate.js"
 import { changeAccountData,  arrSex, arrActiv } from "../../../helper/account-scripts/changeDataUser"
 import {sameHeightTable} from "../../../helper/account-scripts/table-script"
 import { localStorageUser} from "../../../helper/account-scripts/user-data"
@@ -25,11 +24,13 @@ const userSelectParam = (arr, item, arrText)=>{
 }
 
 const userParam = (store, item, text1, text2, text3, text4)=>{
+    let translateCount = localStorage.getItem('languageCount')
     let elem = ''
     localStorageUser(store) == item ? elem = translateText(translateCount, text1, text2) :  elem = translateText(translateCount, text3, text4)
     return elem
 } 
 const account = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     const elem = `
         <figure class="figure-img-profile">
             <img class="img-profile" src= '${localStorageUser('photo') || 'https://i.ibb.co/G5VTwDZ/1625890.png'}'>
@@ -49,7 +50,7 @@ const account = ()=>{
             </tr>
             <tr>        
                 <dt class= "profile-description" id="age" key = "age">${translateText(translateCount, 'Вік', "Age")}</dt>
-                    <dd class="profile-item" id="age-item"   data-validate = "${translateText(translateCount, 'Некоректний вік', "Incorrect age")}">${localStorageUser('age')} ${translateText(translateCount, 'років', 'old years')}</dd>
+                    <dd class="profile-item" id="age-item"   data-validate = "${translateText(translateCount, 'Некоректний вік', "Incorrect age")}">${localStorageUser('age')} ${translateText(translateCount, 'роки(ів)', 'years old')}</dd>
             </tr>
             <tr>   
                 <dt class= "profile-description" id="sex" key = "sex">${translateText(translateCount, 'Стать', "Sex")}</dt>
@@ -89,7 +90,7 @@ const account = ()=>{
                     <dd class="profile-item" id="want-day-item" data-validate = "${translateText(translateCount, 'Не вірний формат (ДД/ММ/РР)', "Invalid format (DD/MM/YY)")}"  >${localStorageUser('wantDate')}</dd> 
             </tr>
             </dl>
-            <button class="changeBtn">${translateText(translateCount, 'Змінити', 'Change')}</button>
+            <button class="changeBtn lang" key = "changeBtn">${translateText(translateCount, 'Змінити', 'Change')}</button>
         </div>
     `
     const wrap = document.querySelector('.profile')

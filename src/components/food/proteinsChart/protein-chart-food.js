@@ -1,11 +1,12 @@
 import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { translateCount } from "../../../helper/translate/translate";
+
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
 import { translateText } from "../../../helper/translate/translateText";
 import { onHandleRoute } from "../../../helper/route";
+import { changeFoodData } from "../../../helper/food-script/changeFoodData";
 const proteinDataFood = ()=>{
-
+  let translateCount = localStorage.getItem('languageCount')
   const labelProtein = translateText(translateCount, 'Залишок білків', 'Left proteins')
   const labelFats = translateText(translateCount, 'Залишок жирів', 'Left fats')
   const labelCarbohydrates = translateText(translateCount, 'Залишок вуглеводів', 'Left carbohydrates')
@@ -19,16 +20,19 @@ const proteinDataFood = ()=>{
   const normalProtein = localStorageUser('needProtein')
   const addProtein = (needProtein - normalProtein)*(-1)
   if (needProtein <= 0) needProtein = 0
+  localStorage.setItem('addProtein', addProtein)
 
   let needFats = localStorage.getItem('fats')
   const normalFats = localStorageUser('needFats')
   const addFats = (needFats - normalFats)*(-1)
   if (needFats <= 0) needFats = 0
+  localStorage.setItem('addFats', addFats)
 
   let needCarbohydrates = localStorage.getItem('carbohydrates')
   const normalCarbohydrates = localStorageUser('needCarbohydrates')
   const addCarbohydrates = (needCarbohydrates - normalCarbohydrates)*(-1)
   if (needCarbohydrates <= 0) needCarbohydrates = 0
+  localStorage.setItem('addCarbohydrates', addCarbohydrates)
 
 
 
@@ -68,6 +72,7 @@ const config = {
   return config
 }
 const createChartProteinCount = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Добова норма білків, жирів та вуглеводів', "Daily rate of proteins, fats and carbohydrates")
 
   const canvasContainer = document.querySelector('.food-chart-wrap')
@@ -81,7 +86,9 @@ const createChartProteinCount = ()=>{
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
   const saveChangeBtn = createElem('a', 'save-change-btn', `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}`, proteinChartWrap, 'href', '/')
-  saveChangeBtn.addEventListener('click', (e)=>{onHandleRoute(e)})
+
+  const id = localStorageUser('id')
+  saveChangeBtn.addEventListener('click', (e)=>{changeFoodData(e, id)})
 }
 
 export {createChartProteinCount}

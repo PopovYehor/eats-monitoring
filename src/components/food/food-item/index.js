@@ -1,4 +1,4 @@
-import { translateCount} from "../../../helper/translate/translate"
+
 import { addFoodItem } from "../../../helper/food-script/add-item-script"
 import { validationFoodCount } from "../../../helper/validation/main-form-validation"
 import "./style"
@@ -11,6 +11,7 @@ if (!selectItem) localStorage.setItem('selectedItem', JSON.stringify([]))
 if (!plateCount) localStorage.setItem('plateCount', 0)
 
 const FoodItem = (data, id)=>{
+    let translateCount = localStorage.getItem('languageCount')
     const elemName = translateCount == 0 ? data.ukText : data.enText;
     const element = `
     <div class = "food-item-container">

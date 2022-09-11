@@ -3,6 +3,8 @@ import { selectParam } from "../form-canculate/formChangeParametr"
 import FoodItem from "../../components/food/food-item"
 import { createBasketItems } from "./basket-script"
 import { paginationFood, paginationCreatingElement } from "./paginationFood"
+
+
 const apiFoodSelect = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const apiAllFoods = 'https://api.json-generator.com/templates/CLp6e4tG98eK/data'
 const token = 'm7ysw5zozkwk8m7wakyk22o83d8sxsy7x3jdmdh8'
@@ -46,6 +48,7 @@ const getAllFood = (filter = null) =>{
             paginationCreatingElement()
         }else{
             res.filter(elem =>{
+                let translateCount = localStorage.getItem('languageCount')
                 const paginationWrap = document.querySelector('.food-pagination-wrap')
                 paginationWrap.innerHTML = ""
                 if(translateCount == 0 && elem.ukText.toLowerCase() == searchInput.toLocaleLowerCase()){

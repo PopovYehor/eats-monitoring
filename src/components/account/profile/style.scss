@@ -140,7 +140,6 @@ position: relative;
             #want-day-item{
             height: 54px;
             display: flex;
-            justify-content: end;
             align-items: center;
             }
           }
@@ -266,6 +265,8 @@ position: relative;
           min-height: 47px;
           padding-bottom: 7px;
           position: relative;
+          display: flex;
+          align-items: center;
           .height-item-input, .weight-item-input, .want-weight-input{
             width: 50%;
             margin-right: 45px;
@@ -275,6 +276,8 @@ position: relative;
         .select-choise-param{
           right: -4px;
           outline: none;
+          border: none;
+          width: 58px;
           option{
             background: rgba(114, 127, 141, 0.281);
           }

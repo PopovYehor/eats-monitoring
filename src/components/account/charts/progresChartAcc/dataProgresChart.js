@@ -2,10 +2,11 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { everyDayData, weightDayData } from "./dataForProgresChart";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
-import { translateCount } from "../../../../helper/translate/translate";
 import { translateText } from '../../../../helper/translate/translateText';
 
 const progresChartData = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
+
   let paramLabel = ''
   const choiseWeightOption = localStorageUser('weightParam')
   choiseWeightOption == 'pounds' ? paramLabel = translateText(translateCount, 'фунти', 'pounds') : paramLabel = translateText(translateCount, 'кілограми', 'kilograms')
@@ -36,6 +37,7 @@ const progresChartData = ()=>{
   return config
 }
 const CreateChartProgresUser = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Прогрес вашої ваги', 'Your Weight Progress')
   
   const canvasContainer = document.querySelector('.progres-chart-user')

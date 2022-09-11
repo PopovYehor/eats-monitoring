@@ -1,10 +1,10 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { coefficientWeightIndex } from "../../../../helper/form-canculate/CalculateCoefficient";
-import { translateCount } from "../../../../helper/translate/translate";
+import { translateText } from "../../../../helper/translate/translateText";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
-import { translateText } from '../../../../helper/translate/translateText';
 const weightIndexData = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const weightIndex = localStorageUser('weightIndex')
   const residue = 100 - weightIndex
 
@@ -36,7 +36,7 @@ return config
 }
 
 const createChartWeightIndexAccount = ()=>{
-
+  let translateCount = localStorage.getItem('languageCount')
   const weightIndex = localStorageUser('weightIndex')
   const title = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
 

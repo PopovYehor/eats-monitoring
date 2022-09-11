@@ -1,10 +1,9 @@
 import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
-import { translateCount} from "../../../../helper/translate/translate";
 import { onHandleRoute } from '../../../../helper/route';
 import { translateText } from '../../../../helper/translate/translateText';
 const proteinDataFood = ()=>{
-
+  let translateCount = localStorage.getItem('languageCount')
   const labelProtein = translateText(translateCount, 'Залишок білків', 'Proteins left')
   const labelFats = translateText(translateCount, 'Залишок жирів', 'Fats left')
   const labelCarbohydrates = translateText(translateCount, 'Залишок вуглеводів', 'Carb left')
@@ -18,17 +17,19 @@ const proteinDataFood = ()=>{
   const normalProtein = localStorage.getItem('needProtein')
   const addProtein = (needProtein - normalProtein)*(-1)
   if (needProtein <= 0) needProtein = 0
+  
 
   let needFats = localStorage.getItem('fats')
   const normalFats = localStorage.getItem('needFats')
   const addFats = (needFats - normalFats)*(-1)
   if (needFats <= 0) needFats = 0
+  
 
   let needCarbohydrates = localStorage.getItem('carbohydrates')
   const normalCarbohydrates = localStorage.getItem('needCarbohydrates')
   const addCarbohydrates = (needCarbohydrates - normalCarbohydrates)*(-1)
   if (needCarbohydrates <= 0) needCarbohydrates = 0
-
+  
 
 
 const data = {
@@ -67,6 +68,7 @@ const config = {
   return config
 }
 const createChartProteinCountAccount = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Добова норма білків, жирів та вуглеводів', "Daily rate of proteins, fats and carbohydrates")
 
   const canvasContainer = document.querySelector('.account-charts-wrap')

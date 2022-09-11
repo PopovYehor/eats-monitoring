@@ -1,9 +1,16 @@
 import "../laguage/style"
 import { createElem } from "../../../helper/createElement"
-import { translateCount } from "../../../helper/translate/translate"
+
 import { translateText } from "../../../helper/translate/translateText"
 const HeaderSwitch = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     const menuWrap = document.querySelector('.language')
+    const wrap = document.getElementById('route-menu')
+    if (wrap){
+        wrap.innerHTML = ''
+        wrap.remove()
+    }
+    
     const routeMenu = createElem('ul', 'menu', null, menuWrap, 'id', 'route-menu')
     const routeDropDown = createElem('li', 'dropdown dropdown-6', null, routeMenu)
     const routeBtn = `<button class = "language-btn">&#xf007</button>`

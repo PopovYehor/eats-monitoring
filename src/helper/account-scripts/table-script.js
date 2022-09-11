@@ -2,11 +2,16 @@ import { localStorageUser } from "./user-data"
 
 const sameHeightTable = ()=>{
     const profileDescription = document.querySelectorAll('.profile-description')
+    
     const profileItem = document.querySelectorAll('.profile-item')
     profileDescription.forEach((elem , i) => {
+        const lastWeightItem = document.getElementById('last-weight-item')
+        const lastWeightDescription = document.getElementById('last-weight')
+        
         setTimeout(()=>{
             elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
         }, 250)
+        
     })
 }
 

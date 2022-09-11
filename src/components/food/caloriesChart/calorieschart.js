@@ -1,10 +1,10 @@
 import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
-import { translateCount } from "../../../helper/translate/translate";
+
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
 import { translateText } from "../../../helper/translate/translateText";
 const caloriesData = ()=>{
-
+  let translateCount = localStorage.getItem('languageCount')
   const labelCalories= translateText(translateCount, 'Залишок Калорій', 'Remainder of calories')
   const labelNeedCalories= translateText(translateCount, 'Додано Калорій', 'Added calories')
 
@@ -12,6 +12,7 @@ const caloriesData = ()=>{
   const normal = Number(localStorageUser('needCalories'))
   const addCalories = (needCalories - normal)*(-1)
   if (needCalories <= 0) needCalories = 0
+  localStorage.setItem('addCalories', addCalories)
 const data = {
     labels: [
       labelCalories,
@@ -39,6 +40,7 @@ const config = {
   return config
 }
 const createChartCaloriesCount = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Добова норма калорій', "Daily caloric intake")
   
   const canvasContainer = document.querySelector('.food-chart-wrap')

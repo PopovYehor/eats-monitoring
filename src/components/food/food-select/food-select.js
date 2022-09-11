@@ -1,10 +1,11 @@
-import { translateCount } from "../../../helper/translate/translate"
+
 import { getAllFood, getSelected } from "../../../helper/food-script/select-items-script"
 import { translateText } from "../../../helper/translate/translateText"
 import foodCount from "../food-count"
 import "./style"
 
 const foodSelect = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     const elem =`
     <div class = "food-select-item-wrap">
         <select class =" food-select-item">

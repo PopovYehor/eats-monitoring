@@ -1,10 +1,10 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/formCalculate-index";
-import { translateCount } from "../../../../helper/translate/translate";
+
 import { translateText } from "../../../../helper/translate/translateText";
 const proteinData = ()=>{
-
+  let translateCount = localStorageUser('languageCount')
   const labelProtein = translateText(translateCount, 'Білків', 'Proteins')
   const labelFats = translateText(translateCount, 'Жирів', 'Fats')
   const labelCarbohydrates = translateText(translateCount, 'Вуглеводів', 'Carbohydrates')
@@ -44,6 +44,7 @@ const config = {
   return config
 }
 const createChartProtein = ()=>{
+  let translateCount = localStorageUser('languageCount')
   const title = translateText(translateCount, 'Кількість калорій у білках, жирах та вугливодах', "Number of calories in proteins, fats and carbohydrates")
 
   const canvasContainer = document.getElementById('canvas-calories-wrap')

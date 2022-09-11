@@ -27,6 +27,12 @@ const user = {
     dataDate: localStorageUser('dataDate') || [],
     perfectWeight: localStorageUser('perfectWeight') || '',
     lastWeighing: localStorageUser('lastWeighing') || '',
+    dataDateCalories: localStorageUser('dataDateCalories') || [],
+    dataCalories: localStorageUser('dataCalories') || [],
+    dataFats: localStorageUser('dataFats') || [],
+    dataProtein: localStorageUser('dataProtein') || [],
+    dataCarb: localStorageUser('dataCarb') || [],
+    dataFoodSelects: localStorageUser('dataFoodSelects') || []
 }
 
 const userObjectValue = (keys)=>{

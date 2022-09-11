@@ -1,13 +1,8 @@
 import createAllCharts from "../../components/main/charts/createAllCharts"
 import {arrLangText, arrLangPlaceholder, arrLangValidate } from "./translate-array"
-import {localStorageUser} from "../account-scripts/user-data"
-/* import Foods from "../../views/foods" */
-
-
-let translateCount = setTimeout(()=>Number(localStorageUser('languageCount')), 500) || 0
-
-
-
+import Food from "../../components/food"
+import { createAllChartsUser } from "../../components/account/charts/createAllChartsUser"
+import HeaderSwitch from "../../components/header/login"
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
     const progressInput = document.querySelectorAll('.progress-input')
@@ -20,46 +15,35 @@ const translate = ()=>{
         elem.addEventListener('click',(e)=>{
             const target = e.target
             if (target.id == 'en'){
-                translateCount = 1
+                localStorage.setItem('languageCount', 1)
                 if (translateItem) translateItem.forEach(elem => elem.textContent = arrLangText.en[elem.getAttribute('key')])
                 if (placeHolders) placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
                 if (progressInput) progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
                 if (inputWrap) inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate['en'][elem.getAttribute('key')])
-                if (profileDescription) profileDescription.forEach(elem => {
-                    elem.textContent = arrLangText.en[elem.getAttribute('key')]
-                    if (elem.id == 'last-weight'){
-                        elem.style.height = 55+ 'px'
-                    }
-                    })
+                if (profileDescription) profileDescription.forEach(elem => {elem.textContent = arrLangText.en[elem.getAttribute('key')]})
             }
             if (target.id == 'uk'){
-                translateCount = 0
+                localStorage.setItem('languageCount', 0)
                 if (translateItem) translateItem.forEach(elem => elem.textContent = arrLangText.uk[elem.getAttribute('key')])
                 if (placeHolders) placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 if (progressInput) progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 if (inputWrap) inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate.uk[elem.getAttribute('key')])
-                if (profileDescription) profileDescription.forEach(elem => {
-                    elem.textContent = arrLangText.uk[elem.getAttribute('key')]
-                    if (elem.id == 'last-weight'){
-                        elem.style.height = 55+ 'px'
-                        lastWeightItem.style.height = 55+ 'px'
-                    }
-                    })
+                if (profileDescription) profileDescription.forEach(elem => {elem.textContent = arrLangText.uk[elem.getAttribute('key')]})
 
             }
-            localStorage.setItem('languageCount', translateCount)
+
             const chartContainer = document.querySelector('.chart-container')
             const food = document.querySelector('.food-wrap')
             const userWrap = document.querySelector('.container-user')
+            const headerLogin = document.getElementById('route-menu')
+            if (headerLogin) HeaderSwitch()
             if(chartContainer) createAllCharts()
-            /* if (food) Foods()
-            if (userWrap){
-                
-            } */
+            if (food) Food()
+            if (userWrap) createAllChartsUser()
         })
     })
 }
 
 
 
-export {translate, translateCount}
+export {translate}

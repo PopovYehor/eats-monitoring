@@ -1,5 +1,5 @@
 import { createElem } from "../createElement"
-import { translateCount } from "../translate/translate"
+
 import { translateText } from "../translate/translateText"
 import { createFoodItem } from "./select-items-script"
 const paginationFood = {
@@ -28,6 +28,7 @@ const pagination = (elem, equal)=>{
 }
 
 const paginationCreatingElement = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     const paginationWrap = document.querySelector('.food-pagination-wrap')
     createElem('div', 'prev btn-pag', `${translateText(translateCount, 'Назад', 'Prev')}`, paginationWrap)
     createElem('span', 'page-count', `${paginationFood.page}`, paginationWrap)
@@ -40,6 +41,7 @@ const paginationCreatingElement = ()=>{
         foodElementsWrap.innerHTML = ''
         const sliceRes = paginationFood.item.slice((paginationFood.offset-paginationFood.limit), paginationFood.offset)
         sliceRes.map(element =>createFoodItem(element, foodElementsWrap))
+        window.scrollTo({top:0, left: 0, behavior: 'smooth'})
     }))
 }
 

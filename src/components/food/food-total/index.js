@@ -1,4 +1,4 @@
-import { translateCount } from "../../../helper/translate/translate"
+
 import { translateText } from "../../../helper/translate/translateText"
 import "./style"
 localStorage.setItem('totalCalories', 0)
@@ -9,6 +9,7 @@ localStorage.setItem('totalCarbohydrates', 0)
 const total = (item, objectItem)=>item.reduce((accumulator, object) => {return accumulator + object[objectItem]}, 0)
 
 const TotalFood = ()=>{
+    let translateCount = localStorage.getItem('languageCount')
     let calories = localStorage.getItem('totalCalories')
     let protein = localStorage.getItem('totalProtein')
     let fats = localStorage.getItem('totalFats')

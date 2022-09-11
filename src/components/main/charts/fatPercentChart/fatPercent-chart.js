@@ -5,9 +5,10 @@ import Chart from 'chart.js/auto'
 import { fatPercent,  fatWeight } from "../../../../helper/form-canculate/formCalculate-index";
 import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { sexData } from "../../../../helper/form-canculate/formTranformationData";
-import { translateCount } from "../../../../helper/translate/translate";
+
 import { translateText } from "../../../../helper/translate/translateText";
 const fatChartData = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const remainder = 100 - fatPercent()
   const labelFatPerent = translateText(translateCount, 'Процент жиру, %', 'Percentage of fat, %')
 const data = {
@@ -32,6 +33,7 @@ const config = {
   return config
 }
 const createFatPercentChart = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   let paramLabel = ''
   let weightFat = ''
   const choiseWeightOption = selectParam(formsData().choiseWeight)

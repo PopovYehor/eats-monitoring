@@ -1,8 +1,9 @@
 import { selectParam } from "./formChangeParametr"
 import { formsData } from "./formTranformationData"
-import { translateCount } from "../translate/translate"
+
 import { translateText } from "../translate/translateText"
 const coefficientWeightIndex = (index)=>{
+    let translateCount = localStorage.getItem('languageCount')
 let elem = ''
  const coefWeightIndex = [
     ['Чіткий дефіцит маси тіла','Дефіцит маси тіла', 'Норма', 'Надлишок маси тіла', 'Ожиріння І ступеня', 'Ожиріння ІІ ступеня', 'Ожиріння ІІІ ступеня'],
@@ -52,6 +53,7 @@ const activity = ()=>{
 }
 
 const fatProcentDescription = (sex, count)=>{
+    let translateCount = localStorage.getItem('languageCount')
     let element = ''
  const correlationFat = [
     [`невід'ємний жир`,'спортивний показник','добрий показник','середній показник', 'поганий показник'],

@@ -1,14 +1,14 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { caloriesFormula, calculateWantCalories  } from "../../../../helper/form-canculate/formCalculate-index";
-import { translateCount } from "../../../../helper/translate/translate";
+
 import { translateText } from "../../../../helper/translate/translateText";
 const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
 
 const CaloriesChartData = ()=>{
-  
+  let translateCount = localStorage.getItem('languageCount')
   const wantCalories = Number(calculateWantCalories()).toFixed(0)
   const remainder = wantCalories - caloriesFormula()
 
@@ -87,6 +87,7 @@ const CaloriesChartData = ()=>{
   return config
 }
 const createCaloriesChart = ()=>{
+  let translateCount = localStorage.getItem('languageCount')
   const title = translateText(translateCount, 'Розрахунок калорій', 'Calculating Calories')
 
   const wrap = document.getElementById('canvas-calories-wrap')

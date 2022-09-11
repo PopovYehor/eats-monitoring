@@ -1,5 +1,5 @@
 import { formsData } from "../form-canculate/formTranformationData"
-import { translateCount } from "../translate/translate"
+
 import { translateText } from "../translate/translateText"
 const addEvent = (elem, func, elem2)=>{
     if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
@@ -29,6 +29,7 @@ const findReg = (item)=>{
     return regEx
 }
 const veref = (elem, id, item)=>{
+    let translateCount = localStorage.getItem('languageCount')
     const element = elem
     if (elem){
         const verefFunction = ()=>{
