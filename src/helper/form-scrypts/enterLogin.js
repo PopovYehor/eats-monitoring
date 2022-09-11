@@ -82,4 +82,6 @@ fetch(`${urlData}/${id}`, {
     })  
 }
 
+
+
 export {logIn, postSignUp, changeAccount}

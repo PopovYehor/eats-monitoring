@@ -23,6 +23,16 @@ const userSelectParam = (arr, item, arrText)=>{
     return element
 }
 
+const keySelectParam = (arr, item)=>{
+    let element = ''
+    arr.forEach((elem) => {
+        if (elem == localStorageUser(item)){
+            element = elem
+        }
+    })
+    return element
+}
+
 const userParam = (store, item, text1, text2, text3, text4)=>{
     let translateCount = localStorage.getItem('languageCount')
     let elem = ''
@@ -50,20 +60,20 @@ const account = ()=>{
             </tr>
             <tr>        
                 <dt class= "profile-description" id="age" key = "age">${translateText(translateCount, 'Вік', "Age")}</dt>
-                    <dd class="profile-item" id="age-item"   data-validate = "${translateText(translateCount, 'Некоректний вік', "Incorrect age")}">${localStorageUser('age')} ${translateText(translateCount, 'роки(ів)', 'years old')}</dd>
+                    <dd class="profile-item" id="age-item"   data-validate = "${translateText(translateCount, 'Некоректний вік', "Incorrect age")}">${localStorageUser('age')} <span class = "lang" key= "oldYears">${translateText(translateCount, 'роки(ів)', 'years old')}</span></dd>
             </tr>
             <tr>   
                 <dt class= "profile-description" id="sex" key = "sex">${translateText(translateCount, 'Стать', "Sex")}</dt>
-                    <dd class="profile-item" id="sex-item">${userSelectParam(arrSex.value, 'sex', arrSex.text, )}</dd>
+                    <dd class="profile-item lang" id="sex-item" key ="${keySelectParam(arrSex.value, 'sex')}">${userSelectParam(arrSex.value, 'sex', arrSex.text, )}</dd>
             </tr>
             <tr>        
                 <dt class= "profile-description" id="height" key = "height">${translateText(translateCount, 'Зріст', "Height")}</dt>
-                    <dd class="profile-item" id="height-item" data-validate = "${translateText(translateCount, 'Некоректний зріст', "Incorrect height")}">${localStorageUser('height')} ${userParam('heightParam', 'sm', 'см', 'sm', 'дюймів', 'inches')}</dd>
+                    <dd class="profile-item" id="height-item" data-validate = "${translateText(translateCount, 'Некоректний зріст', "Incorrect height")}">${localStorageUser('height')} <span class = "lang" key= "sm">${userParam('heightParam', 'sm', 'см', 'sm', 'дюймів', 'inches')}</span></dd>
             </tr>
                     
             <tr>    
                 <dt class= "profile-description" id="weight" key = "weight">${translateText(translateCount, 'Вага', "Weight")}</dt>
-                    <dd class="profile-item" id="weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('weight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+                    <dd class="profile-item" id="weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('weight')} <span class = "lang" key= "kg">${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</span></dd>
             </tr>
             <tr>    
                 <dt class= "profile-description" id="last-weight" key = "lastWeight">${translateText(translateCount, 'Останнє зважування', "Last weighing")}</dt>
@@ -71,15 +81,15 @@ const account = ()=>{
             </tr>
             <tr>    
                 <dt class= "profile-description" id="perfect-weight" key = "perfectWeight">${translateText(translateCount, 'Ідеальна вага', "Perfect weight")}</dt>
-                    <dd class="profile-item" id="perfect-weight-item">${localStorageUser('perfectWeight')} ${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+                    <dd class="profile-item" id="perfect-weight-item">${localStorageUser('perfectWeight')} <span class = "lang" key= "kg">${userParam('weightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</span></dd>
             </tr>
             <tr>    
                 <dt class= "profile-description" id="wantWeight" key = "wantWeight">${translateText(translateCount, 'Бажана вага', "Want weight")}</dt>
-                    <dd class="profile-item" id="want-weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('wantWeight')} ${userParam('wantWeightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</dd>
+                    <dd class="profile-item" id="want-weight-item" data-validate = "${translateText(translateCount, 'Некоректна вага', "Incorrect weight")}">${localStorageUser('wantWeight')} <span class = "lang" key= "kg">${userParam('wantWeightParam', 'kg', 'кг', 'kg', 'фунтів', 'pounds')}</span></dd>
             </tr>
             <tr>
                 <dt class= "profile-description" id="activ" key = "activ">${translateText(translateCount, 'Рівень активності', "Activity level")}</dt>
-                    <dd class="profile-item" id="activ-item">${userSelectParam(arrActiv.value, 'active', arrActiv.text)}</dd>
+                    <dd class="profile-item lang" id="activ-item" key ="${keySelectParam(arrActiv.value, 'active')}">${userSelectParam(arrActiv.value, 'active', arrActiv.text)}</dd>
             </tr>
             <tr>       
                 <dt class= "profile-description" id="dataRegistr" key = "dataRegistr">${translateText(translateCount, 'Дата реєстрації', "Date of registration")}</dt>

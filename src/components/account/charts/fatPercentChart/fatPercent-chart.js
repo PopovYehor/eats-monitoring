@@ -51,7 +51,7 @@ const createFatPercentChartAccount = ()=>{
     paramLabel = translateText(translateCount, 'кілограмів', 'kilograms')
   }
 
-  const title = translateText(translateCount, 'Процент жиру в організмі', 'Percentage of body fat')
+  const title = translateText(translateCount, 'Процент жиру у тілі', 'Percentage of body fat')
   const canvasContainer = document.querySelector('.account-charts-wrap')
   const chartWraper = document.getElementById('fat-chart-container-account')
   if (chartWraper) chartWraper.remove()

@@ -6,17 +6,22 @@ import HeaderSwitch from "../../components/header/login"
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
     const progressInput = document.querySelectorAll('.progress-input')
-    const translateItem = document.querySelectorAll('.lang')
     const inputWrap = document.querySelectorAll('.wrap-input')
     const profileDescription = document.querySelectorAll('.profile-description')
     const translateBtn = document.querySelectorAll('.translate')
-    const lastWeightItem = document.getElementById('last-weight-item')
+    
     translateBtn.forEach(elem =>{
         elem.addEventListener('click',(e)=>{
+            const translateItem = document.querySelectorAll('.lang')
+            console.log(translateItem)
             const target = e.target
             if (target.id == 'en'){
                 localStorage.setItem('languageCount', 1)
-                if (translateItem) translateItem.forEach(elem => elem.textContent = arrLangText.en[elem.getAttribute('key')])
+                if (translateItem) translateItem.forEach(elem =>{
+                    const text = arrLangText.en[elem.getAttribute('key')]
+                    if (elem.classList.contains('profile-item')) {elem.textContent = text.replace(/\((.*?)\)/, '')}
+                    else {elem.textContent = text}
+                })
                 if (placeHolders) placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
                 if (progressInput) progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.en[elem.getAttribute('key')])
                 if (inputWrap) inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate['en'][elem.getAttribute('key')])
@@ -24,7 +29,11 @@ const translate = ()=>{
             }
             if (target.id == 'uk'){
                 localStorage.setItem('languageCount', 0)
-                if (translateItem) translateItem.forEach(elem => elem.textContent = arrLangText.uk[elem.getAttribute('key')])
+                if (translateItem) translateItem.forEach(elem =>{
+                    const text = arrLangText.uk[elem.getAttribute('key')]
+                    if (elem.classList.contains('profile-item')) {elem.textContent = text.replace(/\((.*?)\)/, '')}
+                    else {elem.textContent = text}
+                })
                 if (placeHolders) placeHolders.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 if (progressInput) progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 if (inputWrap) inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate.uk[elem.getAttribute('key')])

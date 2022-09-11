@@ -48,10 +48,10 @@ const addInputForChange = ()=>{
     createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
-    arrSex.value.forEach((elem, i) => createOption('sex-item', elem, arrSex.text[i], selectSex, userObjectValue('sex')))
+    arrSex.value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex.text[i], selectSex, userObjectValue('sex')))
 
     let selectActive = createInput('select', 'select-active select-item', null, null, activItem, 'active')
-    arrActiv.value.forEach((elem, i)=>{createOption('activ-item', elem , arrActiv.text[i] , selectActive, userObjectValue('active'))})
+    arrActiv.value.forEach((elem, i)=>{createOption('activ-item lang', elem , arrActiv.text[i] , selectActive, userObjectValue('active'))})
     
 }
 
@@ -121,6 +121,8 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
             }
 
         })
+            localStorage.setItem('selectedItem', JSON.stringify([]))
+            localStorage.setItem('plateCount', JSON.stringify(0))
             profile.innerHTML = ''
             const preloaderWrap = createElem('div', 'profile-preloader-wrap', null, profile)
             Preloader(preloaderWrap)

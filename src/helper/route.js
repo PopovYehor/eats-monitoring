@@ -1,6 +1,6 @@
 import Account from "../views/account"
 import Foods from "../views/foods"
-
+import Main from "../views/main"
 const onHandleRoute = (e) => {
     e = e || e.window
     e.preventDefault()
@@ -9,7 +9,7 @@ const onHandleRoute = (e) => {
 }
 
 const routes = {
-    '/': Account,
+    '/': Main,
     '/food': Foods,
 }
 

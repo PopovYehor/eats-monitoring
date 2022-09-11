@@ -9,6 +9,7 @@ const sameHeightTable = ()=>{
         const lastWeightDescription = document.getElementById('last-weight')
         
         setTimeout(()=>{
+            elem==lastWeightDescription ? (elem.style.height = 55 + 'px', lastWeightItem.style.height = 55 + 'px') :
             elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
         }, 250)
         
