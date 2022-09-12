@@ -1,6 +1,9 @@
 import Account from "../views/account"
 import Foods from "../views/foods"
+import Login from "../views/login"
 import Main from "../views/main"
+import SignUp from "../views/signUp"
+import { localStorageUser } from "./account-scripts/user-data"
 const onHandleRoute = (e) => {
     e = e || e.window
     e.preventDefault()
@@ -9,15 +12,18 @@ const onHandleRoute = (e) => {
 }
 
 const routes = {
-    '/': Main,
+    '/signUp': SignUp,
+    '/login': Login,
+    '/': !localStorageUser('userName') ? Main : Account ,
     '/food': Foods,
+    '/account': Account,
 }
 
 const onLocation = () => {
     const { pathname } = window.location
     const route = routes[pathname] || routes[404]
-    const main = document.getElementById('root')
-    main.innerHTML = '';
+    const root = document.getElementById('root')
+    root.innerHTML = '';
     route()
 }
 

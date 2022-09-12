@@ -128,6 +128,7 @@ const validationFoodCount = (id)=>{
 }
 
 const valueVer = (inputes)=>{
+
     let flagInput = ''
     for (let i = 0; i< inputes.length; i++){
         if (inputes[i].value == ""){

@@ -1,4 +1,15 @@
+import { selectParam } from '../../helper/form-canculate/formChangeParametr'
+import { formsData } from '../../helper/form-canculate/formTranformationData'
+import { onHandleRoute } from '../../helper/route'
 import './style.scss'
+
+const checkSelectParam = (item, select)=>{
+  const items = sessionStorage.getItem(item)
+  const elementOption = select.querySelectorAll('option')
+  elementOption.forEach(elem =>{
+    if (elem.value == items) select.value = items
+  })
+}
 
 const signUpComponent = ()=>{
     const elem = `
@@ -46,14 +57,14 @@ const signUpComponent = ()=>{
             <!--Возраст-->
             <div class="wrap-row">
             <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="Від 3 до 99 років">
-              <input class="input" type="text" name="age" value = "25" required> 
+              <input class="input" type="text" name="age" value = "${sessionStorage.getItem('age') || ''}" required> 
               <span class="focus-input" key = 'age' data-placeholder="Вік"></span>
             </div>
             <!--пол-->
             <div class="wrap-input validate-input wrap-input-row" id = 'sex-input' key = 'sex' data-validate="Оберіть стать">
               <select name="sex" id="sex" class="select-input" required>
                 <option class="lang" value="choise" selected disabled key = 'choiseSex'>Оберіть стать</option>
-                <option class="lang" value="male" key = 'male' selected >Чоловік</option>
+                <option class="lang" value="male" key = 'male'>Чоловік</option>
                 <option class="lang" value="female" key = 'female'>Жінка</option>
               </select>
               <span class= 'select-item'></span>
@@ -66,7 +77,7 @@ const signUpComponent = ()=>{
                 <option class = "lang" value="sm" key="sm">См</option>
                 <option class = "lang" value="inches" key="inches">Дюйми</option>
             </select>
-              <input class="input" type="text" name="height" value = "195" required>
+              <input class="input" type="text" name="height" value = "${sessionStorage.getItem('height') || ''}" required>
               <span class="focus-input" key = 'height' data-placeholder="Зріст"></span>
             </div>
             <!--Вес-->
@@ -75,14 +86,14 @@ const signUpComponent = ()=>{
                   <option class = "lang" value="kg" key="kg">Кг</option>
                   <option class = "lang" value="pounds" key="pound">Фунти</option>
                 </select>
-              <input class="input" type="text" name="weight" value = "90" required>
+              <input class="input" type="text" name="weight" value = "${sessionStorage.getItem('weight') || ''}" required>
               <span class="focus-input" key = 'weight' data-placeholder="Вага"></span>
             </div>
           </div>
           <!--Желаемые данные-->
           <div class="wrap-row">
             <div class="wrap-input validate-input wrap-input-row" id = 'want-weight-input' key = 'wantWeight' data-validate="Некоректна вага">
-              <input class="input" type="text" name="wantWeight" value = "80" required>
+              <input class="input" type="text" name="wantWeight" value = "${sessionStorage.getItem('wantWeight') || ''}" required>
               <span class="focus-input" key = 'wantWeight' data-placeholder="Бажана вага"></span>
               <select class="choise-weight select-choise-param" name="wantWeightSelect"  tabindex="-1">
                 <option class = "lang" value="kg" key="kg">Кг</option>
@@ -91,19 +102,19 @@ const signUpComponent = ()=>{
             </div>
             <!--желаемое количество дней-->
             <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="Некоректна кількість днів">
-              <input class="input" type="text" name="wantDay" value = "90" required>
+              <input class="input" type="text" name="wantDay" value = "${sessionStorage.getItem('wantDay') || ''}" required>
               <span class="focus-input" key = 'weight' data-placeholder="Кількість днів до цілі"></span>
             </div>
           </div>
             <!--Уровень активности-->
             <div class="wrap-input validate-input" id = 'activ-input' key = 'activ' data-validate="Оберіть рівень активності">
               <select name="activeLevel" id="active-level" class="select-input" required>
-                <option class="lang" value="choise" selected disabled key = "choiseActiv">Оберіть рівень активності</option>
-                <option class="lang" value="none" key = 'noneActiv'>Немає активності (паралізований)</option>
-                <option class="lang" value="low" key = 'lowActiv' selected>Мала активність (Сидячий спосіб життя)</option>
-                <option class="lang" value="middle" key = 'middleActiv'>Середня активність (1-2 тренування на тиждень)</option>
-                <option class="lang" value="hight" key = 'higthActiv'>Висока активність (3-5 тренувань на тиждень)</option>
-                <option class="lang" value="very hight" key = 'veryHightActiv'>Дуже висока активність</option>
+                <option class="lang" value="choise" selected disabled key = "choise">Оберіть рівень активності</option>
+                <option class="lang" value="none" key = 'none'>Немає активності (паралізований)</option>
+                <option class="lang" value="low" key = 'low' >Мала активність (Сидячий спосіб життя)</option>
+                <option class="lang" value="middle" key = 'middle'>Середня активність (1-2 тренування на тиждень)</option>
+                <option class="lang" value="hight" key = 'higth'>Висока активність (3-5 тренувань на тиждень)</option>
+                <option class="lang" value="very hight" key = 'veryHight'>Дуже висока активність</option>
               </select>
               <span class= 'select-item'></span>
             </div>
@@ -118,10 +129,10 @@ const signUpComponent = ()=>{
             </div>
 
             <div class="text-center p-t-115">
-              <span class="txt1 lang" key="haveAcc">
-                Вже маєте акаунт?
+              <span class="trueSignUp lang" key="trueSignUp">
+                Реєстрація пройшла успішно!
               </span>
-              <a class="txt2 lang" key="login" href="../login/login.html">
+              <a class="trueSignUp lang" id = "loginBtnSign" key="login" href="/login">
                 Вхід
               </a>
             </div>
@@ -129,8 +140,27 @@ const signUpComponent = ()=>{
         </div>
       </div>
     `
+    
     const wrap = document.querySelector('.limiter')
     wrap.innerHTML = elem
+
+    const loginBtn = document.getElementById('loginBtnSign')
+    loginBtn.addEventListener('click', (e)=>onHandleRoute(e))
+
+    const selectSex = document.getElementById('sex')
+    checkSelectParam('sex', selectSex)
+
+    const selectActive = document.getElementById('active-level')
+    checkSelectParam('activ', selectActive)
+
+    const selectHeightParam = document.querySelector('.choise-height')
+    checkSelectParam('selectHeight', selectHeightParam)
+
+    const selectWeightParam = document.querySelector('.choise-weight')
+    checkSelectParam('selectWeight', selectWeightParam)
+
+    const selectWantWeightParam = document.querySelector('.choise-height')
+    checkSelectParam('selectWantWeight', selectWantWeightParam)
 }
 
 export {signUpComponent}

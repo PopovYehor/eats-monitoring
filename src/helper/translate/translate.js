@@ -13,7 +13,6 @@ const translate = ()=>{
     translateBtn.forEach(elem =>{
         elem.addEventListener('click',(e)=>{
             const translateItem = document.querySelectorAll('.lang')
-            console.log(translateItem)
             const target = e.target
             if (target.id == 'en'){
                 localStorage.setItem('languageCount', 1)

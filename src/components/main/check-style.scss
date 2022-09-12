@@ -42,12 +42,13 @@
   background-image: url("../../assets/preloader-background.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   opacity: 0.5;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1; 
 }
 
@@ -71,7 +72,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endColorstr="#c5e904",GradientType=1);
 }
 
-.wrap-login {
+.wrap-main {
   width: 490px;
   height: 715px;
   margin-top: 15px;
@@ -348,14 +349,7 @@
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
-@media (max-width: 576px) {
-  header{
-    width: 100%;
-  }
-  .wrap-login {
-    padding: 77px 15px 33px 15px;
-  }
-}
+
 
 
 
@@ -436,3 +430,17 @@
   top: 46%;
 }
 
+.register-massage-wrap{
+  width: 90%;
+  height: 25px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  margin-top: 25px;
+  .register-massage{
+    font-size: 12px;
+    text-align: center;
+    .register-massage-link{
+      font-size: 12px;
+    }
+  }
+}

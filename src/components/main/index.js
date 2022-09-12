@@ -3,11 +3,14 @@ import "./check-style.scss"
 import createAllCharts from "./charts/createAllCharts"
 import { verAll, valueVer} from "../../helper/validation/main-form-validation"
 import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/form-scrypts/placeholderUp"
+import { onHandleRoute } from "../../helper/route"
+import { defheight, formsData } from "../../helper/form-canculate/formTranformationData"
+import { selectParam } from "../../helper/form-canculate/formChangeParametr"
 const mainComponent = ()=>{
   localStorage.setItem('languageCount', 0)
     const elem = `
     <div class="container-login">
-        <div class="wrap-login">
+        <div class="wrap-main">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
             <span class="login-form-title p-b-26">
               Eats Monitoring
@@ -78,6 +81,9 @@ const mainComponent = ()=>{
                   Розрахувати
                 </button>
               </div>
+              <div class=register-massage-wrap>
+                <p class = "register-massage" ><a class = "register-massage-link lang" href = "/signUp" key = "registerLink">Зареєструйтесь</a> <span class = "lang" key = "massageLink">для слідкуванням за своїм прогресом</span></p>
+              </div>
             </div>
           </form>
         </div>
@@ -89,13 +95,21 @@ const mainComponent = ()=>{
     placeholderClickUp()
     selectHasVal()
     verAll()
-
+    
+    const signUpBtn = document.querySelector('.register-massage-link')
+    signUpBtn.addEventListener('click', (e)=>onHandleRoute(e))
     
     const calcBtn = document.querySelector('.login-form-btn')
     calcBtn.addEventListener('click', (e)=>{
       const dontValid = document.querySelectorAll('.alert-validate')
       const inputes = document.querySelectorAll('.input')
-      if (valueVer(inputes) == true && dontValid.length == 0) createAllCharts()
+      if (valueVer(inputes) == true && dontValid.length == 0){
+          defheight()
+          sessionStorage.setItem('selectHeight',selectParam(formsData().choiseHeight).value)
+          sessionStorage.setItem('selectWeight',selectParam(formsData().choiseWeight).value)
+          sessionStorage.setItem('selectWantWeight',selectParam(formsData().wantWeightSelect).value)
+          createAllCharts()
+        }
     })
 }
 

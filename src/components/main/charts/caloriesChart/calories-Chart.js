@@ -3,6 +3,7 @@ import Chart from 'chart.js/auto'
 import { caloriesFormula, calculateWantCalories  } from "../../../../helper/form-canculate/formCalculate-index";
 
 import { translateText } from "../../../../helper/translate/translateText";
+import { onHandleRoute } from "../../../../helper/route";
 const DATA_COUNT = 5;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
@@ -98,6 +99,7 @@ const createCaloriesChart = ()=>{
   const myChart = new Chart(canvasProtein, CaloriesChartData())
 
   const canculateBtn = createElem('a', 'count-calories-account-btn', translateText(translateCount, 'Розрахувати', 'Calculate'), caloriesChartWrap, 'href', '/food')
+  canculateBtn.addEventListener('click', (e)=>onHandleRoute(e))
 }
 
 export {createCaloriesChart}

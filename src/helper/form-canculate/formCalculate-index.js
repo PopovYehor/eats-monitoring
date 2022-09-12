@@ -12,6 +12,8 @@ const weightIndex = ()=>{
 const caloriesFormula = ()=>{
     let calcCalories = ''
     sexData() == 'male' ? calcCalories = (((10*weightData()) + (6.25*heightData()) + (5*yearData()) - 161)*activity()) : calcCalories = (((10*weightData()) + (6.25*heightData()) + (5*yearData()) + 5)*activity())
+    localStorage.setItem('calories', Math.round(calcCalories))
+    localStorage.setItem('needCalories', Math.round(calcCalories))
     return Math.round(calcCalories)
 }
 
@@ -33,7 +35,6 @@ const calculatePartOfWantCalories = (part)=>{
 const fatPercent = ()=>{
     let fatPercent = ''
     sexData() == 'male' ? fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-16.2) : fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-5.4)
-    console.log(fatPercent)
     return fatPercent
 }
 

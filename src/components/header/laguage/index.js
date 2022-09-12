@@ -1,5 +1,6 @@
 import './style.scss'
 import { createElem } from "../../../helper/createElement"
+import { localStorageUser } from '../../../helper/account-scripts/user-data'
 
 const LangHeader = ()=>{
     const menuWrap = document.querySelector('.language')
@@ -15,6 +16,7 @@ const LangHeader = ()=>{
     LanguageDropdownMenu.innerHTML = LanguageElement
     let translateCount = localStorage.getItem('languageCount')
     if (!translateCount) localStorage.setItem('languageCount', 0)
+    
 }
 
 export default LangHeader

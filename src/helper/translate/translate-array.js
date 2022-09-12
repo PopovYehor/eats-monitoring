@@ -37,6 +37,9 @@ const arrLangText = {
         'weight' : 'Вага',
         'changeBtn': 'Змінити',
         'oldYears': 'роки(ів)',
+        'massageLink': 'для слідкуванням за своїм прогресом',
+        'registerLink': 'Зареєструйтесь',
+        'trueSignUp':'Реєстрація пройшла успішно!',
     },
     en:{
         'title': 'Sing Up',
@@ -75,6 +78,9 @@ const arrLangText = {
         'weight' : 'Weight',
         'changeBtn': 'Change',
         'oldYears': 'years old',
+        'massageLink': 'to track your progress',
+        'registerLink': 'Sign up',
+        'trueSignUp':'Registration is successful',
     }
 }
 const arrLangPlaceholder = {

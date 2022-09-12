@@ -3,7 +3,12 @@
 [ Utility ]*/
 .text-center{
   text-align: center;
-  padding-top: 50px;
+  padding-top: 35px;
+  .trueSignUp{
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.74);
+  }
+  
 }
 .txt1 {
   font-family: Poppins-Regular;
@@ -282,7 +287,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endCo
 }
 
 .login-form-btn {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, fontAwesome;
   font-size: 15px;
   color: #fff;
   font-weight: 600;
@@ -309,11 +314,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endCo
 /*------------------------------------------------------------------
 [ Responsive ]*/
 
-@media (max-width: 576px) {
-  .wrap-login {
-    padding: 77px 15px 33px 15px;
-  }
-}
+
 
 
 

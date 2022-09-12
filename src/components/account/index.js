@@ -1,9 +1,9 @@
 import { createElem } from "../../helper/createElement"
 import Preloader from "../preloader"
-import { logIn } from "../../helper/form-scrypts/enterLogin"
 import "./style"
 import { account } from "./profile"
 import {createAllChartsUser} from "./charts/createAllChartsUser"
+import Login from "../../views/login"
 const AccountProfile = ()=>{
     const root = document.getElementById('root')
     const wrap = createElem('div', 'user-wrap', null, root)
@@ -24,7 +24,9 @@ const AccountProfile = ()=>{
         const preloader = document.querySelector('.preload-account-page')
         if (preloader) preloader.remove()
     }else{
-        logIn()
+        root.innerHTML = ''
+        window.history.pushState({}, '', '/login')
+        window.route = Login()
     }
 }
 

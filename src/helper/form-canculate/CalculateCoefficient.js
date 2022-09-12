@@ -49,6 +49,7 @@ const activity = ()=>{
     let optionActive = selectParam(formsData().activeLevel)
     let active = ''
     activ.forEach(elem => Object.keys(elem) == optionActive.value ? active = Object.values(elem) : null)
+    sessionStorage.setItem('activ', optionActive.value)
     return active
 }
 

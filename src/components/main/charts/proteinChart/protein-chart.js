@@ -16,8 +16,16 @@ const proteinData = ()=>{
   }
 
   const proteins = calculatePartOfWantCalories(coeff.protein)
+  localStorage.setItem('protein', proteins)
+  localStorage.setItem('needProtein', proteins)
+
   const fats = calculatePartOfWantCalories(coeff.fats)
+  localStorage.setItem('fats', fats)
+  localStorage.setItem('needFats', fats)
+
   const carbohydrates = calculatePartOfWantCalories(coeff.carbohydrates)
+  localStorage.setItem('carbohydrates', carbohydrates)
+  localStorage.setItem('needCarbohydrates', carbohydrates)
 
 const data = {
     labels: [

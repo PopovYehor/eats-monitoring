@@ -31,11 +31,13 @@ const activData = ()=>{
 }
 const wantDay = () =>{
     const wantDay = formsData().wantDay.value
+    sessionStorage.setItem('wantDay', wantDay)
     return wantDay
 }
 
 const yearData = ()=>{
     const year = formsData().age.value
+    sessionStorage.setItem('age', year)
     return year
 }
 
@@ -47,6 +49,7 @@ const heightData = ()=>{
 }
 const defheight = ()=>{
     let height = formsData().height.value
+    sessionStorage.setItem('height', height)
     return height
 }
 const weightData = ()=>{
@@ -57,6 +60,7 @@ const weightData = ()=>{
 }
 const defWeight = ()=>{
     let weight = formsData().weight.value
+    sessionStorage.setItem('weight', weight)
     return weight
 }
 
@@ -68,11 +72,13 @@ const wantWeightData= ()=>{
 }
 const defWantWeight = ()=>{
     let wantWeight = formsData().wantWeight.value
+    sessionStorage.setItem('wantWeight', wantWeight)
     return wantWeight
 }
 
 const sexData = ()=>{
     const sexes = selectParam(formsData().sex)
+    sessionStorage.setItem('sex', sexes.value)
     return sexes.value
 }
 

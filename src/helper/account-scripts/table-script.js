@@ -1,5 +1,6 @@
 import { localStorageUser } from "./user-data"
-
+import { translateText } from "../translate/translateText"
+import { arrActiv } from "./changeDataUser"
 const sameHeightTable = ()=>{
     const profileDescription = document.querySelectorAll('.profile-description')
     
@@ -82,4 +83,40 @@ const fatWeightAccount = ()=>{
     return fatWeight
 }
 
-export {sameHeightTable, caloriesFormulaAccount, fatWeightAccount}
+const userSelectParam = (arr, item, arrText)=>{
+    let element = ''
+        arr.forEach((elem, i) => {
+            if (elem == localStorageUser(item)){
+                element = arrText[i].replace(/\((.*?)\)/, '')
+                
+            }
+        })
+        if (item == 'active'){
+            arr.forEach((element, i) => {
+                if (element == localStorageUser(item)){
+                    const [userActiveCoef] = Object.values(arrActiv.coef[i])
+                    localStorage.setItem('activeCoef', JSON.stringify(userActiveCoef))
+                }
+            })
+        }
+    return element
+}
+
+const keySelectParam = (arr, item)=>{
+    let element = ''
+    arr.forEach((elem) => {
+        if (elem == localStorageUser(item)){
+            element = elem
+        }
+    })
+    return element
+}
+
+const userParam = (store, item, text1, text2, text3, text4)=>{
+    let translateCount = localStorage.getItem('languageCount')
+    let elem = ''
+    localStorageUser(store) == item ? elem = translateText(translateCount, text1, text2) :  elem = translateText(translateCount, text3, text4)
+    return elem
+} 
+
+export {sameHeightTable, caloriesFormulaAccount, fatWeightAccount, userSelectParam, keySelectParam, userParam}
