@@ -1,7 +1,5 @@
-import { selectParam } from '../../helper/form-canculate/formChangeParametr'
-import { formsData } from '../../helper/form-canculate/formTranformationData'
 import { onHandleRoute } from '../../helper/route'
-import './style.scss'
+import "./style"
 
 const checkSelectParam = (item, select)=>{
   const items = sessionStorage.getItem(item)
@@ -14,7 +12,7 @@ const checkSelectParam = (item, select)=>{
 const signUpComponent = ()=>{
     const elem = `
     <div class="container-login">
-        <div class="wrap-login">
+        <div class="wrap-main" id = "wrap-signUp">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
             <span class="login-form-title p-b-26 lang" key = 'title'>
               Реєстрація
@@ -53,6 +51,11 @@ const signUpComponent = ()=>{
             <div class="wrap-input validate-input" id = 'surname-input' key = 'surname' data-validate="Некоректне прізвище">
               <input class="input" type="text" name="surname" value = "Попов" required>
               <span class="focus-input" key ='surname' data-placeholder="Прізвище"></span>
+            </div>
+            <!--email-->
+            <div class="wrap-input validate-input" id = 'email-input' key = 'email' data-validate="Некоректний email">
+              <input class="input" type="text" name="email" value = "" required>
+              <span class="focus-input" key ='email' data-placeholder="Email"></span>
             </div>
             <!--Возраст-->
             <div class="wrap-row">

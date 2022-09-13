@@ -123,3 +123,44 @@
         }
     }
 }
+
+/* @media all and (min-width: 1440px) and (max-width:1820px  ){
+    .container-user{
+        width: auto;
+    }
+    .account-charts-wrap{
+        height: 265px;
+        padding: 10px;
+        .chart-data-container{
+          width: 200px !important;
+          height: 220px !important;
+          .canvas-title{
+            font-size: 15px;
+          }
+          .chart-label{
+            font-size: 15px;
+          }
+        }
+        .chart-wrapper{
+            #account-calories-chart{
+            width: 200px !important;
+            height: 160px !important;
+            }
+            #protein-chart-account{
+            width: 215px !important;
+            height: 170px !important;
+            }
+            #index-chart-account{
+            width: 170px !important;
+            height: 150px !important;
+            }
+            #fat-chart-account{
+            width: 140px !important ;
+            height: 130px !important;
+            }
+        }
+      }
+      .progres-chart-user{
+        margin-top: 20px !important;
+      }
+} */

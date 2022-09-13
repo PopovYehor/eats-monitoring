@@ -5,7 +5,7 @@ const arrLangText = {
         'choiseSex': 'Оберіть стать',
         'male': 'Чоловік',
         'female': 'Жінка',
-        "choise": 'Виберіть рівень активності',
+        "choise": 'Оберіть рівень активності',
         'none': 'Малорухливий спосіб життя',
         'low': 'Мала активність (1-3 тренування на тиждень)',
         'middle': 'Середня активність (3-5 тренувань на тиждень)',
@@ -128,6 +128,8 @@ const arrLangValidate = {
         'height': "З таким зростом краще зверніться до лікаря",
         'weight': "З такою вагою краще зверніться до лікаря",
         'activ': 'Оберіть рівень активності',
+        'enterLogin': 'Введіть логін',
+        'enterPass': 'Введіть пароль',
     },
     'en': {
         'login': 'The login must be longer than 6 characters and must not contain any special characters (!@#$%^&*?/,.)',
@@ -140,6 +142,8 @@ const arrLangValidate = {
         'height': "With such growth, it is better to consult a doctor",
         'weight': "With such a weight, it is better to consult a doctor",
         'activ': 'Choose an activity level',
+        'enterLogin': 'Enter your login',
+        'enterPass': 'Enter your password',
     }
 }
 

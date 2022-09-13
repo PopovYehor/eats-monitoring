@@ -54,4 +54,7 @@ const weightDayData = ()=>{
     return arrWeightDay
 }
 
-export {everyDayData, weightDayData}
+const fromTodayToWantDate = ()=> moment().diff(moment(localStorageUser('wantDate'), 'DD/MM/YY'), 'days')*(-1)
+
+
+export {everyDayData, weightDayData, fromTodayToWantDate}

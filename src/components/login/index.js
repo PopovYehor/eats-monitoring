@@ -1,11 +1,10 @@
-import { formsData } from "../../helper/form-canculate/formTranformationData"
 import { onHandleRoute } from "../../helper/route"
-import "./style.scss"
+import "./style"
 
 const LoginComponent = ()=>{
     const elem = `
       <div class="container-login">
-        <div class="wrap-logins">
+        <div class="wrap-main" id = "wrap-login">
           <form class="login-form validate-form" name = 'singUpForm'>
             <span class="login-form-title p-b-26">
               Eats Monitoring
@@ -14,11 +13,11 @@ const LoginComponent = ()=>{
               <i href = '#'><img src="https://i.ibb.co/2cjMbjh/title.png" alt="" width="80px" height="80px"></i>
             </span>
             
-            <div class="wrap-input validate-input" id = 'login-input' data-validate="Enter login">
+            <div class="wrap-input validate-input" id = 'login-input' key = "enterLogin" data-validate="Введіть логін">
               <input class="input" type="text" name="login">
               <span class="focus-input" key='login' data-placeholder="Логін"></span>
             </div>
-            <div class="wrap-input-pass validate-input" id = 'password-input' data-validate="Enter password">
+            <div class="wrap-input validate-input" id = 'password-input' key = "enterPass" data-validate="Введіть пароль">
               <button class="btn-show-pass" type="button">
                 <img class="eyes-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
               </button>

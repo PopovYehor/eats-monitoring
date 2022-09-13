@@ -22,8 +22,8 @@ const data = {
       label: 'My First Dataset',
       data: [needCalories, addCalories],
       backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(255, 0, 0)',
+        'rgb(250, 215, 160, 80% )',
+        'rgb(174, 214, 241, 80% )',
       ],
       hoverOffset: 4
     }]

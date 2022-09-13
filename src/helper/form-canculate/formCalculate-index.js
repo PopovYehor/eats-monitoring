@@ -21,6 +21,7 @@ const caloriesFormula = ()=>{
 const calculateWantCalories = ()=>{
     let wantResult = ''
     wantWeightData() < weightData() ? wantResult = (caloriesFormula() - ((7700*( weightData()-wantWeightData()))/formsData().wantDay.value)) : wantResult = (caloriesFormula() + ((7700*(wantWeightData() - weightData()))/formsData().wantDay.value))
+    console.log(wantResult)
     return wantResult
 }
 

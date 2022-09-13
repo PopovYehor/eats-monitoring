@@ -1,6 +1,6 @@
 import { formsData } from "../form-canculate/formTranformationData"
-
 import { translateText } from "../translate/translateText"
+
 const addEvent = (elem, func, elem2)=>{
     if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
 }
@@ -20,7 +20,8 @@ const regArr = {
     weight: /^\d{2,3}([\.,][\d]){0,1}$/,
     wantWeight: /^\d{2,3}([\.,][\d]){0,1}$/,
     wantDay: /^\d+$/,
-    date: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/
+    date: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/,
+    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
 }
 
 const findReg = (item)=>{
@@ -95,6 +96,7 @@ const verAll = ()=>{
     veref(formsData().login,'login-input', 'login')
     veref(formsData().pass, 'password-input', 'password')
     verRepeatPassword()
+    veref(formsData().email, 'email-input', 'email')
     veref(formsData().userName, 'name-input', 'name')
     veref(formsData().surname, 'surname-input', 'name')
     veref(formsData().age, 'age-input', 'age')

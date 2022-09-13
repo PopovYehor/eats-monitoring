@@ -20,6 +20,7 @@ const signUpData = ()=>{
         'password': passwordData(),
         'name':nameData(),
         'surname':surnameData(),
+        'email': formsData().email.value,
         'age': yearData(),
         'weight': defWeight(),
         'wantWight':defWantWeight(),

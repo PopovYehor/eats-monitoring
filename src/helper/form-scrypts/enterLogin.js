@@ -88,10 +88,9 @@ const postSignUp = ()=>{
                                     btnWrap.innerHTML = trueSignUpBtn()
                                     const btn = document.querySelector('.login-form-btn')
                                     btn.style.fontSize = 35 + 'px'
-                                    const wrap = document.querySelector('.wrap-login')
+                                    const wrap = document.getElementById('wrap-signUp')
+                                    console.log(wrap)
                                     wrap.style.height = 810 + 'px'
-                                    const loginBtn = document.getElementById('loginBtn')
-                                    loginBtn.addEventListener('click', (e)=>onHandleRoute(e))
                                     console.log(res)
                                 })
                         }else{

@@ -37,7 +37,6 @@ const translate = ()=>{
                 if (progressInput) progressInput.forEach(elem => elem.dataset.placeholder = arrLangPlaceholder.uk[elem.getAttribute('key')])
                 if (inputWrap) inputWrap.forEach(elem => elem.dataset.validate = arrLangValidate.uk[elem.getAttribute('key')])
                 if (profileDescription) profileDescription.forEach(elem => {elem.textContent = arrLangText.uk[elem.getAttribute('key')]})
-
             }
 
             const chartContainer = document.querySelector('.chart-container')

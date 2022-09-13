@@ -42,7 +42,7 @@ const createChartProgres = ()=>{
   const canvasContainer = document.getElementById('canvas-progres-wrap')
   const ChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'progres-container')
   const canvasTitle = createElem('h1', 'canvas-title', title, ChartWrap)
-  const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'myChart')
+  const canvasProgres = createElem('canvas', null, null, ChartWrap, 'id', 'progressChart-main')
   const myChart = new Chart(canvasProgres, progresChartData())
 }
 

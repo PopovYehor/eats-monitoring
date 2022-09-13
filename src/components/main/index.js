@@ -1,5 +1,5 @@
 import "./style.scss"
-import "./check-style.scss"
+import "./newStyle"
 import createAllCharts from "./charts/createAllCharts"
 import { verAll, valueVer} from "../../helper/validation/main-form-validation"
 import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/form-scrypts/placeholderUp"
@@ -7,10 +7,10 @@ import { onHandleRoute } from "../../helper/route"
 import { defheight, formsData } from "../../helper/form-canculate/formTranformationData"
 import { selectParam } from "../../helper/form-canculate/formChangeParametr"
 const mainComponent = ()=>{
-  localStorage.setItem('languageCount', 0)
+  
     const elem = `
     <div class="container-login">
-        <div class="wrap-main">
+        <div class="wrap-main" id = "main-wrapper">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
             <span class="login-form-title p-b-26">
               Eats Monitoring

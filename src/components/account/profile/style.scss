@@ -1,4 +1,5 @@
 @import "../../../style/var.scss";
+
 .user-wrap{
 width: 100%;
 height: 94%;
@@ -139,9 +140,6 @@ position: relative;
             }
             #want-day-item{
             height: 54px;
-            display: flex;
-            align-items: center;
-            justify-content: end;
             }
           }
       }
@@ -256,12 +254,12 @@ position: relative;
         visibility: visible;
         opacity: 1;
       }
-      dl{
-        dt{
+      .list{
+        .profile-description{
           width: 45%;
           min-height: 47px;
         }
-        dd{
+        .profile-item{
           width: 55%;
           min-height: 47px;
           padding-bottom: 7px;
@@ -307,41 +305,7 @@ position: relative;
     .view_details {position: absolute; top: -5000px; left: -5000px;}
     label {display: block; cursor: pointer;}
     
-    @media screen and (max-width: 520px) {
-      .profile {
-        padding: 1em;
-        margin: 1em;
-      }
-      .profile img {
-        max-width: 100%;
-        height: auto;
-      }
-      .profile main dl,
-      .profile main dl dt,
-      .profile main dl dd {
-        display: block;
-        width: 100%;
-        float: none;
-      }
-      .profile main dl dt {
-        border-bottom: none;
-      }
-      .profile main dl dd {
-        margin-bottom: 10px;
-      }
     
-      .profile .toggle {
-        top: 15px;
-        left: 15px;
-      }
-      .profile-preloader-wrap{
-        width: 100%;
-        height: 800px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
   }
   .preload-account-page{
     position: absolute;
@@ -385,4 +349,41 @@ position: relative;
   right: 0;
   position: absolute;
   z-index: -1; 
+}
+
+
+@media screen and (min-width: 1440px) and (max-width:1820px  ){
+  .img-profile, .label-change{
+    min-width: 120px !important;
+    max-height: 120px !important;
+  }
+  .list{
+    dt{
+      min-height: 40px !important;
+      font-size: 15px;
+      padding: 7px 5px !important;
+    }
+    dd{
+      min-height: 40px !important;
+      font-size: 15px;
+      padding: 7px 5px !important;
+    }
+  }
+  .profile.active.change{
+    .list{
+      dt{
+        min-height: 40px !important;
+        font-size: 15px;
+        padding: 7px 5px !important;
+      }
+      dd{
+        min-height: 40px !important;
+        font-size: 15px;
+        padding: 7px 5px !important;
+      }
+    }
+  }
+
+  
+  
 }

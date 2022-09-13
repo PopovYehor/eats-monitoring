@@ -49,12 +49,12 @@ const data = {
       label: 'My First Dataset',
       data: [needProtein, addProtein, needFats, addFats, needCarbohydrates, addCarbohydrates],
       backgroundColor: [
-        '#FFBFBF',
-        '#FF4E4E',
-        '#8BA1F7',
-        '#3C62FA',
-        '#93F79A',
-        '#4BFA57',
+        'rgb(171, 235, 198, 80% )',
+        'rgb(35, 155, 86, 80%)',
+        'rgb(245, 203, 167, 80% )',
+        'rgb(185, 119, 14, 80%)',
+        'rgb(195, 155, 211, 80% )',
+        'rgb(118, 68, 138, 80%)',
         
       ],
       hoverOffset: 4

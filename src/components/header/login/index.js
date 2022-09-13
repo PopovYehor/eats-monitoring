@@ -22,15 +22,21 @@ const HeaderSwitch = ()=>{
     <div class="dropdown_item">&#xf2f6<a class = "dorp-item-img" href = "/login" id = "loginBtn">${translateText(translateCount, 'Вхід', 'Log In')}</a></div>
     <div class="dropdown_item">&#xf234 <a class = "dorp-item-img" href = "/signUp" id ="signUpBtn">${translateText(translateCount, 'Реєстрація', 'Sing Up')}</a></div>
     ` : `
-    <div class="dropdown_item">&#xf52b <a class = "dorp-item-img" >${translateText(translateCount, 'Вихід', 'Sign Out')}</a></div>
+    <div class="dropdown_item">&#xf52b <a class = "dorp-item-img" href = "/login" id = "signOutBtn">${translateText(translateCount, 'Вихід', 'Sign Out')}</a></div>
     `
     routeDropdownMenu.innerHTML = routeElement
     if (!localStorageUser('userName')){
-    const loginBtn = document.getElementById('loginBtn')
-    loginBtn.addEventListener('click', (e)=> onHandleRoute(e))
+        const loginBtn = document.getElementById('loginBtn')
+        loginBtn.addEventListener('click', (e)=> onHandleRoute(e))
 
-    const signUpBtn = document.getElementById('signUpBtn')
-    signUpBtn.addEventListener('click', (e)=> onHandleRoute(e))
+        const signUpBtn = document.getElementById('signUpBtn')
+        signUpBtn.addEventListener('click', (e)=> onHandleRoute(e))
+    }else{
+        const signOutBtn = document.getElementById('signOutBtn')
+        signOutBtn.addEventListener('click', (e)=>{
+            window.localStorage.clear()
+            onHandleRoute(e)
+        })
     }
 }
 

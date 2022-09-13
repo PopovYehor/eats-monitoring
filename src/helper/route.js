@@ -14,7 +14,7 @@ const onHandleRoute = (e) => {
 const routes = {
     '/signUp': SignUp,
     '/login': Login,
-    '/': !localStorageUser('userName') ? Main : Account ,
+    '/': Main,
     '/food': Foods,
     '/account': Account,
 }

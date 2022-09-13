@@ -161,3 +161,97 @@
         }
     }
 }
+
+@media  (min-width: 1440px) and (max-width:1820px  ){
+    #main-wrapper{
+        margin-top: 35px !important;
+    }
+    .container-login{
+        align-items: flex-start;
+        .wrap-main{
+            margin-top: 35px;
+        }
+    }
+    #myChart{
+        width: 190px !important;
+        height: 190px !important;
+    }
+    .canvas-title{
+        font-size: 18px !important;
+    }
+    .chart-container{
+        flex-direction: column;
+        
+        .row-chart-container{
+            #index-wrap{
+                width: 820px;
+                height: 350px;
+                margin-top: 0;
+                #canvas-index-wrap{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) and (max-width:1430px){
+    #main-wrapper{
+        width: 300px !important;
+        padding: 25px 30px 33px 30px !important;
+        margin-top: 35px !important;
+    }
+    .column-chart-container{
+        width: 650px;
+        margin: 0 0 0px 20px;
+            .chart-progres-wrap{
+                width: 650px !important;
+                padding: 0 !important;
+                margin: 0 0 20px 10px !important;
+            }
+            #calories-wrap{
+                width: 650px;
+                padding: 0;
+                margin: 0 0 20px 10px;
+                .chart-data-container{
+                    padding: 0;
+                    .chart-wrapper{
+                        width: 190px;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }
+                
+            
+        }
+    }
+    
+    
+    .container-login{
+        align-items: flex-start;
+        .wrap-main{
+            margin-top: 35px;
+        }
+    }
+    #myChart{
+        width: 175px !important;
+        height: 175px !important;
+    }
+    .canvas-title{
+        font-size: 16px !important;
+    }
+    .chart-container{
+        flex-direction: column;
+        
+        .row-chart-container{
+            #index-wrap{
+                width: 650px;
+                height: 350px;
+                margin-top: 0;
+                #canvas-index-wrap{
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+}
