@@ -45,7 +45,7 @@ const addFoodItem = (data, id)=>{
     
     if (selectedItems.length > 0) selectedItems.forEach((elem) => elem.name == data.name ? check = false : check = true)
         
-    if (check == true){
+    if (check == true && input > 0){
         selectedItems.push(defaultItem(data, perscent, input))
         localStorage.setItem('selectedItem', JSON.stringify(selectedItems))
         addFoodCount()

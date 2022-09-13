@@ -85,7 +85,7 @@ const createChartProteinCount = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'proteinChart')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  const saveChangeBtn = createElem('a', 'save-change-btn', `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}`, proteinChartWrap, 'href', '/')
+  const saveChangeBtn = createElem('a', 'save-change-btn', localStorageUser('userName') ? `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}` : `${translateText(translateCount, 'Вихід', 'Leave page')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
 
   const id = localStorageUser('id')
   saveChangeBtn.addEventListener('click', (e)=>{changeFoodData(e, id)})

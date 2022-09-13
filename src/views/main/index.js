@@ -6,6 +6,8 @@ import { localStorageUser } from "../../helper/account-scripts/user-data"
 import Account from "../account"
 
 const Main = ()=>{
+    window.localStorage.clear()
+    window.sessionStorage.clear()
     localStorage.setItem('languageCount', 0)
     if (localStorageUser('userName')){
         root.innerHTML = ''
