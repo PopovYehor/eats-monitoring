@@ -50,7 +50,7 @@ const createChartCaloriesCount = ()=>{
   proteinChartWrap.innerHTML = ''
   const canvasTitle = createElem('h1', 'canvas-title', title, proteinChartWrap)
   const chartWrap = createElem('div', 'chart-wrapper', null, proteinChartWrap)
-  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
+  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'calories-chart-food')
   const myChart = new Chart(canvasProtein, caloriesData())
 }
 

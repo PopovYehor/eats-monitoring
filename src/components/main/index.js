@@ -6,6 +6,7 @@ import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/fo
 import { onHandleRoute } from "../../helper/route"
 import { defheight, formsData } from "../../helper/form-canculate/formTranformationData"
 import { selectParam } from "../../helper/form-canculate/formChangeParametr"
+
 const mainComponent = ()=>{
   
     const elem = `
@@ -26,7 +27,7 @@ const mainComponent = ()=>{
             </div>
             <!--Возраст-->
             <div class="wrap-input validate-input" id = 'age-input' key = 'age' data-validate="Введіть ваш вік">
-              <input class="input" type="text" name="age" required value=""> 
+              <input class="input" type="text" name="age" required value="">
               <span class="focus-input" key = 'age' data-placeholder="Вік"></span>
             </div>
           <!--Рост-->
@@ -90,6 +91,7 @@ const mainComponent = ()=>{
       </div>
     `
     const wrap = document.querySelector('.limiter')
+
     wrap.innerHTML = elem
     placeholderUp()
     placeholderClickUp()

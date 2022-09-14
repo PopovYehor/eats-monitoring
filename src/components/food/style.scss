@@ -53,11 +53,11 @@
                 text-align: center;
             }
             .chart-wrapper{
-                canvas{
+                #calories-chart-food{
                     width: 250px !important;
                     height: 250px !important;
                 }
-                #proteinChart{
+                #protein-chart-food{
                     width: 300px !important;
                     height: 300px !important;
                 }

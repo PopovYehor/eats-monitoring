@@ -60,6 +60,7 @@ const addInputForChange = ()=>{
 const loadFile = (event)=> {
     const profileImg = document.querySelector('.img-profile')
     profileImg.src = URL.createObjectURL(event.target.files[0]);
+    localStorage.setItem('photo', JSON.stringify(profileImg.src))
     fetch(profileImg.src).then(r => r.blob()).then(blobFile =>{
          let files = new File([blobFile], `avatarUser-${localStorageUser('id')}`, { type: "image/png" })
         })

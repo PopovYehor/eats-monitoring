@@ -41,6 +41,7 @@ position: relative;
             padding: 10px;
             box-shadow: 0px 0px 20px rgba($base-text-color, .15);
             z-index: 0;
+            object-fit: cover;
           }
           .add-img{
             display: none;
@@ -149,6 +150,7 @@ position: relative;
       }
     
         .toggle {
+          display: none;
           position: absolute;
           background: #fff;
           top: 30px;
@@ -303,7 +305,7 @@ position: relative;
     }
     
     .view_details {position: absolute; top: -5000px; left: -5000px;}
-    label {display: block; cursor: pointer;}
+    label {display: block; cursor: pointer; background: rgb(230 230 235 / 80%);border-radius: 50%;}
     
     
   }
@@ -347,15 +349,25 @@ position: relative;
   left: 0;
   bottom: 0;
   right: 0;
-  position: absolute;
+  position: fixed;
   z-index: -1; 
 }
 
 
 @media screen and (min-width: 1440px) and (max-width:1820px  ){
+  .toogle{
+    display: none;
+  }
+  .container-profile{
+    margin: 0 !important;
+  }
   .img-profile, .label-change{
     min-width: 120px !important;
     max-height: 120px !important;
+  }
+  .label-change.active{
+    width: 120px !important;
+    height: 120px !important;
   }
   .list{
     dt{
@@ -368,8 +380,84 @@ position: relative;
       font-size: 15px;
       padding: 7px 5px !important;
     }
+    #regist-day-item {
+      height: auto !important;
+    }
+    #want-day-item{
+      height: 50px !important;
+    }
   }
   .profile.active.change{
+    min-width: 440px !important;
+    
+    .title-name{
+      input{
+        width: 175px !important;
+      }
+    }
+    .list{
+      dt{
+        min-height: 40px !important;
+        font-size: 15px;
+        padding: 7px 5px !important;
+      }
+      dd{
+        min-height: 40px !important;
+        font-size: 15px;
+        padding: 7px 5px !important;
+      }
+    }
+  }
+}
+
+@media all and (max-width:1439px){
+  .toggle{
+    display: block !important;
+  }
+  .account-container-wrap{
+    flex-direction: column;
+  }
+  .container-profile{
+    width: 100% !important;
+    margin: 0 !important;
+    .profile{
+      max-width: 100% !important;
+    }
+  }
+  .img-profile, .label-change{
+    min-width: 120px !important;
+    max-height: 120px !important;
+  }
+  .label-change.active{
+    width: 120px !important;
+    height: 120px !important;
+  }
+  .list{
+    dt{
+      min-height: 40px !important;
+      font-size: 15px;
+      padding: 7px 5px !important;
+    }
+    dd{
+      min-height: 40px !important;
+      font-size: 15px;
+      padding: 7px 5px !important;
+    }
+    #regist-day-item {
+      height: auto !important;
+    }
+    #want-day-item{
+      height: 50px !important;
+    }
+  }
+  .profile.active.change{
+    min-width: 440px !important;
+    
+    .title-name{
+      input{
+        width: 175px !important;
+      }
+    }
     .list{
       dt{
         min-height: 40px !important;
@@ -384,6 +472,4 @@ position: relative;
     }
   }
 
-  
-  
 }

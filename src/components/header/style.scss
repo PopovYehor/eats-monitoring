@@ -1,3 +1,32 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 55px;
+    width: 100%;
+    background: #EFEFBB;
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB); 
+
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endColorstr="#c5e904",GradientType=1);
+    
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+@media (max-width:1439px){
+
+  header{
+    height: 40px !important;
+    .icon{
+      width: 30px !important;
+      height: 30px !important;
+    }
+    .language-btn{
+      font-size: 26px !important;
+    }
+  }
+}
+
 .main-icon{
     height: 100%;
     width: 500px;

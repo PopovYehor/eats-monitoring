@@ -6,14 +6,15 @@ import { localStorageUser } from "../../helper/account-scripts/user-data"
 import Account from "../account"
 
 const Main = ()=>{
-    window.localStorage.clear()
-    window.sessionStorage.clear()
-    localStorage.setItem('languageCount', 0)
+    
     if (localStorageUser('userName')){
         root.innerHTML = ''
         window.history.pushState({}, '', '/account')
         window.route = Account()
     }else{
+        window.localStorage.clear()
+        window.sessionStorage.clear()
+        localStorage.setItem('languageCount', 0)
         Header()
         const root = document.getElementById('root')
         createElem('div', 'limiter', null, root)

@@ -1,6 +1,6 @@
 import "./style.scss"
 import { changeAccountData,  arrSex, arrActiv } from "../../../helper/account-scripts/changeDataUser"
-import {sameHeightTable, keySelectParam, userParam, userSelectParam} from "../../../helper/account-scripts/table-script"
+import {sameHeightTable, keySelectParam, userParam, userSelectParam, upAccount} from "../../../helper/account-scripts/table-script"
 import { localStorageUser} from "../../../helper/account-scripts/user-data"
 import { translateText } from "../../../helper/translate/translateText"
 
@@ -16,6 +16,10 @@ const account = ()=>{
         </figure>
         <div class="title-name">
             <h1 class="profile-item" id="name" data-validate = "${translateText(translateCount, `Некоректне ім'я або призвище`, "Incorrect name or surname")}">${localStorageUser('name')} ${localStorageUser('surname')}</h1>
+        </div>
+        <div class="toggle">
+            <input class="view_details dropdown-toggle" id="view_details" type="checkbox">
+            <label for="view_details">☰</label>
         </div>
         <div class="mainen active">
             <dl class="list">
@@ -70,7 +74,12 @@ const account = ()=>{
     `
     const wrap = document.querySelector('.profile')
     wrap.innerHTML = elem
+    const mainem = document.querySelector('.mainen')
 
+    if (window.innerWidth <=1024){
+        mainem.classList.remove('active')
+    }
+    upAccount()
     const changeBtn = document.querySelector('.changeBtn')
     changeBtn.addEventListener('click', ()=>{changeAccountData()})
     sameHeightTable()

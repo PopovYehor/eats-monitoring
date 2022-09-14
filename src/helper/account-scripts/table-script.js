@@ -13,12 +13,16 @@ const sameHeightTable = ()=>{
         setTimeout(()=>{
             if (elem==lastWeightDescription)
                 if (window.innerWidth > 1440){
-                    elem.style.height = 55 + 'px'
+                    lastWeightDescription.style.height = 55 + 'px'
                     lastWeightItem.style.height = 55 + 'px'
                 }
                 if (window.innerWidth <= 1440){
-                    elem.style.height = 50 + 'px'
+                    lastWeightDescription.style.height = 50 + 'px'
                     lastWeightItem.style.height = 50 + 'px'
+                }
+                if (window.innerWidth <= 1300){
+                    lastWeightDescription.style.height = 40 + 'px'
+                    lastWeightItem.style.height = 40 + 'px'
                 }
              else{
             elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
@@ -138,4 +142,23 @@ const userParam = (store, item, text1, text2, text3, text4)=>{
     return elem
 } 
 
-export {sameHeightTable, caloriesFormulaAccount, fatWeightAccount, userSelectParam, keySelectParam, userParam}
+const upAccount = ()=>{
+    const openProf = document.getElementById('view_details')
+    const main = document.querySelector('.mainen')
+    const profile = document.querySelector('.profile')
+    const labelChangePhoto = document.querySelector('.label-change')
+    const changeBtn = document.querySelector('.changeBtn')
+    const profileItem = document.querySelectorAll('.profile-item')
+        openProf.addEventListener('click', ()=>{
+        if(!profile.classList.contains('active') && !main.classList.contains('active') ){
+            main.classList.add('active')
+            profile.classList.add('active')
+
+        }else{
+            main.classList.remove('active')
+            profile.classList.remove('active')
+        }
+        })
+    }
+
+export {sameHeightTable, caloriesFormulaAccount, fatWeightAccount, userSelectParam, keySelectParam, userParam, upAccount}

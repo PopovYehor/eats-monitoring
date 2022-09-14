@@ -48,7 +48,7 @@
                 align-items: center;
                 justify-content: center;
                 flex-direction: column;
-                #account-calories-chart{
+                /* #account-calories-chart{
                     width: 240px !important;
                     height: 220px !important;
                 }
@@ -63,7 +63,7 @@
                 #fat-chart-account{
                     width: 170px !important;
                     height: 170px !important;
-                }
+                } */
                 .label-wrap{
                     width: 90%;
                     margin-top: 10px;
@@ -115,52 +115,84 @@
                 top: 5px;
                 left: 290px;
             }
-            #progress-account-chart{
+            /* #progress-account-chart{
                 margin-top: 10px;
                 height: 325px !important;
                 width: 665px !important;
-            }
+            } */
         }
     }
 }
 
-/* @media all and (min-width: 1440px) and (max-width:1820px  ){
-    .container-user{
-        width: auto;
+@media screen and (min-width: 1820px){
+    #progress-account-chart{
+        margin-top: 10px;
+        height: 325px !important;
+        width: 665px !important;
     }
-    .account-charts-wrap{
-        height: 265px;
-        padding: 10px;
-        .chart-data-container{
-          width: 200px !important;
-          height: 220px !important;
-          .canvas-title{
-            font-size: 15px;
-          }
-          .chart-label{
-            font-size: 15px;
-          }
-        }
-        .chart-wrapper{
+    #account-calories-chart{
+        width: 240px !important;
+        height: 220px !important;
+    }
+    #protein-chart-account{
+        width: 300px !important;
+        height: 200px !important;
+    }
+    #index-chart-account{
+        width: 195px !important;
+        height: 195px !important;
+    }
+    #fat-chart-account{
+        width: 170px !important;
+        height: 170px !important;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width:1819px  ){
+            .container-user{
+                width: auto;
+                margin: 35px;
+                .account-charts-wrap{
+                    .chart-data-container{
+                        width: 220px !important;   
+                    }
+                    #protein-chart-container-account{
+                        width: 230px !important;
+                    }
+                    #index-chart-container-account{
+                        width: 200px !important;
+                    }
+                }
+                
+                .progres-chart-user{
+                    height: 370px !important;
+                    margin-top: 20px !important;
+                }
+            }
+            .count-calories-account-btn{
+                left: -105px !important;
+                bottom: 5px !important;
+            }
             #account-calories-chart{
-            width: 200px !important;
-            height: 160px !important;
+            width: 215px !important;
+            height: 215px !important;
             }
             #protein-chart-account{
-            width: 215px !important;
-            height: 170px !important;
+            width: 230px !important;
+            height: 210px !important;
             }
             #index-chart-account{
             width: 170px !important;
-            height: 150px !important;
+            height: 190px !important;
             }
             #fat-chart-account{
-            width: 140px !important ;
-            height: 130px !important;
+            width: 170px !important ;
+            height: 175px !important;
             }
-        }
-      }
-      .progres-chart-user{
-        margin-top: 20px !important;
-      }
-} */
+            #progress-account-chart{
+                margin-top: 10px;
+                height: 300px !important;
+                width: 665px !important;
+            }
+}
+

@@ -82,10 +82,10 @@ const createChartProteinCount = ()=>{
   proteinChartWrap.innerHTML = ''
   const canvasTitle = createElem('h1', 'canvas-title', title, proteinChartWrap)
   const chartWrap = createElem('div', 'chart-wrapper', null, proteinChartWrap)
-  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'proteinChart')
+  const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'protein-chart-food')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  const saveChangeBtn = createElem('a', 'save-change-btn', localStorageUser('userName') ? `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}` : `${translateText(translateCount, 'Вихід', 'Leave page')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
+  const saveChangeBtn = createElem('button', 'save-change-btn', localStorageUser('userName') ? `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}` : `${translateText(translateCount, 'Вихід', 'Leave page')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
 
   const id = localStorageUser('id')
   saveChangeBtn.addEventListener('click', (e)=>{changeFoodData(e, id)})

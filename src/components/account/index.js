@@ -11,10 +11,13 @@ const AccountProfile = ()=>{
     const containerProfile = createElem('div', 'container-profile', null, containerAccount)
     const container = createElem('div', 'container-user', null, containerAccount)
     
-    createElem('div', 'profile active', null, containerProfile)
+    const profile = createElem('div', 'profile active', null, containerProfile)
     createElem('div', 'account-charts-wrap', null, container)
-    createElem('div', 'progres-chart-user', null, container) 
-
+    createElem('div', 'progres-chart-user', null, container)
+     
+    if (window.innerWidth <=1024){
+        profile.classList.remove('active')
+    }
     const preloadWrap =  createElem('div', 'preload-account-page', null, wrap)
     Preloader(preloadWrap)
     const user = localStorage.getItem('userName')
