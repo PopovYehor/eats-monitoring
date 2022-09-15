@@ -1,9 +1,10 @@
 import "../laguage/style"
 import { createElem } from "../../../helper/createElement"
 
-import { getLang, TranslateTextes } from "../../../helper/translate/translateText"
+import { getLang, translateText, TranslateTextes } from "../../../helper/translate/translateText"
 import { onHandleRoute } from "../../../helper/route"
 import { localStorageUser } from "../../../helper/account-scripts/user-data"
+import { arrLangText } from "../../../helper/translate/translate-array"
 const HeaderSwitch = ()=>{
 
     const menuWrap = document.querySelector('.language')
@@ -35,6 +36,7 @@ const HeaderSwitch = ()=>{
         const signOutBtn = document.getElementById('signOutBtn')
         signOutBtn.addEventListener('click', (e)=>{
             window.localStorage.clear()
+            localStorage.setItem('translateCount',JSON.stringify('uk'))
             onHandleRoute(e)
         })
     }

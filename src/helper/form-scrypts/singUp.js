@@ -37,7 +37,7 @@ const signUpData = ()=>{
         'dateRegist': moment().format('DD/MM/YY'),
         'dataDate': [moment().format('DD/MM/YY')],
         'wantDate': wantDayToMoment(),
-        'languageCount': localStorageUser('languageCount'),
+        'translateCount': localStorage.getItem('translateCount'),
         'dataDateCalories': [],
         'dataCalories': [],
         'dataFats' : [],

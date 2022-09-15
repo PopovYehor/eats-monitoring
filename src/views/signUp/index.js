@@ -2,12 +2,20 @@ import { createElem } from "../../helper/createElement"
 import { signUpComponent } from "../../components/signUp"
 import { progressBar } from "../../helper/form-scrypts/progress-bar"
 import { formsData } from "../../helper/form-canculate/formTranformationData"
-import { postSignUp, logIn } from "../../helper/form-scrypts/enterLogin"
+import { postSignUp } from "../../helper/form-scrypts/enterLogin"
 import { changePassType } from "../../helper/form-scrypts/viewPassword"
-import { valueVer, verAll } from "../../helper/validation/main-form-validation"
+import {  verAll } from "../../helper/validation/main-form-validation"
 import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/form-scrypts/placeholderUp"
 import Header from "../../components/header"
+import { localStorageUser } from "../../helper/account-scripts/user-data"
 const SignUp = ()=>{
+    const plateCount = localStorageUser('plateCount')
+    const selectItem = localStorageUser('selectedItem')
+    if (selectItem && plateCount) {
+        localStorage.removeItem('plateCount')
+        localStorage.removeItem('selectedItem')
+    }
+
     Header()
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)

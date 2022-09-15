@@ -22,7 +22,7 @@ const user = {
     photo: localStorageUser('photo') || 'https://ibb.co/d5Qg9vN',
     dateRegist: localStorageUser('dateRegist') || '',
     wantDate: localStorageUser('wantDate') || '',
-    languageCount: localStorageUser('languageCount') || '',
+    translateCount: localStorage.getItem('translateCount') || '',
     dataWeight : localStorageUser('dataWeight') || [],
     dataDate: localStorageUser('dataDate') || [],
     perfectWeight: localStorageUser('perfectWeight') || '',
@@ -35,11 +35,8 @@ const user = {
     dataFoodSelects: localStorageUser('dataFoodSelects') || []
 }
 
-const userObjectValue = (keys)=>{
-    let element = user[keys]
-    
-    return element
-}
+const userObjectValue = (keys)=> user[keys]
+
 
 
 

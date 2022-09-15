@@ -53,7 +53,6 @@ const activity = ()=>{
 }
 
 const fatProcentDescription = (sex, count)=>{
-    let translateCount = localStorage.getItem('languageCount')
     let element = ''
  const correlationFat = [
     [`невід'ємний жир`,'спортивний показник','добрий показник','середній показник', 'поганий показник'],

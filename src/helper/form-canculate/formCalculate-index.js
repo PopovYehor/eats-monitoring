@@ -3,10 +3,8 @@ import { activity } from "./CalculateCoefficient"
 import { formsData, yearData, heightData, weightData, wantWeightData, sexData  } from "./formTranformationData"
 
 //------------------------------Wight Index---------------------------------//
-const weightIndex = ()=>{
-    const weightIndex = Math.round(weightData()/(Math.pow((heightData()/100), 2)))
-    return weightIndex
-}
+const weightIndex = ()=>Math.round(weightData()/(Math.pow((heightData()/100), 2)))
+
 
 //--------------------------------Calculate Calories--------------------------//
 const caloriesFormula = ()=>{
@@ -18,26 +16,17 @@ const caloriesFormula = ()=>{
 }
 
 //-------------------------------Calculate Calories For Want Result--------------------------//
-const calculateWantCalories = ()=>{
-    let wantResult = ''
-    wantWeightData() < weightData() ? wantResult = (caloriesFormula() - ((7700*( weightData()-wantWeightData()))/formsData().wantDay.value)) : wantResult = (caloriesFormula() + ((7700*(wantWeightData() - weightData()))/formsData().wantDay.value))
-    console.log(wantResult)
-    return wantResult
-}
+const calculateWantCalories = ()=>wantWeightData() < weightData() ? (caloriesFormula() - ((7700*( weightData()-wantWeightData()))/formsData().wantDay.value)) : (caloriesFormula() + ((7700*(wantWeightData() - weightData()))/formsData().wantDay.value))
+    
 
 //----------Calculate fat, protein, carbohydrates for want calories-------//
-const calculatePartOfWantCalories = (part)=>{
-    let element = Math.round(calculateWantCalories()*part)
-    return element
-} 
+const calculatePartOfWantCalories = (part)=>Math.round(calculateWantCalories()*part)
+    
 
 //---------------------------------Fat Weight---------------------------------//
 
-const fatPercent = ()=>{
-    let fatPercent = ''
-    sexData() == 'male' ? fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-16.2) : fatPercent = Math.round((1.2*weightIndex())+(0.23*yearData())-5.4)
-    return fatPercent
-}
+const fatPercent = ()=>sexData() == 'male' ? Math.round((1.2*weightIndex())+(0.23*yearData())-16.2) : Math.round((1.2*weightIndex())+(0.23*yearData())-5.4)
+   
 
 const fatWeight = ()=>{
     let fatWeight = ''

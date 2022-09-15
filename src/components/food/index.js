@@ -4,6 +4,10 @@ import TotalFood from "./food-total"
 import { createChartCaloriesCount } from "./caloriesChart/calorieschart"
 import { createChartProteinCount } from "./proteinsChart/protein-chart-food"
 import "./style"
+import { localStorageUser } from "../../helper/account-scripts/user-data"
+
+
+
 const Food = ()=>{
     const root = document.getElementById('root')
     const foodWrap = document.querySelector('.food-wrap')
@@ -12,6 +16,13 @@ const Food = ()=>{
     }else{
         createElem('div', 'food-wrap', null, root)
     }
+    const plateCount = localStorageUser('plateCount')
+    const selectItem = localStorageUser('selectedItem')
+
+    if (!selectItem) localStorage.setItem('selectedItem', JSON.stringify([]))
+    if (!plateCount) localStorage.setItem('plateCount', 0)
+
+
     const foodWrapper =  document.querySelector('.food-wrap')
     const foodContainer = createElem('div', 'food-container', null, foodWrapper)
     createElem('div', 'food-chart-wrap', null, foodContainer)

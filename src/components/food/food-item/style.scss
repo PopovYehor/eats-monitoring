@@ -48,6 +48,9 @@
                 .caloties-item-title{
                     font-size: 15px;
                 }
+                .caloties-item-title::after{
+                    content: ':';
+                }
                 #total-calories-title{
                     font-weight: 600;
                 }

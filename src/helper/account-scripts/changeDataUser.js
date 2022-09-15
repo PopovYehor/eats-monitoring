@@ -8,19 +8,26 @@ import moment from "moment"
 import Preloader from "../../components/preloader"
 import { TranslateTextes, getLang } from "../translate/translateText"
 
-const arrSex = {
-    value :['male', 'female'],
-    text: [ TranslateTextes(getLang(), 'male'),TranslateTextes(getLang(), 'female')]
+const arrSex = ()=> {
+    const arr = {
+        value :['male', 'female'],
+        text: [ TranslateTextes(getLang(), 'male'),TranslateTextes(getLang(), 'female')]
+    }
+    return arr
 }
-const arrActiv = {
-    value: ["none","low","middle","hight", "veryHight"],
-    coef: [{none: 1.2}, {low: 1.375}, {middle: 1.55}, {hight: 1.725},{veryHight: 1.9}, ],
-    text : [TranslateTextes(getLang(), 'none'),
-    TranslateTextes(getLang(), 'low'),
-    TranslateTextes(getLang(), 'middle'),
-    TranslateTextes(getLang(), 'higth'), 
-    TranslateTextes(getLang(), 'higth')
-    ]
+const arrActiv = ()=>{
+    const arr = {
+        value: ["none","low","middle","hight", "veryHight"],
+        coef: [{none: 1.2}, {low: 1.375}, {middle: 1.55}, {hight: 1.725},{veryHight: 1.9}, ],
+        text : [
+            TranslateTextes(getLang(), 'none'),
+            TranslateTextes(getLang(), 'low'),
+            TranslateTextes(getLang(), 'middle'),
+            TranslateTextes(getLang(), 'higth'), 
+            TranslateTextes(getLang(), 'veryHight')
+        ]
+    }
+    return arr
 }
 
 const addInputForChange = ()=>{
@@ -47,10 +54,10 @@ const addInputForChange = ()=>{
     createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
-    arrSex.value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex.text[i], selectSex, userObjectValue('sex')))
+    arrSex().value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex().text[i], selectSex, userObjectValue('sex')))
 
     let selectActive = createInput('select', 'select-active select-item', null, null, activItem, 'active')
-    arrActiv.value.forEach((elem, i)=>{createOption('activ-item lang', elem , arrActiv.text[i] , selectActive, userObjectValue('active'))})
+    arrActiv().value.forEach((elem, i)=>{createOption('activ-item lang', elem , arrActiv().text[i] , selectActive, userObjectValue('active'))})
     
 }
 

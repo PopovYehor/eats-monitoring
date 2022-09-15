@@ -9,13 +9,14 @@ localStorage.setItem('totalCarbohydrates', 0)
 const total = (item, objectItem)=>item.reduce((accumulator, object) => {return accumulator + object[objectItem]}, 0)
 
 const TotalFood = ()=>{
-    let translateCount = localStorage.getItem('languageCount')
+
     let calories = localStorage.getItem('totalCalories')
     let protein = localStorage.getItem('totalProtein')
     let fats = localStorage.getItem('totalFats')
     let carbohydrates = localStorage.getItem('totalCarbohydrates')
 
     const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
+    console.log(selectedItem.length)
     if(selectedItem.length > 0) {
         calories = total(selectedItem, 'calories')
         protein = total(selectedItem, 'protein')

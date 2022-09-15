@@ -54,7 +54,7 @@ const signUpComponent = ()=>{
               <span class="focus-input" key ='surname' data-placeholder=${TranslateTextes(getLang(), 'surname')}></span>
             </div>
             <!--email-->
-            <div class="wrap-input validate-input" id = 'email-input' key = 'email' data-validate="${TranslateTextes(getLang(), 'emailValidate')}">
+            <div class="wrap-input validate-input" id = 'email-input' key = 'emailValidate' data-validate="${TranslateTextes(getLang(), 'emailValidate')}">
               <input class="input" type="text" name="email" value = "" required>
               <span class="focus-input" key ='email' data-placeholder=${TranslateTextes(getLang(), 'email')}></span>
             </div>
@@ -107,7 +107,7 @@ const signUpComponent = ()=>{
             <!--желаемое количество дней-->
             <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="${TranslateTextes(getLang(), 'wantDayValidate')}">
               <input class="input" type="text" name="wantDay" value = "${sessionStorage.getItem('wantDay') || ''}" required>
-              <span class="focus-input" key = 'wantDay' data-placeholder=${TranslateTextes(getLang(), 'wantDayNumber')}></span>
+              <span class="focus-input" key = 'wantDay' data-placeholder="${TranslateTextes(getLang(), 'wantDayNumber')}"></span>
             </div>
           </div>
             <!--Уровень активности-->
@@ -118,7 +118,7 @@ const signUpComponent = ()=>{
                 <option class="lang" value="low" key = 'low' >${TranslateTextes(getLang(), 'low')}</option>
                 <option class="lang" value="middle" key = 'middle'>${TranslateTextes(getLang(), 'middle')}</option>
                 <option class="lang" value="hight" key = 'higth'>${TranslateTextes(getLang(), 'higth')}</option>
-                <option class="lang" value="very hight" key = 'veryHight'>${TranslateTextes(getLang(), 'veryHight')}</option>
+                <option class="lang" value="very hight" key = 'veryHight'>${TranslateTextes(getLang(), 'higth')}</option>
               </select>
               <span class= 'select-item'></span>
             </div>

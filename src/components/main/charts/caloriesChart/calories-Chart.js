@@ -96,7 +96,7 @@ const createCaloriesChart = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
   const myChart = new Chart(canvasProtein, CaloriesChartData())
 
-  const canculateBtn = createElem('a', 'count-calories-account-btn', TranslateTextes(getLang(), 'Calculate'), caloriesChartWrap, 'href', '/food')
+  const canculateBtn = createElem('a', 'count-calories-btn', TranslateTextes(getLang(), 'Calculate'), caloriesChartWrap, 'href', '/food')
   canculateBtn.addEventListener('click', (e)=>onHandleRoute(e))
 }
 

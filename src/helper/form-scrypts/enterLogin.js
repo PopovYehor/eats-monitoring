@@ -89,7 +89,6 @@ const postSignUp = ()=>{
                                     const btn = document.querySelector('.login-form-btn')
                                     btn.style.fontSize = 35 + 'px'
                                     const wrap = document.getElementById('wrap-signUp')
-                                    console.log(wrap)
                                     wrap.style.height = 810 + 'px'
                                     console.log(res)
                                 })

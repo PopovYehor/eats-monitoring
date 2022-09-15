@@ -60,6 +60,7 @@ const arrLangText = {
         'emailValidate': 'Некоректний email',
         'email': 'Email',
         'incorectLogin': 'Логін або пароль невірний',
+        'haveUser': 'Такий користувач вже існує',
         'wantDayValidate': 'Некоректна кількість днів',
         'wantDayNumber': 'Кількість днів до цілі',
         'requiredField' : `Обов'язкове поле`,
@@ -104,7 +105,7 @@ const arrLangText = {
         'AddedCarb': 'Додано вуглеводів',
 
         'saveChange': 'Зберегти зміни',
-        'leavePAge': 'Вихід',
+        'leavePAge': 'На головну',
         //food
         'AllTypes': 'Всі типи їжі',
         'Alcohol': 'Алкогольні напої',
@@ -187,6 +188,7 @@ const arrLangText = {
         'email': 'Email',
         'wantDayValidate': 'Incorrect number of days',
         'incorectLogin': 'The login or password is incorrect',
+        'haveUser': 'This username already exists',
         'wantDayNumber': 'Number of desired days',
         'requiredField' : `Required field`,
         'dateValidation': 'Invalid format (DD/MM/YY)',
@@ -250,7 +252,7 @@ const arrLangText = {
         'AddedCarb': 'Added carb',
 
         'saveChange': 'Save changes',
-        'leavePAge': 'Leave page'
+        'leavePAge': 'To Main'
     }
 }
 const arrLangPlaceholder = {
@@ -281,12 +283,6 @@ const arrLangPlaceholder = {
         'email': 'Email',
     },
 }
-const callArrLangPlaceholder= (count)=>{
-    let arr = {}
-count == 0 ? arr = arrLangPlaceholder.uk : arr = arrLangPlaceholder.en
-return arr
-}
-
 
 const arrLangValidate = {
     'uk': {
@@ -323,4 +319,4 @@ const arrLangValidate = {
     }
 }
 
-export {arrLangText, arrLangPlaceholder, arrLangValidate, callArrLangPlaceholder}
+export {arrLangText, arrLangPlaceholder, arrLangValidate}
