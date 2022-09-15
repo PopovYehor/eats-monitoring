@@ -1,12 +1,12 @@
 import { formsData } from "../form-canculate/formTranformationData"
 import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
-import { localStorageUser, user } from "../account-scripts/user-data"
+import { user } from "../account-scripts/user-data"
 import { account } from "../../components/account/profile"
 import { caloriesFormulaAccount, fatWeightAccount, sameHeightTable } from "../account-scripts/table-script"
 import {createAllChartsUser} from "../../components/account/charts/createAllChartsUser"
 import { trueSignUpBtn } from "../../components/signUp/trueSignUpBtn"
-import { translateText } from "../translate/translateText"
+import { getLang, TranslateTextes } from "../translate/translateText"
 import { onHandleRoute } from "../route"
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
@@ -42,11 +42,11 @@ const logIn = ()=>{
                             createAllChartsUser()
                             }else{
                                 const loginWrap = document.getElementById('login-input')
-                                loginWrap.dataset.validate = translateText(localStorageUser('languageCount'), 'Логін або пароль невірний', 'The login or password is incorrect')
+                                loginWrap.dataset.validate = TranslateTextes(getLang(), 'incorectLogin')
                                 loginWrap.classList.add('alert-validate')
 
                                 const passWrap = document.getElementById('password-input')
-                                passWrap.dataset.validate = translateText(localStorageUser('languageCount'), 'Логін або пароль невірний', 'The login or password is incorrect')
+                                passWrap.dataset.validate = TranslateTextes(getLang(), 'incorectLogin')
                                 passWrap.classList.add('alert-validate')
                             }
                         })
@@ -95,7 +95,7 @@ const postSignUp = ()=>{
                                 })
                         }else{
                             const wrapLogin = document.getElementById('login-input')
-                            wrapLogin.dataset.validate = translateText(localStorageUser('languageCount'), 'Такий користувач вже існує', 'This user already exists')
+                            wrapLogin.dataset.validate = TranslateTextes(getLang(), 'haveUser')
                             wrapLogin.classList.add('alert-validate')
                         }
                     })

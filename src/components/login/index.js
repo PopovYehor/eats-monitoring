@@ -1,4 +1,5 @@
 import { onHandleRoute } from "../../helper/route"
+import { getLang, TranslateTextes } from "../../helper/translate/translateText"
 import "./style"
 
 const LoginComponent = ()=>{
@@ -13,37 +14,37 @@ const LoginComponent = ()=>{
               <i href = '#'><img src="https://i.ibb.co/2cjMbjh/title.png" alt="" width="80px" height="80px"></i>
             </span>
             
-            <div class="wrap-input validate-input" id = 'login-input' key = "enterLogin" data-validate="Введіть логін">
+            <div class="wrap-input validate-input" id = 'login-input' key = "enterLogin" data-validate="${TranslateTextes(getLang(), 'enterLoginValidate')}">
               <input class="input" type="text" name="login">
-              <span class="focus-input" key='login' data-placeholder="Логін"></span>
+              <span class="focus-input" key='login' data-placeholder="${TranslateTextes(getLang(), 'logins')}"></span>
             </div>
-            <div class="wrap-input validate-input" id = 'password-input' key = "enterPass" data-validate="Введіть пароль">
+            <div class="wrap-input validate-input" id = 'password-input' key = "enterPass" data-validate="${TranslateTextes(getLang(), 'enterPassValidate')}">
               <button class="btn-show-pass" type="button">
                 <img class="eyes-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
               </button>
               <input class="input" type="password" name="pass">
-              <span class="focus-input" key='password' data-placeholder="Пароль"></span>
+              <span class="focus-input" key='password' data-placeholder="${TranslateTextes(getLang(), 'password')}"></span>
             </div>
             <div class="txt3">
             <a class="txt2 lang" key="forGetPass" href="#">
-              Забули пароль?
+            ${TranslateTextes(getLang(), 'forGetPass')}
             </a>
             </div>
             <div class="container-login-form-btn">
               <div class="wrap-login-form-btn">
                 <div class="login-form-bgbtn"></div>
                 <button class="login-form-btn lang" key="login" type="button" href = "/account">
-                  Вхід
+                ${TranslateTextes(getLang(), 'login')}
                 </button>
               </div>
             </div>
 
             <div class="text-center p-t-115">
               <span class="trueSignUp lang" key="havntAcc">
-                Не маєте акаунту?
+              ${TranslateTextes(getLang(), 'havntAcc')}
               </span>
               <a class="trueSignUp lang" key="SingUp" href="/signUp" id = "signUpBtnLogin">
-                Зареєструватися
+              ${TranslateTextes(getLang(), 'regist')}
               </a>
             </div>
           </form>

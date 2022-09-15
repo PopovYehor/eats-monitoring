@@ -6,6 +6,7 @@ import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/fo
 import { onHandleRoute } from "../../helper/route"
 import { defheight, formsData } from "../../helper/form-canculate/formTranformationData"
 import { selectParam } from "../../helper/form-canculate/formChangeParametr"
+import { getLang, TranslateTextes } from "../../helper/translate/translateText"
 
 const mainComponent = ()=>{
   
@@ -18,7 +19,7 @@ const mainComponent = ()=>{
             </span>
             <!--Пол-->
             <div class="wrap-input validate-input" id = 'sex-input' key = 'sex' data-validate="Оберіть стать">
-              <select name="sex" id="sex" class="select-input" required>
+              <select name="sex" id="sex" class="select-input" key = "sex" required>
                 <option class="lang" value="choise" selected disabled key = 'choiseSex'>Оберіть стать</option>
                 <option class="lang" value="male" key = 'male'>Чоловік</option>
                 <option class="lang" value="female" key = 'female'>Жінка</option>

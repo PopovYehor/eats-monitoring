@@ -1,9 +1,8 @@
 import { selectParam } from "./formChangeParametr"
 import { formsData } from "./formTranformationData"
 
-import { translateText } from "../translate/translateText"
+import { getLang, translateText, TranslateTextes } from "../translate/translateText"
 const coefficientWeightIndex = (index)=>{
-    let translateCount = localStorage.getItem('languageCount')
 let elem = ''
  const coefWeightIndex = [
     ['Чіткий дефіцит маси тіла','Дефіцит маси тіла', 'Норма', 'Надлишок маси тіла', 'Ожиріння І ступеня', 'Ожиріння ІІ ступеня', 'Ожиріння ІІІ ступеня'],
@@ -29,10 +28,10 @@ let elem = ''
  ]
  for (let i = 0; i<coefWeightIndex[0].length; i++){
     if (index >= Object.values(coefWeightIndex[2])[i].from && index <= Object.values(coefWeightIndex[2])[i].to){
-        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][i])}'>${translateText(translateCount,coefWeightIndex[0][i],coefWeightIndex[1][i] )}</span>`
+        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][i])}'>${translateText(getLang(),coefWeightIndex[0][i],coefWeightIndex[1][i] )}</span>`
         break
     }else{
-        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][6])}'>${translateText(translateCount, 'Звернітся до лікаря!', 'Consult a doctor!')}</span>`
+        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][6])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
     }
  }
  return elem
@@ -84,17 +83,17 @@ const fatProcentDescription = (sex, count)=>{
     for (let i = 0 ; i< correlationFat[0].length; i++){
         if (sex == 'male'){
             if (count >= Object.values(correlationFat[2])[i].from && count <= Object.values(correlationFat[2])[i].to){
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(translateCount,correlationFat[0][i], correlationFat[1][i]) }</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(getLang(),correlationFat[0][i], correlationFat[1][i]) }</span>`
                 break
             }else{
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${translateText(translateCount, 'Звернітся до лікаря!', 'Consult a doctor!')}</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
             }
         }else {
             if (count >= Object.values(correlationFat[3])[i].from && count <= Object.values(correlationFat[3])[i].to){
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(translateCount,correlationFat[0][i], correlationFat[1][i])}</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(getLang(),correlationFat[0][i], correlationFat[1][i])}</span>`
                 break
             }else{
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${translateText(translateCount, 'Звернітся до лікаря!', 'Consult a doctor!')}</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
             }
         }
     }

@@ -16,6 +16,7 @@ const translate = ()=>{
             const target = e.target
             if (target.id == 'en'){
                 localStorage.setItem('languageCount', 1)
+                localStorage.setItem('translateCount', 'en')
                 if (translateItem) translateItem.forEach(elem =>{
                     const text = arrLangText.en[elem.getAttribute('key')]
                     if (elem.classList.contains('profile-item')) {elem.textContent = text.replace(/\((.*?)\)/, '')}
@@ -28,6 +29,7 @@ const translate = ()=>{
             }
             if (target.id == 'uk'){
                 localStorage.setItem('languageCount', 0)
+                localStorage.setItem('translateCount', 'uk')
                 if (translateItem) translateItem.forEach(elem =>{
                     const text = arrLangText.uk[elem.getAttribute('key')]
                     if (elem.classList.contains('profile-item')) {elem.textContent = text.replace(/\((.*?)\)/, '')}

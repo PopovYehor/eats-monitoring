@@ -6,25 +6,24 @@ import {validationAccount} from "../validation/main-form-validation"
 import { sameHeightTable } from "./table-script"
 import moment from "moment"
 import Preloader from "../../components/preloader"
-import { translateText } from "../translate/translateText"
-let translateCount = localStorage.getItem('languageCount')
+import { TranslateTextes, getLang } from "../translate/translateText"
+
 const arrSex = {
     value :['male', 'female'],
-    text: [ translateText(translateCount,'Чоловік', 'Male'),translateText(translateCount,'Жінка', 'Female')]
+    text: [ TranslateTextes(getLang(), 'male'),TranslateTextes(getLang(), 'female')]
 }
 const arrActiv = {
     value: ["none","low","middle","hight", "veryHight"],
     coef: [{none: 1.2}, {low: 1.375}, {middle: 1.55}, {hight: 1.725},{veryHight: 1.9}, ],
-    text : [translateText(translateCount,'Малорухливий спосіб життя', 'Sedentary lifestyle'),
-    translateText(translateCount,'Мала активність (1-3 тренування на тиждень)', 'Low activity (1-3 workouts per week)'),
-    translateText(translateCount,'Середня активність (3-5 тренувань на тиждень)', 'Moderate activity (3-5 training sessions per week)'),
-    translateText(translateCount,'Висока активність (5-7 тренувань на тиждень)', 'High activity (5-7 training sessions per week)'), 
-    translateText(translateCount,'Дуже висока активність', 'Very high activity')
+    text : [TranslateTextes(getLang(), 'none'),
+    TranslateTextes(getLang(), 'low'),
+    TranslateTextes(getLang(), 'middle'),
+    TranslateTextes(getLang(), 'higth'), 
+    TranslateTextes(getLang(), 'higth')
     ]
 }
 
 const addInputForChange = ()=>{
-    let translateCount = localStorage.getItem('languageCount')
     const heightItem = document.getElementById('height-item')
     const weightItem = document.getElementById('weight-item')
     const wantWeightItem = document.getElementById('want-weight-item')
@@ -38,13 +37,13 @@ const addInputForChange = ()=>{
     createInput('input', 'name-item-input item-input', null, userObjectValue('name'), nameItem, 'name')
     createInput('input', 'surname-item-input item-input', null, userObjectValue('surname'), nameItem, 'surname')
     createInput('input', 'height-item-input item-input', null, userObjectValue('height'), heightItem, 'height')
-    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', translateText(translateCount, 'См', 'Sm'),translateText(translateCount, 'Дюйми', 'Inches'),userObjectValue('heightParam'), 'heightParam')
+    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTextes(getLang(), 'sm'),TranslateTextes(getLang(), 'inches'),userObjectValue('heightParam'), 'heightParam')
     createInput('input', 'weight-item-input item-input', null, userObjectValue('weight'), weightItem, 'weight')
-    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', translateText(translateCount, 'Кг', 'Kg'),translateText(translateCount, 'Фунти', 'Pounds'), userObjectValue('weightParam'), 'weightParam' )
+    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTextes(getLang(), 'kg'),TranslateTextes(getLang(), 'pound'), userObjectValue('weightParam'), 'weightParam' )
     createInput('input', 'login-item-input item-input', null, userObjectValue('userName'), loginItem, 'userName')
     createInput('input', 'age-item-input item-input', null, userObjectValue('age'), ageItem, 'age')
     createInput('input', 'want-weight-input item-input', null, userObjectValue('wantWeight'), wantWeightItem, 'wantWeight')
-    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds', translateText(translateCount, 'Кг', 'Kg'),translateText(translateCount, 'Фунти', 'Pounds'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
+    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTextes(getLang(), 'kg'),TranslateTextes(getLang(), 'pound'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
     createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
@@ -68,7 +67,6 @@ const loadFile = (event)=> {
 }
 
 const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
-    let translateCount = localStorage.getItem('languageCount')
     profile.classList.add('change')
     addImgInput.addEventListener('change', (e)=>{loadFile(e)})
     profileItem.forEach(elem =>{ if(elem.id != 'regist-day-item' && elem.id != 'perfect-weight-item' && elem.id != 'last-weight-item') elem.textContent = ''})
@@ -76,7 +74,7 @@ const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, pr
     addInputForChange()
     sameHeightTable()
     validationAccount()
-    changeBtn.textContent = translateText(translateCount, 'Зберегти', 'Save')
+    changeBtn.textContent = TranslateTextes(getLang(), 'save')
 }
 
 const saveWeight = (wightInput)=>{

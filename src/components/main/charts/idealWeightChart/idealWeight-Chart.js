@@ -3,18 +3,17 @@ import Chart from 'chart.js/auto'
 import { perfectWeight } from "../../../../helper/form-canculate/formCalculate-index";
 import { defWeight } from "../../../../helper/form-canculate/formTranformationData";
 
-import { translateText } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
 const DATA_COUNT = 3;
 const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 
 const idealWeightData = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
   let remainder = ''
   defWeight() > perfectWeight() ? remainder = defWeight() - perfectWeight() : remainder = perfectWeight() - defWeight()
 
-  const labelPerfectWeight = translateText(translateCount, 'Ідеальна вага', 'Perfect weight')
-  const labelYourWeight = translateText(translateCount, 'Ваша вага', 'Your weight')
-  const labelToPerfectWeight = translateText(translateCount, 'До ідеальної ваги', "To the perfect weight")
+  const labelPerfectWeight = TranslateTextes(getLang(), 'PerfectWeight')
+  const labelYourWeight = TranslateTextes(getLang(), 'YourWeight')
+  const labelToPerfectWeight = TranslateTextes(getLang(), 'ToThePerfectWeight')
 
   const data = {
     labels: [labelPerfectWeight, labelYourWeight, labelToPerfectWeight],
@@ -86,8 +85,7 @@ const idealWeightData = ()=>{
   return config
 }
 const createPerfectWeightChart = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const title = translateText(translateCount, 'Ваша ідеальна вага', 'Your Perfect Weight')
+  const title = TranslateTextes(getLang(), 'YourPerfectWeight')
 
   const wrap = document.getElementById('canvas-calories-wrap')
   const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-perfect-container')

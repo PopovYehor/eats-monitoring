@@ -6,11 +6,11 @@ import { fatPercent,  fatWeight } from "../../../../helper/form-canculate/formCa
 import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { sexData } from "../../../../helper/form-canculate/formTranformationData";
 
-import { translateText } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
 const fatChartData = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
+
   const remainder = 100 - fatPercent()
-  const labelFatPerent = translateText(translateCount, 'Процент жиру, %', 'Percentage of fat, %')
+  const labelFatPerent = TranslateTextes(getLang(), 'PercentageOfFat')
 const data = {
     labels: [
       labelFatPerent,
@@ -33,19 +33,18 @@ const config = {
   return config
 }
 const createFatPercentChart = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
   let paramLabel = ''
   let weightFat = ''
   const choiseWeightOption = selectParam(formsData().choiseWeight)
   if( choiseWeightOption.value == 'pounds'){
     weightFat = (Number(fatWeight())*2.2).toFixed(0)
-    paramLabel = translateText(translateCount, 'фунтів', 'pounds')
+    paramLabel = TranslateTextes(getLang(), 'pound')
   }else{
     weightFat = Number(fatWeight())
-    paramLabel = translateText(translateCount, 'кілограмів', 'kilograms')
+    paramLabel = TranslateTextes(getLang(), 'kg')
   }
 
-  const title = translateText(translateCount, 'Процент жиру в організмі', 'Percentage of body fat')
+  const title = TranslateTextes(getLang(), 'PercentageOfBodyFat')
   const wrap = document.getElementById('canvas-index-wrap')
   const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'fat-chart-container')
   const canvasTitle = createElem('h1', 'canvas-title', title, weightIndexChartWrap)

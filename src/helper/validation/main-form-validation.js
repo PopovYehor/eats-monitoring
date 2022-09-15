@@ -1,5 +1,5 @@
 import { formsData } from "../form-canculate/formTranformationData"
-import { translateText } from "../translate/translateText"
+import { getLang,TranslateTextes } from "../translate/translateText"
 
 const addEvent = (elem, func, elem2)=>{
     if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
@@ -30,7 +30,7 @@ const findReg = (item)=>{
     return regEx
 }
 const veref = (elem, id, item)=>{
-    let translateCount = localStorage.getItem('languageCount')
+
     const element = elem
     if (elem){
         const verefFunction = ()=>{
@@ -39,7 +39,7 @@ const veref = (elem, id, item)=>{
             findReg(item).test(element.value) ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false, form, item), flag = false)
             if(flag == false) {
                 addEvent(element, verefFunction, form.classList.contains('alert-validate'))
-                if(element.value == "") form.dataset.validate = translateText(translateCount, `Обов'язкове поле`, 'Required field')
+                if(element.value == "") form.dataset.validate = TranslateTextes(getLang(), 'requiredField')
             }
         }
         addBlur(element, verefFunction)

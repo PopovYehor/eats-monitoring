@@ -3,7 +3,7 @@ import { addFoodItem } from "../../../helper/food-script/add-item-script"
 import { validationFoodCount } from "../../../helper/validation/main-form-validation"
 import "./style"
 import { localStorageUser } from "../../../helper/account-scripts/user-data"
-import { translateText } from "../../../helper/translate/translateText"
+import { TranslateTextes, getLang } from "../../../helper/translate/translateText"
 
 const plateCount = localStorageUser('plateCount')
 const selectItem = localStorageUser('selectedItem')
@@ -23,25 +23,25 @@ const FoodItem = (data, id)=>{
         </div>
         <div class ="calories-count-wrap">
             <div class ="calories-count">
-                <span class="caloties-item-title" id="total-calories-title">${translateText(translateCount, 'Калорій:', 'Total calories:')}</span>
+                <span class="caloties-item-title" id="total-calories-title">${TranslateTextes(getLang(), 'TotalCalories')}</span>
                 <span class= "caloties-item-data" id="total-calories">${data.calories}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${translateText(translateCount, 'Жирів:', 'Fats:')}</span>
+                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Fats')}</span>
                 <span class= "caloties-item-data" id="total-fats">${data.fats}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${translateText(translateCount, 'Білків:', 'Proteins:')}</span>
+                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Proteins')}</span>
                 <span class= "caloties-item-data" id="total-protein">${data.protein}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${translateText(translateCount, 'Вуглеводів:', 'Carbohydrates:')}</span>
+                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Carbohydrates')}</span>
                 <span class= "caloties-item-data" id="total-carbohydrates">${data.carbonaries}</span>
             </div>
         </div>
-        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${translateText(translateCount, 'Введіть число', 'Enter a number')}">
+        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${TranslateTextes(getLang(), 'EnterNumber')}">
             <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
-            <span class= "calories-input-desc">${translateText(translateCount, 'грамів', 'grams')}</span>
+            <span class= "calories-input-desc">${TranslateTextes(getLang(), 'grams')}</span>
         </div>
         <div class="calories-add-btn-wrap">
             <button class="calories-add-btn" id="btn-${id}">&#x2b</button>

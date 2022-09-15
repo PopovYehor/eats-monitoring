@@ -1,34 +1,20 @@
 import { selectParam, InchesToSm, PoundToKg } from "./formChangeParametr";
 
-const formsData = ()=>{
-    const form = document.forms.singUpForm
-    return form
-}
+const formsData = ()=>document.forms.singUpForm
 
-const loginData = ()=>{
-    const login = formsData().login.value
-    return login
-}
-const passwordData = () =>{
-    const password = formsData().pass.value
-    return password
-}
-const repeatPaaswordData = ()=>{
-    const repeatPassword = formsData().repeatPassword.value
-    return repeatPassword
-}
-const nameData = ()=>{
-    const name = formsData().name.value
-    return name
-}
-const surnameData = ()=>{
-    const surname = formsData().surname.value
-    return surname
-}
-const activData = ()=>{
-    const activ = selectParam(formsData().activeLevel)
-    return activ.value
-}
+
+const loginData = ()=>formsData().login.value
+    
+const passwordData = () =>formsData().pass.value
+   
+const repeatPaaswordData = ()=>formsData().repeatPassword.value
+   
+const nameData = ()=>formsData().name.value
+    
+const surnameData = ()=>formsData().surname.value
+    
+const activData = ()=>selectParam(formsData().activeLevel)
+    
 const wantDay = () =>{
     const wantDay = formsData().wantDay.value
     sessionStorage.setItem('wantDay', wantDay)

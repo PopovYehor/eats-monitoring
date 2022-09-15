@@ -3,12 +3,11 @@ import Chart from 'chart.js/auto'
 import { coefficientWeightIndex } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { weightIndex } from "../../../../helper/form-canculate/formCalculate-index";
 
-import { translateText } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
 const weightIndexData = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
 const residue = 100 - weightIndex()
 
-const labelWeightIndex = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
+const labelWeightIndex = TranslateTextes(getLang(), 'BodyMassIndex')
 const data = {
     labels: [
       labelWeightIndex,
@@ -32,8 +31,7 @@ return config
 }
 
 const createChartWeightIndex = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const title = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
+  const title = TranslateTextes(getLang(), 'BodyMassIndex')
   const wrap = document.getElementById('canvas-index-wrap')
   const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'weight-index-chart-container')
   createElem('h1', 'canvas-title', title, weightIndexChartWrap)

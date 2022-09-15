@@ -1,5 +1,5 @@
 import { localStorageUser } from "./user-data"
-import { translateText } from "../translate/translateText"
+import { TranslateTextes, getLang } from "../translate/translateText"
 import { arrActiv } from "./changeDataUser"
 import { fromTodayToWantDate } from "../../components/account/charts/progresChartAcc/dataForProgresChart"
 const sameHeightTable = ()=>{
@@ -135,10 +135,10 @@ const keySelectParam = (arr, item)=>{
     return element
 }
 
-const userParam = (store, item, text1, text2, text3, text4)=>{
-    let translateCount = localStorage.getItem('languageCount')
+const userParam = (store, item, langItem1, langItem2)=>{
+
     let elem = ''
-    localStorageUser(store) == item ? elem = translateText(translateCount, text1, text2) :  elem = translateText(translateCount, text3, text4)
+    localStorageUser(store) == item ? elem = TranslateTextes(getLang(), langItem1) :  elem = TranslateTextes(getLang(), langItem2)
     return elem
 } 
 
@@ -146,9 +146,6 @@ const upAccount = ()=>{
     const openProf = document.getElementById('view_details')
     const main = document.querySelector('.mainen')
     const profile = document.querySelector('.profile')
-    const labelChangePhoto = document.querySelector('.label-change')
-    const changeBtn = document.querySelector('.changeBtn')
-    const profileItem = document.querySelectorAll('.profile-item')
         openProf.addEventListener('click', ()=>{
         if(!profile.classList.contains('active') && !main.classList.contains('active') ){
             main.classList.add('active')

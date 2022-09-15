@@ -2,12 +2,11 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/formCalculate-index";
 
-import { translateText } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
 const proteinData = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const labelProtein = translateText(translateCount, 'Білків', 'Proteins')
-  const labelFats = translateText(translateCount, 'Жирів', 'Fats')
-  const labelCarbohydrates = translateText(translateCount, 'Вуглеводів', 'Carbohydrates')
+  const labelProtein = TranslateTextes(getLang(), 'Proteins')
+  const labelFats = TranslateTextes(getLang(), 'Fats')
+  const labelCarbohydrates = TranslateTextes(getLang(), 'Carbohydrates')
   
   const coeff = {
     protein : 0.30,
@@ -52,8 +51,8 @@ const config = {
   return config
 }
 const createChartProtein = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const title = translateText(translateCount, 'Кількість калорій у білках, жирах та вугливодах', "Number of calories in proteins, fats and carbohydrates")
+
+  const title = TranslateTextes(getLang(), 'NumberCalories')
 
   const canvasContainer = document.getElementById('canvas-calories-wrap')
   const proteinChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'protein-chart-container')

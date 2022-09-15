@@ -2,13 +2,12 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
-import { translateText } from '../../../../helper/translate/translateText';
+import { TranslateTextes, getLang } from '../../../../helper/translate/translateText';
 const fatChartData = ()=>{
-  let translateCount = localStorageUser('translateCount')
 
   const fatPercent = localStorageUser('fatPercent')
   const remainder = 100 - fatPercent
-  const labelFatPerent = translateText(translateCount, 'Процент жиру, %', 'Percentage of fat, %')
+  const labelFatPerent = TranslateTextes(getLang(), 'PercentageOfFat')
 const data = {
     labels: [
       labelFatPerent,
@@ -35,7 +34,6 @@ const config = {
   return config
 }
 const createFatPercentChartAccount = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
 
   let paramLabel = ''
   let weightFat = ''
@@ -45,13 +43,13 @@ const createFatPercentChartAccount = ()=>{
   const sex = localStorageUser('sex')
   if( weightParam == 'pounds'){
     weightFat = (Number(fatWeight)*2.2).toFixed(0)
-    paramLabel = translateText(translateCount, 'фунтів', 'pounds')
+    paramLabel = TranslateTextes(getLang(), 'pound')
   }else{
     weightFat = Number(fatWeight)
-    paramLabel = translateText(translateCount, 'кілограмів', 'kilograms')
+    paramLabel = TranslateTextes(getLang(), 'kg')
   }
 
-  const title = translateText(translateCount, 'Процент жиру у тілі', 'Percentage of body fat')
+  const title = TranslateTextes(getLang(), 'PercentageOfBodyFat')
   const canvasContainer = document.querySelector('.account-charts-wrap')
   const chartWraper = document.getElementById('fat-chart-container-account')
   if (chartWraper) chartWraper.remove()

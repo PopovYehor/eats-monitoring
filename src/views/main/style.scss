@@ -196,8 +196,12 @@
 }
 
 @media (min-width: 1024px) and (max-width:1430px){
+    .container-login{
+        flex-wrap: nowrap !important;
+    }
     #main-wrapper{
-        width: 300px !important;
+        min-width: 300px !important;
+        max-width: 420px !important;
         padding: 25px 30px 33px 30px !important;
         margin-top: 35px !important;
     }

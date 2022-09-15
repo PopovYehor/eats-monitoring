@@ -2,18 +2,18 @@ import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
 
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
-import { translateText } from "../../../helper/translate/translateText";
-import { onHandleRoute } from "../../../helper/route";
+import { TranslateTextes, getLang } from "../../../helper/translate/translateText";
+
 import { changeFoodData } from "../../../helper/food-script/changeFoodData";
 const proteinDataFood = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const labelProtein = translateText(translateCount, 'Залишок білків', 'Left proteins')
-  const labelFats = translateText(translateCount, 'Залишок жирів', 'Left fats')
-  const labelCarbohydrates = translateText(translateCount, 'Залишок вуглеводів', 'Left carbohydrates')
 
-  const labelNeedProtein = translateText(translateCount, 'Додано білків', 'Added proteins')
-  const labelNeedFats = translateText(translateCount, 'Додано жирів', 'Added fats')
-  const labelNeedCarbohydrates = translateText(translateCount, 'Додано вуглеводів', 'Added carbohydrates')
+  const labelProtein = TranslateTextes(getLang(), 'RemnantProteins')
+  const labelFats = TranslateTextes(getLang(), 'RemnantFats')
+  const labelCarbohydrates = TranslateTextes(getLang(), 'RemnantCarb')
+
+  const labelNeedProtein = TranslateTextes(getLang(), 'AddedProteins')
+  const labelNeedFats = TranslateTextes(getLang(), 'AddedFats')
+  const labelNeedCarbohydrates = TranslateTextes(getLang(), 'AddedCarb')
 
   
   let needProtein = localStorage.getItem('protein')
@@ -72,8 +72,8 @@ const config = {
   return config
 }
 const createChartProteinCount = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
-  const title = translateText(translateCount, 'Добова норма білків, жирів та вуглеводів', "Daily rate of proteins, fats and carbohydrates")
+
+  const title = TranslateTextes(getLang(), 'DailyProtein')
 
   const canvasContainer = document.querySelector('.food-chart-wrap')
   const chartWraper = document.getElementById('protein-chart-container')
@@ -85,7 +85,7 @@ const createChartProteinCount = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'protein-chart-food')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  const saveChangeBtn = createElem('button', 'save-change-btn', localStorageUser('userName') ? `${translateText(translateCount, 'Зберегти зміни', 'Save changes')}` : `${translateText(translateCount, 'Вихід', 'Leave page')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
+  const saveChangeBtn = createElem('button', 'save-change-btn', localStorageUser('userName') ? `${TranslateTextes(getLang(), 'saveChange')}` : `${TranslateTextes(getLang(), 'leavePAge')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
 
   const id = localStorageUser('id')
   saveChangeBtn.addEventListener('click', (e)=>{changeFoodData(e, id)})

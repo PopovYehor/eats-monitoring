@@ -1,14 +1,14 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { coefficientWeightIndex } from "../../../../helper/form-canculate/CalculateCoefficient";
-import { translateText } from "../../../../helper/translate/translateText";
+import { TranslateTextes, getLang } from "../../../../helper/translate/translateText";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
 const weightIndexData = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
+  
   const weightIndex = localStorageUser('weightIndex')
   const residue = 100 - weightIndex
 
-const labelWeightIndex = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
+const labelWeightIndex = TranslateTextes(getLang(), 'BodyMassIndex')
 const data = {
     labels: [
       labelWeightIndex,
@@ -36,9 +36,9 @@ return config
 }
 
 const createChartWeightIndexAccount = ()=>{
-  let translateCount = localStorage.getItem('languageCount')
+  
   const weightIndex = localStorageUser('weightIndex')
-  const title = translateText(translateCount, 'Індекс маси тіла', 'Body mass index')
+  const title = TranslateTextes(getLang(), 'BodyMassIndex')
 
   const canvasContainer = document.querySelector('.account-charts-wrap')
   const chartWraper = document.getElementById('index-chart-container-account')

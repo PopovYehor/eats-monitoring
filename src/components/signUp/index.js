@@ -1,4 +1,5 @@
 import { onHandleRoute } from '../../helper/route'
+import { getLang, TranslateTextes } from '../../helper/translate/translateText'
 import "./style"
 
 const checkSelectParam = (item, select)=>{
@@ -18,106 +19,106 @@ const signUpComponent = ()=>{
               Реєстрація
             </span>
             <!--Логин-->
-            <div class="wrap-input validate-input" id = 'login-input' key = 'login' data-validate="Має бути більше 6 символів та без спеціальних символів (!@#$...)">
-              <input class="input" type="text" name="login" value = "testLogin" required>
-              <span class="progress-input" id ="login-progress" key = 'login' data-placeholder="Логін"></span>
+            <div class="wrap-input validate-input" id = 'login-input' key = 'login' data-validate="${TranslateTextes(getLang(), 'loginValidate')}">
+              <input class="input" type="text" name="login" value = "" required>
+              <span class="progress-input" id ="login-progress" key = 'login' data-placeholder="${TranslateTextes(getLang(), 'logins')}"></span>
             </div>
             <!--Пароль-->
             <!--глазок-->
-            <div class="wrap-input validate-input" id = 'password-input' key ='password' data-validate="Мінімум 8 символів, велика буква та цифра">
+            <div class="wrap-input validate-input" id = 'password-input' key ='password' data-validate="${TranslateTextes(getLang(), 'passwordValidate')}">
               <button class="btn-show-pass" type="button">
                 <img class="eyes-pass first-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
               </button>
               <!--форма Пароль-->
-              <input class="input passOne" type="password" name="pass" value = "testPassword" required>
-              <span class="progress-input" id ="password-progress" key = 'password' data-placeholder="Пароль"></span>
+              <input class="input passOne" type="password" name="pass" value = "" required>
+              <span class="progress-input" id ="password-progress" key = 'password' data-placeholder=${TranslateTextes(getLang(), 'password')}></span>
             </div>
               <!--повторить Пароль-->
               <!--повторить глазок Пароль-->
-            <div class="wrap-input validate-input" id = 'repeat-password-input' key = 'repeatPassword' data-validate="Паролі повинні повторюватись">
+            <div class="wrap-input validate-input" id = 'repeat-password-input' key = 'repeatPassword' data-validate="${TranslateTextes(getLang(), 'repeatPasswordValidate')}">
               <button class="btn-show-pass repeat-pass-btn" type="button">
                 <img class="eyes-pass repeat-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
               </button>
               <!--форма повторить Пароль-->
-              <input class="input repeatPassword" type="password" name="repeatPassword" value = "testPassword" required>
-              <span class="progress-input" id ="password-repeat-progress" key = 'repeatPassword' data-placeholder="Повторіть пароль"></span>
+              <input class="input repeatPassword" type="password" name="repeatPassword" value = "" required>
+              <span class="progress-input" id ="password-repeat-progress" key = 'repeatPassword' data-placeholder="${TranslateTextes(getLang(), 'repeatPassword')}"></span>
             </div>
             <!--имя-->
-            <div class="wrap-input validate-input" id = 'name-input' key = 'name' data-validate="Некоректне ім'я">
-              <input class="input" type="text" name="userName" value = "Єгор" required>
-              <span class="focus-input" key = 'name' data-placeholder="Ім'я"></span>
+            <div class="wrap-input validate-input" id = 'name-input' key = 'name' data-validate="${TranslateTextes(getLang(), 'nameValidate')}">
+              <input class="input" type="text" name="userName" value = "" required>
+              <span class="focus-input" key = 'name' data-placeholder=${TranslateTextes(getLang(), 'name')}></span>
             </div>
             <!--Фамилия-->
-            <div class="wrap-input validate-input" id = 'surname-input' key = 'surname' data-validate="Некоректне прізвище">
-              <input class="input" type="text" name="surname" value = "Попов" required>
-              <span class="focus-input" key ='surname' data-placeholder="Прізвище"></span>
+            <div class="wrap-input validate-input" id = 'surname-input' key = 'surname' data-validate="${TranslateTextes(getLang(), 'surnameValidate')}">
+              <input class="input" type="text" name="surname" value = "" required>
+              <span class="focus-input" key ='surname' data-placeholder=${TranslateTextes(getLang(), 'surname')}></span>
             </div>
             <!--email-->
-            <div class="wrap-input validate-input" id = 'email-input' key = 'email' data-validate="Некоректний email">
+            <div class="wrap-input validate-input" id = 'email-input' key = 'email' data-validate="${TranslateTextes(getLang(), 'emailValidate')}">
               <input class="input" type="text" name="email" value = "" required>
-              <span class="focus-input" key ='email' data-placeholder="Email"></span>
+              <span class="focus-input" key ='email' data-placeholder=${TranslateTextes(getLang(), 'email')}></span>
             </div>
             <!--Возраст-->
             <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="Від 3 до 99 років">
+            <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="${TranslateTextes(getLang(), 'ageValidate')}">
               <input class="input" type="text" name="age" value = "${sessionStorage.getItem('age') || ''}" required> 
-              <span class="focus-input" key = 'age' data-placeholder="Вік"></span>
+              <span class="focus-input" key = 'age' data-placeholder=${TranslateTextes(getLang(), 'age')}></span>
             </div>
             <!--пол-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'sex-input' key = 'sex' data-validate="Оберіть стать">
+            <div class="wrap-input validate-input wrap-input-row" id = 'sex-input' key = 'sex' data-validate="${TranslateTextes(getLang(), 'sexValidate')}">
               <select name="sex" id="sex" class="select-input" required>
-                <option class="lang" value="choise" selected disabled key = 'choiseSex'>Оберіть стать</option>
-                <option class="lang" value="male" key = 'male'>Чоловік</option>
-                <option class="lang" value="female" key = 'female'>Жінка</option>
+                <option class="lang" value="choise" selected disabled key = 'choiseSex'>${TranslateTextes(getLang(), 'choiseSex')}</option>
+                <option class="lang" value="male" key = 'male'>${TranslateTextes(getLang(), 'male')}</option>
+                <option class="lang" value="female" key = 'female'>${TranslateTextes(getLang(), 'female')}</option>
               </select>
               <span class= 'select-item'></span>
             </div>
           </div>
           <!--Рост-->
           <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'height-input' key = 'height' data-validate="Введіть значення від 30 до 250">
+            <div class="wrap-input validate-input wrap-input-row" id = 'height-input' key = 'height' data-validate="${TranslateTextes(getLang(), 'heightValidate')}">
               <select class="choise-height select-choise-param" name="choiseHeight" tabindex="-1">
-                <option class = "lang" value="sm" key="sm">См</option>
-                <option class = "lang" value="inches" key="inches">Дюйми</option>
+                <option class = "lang" value="sm" key="sm">${TranslateTextes(getLang(), 'sm')}</option>
+                <option class = "lang" value="inches" key="inches">${TranslateTextes(getLang(), 'inches')}</option>
             </select>
               <input class="input" type="text" name="height" value = "${sessionStorage.getItem('height') || ''}" required>
-              <span class="focus-input" key = 'height' data-placeholder="Зріст"></span>
+              <span class="focus-input" key = 'height' data-placeholder=${TranslateTextes(getLang(), 'height')}></span>
             </div>
             <!--Вес-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'weight-input' key = 'weight' data-validate="Некоректна вага">
+            <div class="wrap-input validate-input wrap-input-row" id = 'weight-input' key = 'weight' data-validate="${TranslateTextes(getLang(), 'weightValidate')}">
               <select class="choise-weight select-choise-param" name="choiseWeight" tabindex="-1">
-                  <option class = "lang" value="kg" key="kg">Кг</option>
-                  <option class = "lang" value="pounds" key="pound">Фунти</option>
+                  <option class = "lang" value="kg" key="kg">${TranslateTextes(getLang(), 'kg')}</option>
+                  <option class = "lang" value="pounds" key="pound">${TranslateTextes(getLang(), 'pound')}</option>
                 </select>
               <input class="input" type="text" name="weight" value = "${sessionStorage.getItem('weight') || ''}" required>
-              <span class="focus-input" key = 'weight' data-placeholder="Вага"></span>
+              <span class="focus-input" key = 'weight' data-placeholder=${TranslateTextes(getLang(), 'weight')}></span>
             </div>
           </div>
           <!--Желаемые данные-->
           <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'want-weight-input' key = 'wantWeight' data-validate="Некоректна вага">
+            <div class="wrap-input validate-input wrap-input-row" id = 'want-weight-input' key = 'wantWeight' data-validate="${TranslateTextes(getLang(), 'weightValidate')}">
               <input class="input" type="text" name="wantWeight" value = "${sessionStorage.getItem('wantWeight') || ''}" required>
-              <span class="focus-input" key = 'wantWeight' data-placeholder="Бажана вага"></span>
+              <span class="focus-input" key = 'wantWeight' data-placeholder="${TranslateTextes(getLang(), 'wantWeight')}"></span>
               <select class="choise-weight select-choise-param" name="wantWeightSelect"  tabindex="-1">
-                <option class = "lang" value="kg" key="kg">Кг</option>
-                <option class = "lang" value="pounds" key="pound">Фунти</option>
+                <option class = "lang" value="kg" key="kg">${TranslateTextes(getLang(), 'kg')}</option>
+                <option class = "lang" value="pounds" key="pound">${TranslateTextes(getLang(), 'pound')}</option>
               </select>
             </div>
             <!--желаемое количество дней-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="Некоректна кількість днів">
+            <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="${TranslateTextes(getLang(), 'wantDayValidate')}">
               <input class="input" type="text" name="wantDay" value = "${sessionStorage.getItem('wantDay') || ''}" required>
-              <span class="focus-input" key = 'weight' data-placeholder="Кількість днів до цілі"></span>
+              <span class="focus-input" key = 'wantDay' data-placeholder=${TranslateTextes(getLang(), 'wantDayNumber')}></span>
             </div>
           </div>
             <!--Уровень активности-->
-            <div class="wrap-input validate-input" id = 'activ-input' key = 'activ' data-validate="Оберіть рівень активності">
+            <div class="wrap-input validate-input" id = 'activ-input' key = 'activ' data-validate="${TranslateTextes(getLang(), 'choise')}">
               <select name="activeLevel" id="active-level" class="select-input" required>
-                <option class="lang" value="choise" selected disabled key = "choise">Оберіть рівень активності</option>
-                <option class="lang" value="none" key = 'none'>Немає активності (паралізований)</option>
-                <option class="lang" value="low" key = 'low' >Мала активність (Сидячий спосіб життя)</option>
-                <option class="lang" value="middle" key = 'middle'>Середня активність (1-2 тренування на тиждень)</option>
-                <option class="lang" value="hight" key = 'higth'>Висока активність (3-5 тренувань на тиждень)</option>
-                <option class="lang" value="very hight" key = 'veryHight'>Дуже висока активність</option>
+                <option class="lang" value="choise" selected disabled key = "choise">${TranslateTextes(getLang(), 'choise')}</option>
+                <option class="lang" value="none" key = 'none'>${TranslateTextes(getLang(), 'none')}</option>
+                <option class="lang" value="low" key = 'low' >${TranslateTextes(getLang(), 'low')}</option>
+                <option class="lang" value="middle" key = 'middle'>${TranslateTextes(getLang(), 'middle')}</option>
+                <option class="lang" value="hight" key = 'higth'>${TranslateTextes(getLang(), 'higth')}</option>
+                <option class="lang" value="very hight" key = 'veryHight'>${TranslateTextes(getLang(), 'veryHight')}</option>
               </select>
               <span class= 'select-item'></span>
             </div>
@@ -126,17 +127,17 @@ const signUpComponent = ()=>{
               <div class="wrap-login-form-btn">
                 <div class="login-form-bgbtn"></div>
                 <button class="login-form-btn lang" key="SingUp" type="button" form="singUpForm">
-                  Зареєструватися
+                ${TranslateTextes(getLang(), 'SingUp')}
                 </button>
               </div>
             </div>
 
             <div class="text-center p-t-115">
               <span class="trueSignUp lang" key="trueSignUp">
-                Реєстрація пройшла успішно!
+              ${TranslateTextes(getLang(), 'trueSignUp')}
               </span>
               <a class="trueSignUp lang" id = "loginBtnSign" key="login" href="/login">
-                Вхід
+              ${TranslateTextes(getLang(), 'login')}
               </a>
             </div>
           </form>
