@@ -1,7 +1,7 @@
 import "../laguage/style"
 import { createElem } from "../../../helper/createElement"
 
-import { getLang, translateText, TranslateTextes } from "../../../helper/translate/translateText"
+import { getLang, TranslateTexts } from "../../../helper/translate/translateText"
 import { onHandleRoute } from "../../../helper/route"
 import { localStorageUser } from "../../../helper/account-scripts/user-data"
 import { arrLangText } from "../../../helper/translate/translate-array"
@@ -20,10 +20,10 @@ const HeaderSwitch = ()=>{
     routeDropDown.innerHTML = routeBtn
     const routeDropdownMenu = createElem('ul', 'dropdown_menu dropdown_menu--animated dropdown_menu-6', null, routeDropDown)
     const routeElement =  !localStorage.getItem('userName') ? `
-    <div class="dropdown_item">&#xf2f6<a class = "dorp-item-img" href = "/login" id = "loginBtn">${TranslateTextes(getLang(), 'login')}</a></div>
-    <div class="dropdown_item">&#xf234 <a class = "dorp-item-img" href = "/signUp" id ="signUpBtn">${TranslateTextes(getLang(), 'headerSingUp')}</a></div>
+    <div class="dropdown_item">&#xf2f6<a class = "dorp-item-img" href = "/login" id = "loginBtn">${TranslateTexts(getLang(), 'login')}</a></div>
+    <div class="dropdown_item">&#xf234 <a class = "dorp-item-img" href = "/signUp" id ="signUpBtn">${TranslateTexts(getLang(), 'headerSingUp')}</a></div>
     ` : `
-    <div class="dropdown_item">&#xf52b <a class = "dorp-item-img" href = "/login" id = "signOutBtn">${TranslateTextes(getLang(), 'SignOut')}</a></div>
+    <div class="dropdown_item">&#xf52b <a class = "dorp-item-img" href = "/login" id = "signOutBtn">${TranslateTexts(getLang(), 'SignOut')}</a></div>
     `
     routeDropdownMenu.innerHTML = routeElement
     if (!localStorageUser('userName')){

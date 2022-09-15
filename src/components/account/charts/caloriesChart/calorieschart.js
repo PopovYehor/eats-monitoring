@@ -1,11 +1,11 @@
 import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
-import { TranslateTextes, getLang } from '../../../../helper/translate/translateText';
+import { TranslateTexts, getLang } from '../../../../helper/translate/translateText';
 import { localStorageUser } from '../../../../helper/account-scripts/user-data';
 
 const caloriesData = ()=>{
-  const labelCalories= TranslateTextes(getLang(), 'remainderCalories')
-  const labelNeedCalories= TranslateTextes(getLang(), 'AddedCalories')
+  const labelCalories= TranslateTexts(getLang(), 'remainderCalories')
+  const labelNeedCalories= TranslateTexts(getLang(), 'AddedCalories')
 
   let needCalories = Number(localStorageUser('calories'))
   const normal = Number(localStorageUser('needCalories'))
@@ -40,7 +40,7 @@ const config = {
 }
 const createChartCaloriesCountAccount = ()=>{
 
-  const title = TranslateTextes(getLang(), 'DailyCaloric')
+  const title = TranslateTexts(getLang(), 'DailyCaloric')
   
   const canvasContainer = document.querySelector('.account-charts-wrap')
   const chartWraper = document.getElementById('calories-chart-container-account')

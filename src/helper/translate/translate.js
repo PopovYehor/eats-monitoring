@@ -3,6 +3,8 @@ import {arrLangText, arrLangPlaceholder, arrLangValidate } from "./translate-arr
 import Food from "../../components/food"
 import { createAllChartsUser } from "../../components/account/charts/createAllChartsUser"
 import HeaderSwitch from "../../components/header/login"
+
+
 const translate = ()=>{
     const placeHolders = document.querySelectorAll('.focus-input')
     const progressInput = document.querySelectorAll('.progress-input')

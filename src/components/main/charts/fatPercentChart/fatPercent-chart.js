@@ -3,14 +3,14 @@ import {selectParam} from "../../../../helper/form-canculate/formChangeParametr"
 import { formsData } from "../../../../helper/form-canculate/formTranformationData";
 import Chart from 'chart.js/auto'
 import { fatPercent,  fatWeight } from "../../../../helper/form-canculate/formCalculate-index";
-import { fatProcentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
+import { fatPercentDescription } from "../../../../helper/form-canculate/CalculateCoefficient";
 import { sexData } from "../../../../helper/form-canculate/formTranformationData";
 
-import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTexts } from "../../../../helper/translate/translateText";
 const fatChartData = ()=>{
 
   const remainder = 100 - fatPercent()
-  const labelFatPerent = TranslateTextes(getLang(), 'PercentageOfFat')
+  const labelFatPerent = TranslateTexts(getLang(), 'PercentageOfFat')
 const data = {
     labels: [
       labelFatPerent,
@@ -38,13 +38,13 @@ const createFatPercentChart = ()=>{
   const choiseWeightOption = selectParam(formsData().choiseWeight)
   if( choiseWeightOption.value == 'pounds'){
     weightFat = (Number(fatWeight())*2.2).toFixed(0)
-    paramLabel = TranslateTextes(getLang(), 'pound')
+    paramLabel = TranslateTexts(getLang(), 'pound')
   }else{
     weightFat = Number(fatWeight())
-    paramLabel = TranslateTextes(getLang(), 'kg')
+    paramLabel = TranslateTexts(getLang(), 'kg')
   }
 
-  const title = TranslateTextes(getLang(), 'PercentageOfBodyFat')
+  const title = TranslateTexts(getLang(), 'PercentageOfBodyFat')
   const wrap = document.getElementById('canvas-index-wrap')
   const weightIndexChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'fat-chart-container')
   const canvasTitle = createElem('h1', 'canvas-title', title, weightIndexChartWrap)
@@ -54,7 +54,7 @@ const createFatPercentChart = ()=>{
   
   const labelItem = `
   <span class = "chart-label fat-index">  ${fatPercent()} % (${weightFat} ${paramLabel}) 
-  <span class = "chart-label-desription">${fatProcentDescription(sexData(), fatPercent())}</span>
+  <span class = "chart-label-desription">${fatPercentDescription(sexData(), fatPercent())}</span>
   </span
   `
   labelWrap.innerHTML = labelItem

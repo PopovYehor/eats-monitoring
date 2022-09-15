@@ -6,12 +6,12 @@ import {validationAccount} from "../validation/main-form-validation"
 import { sameHeightTable } from "./table-script"
 import moment from "moment"
 import Preloader from "../../components/preloader"
-import { TranslateTextes, getLang } from "../translate/translateText"
+import { TranslateTexts, getLang } from "../translate/translateText"
 
 const arrSex = ()=> {
     const arr = {
         value :['male', 'female'],
-        text: [ TranslateTextes(getLang(), 'male'),TranslateTextes(getLang(), 'female')]
+        text: [ TranslateTexts(getLang(), 'male'),TranslateTexts(getLang(), 'female')]
     }
     return arr
 }
@@ -20,11 +20,11 @@ const arrActiv = ()=>{
         value: ["none","low","middle","hight", "veryHight"],
         coef: [{none: 1.2}, {low: 1.375}, {middle: 1.55}, {hight: 1.725},{veryHight: 1.9}, ],
         text : [
-            TranslateTextes(getLang(), 'none'),
-            TranslateTextes(getLang(), 'low'),
-            TranslateTextes(getLang(), 'middle'),
-            TranslateTextes(getLang(), 'higth'), 
-            TranslateTextes(getLang(), 'veryHight')
+            TranslateTexts(getLang(), 'none'),
+            TranslateTexts(getLang(), 'low'),
+            TranslateTexts(getLang(), 'middle'),
+            TranslateTexts(getLang(), 'higth'), 
+            TranslateTexts(getLang(), 'veryHight')
         ]
     }
     return arr
@@ -44,13 +44,13 @@ const addInputForChange = ()=>{
     createInput('input', 'name-item-input item-input', null, userObjectValue('name'), nameItem, 'name')
     createInput('input', 'surname-item-input item-input', null, userObjectValue('surname'), nameItem, 'surname')
     createInput('input', 'height-item-input item-input', null, userObjectValue('height'), heightItem, 'height')
-    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTextes(getLang(), 'sm'),TranslateTextes(getLang(), 'inches'),userObjectValue('heightParam'), 'heightParam')
+    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTexts(getLang(), 'sm'),TranslateTexts(getLang(), 'inches'),userObjectValue('heightParam'), 'heightParam')
     createInput('input', 'weight-item-input item-input', null, userObjectValue('weight'), weightItem, 'weight')
-    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTextes(getLang(), 'kg'),TranslateTextes(getLang(), 'pound'), userObjectValue('weightParam'), 'weightParam' )
+    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), userObjectValue('weightParam'), 'weightParam' )
     createInput('input', 'login-item-input item-input', null, userObjectValue('userName'), loginItem, 'userName')
     createInput('input', 'age-item-input item-input', null, userObjectValue('age'), ageItem, 'age')
     createInput('input', 'want-weight-input item-input', null, userObjectValue('wantWeight'), wantWeightItem, 'wantWeight')
-    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTextes(getLang(), 'kg'),TranslateTextes(getLang(), 'pound'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
+    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
     createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
@@ -61,8 +61,7 @@ const addInputForChange = ()=>{
     
 }
 
-
-
+//change photo profile
 const loadFile = (event)=> {
     const profileImg = document.querySelector('.img-profile')
     profileImg.src = URL.createObjectURL(event.target.files[0]);
@@ -70,7 +69,6 @@ const loadFile = (event)=> {
     fetch(profileImg.src).then(r => r.blob()).then(blobFile =>{
          let files = new File([blobFile], `avatarUser-${localStorageUser('id')}`, { type: "image/png" })
         })
-    
 }
 
 const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, profileItem)=>{
@@ -81,7 +79,7 @@ const changeProfileData = (profile, addImgInput, labelChangePhoto, changeBtn, pr
     addInputForChange()
     sameHeightTable()
     validationAccount()
-    changeBtn.textContent = TranslateTextes(getLang(), 'save')
+    changeBtn.textContent = TranslateTexts(getLang(), 'save')
 }
 
 const saveWeight = (wightInput)=>{

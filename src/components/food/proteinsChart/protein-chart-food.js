@@ -2,18 +2,18 @@ import { createElem } from "../../../helper/createElement";
 import Chart from 'chart.js/auto'
 
 import { localStorageUser } from "../../../helper/account-scripts/user-data";
-import { TranslateTextes, getLang } from "../../../helper/translate/translateText";
+import { TranslateTexts, getLang } from "../../../helper/translate/translateText";
 
 import { changeFoodData } from "../../../helper/food-script/changeFoodData";
 const proteinDataFood = ()=>{
 
-  const labelProtein = TranslateTextes(getLang(), 'RemnantProteins')
-  const labelFats = TranslateTextes(getLang(), 'RemnantFats')
-  const labelCarbohydrates = TranslateTextes(getLang(), 'RemnantCarb')
+  const labelProtein = TranslateTexts(getLang(), 'RemnantProteins')
+  const labelFats = TranslateTexts(getLang(), 'RemnantFats')
+  const labelCarbohydrates = TranslateTexts(getLang(), 'RemnantCarb')
 
-  const labelNeedProtein = TranslateTextes(getLang(), 'AddedProteins')
-  const labelNeedFats = TranslateTextes(getLang(), 'AddedFats')
-  const labelNeedCarbohydrates = TranslateTextes(getLang(), 'AddedCarb')
+  const labelNeedProtein = TranslateTexts(getLang(), 'AddedProteins')
+  const labelNeedFats = TranslateTexts(getLang(), 'AddedFats')
+  const labelNeedCarbohydrates = TranslateTexts(getLang(), 'AddedCarb')
 
   
   let needProtein = localStorage.getItem('protein')
@@ -73,7 +73,7 @@ const config = {
 }
 const createChartProteinCount = ()=>{
 
-  const title = TranslateTextes(getLang(), 'DailyProtein')
+  const title = TranslateTexts(getLang(), 'DailyProtein')
 
   const canvasContainer = document.querySelector('.food-chart-wrap')
   const chartWraper = document.getElementById('protein-chart-container')
@@ -85,7 +85,7 @@ const createChartProteinCount = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'protein-chart-food')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  const saveChangeBtn = createElem('button', 'save-change-btn', localStorageUser('userName') ? `${TranslateTextes(getLang(), 'saveChange')}` : `${TranslateTextes(getLang(), 'leavePAge')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
+  const saveChangeBtn = createElem('button', 'save-change-btn', localStorageUser('userName') ? `${TranslateTexts(getLang(), 'saveChange')}` : `${TranslateTexts(getLang(), 'leavePAge')}`, proteinChartWrap, 'href', localStorageUser('userName') ? '/account' : '/')
 
   const id = localStorageUser('id')
   saveChangeBtn.addEventListener('click', (e)=>{changeFoodData(e, id)})

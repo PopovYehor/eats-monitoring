@@ -1,10 +1,9 @@
 import moment from "moment"
-import { localStorageUser } from "../account-scripts/user-data"
 import { perfectWeight } from "../form-canculate/formCalculate-index"
 import { selectParam } from "../form-canculate/formChangeParametr"
 import {  wantDay, yearData, defheight, defWeight, defWantWeight, sexData, loginData, passwordData, nameData, surnameData, activData, formsData } from "../form-canculate/formTranformationData"
 
-const wantDayToMoment = () =>{
+const wantDayNumberToMoment = () =>{
     let dateArr = [] 
     for (let i = 0; i < wantDay() ; i++){
        dateArr.push((moment().add(i,'d').format('DD/MM/YY')))
@@ -36,7 +35,7 @@ const signUpData = ()=>{
         'weightParam' : selectParam(formsData().choiseWeight).value,
         'dateRegist': moment().format('DD/MM/YY'),
         'dataDate': [moment().format('DD/MM/YY')],
-        'wantDate': wantDayToMoment(),
+        'wantDate': wantDayNumberToMoment(),
         'translateCount': localStorage.getItem('translateCount'),
         'dataDateCalories': [],
         'dataCalories': [],

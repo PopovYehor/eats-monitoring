@@ -2,11 +2,11 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { calculatePartOfWantCalories } from "../../../../helper/form-canculate/formCalculate-index";
 
-import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTexts } from "../../../../helper/translate/translateText";
 const proteinData = ()=>{
-  const labelProtein = TranslateTextes(getLang(), 'Proteins')
-  const labelFats = TranslateTextes(getLang(), 'Fats')
-  const labelCarbohydrates = TranslateTextes(getLang(), 'Carbohydrates')
+  const labelProtein = TranslateTexts(getLang(), 'Proteins')
+  const labelFats = TranslateTexts(getLang(), 'Fats')
+  const labelCarbohydrates = TranslateTexts(getLang(), 'Carbohydrates')
   
   const coeff = {
     protein : 0.30,
@@ -52,7 +52,7 @@ const config = {
 }
 const createChartProtein = ()=>{
 
-  const title = TranslateTextes(getLang(), 'NumberCalories')
+  const title = TranslateTexts(getLang(), 'NumberCalories')
 
   const canvasContainer = document.getElementById('canvas-calories-wrap')
   const proteinChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'protein-chart-container')

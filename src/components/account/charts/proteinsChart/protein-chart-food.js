@@ -1,15 +1,15 @@
 import { createElem } from '../../../../helper/createElement';
 import Chart from 'chart.js/auto'
 import { onHandleRoute } from '../../../../helper/route';
-import { TranslateTextes, getLang } from '../../../../helper/translate/translateText';
+import { TranslateTexts, getLang } from '../../../../helper/translate/translateText';
 const proteinDataFood = ()=>{
-  const labelProtein = TranslateTextes(getLang(), 'RemnantProteins')
-  const labelFats = TranslateTextes(getLang(), 'RemnantFats')
-  const labelCarbohydrates = TranslateTextes(getLang(), 'RemnantCarb')
+  const labelProtein = TranslateTexts(getLang(), 'RemnantProteins')
+  const labelFats = TranslateTexts(getLang(), 'RemnantFats')
+  const labelCarbohydrates = TranslateTexts(getLang(), 'RemnantCarb')
 
-  const labelNeedProtein = TranslateTextes(getLang(), 'AddedProteins')
-  const labelNeedFats = TranslateTextes(getLang(), 'AddedFats')
-  const labelNeedCarbohydrates = TranslateTextes(getLang(), 'AddedCarb')
+  const labelNeedProtein = TranslateTexts(getLang(), 'AddedProteins')
+  const labelNeedFats = TranslateTexts(getLang(), 'AddedFats')
+  const labelNeedCarbohydrates = TranslateTexts(getLang(), 'AddedCarb')
 
   
   let needProtein = localStorage.getItem('protein')
@@ -68,7 +68,7 @@ const config = {
 }
 const createChartProteinCountAccount = ()=>{
 
-  const title =TranslateTextes(getLang(), 'DailyProtein')
+  const title =TranslateTexts(getLang(), 'DailyProtein')
 
   const canvasContainer = document.querySelector('.account-charts-wrap')
   const chartWraper = document.getElementById('protein-chart-container-account')
@@ -80,7 +80,7 @@ const createChartProteinCountAccount = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'protein-chart-account')
   const myChart = new Chart(canvasProtein, proteinDataFood())
 
-  const canculateBtn = createElem('a', 'count-calories-account-btn', TranslateTextes(getLang(), 'calculate'), proteinChartWrap, 'href', '/food')
+  const canculateBtn = createElem('a', 'count-calories-account-btn', TranslateTexts(getLang(), 'calculate'), proteinChartWrap, 'href', '/food')
   canculateBtn.addEventListener('click', (e)=>{onHandleRoute(e)})
 }
 

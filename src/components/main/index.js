@@ -6,7 +6,6 @@ import { placeholderClickUp, placeholderUp, selectHasVal } from "../../helper/fo
 import { onHandleRoute } from "../../helper/route"
 import { defheight, formsData } from "../../helper/form-canculate/formTranformationData"
 import { selectParam } from "../../helper/form-canculate/formChangeParametr"
-import { getLang, TranslateTextes } from "../../helper/translate/translateText"
 
 const mainComponent = ()=>{
   

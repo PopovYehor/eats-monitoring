@@ -3,17 +3,20 @@ import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
 import { user } from "../account-scripts/user-data"
 import { account } from "../../components/account/profile"
-import { caloriesFormulaAccount, fatWeightAccount, sameHeightTable } from "../account-scripts/table-script"
+import { sameHeightTable } from "../account-scripts/table-script"
 import {createAllChartsUser} from "../../components/account/charts/createAllChartsUser"
 import { trueSignUpBtn } from "../../components/signUp/trueSignUpBtn"
-import { getLang, TranslateTextes } from "../translate/translateText"
+import { getLang, TranslateTexts } from "../translate/translateText"
 import { onHandleRoute } from "../route"
+import { caloriesFormulaAccount, fatWeightAccount } from "../account-scripts/canculate-account-data"
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 
 const API = `${cors}${urlData}`
 
+
+//login to account
 const logIn = ()=>{
     const btn = document.querySelector('.login-form-btn')
     btn.addEventListener('click', (e)=>{
@@ -42,20 +45,15 @@ const logIn = ()=>{
                             createAllChartsUser()
                             }else{
                                 const loginWrap = document.getElementById('login-input')
-                                loginWrap.dataset.validate = TranslateTextes(getLang(), 'incorectLogin')
+                                loginWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
                                 loginWrap.classList.add('alert-validate')
 
                                 const passWrap = document.getElementById('password-input')
-                                passWrap.dataset.validate = TranslateTextes(getLang(), 'incorectLogin')
+                                passWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
                                 passWrap.classList.add('alert-validate')
                             }
                         })
-                        /* const preloader = document.querySelector('.preload-account-page')
-                        if (preloader) preloader.remove()
-                        account()
-                        caloriesFormulaAccount()
-                        fatWeightAccount()
-                        createAllChartsUser() */
+                        
                     })
     })
 }
@@ -94,7 +92,7 @@ const postSignUp = ()=>{
                                 })
                         }else{
                             const wrapLogin = document.getElementById('login-input')
-                            wrapLogin.dataset.validate = TranslateTextes(getLang(), 'haveUser')
+                            wrapLogin.dataset.validate = TranslateTexts(getLang(), 'haveUser')
                             wrapLogin.classList.add('alert-validate')
                         }
                     })

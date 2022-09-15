@@ -1,5 +1,5 @@
 
-import {  TranslateTextes, getLang } from "../../../helper/translate/translateText"
+import {  TranslateTexts, getLang } from "../../../helper/translate/translateText"
 import "./style"
 localStorage.setItem('totalCalories', 0)
 localStorage.setItem('totalProtein', 0)
@@ -27,19 +27,19 @@ const TotalFood = ()=>{
     const element = `
     <div class="total-food-container">
         <div class="total-item" id="total-calories">
-            <sapn class="total-text">${TranslateTextes(getLang(), 'TotalCalories')}</sapn>
+            <sapn class="total-text">${TranslateTexts(getLang(), 'TotalCalories')}</sapn>
             <sapn class="total-count" id="total-calories">${calories}</sapn>
         </div>
         <div class="total-item" id="total-calories">
-            <sapn class="total-text">${TranslateTextes(getLang(), 'Proteins')}</sapn>
+            <sapn class="total-text">${TranslateTexts(getLang(), 'Proteins')}</sapn>
             <sapn class="total-count" id="total-protein">${protein}</sapn>
         </div>
         <div class="total-item" id="total-calories">
-            <sapn class="total-text" >${TranslateTextes(getLang(), 'Fats')}</sapn>
+            <sapn class="total-text" >${TranslateTexts(getLang(), 'Fats')}</sapn>
             <sapn class="total-count" id="total-fats">${fats}</sapn>
         </div>
         <div class="total-item" id="total-calories">
-            <sapn class="total-text">${TranslateTextes(getLang(), 'Carbohydrates')}</sapn>
+            <sapn class="total-text">${TranslateTexts(getLang(), 'Carbohydrates')}</sapn>
             <sapn class="total-count" id="total-carbohydrates">${carbohydrates}</sapn>
         </div>
     </div>

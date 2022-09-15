@@ -2,19 +2,19 @@ import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { everyDayData, weightDayData } from "./dataForProgresChart";
 import { localStorageUser } from "../../../../helper/account-scripts/user-data";
-import { TranslateTextes, getLang } from '../../../../helper/translate/translateText';
+import { TranslateTexts, getLang } from '../../../../helper/translate/translateText';
 
 const progresChartData = ()=>{
 
   let paramLabel = ''
   const choiseWeightOption = localStorageUser('weightParam')
-  choiseWeightOption == 'pounds' ? paramLabel = TranslateTextes(getLang(), 'pound') : paramLabel = TranslateTextes(getLang(), 'kg')
+  choiseWeightOption == 'pounds' ? paramLabel = TranslateTexts(getLang(), 'pound') : paramLabel = TranslateTexts(getLang(), 'kg')
 
   const data = {
       labels: everyDayData(),
       datasets: [
         {
-          label: `${TranslateTextes(getLang(), 'weight')}, ${paramLabel} `,
+          label: `${TranslateTexts(getLang(), 'weight')}, ${paramLabel} `,
           data: weightDayData(),
           borderColor: '#F44336',
           backgroundColor: '#F44336',
@@ -37,7 +37,7 @@ const progresChartData = ()=>{
 }
 const CreateChartProgresUser = ()=>{
   
-  const title = TranslateTextes(getLang(), 'YourWeightProgress')
+  const title = TranslateTexts(getLang(), 'YourWeightProgress')
   
   const canvasContainer = document.querySelector('.progres-chart-user')
   const chartWraper = document.getElementById('progres-container')

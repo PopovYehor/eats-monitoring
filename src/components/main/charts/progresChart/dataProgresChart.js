@@ -4,17 +4,17 @@ import { dateData, dateWeightData } from "./dataForProgresChart";
 
 import { formsData } from "../../../../helper/form-canculate/formTranformationData";
 import { selectParam } from "../../../../helper/form-canculate/formChangeParametr";
-import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTexts } from "../../../../helper/translate/translateText";
 const progresChartData = ()=>{
   let paramLabel = ''
   const choiseWeightOption = selectParam(formsData().choiseWeight)
-  choiseWeightOption.value == 'pounds' ? paramLabel = TranslateTextes(getLang(), 'pound') : paramLabel = TranslateTextes(getLang(), 'kg')
+  choiseWeightOption.value == 'pounds' ? paramLabel = TranslateTexts(getLang(), 'pound') : paramLabel = TranslateTexts(getLang(), 'kg')
 
   const data = {
       labels: dateData(),
       datasets: [
         {
-          label: `${TranslateTextes(getLang(), 'weight')}, ${paramLabel} `,
+          label: `${TranslateTexts(getLang(), 'weight')}, ${paramLabel} `,
           data: dateWeightData(),
           borderColor: '#F44336',
           backgroundColor: '#F44336',
@@ -35,7 +35,7 @@ const progresChartData = ()=>{
   return config
 }
 const createChartProgres = ()=>{
-  const title = TranslateTextes(getLang(), 'YourWeightProgress')
+  const title = TranslateTexts(getLang(), 'YourWeightProgress')
 
   const canvasContainer = document.getElementById('canvas-progres-wrap')
   const ChartWrap = createElem('div', 'chart-data-container', null, canvasContainer, 'id', 'progres-container')

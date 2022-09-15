@@ -1,7 +1,7 @@
 import { createElem } from "../createElement"
-
-import {  TranslateTextes, getLang } from "../translate/translateText"
+import {  TranslateTexts, getLang } from "../translate/translateText"
 import { createFoodItem } from "./select-items-script"
+
 const paginationFood = {
     item: [],
     limit: 10,
@@ -30,9 +30,9 @@ const pagination = (elem, equal)=>{
 const paginationCreatingElement = ()=>{
 
     const paginationWrap = document.querySelector('.food-pagination-wrap')
-    createElem('div', 'prev btn-pag', `${ TranslateTextes(getLang(), 'Prev')}`, paginationWrap)
+    createElem('div', 'prev btn-pag', `${ TranslateTexts(getLang(), 'Prev')}`, paginationWrap)
     createElem('span', 'page-count', `${paginationFood.page}`, paginationWrap)
-    createElem('div', 'next btn-pag', `${TranslateTextes(getLang(), 'Next')}`, paginationWrap)
+    createElem('div', 'next btn-pag', `${TranslateTexts(getLang(), 'Next')}`, paginationWrap)
 
     const btnPagType = document.querySelectorAll('.btn-pag')
     btnPagType.forEach(elem => elem.addEventListener('click', ()=>{

@@ -1,7 +1,7 @@
 import { selectParam } from "./formChangeParametr"
 import { formsData } from "./formTranformationData"
+import { getLang, translateText, TranslateTexts } from "../translate/translateText"
 
-import { getLang, translateText, TranslateTextes } from "../translate/translateText"
 const coefficientWeightIndex = (index)=>{
 let elem = ''
  const coefWeightIndex = [
@@ -31,7 +31,7 @@ let elem = ''
         elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][i])}'>${translateText(getLang(),coefWeightIndex[0][i],coefWeightIndex[1][i] )}</span>`
         break
     }else{
-        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][6])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
+        elem =  `<span class = 'weight-index-description ${Object.values(coefWeightIndex[3][6])}'>${TranslateTexts(getLang(), 'ConsultDoctor')}</span>`
     }
  }
  return elem
@@ -52,7 +52,7 @@ const activity = ()=>{
     return active
 }
 
-const fatProcentDescription = (sex, count)=>{
+const fatPercentDescription = (sex, count)=>{
     let element = ''
  const correlationFat = [
     [`невід'ємний жир`,'спортивний показник','добрий показник','середній показник', 'поганий показник'],
@@ -85,14 +85,14 @@ const fatProcentDescription = (sex, count)=>{
                 element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(getLang(),correlationFat[0][i], correlationFat[1][i]) }</span>`
                 break
             }else{
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTexts(getLang(), 'ConsultDoctor')}</span>`
             }
         }else {
             if (count >= Object.values(correlationFat[3])[i].from && count <= Object.values(correlationFat[3])[i].to){
                 element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][i])}'>${translateText(getLang(),correlationFat[0][i], correlationFat[1][i])}</span>`
                 break
             }else{
-                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTextes(getLang(), 'ConsultDoctor')}</span>`
+                element = `<span class = 'fat-weight-description ${Object.values(correlationFat[4][4])}'>${TranslateTexts(getLang(), 'ConsultDoctor')}</span>`
             }
         }
     }
@@ -101,4 +101,4 @@ const fatProcentDescription = (sex, count)=>{
 }
 
 
-export {coefficientWeightIndex, activity, fatProcentDescription}
+export {coefficientWeightIndex, activity, fatPercentDescription}

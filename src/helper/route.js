@@ -3,7 +3,7 @@ import Foods from "../views/foods"
 import Login from "../views/login"
 import Main from "../views/main"
 import SignUp from "../views/signUp"
-import { localStorageUser } from "./account-scripts/user-data"
+
 const onHandleRoute = (e) => {
     e = e || e.window
     e.preventDefault()

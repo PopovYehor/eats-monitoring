@@ -1,7 +1,7 @@
 
 import { changeFoodItem, deleteFoodItem } from "../../../helper/food-script/basket-script";
 import { validationFoodCount } from "../../../helper/validation/main-form-validation";
-import { TranslateTextes, getLang } from "../../../helper/translate/translateText";
+import { TranslateTexts, getLang } from "../../../helper/translate/translateText";
 const basketItem = (data, id)=> {
     const elemName = getLang() == 'uk' ? data.ukText : data.enText;
     const element = `
@@ -14,25 +14,25 @@ const basketItem = (data, id)=> {
         </div>
         <div class ="calories-count-wrap">
             <div class ="calories-count">
-                <span class="caloties-item-title" id="total-calories-title">${TranslateTextes(getLang(), 'TotalCalories')}</span>
+                <span class="caloties-item-title" id="total-calories-title">${TranslateTexts(getLang(), 'TotalCalories')}</span>
                 <span class= "caloties-item-data" id="total-calories">${data.calories}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Fats')}</span>
+                <span class="caloties-item-title">${TranslateTexts(getLang(), 'Fats')}</span>
                 <span class= "caloties-item-data" id="total-fats">${data.fats}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Proteins')}</span>
+                <span class="caloties-item-title">${TranslateTexts(getLang(), 'Proteins')}</span>
                 <span class= "caloties-item-data" id="total-protein">${data.protein}</span>
             </div>
             <div class ="calories-count">
-                <span class="caloties-item-title">${TranslateTextes(getLang(), 'Carbohydrates')}</span>
+                <span class="caloties-item-title">${TranslateTexts(getLang(), 'Carbohydrates')}</span>
                 <span class= "caloties-item-data" id="total-carbohydrates">${data.carbonaries}</span>
             </div>
         </div>
-        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${TranslateTextes(getLang(), 'EnterNumber')}">
+        <div class= "calories-input-wrap" id ="calories-input-wrap-${id}" data-validate= "${TranslateTexts(getLang(), 'EnterNumber')}">
             <input class= "calories-input" type="text" id = "calories-input-${id}" value = ${data.value || "100"}>
-            <span class= "calories-input-desc">${TranslateTextes(getLang(), 'grams')}</span>
+            <span class= "calories-input-desc">${TranslateTexts(getLang(), 'grams')}</span>
         </div>
         <div class="calories-delete-btn-wrap">
             <button class="calories-btn delete" id="btn-delete-${id}">&#xf1f8;</button>

@@ -1,7 +1,7 @@
 import { createElem } from "../../../../helper/createElement";
 import Chart from 'chart.js/auto'
 import { caloriesFormula, calculateWantCalories  } from "../../../../helper/form-canculate/formCalculate-index";
-import { getLang, TranslateTextes } from "../../../../helper/translate/translateText";
+import { getLang, TranslateTexts } from "../../../../helper/translate/translateText";
 import { onHandleRoute } from "../../../../helper/route";
 
 const DATA_COUNT = 5;
@@ -13,9 +13,9 @@ const CaloriesChartData = ()=>{
   let remainder = wantCalories - caloriesFormula()
   if (remainder < 0) remainder = remainder*(-1)
   let betweenLabel = ''
-  remainder > 0 ? betweenLabel = TranslateTextes(getLang(), 'extraCalories') : betweenLabel = TranslateTextes(getLang(), 'remainderCalories')
-  const labelCaloriesCount = TranslateTextes(getLang(), 'yourCalorieCount')
-  const labelCalTotal = TranslateTextes(getLang(), 'totalCalories')
+  remainder > 0 ? betweenLabel = TranslateTexts(getLang(), 'extraCalories') : betweenLabel = TranslateTexts(getLang(), 'remainderCalories')
+  const labelCaloriesCount = TranslateTexts(getLang(), 'yourCalorieCount')
+  const labelCalTotal = TranslateTexts(getLang(), 'totalCalories')
 
   const data = {
     labels: [labelCaloriesCount, betweenLabel, labelCalTotal],
@@ -87,7 +87,7 @@ const CaloriesChartData = ()=>{
   return config
 }
 const createCaloriesChart = ()=>{
-  const title = TranslateTextes(getLang(), 'CalculatingCalories')
+  const title = TranslateTexts(getLang(), 'CalculatingCalories')
 
   const wrap = document.getElementById('canvas-calories-wrap')
   const caloriesChartWrap = createElem('div', 'chart-data-container', null, wrap, 'id', 'calories-chart-container')
@@ -96,7 +96,7 @@ const createCaloriesChart = ()=>{
   const canvasProtein = createElem('canvas', null, null, chartWrap, 'id', 'myChart')
   const myChart = new Chart(canvasProtein, CaloriesChartData())
 
-  const canculateBtn = createElem('a', 'count-calories-btn', TranslateTextes(getLang(), 'Calculate'), caloriesChartWrap, 'href', '/food')
+  const canculateBtn = createElem('a', 'count-calories-btn', TranslateTexts(getLang(), 'Calculate'), caloriesChartWrap, 'href', '/food')
   canculateBtn.addEventListener('click', (e)=>onHandleRoute(e))
 }
 

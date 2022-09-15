@@ -41,7 +41,6 @@ const getAllFood = (filter = null) =>{
         paginationFood.offset = 10
         const sliceRes = res.slice((paginationFood.offset-paginationFood.limit), paginationFood.offset)
 
-        
         if(!filter){
             sliceRes.map(elem => createFoodItem(elem, wrap))
             const paginationWrap = document.querySelector('.food-pagination-wrap')

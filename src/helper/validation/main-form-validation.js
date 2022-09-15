@@ -1,16 +1,14 @@
 import { formsData } from "../form-canculate/formTranformationData"
-import { getLang,TranslateTextes } from "../translate/translateText"
-
-const addEvent = (elem, func, elem2)=>{
-    if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })  
-}
-const addBlur = (elem, func)=>{elem.addEventListener('blur', func )  }
+import { getLang,TranslateTexts } from "../translate/translateText"
 
 
-const addOrRemoveAlertValidate = (flag, elem)=>{
-    flag == false ? elem.classList.add('alert-validate') : elem.classList.remove('alert-validate')
-}
-
+//delete alert on input
+const addEvent = (elem, func, elem2)=>{if (elem2) elem.addEventListener('focus', function(){ elem.addEventListener('keyup', func) })}
+//adding a primary alert on blur
+const addBlur = (elem, func)=> elem.addEventListener('blur', func )
+//add or remove alert
+const addOrRemoveAlertValidate = (flag, elem)=>flag == false ? elem.classList.add('alert-validate') : elem.classList.remove('alert-validate')
+//regular expressions
 const regArr = {
     login : /(?=[a-zа-яёі0-9]{5,})/im,
     password: /((?=.*([a-z]|[а-яё]))(?=.*([A-Z]|[А-ЯЁ]))(?=.*\d)(?=.*[!@#$%^&*]{0,})){8,}/,
@@ -23,33 +21,31 @@ const regArr = {
     date: /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{2}$/,
     email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
 }
+//find regular expressions
+const findReg = (item)=> regArr[item]
 
-const findReg = (item)=>{
-    let regEx = ''
-    regEx = regArr[item]
-    return regEx
-}
+//function validation input
 const veref = (elem, id, item)=>{
-
     const element = elem
     if (elem){
         const verefFunction = ()=>{
             const form = document.getElementById(id)
-            let flag = ''
+            let flag 
             findReg(item).test(element.value) ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false, form, item), flag = false)
             if(flag == false) {
                 addEvent(element, verefFunction, form.classList.contains('alert-validate'))
-                if(element.value == "") form.dataset.validate = TranslateTextes(getLang(), 'requiredField')
+                if(element.value == "") form.dataset.validate = TranslateTexts(getLang(), 'requiredField')
             }
         }
         addBlur(element, verefFunction)
     }
 }
+//function validation selects
 const verefSelect = (elem,id, item)=>{
     const element = elem
     if (element){
         const verefecationFunction = ()=>{
-            let flag = ''
+            let flag 
             const form = document.getElementById(id)
             element.value != 'choise' ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false,form, item), flag = false)
         }
@@ -57,13 +53,13 @@ const verefSelect = (elem,id, item)=>{
     }
 }
 
-//повтор пароля
+//vaidation repeat password
 const verRepeatPassword = ()=>{
 const repeatPassword = formsData().repeatPassword
 if (repeatPassword){
     const vereficationRepeatPassword = ()=>{
         const repeatPasswordForm = document.getElementById('repeat-password-input')
-        let flag = ''
+        let flag 
         repeatPassword.value == formsData().pass.value ? (addOrRemoveAlertValidate(true, repeatPasswordForm, 'repeatPassword'), flag = true) : (addOrRemoveAlertValidate(false, repeatPasswordForm, 'repeatPassword'), flag = false);
         if (flag == false)addEvent(repeatPassword, vereficationRepeatPassword, repeatPasswordForm.classList.contains('alert-validate'))
     }
@@ -71,27 +67,7 @@ if (repeatPassword){
     }
 }
 
-//Регулярка для веса
-/* const verWeight = ()=>{
-const regWeight = /^\d{2,3}([\.,][\d]){0,1}$/
-const weightUser = formsData().weight
-const vereficationWeight = ()=>{
-    let flag = ''
-    const weightForm = document.getElementById('weight-input')
-    regWeight.test(weightUser.value) ? (addOrRemoveAlertValidate(true, weightForm, 'weight'), flag = true) : (addOrRemoveAlertValidate(false,weightForm, 'weight'), flag = false);
-    if (flag == false){
-        addEvent(weightUser, vereficationWeight, weightForm.classList.contains('alert-validate'))
-        weightUser.value != '' && weightUser.value < 10 || weightUser.value > 999 ? weightForm.dataset.validate = 'Вище або нижче ліміту' : weightForm.dataset.validate = 'Некоректний формат'
-        
-    }
-}
-addBlur(weightUser , vereficationWeight)
-} */
-
-
-
-
-
+//validation all inputes on main and sign up pages
 const verAll = ()=>{
     veref(formsData().login,'login-input', 'login')
     veref(formsData().pass, 'password-input', 'password')
@@ -108,10 +84,8 @@ const verAll = ()=>{
     verefSelect(formsData().sex, 'sex-input', 'sex')
 }
 
-const findSelector = (tag)=>{
-    const element = document.querySelector(tag)
-    return element
-}
+const findSelector = (tag)=> document.querySelector(tag)
+//validation all inputes on account pages    
 const validationAccount = ()=>{
     veref(findSelector('.name-item-input'), 'name', 'name')
     veref(findSelector('.surname-item-input'), 'name', 'name')
@@ -123,15 +97,15 @@ const validationAccount = ()=>{
     veref(findSelector('.regist-day-input'), 'regist-day-item', 'date')
     veref(findSelector('.want-day-input'), 'want-day-item', 'date')
 }
-
+//validation food count input
 const validationFoodCount = (id)=>{
     const caloriesInput = document.getElementById(`calories-input-${id}`)
     veref(caloriesInput, `calories-input-wrap-${id}`, 'wantDay')
 }
-
+//empty field check
 const valueVer = (inputes)=>{
 
-    let flagInput = ''
+    let flagInput
     for (let i = 0; i< inputes.length; i++){
         if (inputes[i].value == ""){
             flagInput = false
@@ -140,7 +114,7 @@ const valueVer = (inputes)=>{
         }else{flagInput = true}
     }
     const selectInputes =  document.querySelectorAll('.select-input')
-    let flagSelectInput = ''
+    let flagSelectInput
     for (let i = 0; i< selectInputes.length; i++){
         if (selectInputes[i].value == "choise"){
             flagSelectInput = false
@@ -149,7 +123,7 @@ const valueVer = (inputes)=>{
         }else{flagSelectInput = true}
     }
     
-    let sumFlag = ''
+    let sumFlag 
     flagInput == true && flagSelectInput == true ? sumFlag = true : sumFlag = false
     return sumFlag
 }
