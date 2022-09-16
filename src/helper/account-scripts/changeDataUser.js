@@ -1,5 +1,5 @@
 
-import {localStorageUser, userObjectValue, user} from "./user-data"
+import {localStorageUser, user} from "./user-data"
 import {createOption, createInput, createSelectParam, createElem} from "../createElement"
 import { changeAccount } from "../form-scrypts/enterLogin"
 import {validationAccount} from "../validation/main-form-validation"
@@ -41,23 +41,23 @@ const addInputForChange = ()=>{
     const activItem = document.getElementById('activ-item')
     const wantDate = document.getElementById('want-day-item')
 
-    createInput('input', 'name-item-input item-input', null, userObjectValue('name'), nameItem, 'name')
-    createInput('input', 'surname-item-input item-input', null, userObjectValue('surname'), nameItem, 'surname')
-    createInput('input', 'height-item-input item-input', null, userObjectValue('height'), heightItem, 'height')
-    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTexts(getLang(), 'sm'),TranslateTexts(getLang(), 'inches'),userObjectValue('heightParam'), 'heightParam')
-    createInput('input', 'weight-item-input item-input', null, userObjectValue('weight'), weightItem, 'weight')
-    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), userObjectValue('weightParam'), 'weightParam' )
-    createInput('input', 'login-item-input item-input', null, userObjectValue('userName'), loginItem, 'userName')
-    createInput('input', 'age-item-input item-input', null, userObjectValue('age'), ageItem, 'age')
-    createInput('input', 'want-weight-input item-input', null, userObjectValue('wantWeight'), wantWeightItem, 'wantWeight')
-    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), userObjectValue('wantWeightParam'), 'wantWeightParam' )
-    createInput('input', 'want-day-input item-input', null, userObjectValue('wantDate'), wantDate, 'wantDate')
+    createInput('input', 'name-item-input item-input', null, localStorageUser('name'), nameItem, 'name')
+    createInput('input', 'surname-item-input item-input', null, localStorageUser('surname'), nameItem, 'surname')
+    createInput('input', 'height-item-input item-input', null, localStorageUser('height'), heightItem, 'height')
+    createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTexts(getLang(), 'sm'),TranslateTexts(getLang(), 'inches'),localStorageUser('heightParam'), 'heightParam')
+    createInput('input', 'weight-item-input item-input', null, localStorageUser('weight'), weightItem, 'weight')
+    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), localStorageUser('weightParam'), 'weightParam' )
+    createInput('input', 'login-item-input item-input', null, localStorageUser('userName'), loginItem, 'userName')
+    createInput('input', 'age-item-input item-input', null, localStorageUser('age'), ageItem, 'age')
+    createInput('input', 'want-weight-input item-input', null, localStorageUser('wantWeight'), wantWeightItem, 'wantWeight')
+    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), localStorageUser('wantWeightParam'), 'wantWeightParam' )
+    createInput('input', 'want-day-input item-input', null, localStorageUser('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
-    arrSex().value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex().text[i], selectSex, userObjectValue('sex')))
+    arrSex().value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex().text[i], selectSex, localStorageUser('sex')))
 
     let selectActive = createInput('select', 'select-active select-item', null, null, activItem, 'active')
-    arrActiv().value.forEach((elem, i)=>{createOption('activ-item lang', elem , arrActiv().text[i] , selectActive, userObjectValue('active'))})
+    arrActiv().value.forEach((elem, i)=>{createOption('activ-item lang', elem , arrActiv().text[i] , selectActive, localStorageUser('active'))})
     
 }
 

@@ -36,12 +36,12 @@ const account = ()=>{
             </tr>
             <tr>        
                 <dt class= "profile-description" id="height" key = "height">${TranslateTexts(getLang(), 'height')}</dt>
-                    <dd class="profile-item" id="height-item" data-validate = "${keySelectParam(arrSex().value, 'heightValidate')}">${localStorageUser('height')} <span class = "lang" key= "sm">${userParam('heightParam', 'sm', 'sm', 'inches')}</span></dd>
+                    <dd class="profile-item" id="height-item" data-validate = "${keySelectParam(arrSex().value, 'heightValidate')}">${localStorageUser('height')} <span class = "lang" key= "sm">${userParam('heightParam', 'sm', 'sm', 'inches').toLowerCase()}</span></dd>
             </tr>
                     
             <tr>    
                 <dt class= "profile-description" id="weight" key = "weight">${TranslateTexts(getLang(), 'weight')}</dt>
-                    <dd class="profile-item" id="weight-item" data-validate = "${TranslateTexts(getLang(), 'weightValidate')}">${localStorageUser('weight')} <span class = "lang" key= "kg">${userParam('weightParam', 'kg', 'kg', 'pounds')}</span></dd>
+                    <dd class="profile-item" id="weight-item" data-validate = "${TranslateTexts(getLang(), 'weightValidate')}">${localStorageUser('weight')} <span class = "lang" key= "kg">${userParam('weightParam', 'kg', 'kg', 'pounds').toLowerCase()}</span></dd>
             </tr>
             <tr>    
                 <dt class= "profile-description" id="last-weight" key = "lastWeight">${TranslateTexts(getLang(), 'lastWeight')}</dt>
@@ -49,11 +49,11 @@ const account = ()=>{
             </tr>
             <tr>    
                 <dt class= "profile-description" id="perfect-weight" key = "perfectWeight">${TranslateTexts(getLang(), 'perfectWeight')}</dt>
-                    <dd class="profile-item" id="perfect-weight-item">${localStorageUser('perfectWeight')} <span class = "lang" key= "kg">${userParam('weightParam', 'kg',  'kg', 'pounds')}</span></dd>
+                    <dd class="profile-item" id="perfect-weight-item">${localStorageUser('perfectWeight')+" "} <span class = "lang" key= "kg">${userParam('weightParam', 'kg',  'kg', 'pounds').toLowerCase()}</span></dd>
             </tr>
             <tr>    
                 <dt class= "profile-description" id="wantWeight" key = "wantWeight">${TranslateTexts(getLang(), 'wantWeight')}</dt>
-                    <dd class="profile-item" id="want-weight-item" data-validate = "${TranslateTexts(getLang(), 'weightValidate')}">${localStorageUser('wantWeight')} <span class = "lang" key= "kg">${userParam('wantWeightParam', 'kg', 'kg', 'pounds')}</span></dd>
+                    <dd class="profile-item" id="want-weight-item" data-validate = "${TranslateTexts(getLang(), 'weightValidate')}">${localStorageUser('wantWeight')} <span class = "lang" key= "kg">${userParam('wantWeightParam', 'kg', 'kg', 'pounds').toLowerCase()}</span></dd>
             </tr>
             <tr>
                 <dt class= "profile-description" id="activ" key = "activ">${TranslateTexts(getLang(), 'activ')}</dt>
