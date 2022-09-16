@@ -14,7 +14,6 @@ const Main = ()=>{
         window.route = Account()
     }else{
         window.localStorage.clear()
-        window.sessionStorage.clear()
         localStorage.setItem('translateCount',JSON.stringify('uk'))
         Header()
         const root = document.getElementById('root')
