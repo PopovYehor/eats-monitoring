@@ -10,9 +10,9 @@ const addBlur = (elem, func)=> elem.addEventListener('blur', func )
 const addOrRemoveAlertValidate = (flag, elem)=>flag == false ? elem.classList.add('alert-validate') : elem.classList.remove('alert-validate')
 //regular expressions
 const regArr = {
-    login : /(?=[a-zа-яёі0-9]{5,})/im,
+    login : /(?=[a-zа-яёі0-9]{6,})/im,
     password: /((?=.*([a-z]|[а-яё]))(?=.*([A-Z]|[А-ЯЁ]))(?=.*\d)(?=.*[!@#$%^&*]{0,})){8,}/,
-    name: /^([A-Z]{1})([a-z]{1,}$)|^([А-ЯЁІЇЄ]{1})([а-яёіїє]{1,}$)/,
+    name: /^([a-z]{1,}$)|^([а-яёіїє]{1,}$)/i,
     age: /^[3-9]$|^[1-9][0-9]$/,
     height: /^([3-9][0-9])$|^1([0-9][0-9])$|^2([0-4][0-9])$|^250$/,
     weight: /^\d{2,3}([\.,][\d]){0,1}$/,

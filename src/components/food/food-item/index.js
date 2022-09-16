@@ -7,7 +7,7 @@ import { TranslateTexts, getLang } from "../../../helper/translate/translateText
 
 
 const FoodItem = (data, id)=>{
-    const elemName = getLang() == 'uk' ? data.ukText : data.enText;
+    const elemName = getLang() == `"uk"` ? data.ukText : data.enText;
     const element = `
     <div class = "food-item-container">
         <div class= "food-item-img-wrap">

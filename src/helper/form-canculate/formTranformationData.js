@@ -9,7 +9,7 @@ const passwordData = () =>formsData().pass.value
    
 const repeatPaaswordData = ()=>formsData().repeatPassword.value
    
-const nameData = ()=>formsData().name.value
+const nameData = ()=>formsData().userName.value
     
 const surnameData = ()=>formsData().surname.value
     

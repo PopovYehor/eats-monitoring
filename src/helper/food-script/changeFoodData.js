@@ -6,6 +6,7 @@ const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 const lastDataArrUser  = (data, arr) =>  data[arr][data[arr].length-1] 
 
 const changeFoodData = (e, id)=>{
+    if (localStorageUser('userName')){
     const today = moment().format("DD/MM/YY")
     if ((user.dataDateCalories.length > 0 && lastDataArrUser(user,'dataDateCalories') != today) || user.dataDateCalories.length == 0){
         user.dataDateCalories.push(today)
@@ -33,7 +34,10 @@ const changeFoodData = (e, id)=>{
         .then(res =>{
             console.log(res)
             onHandleRoute(e)
-        })  
+        })
+    }else{
+        onHandleRoute(e)
+    } 
 }
 
 export {changeFoodData}

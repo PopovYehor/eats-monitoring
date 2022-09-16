@@ -22,7 +22,7 @@ const user = {
     photo: localStorageUser('photo') || 'https://ibb.co/d5Qg9vN',
     dateRegist: localStorageUser('dateRegist') || '',
     wantDate: localStorageUser('wantDate') || '',
-    translateCount: localStorage.getItem('translateCount') || '',
+    translateCount:JSON.parse(localStorage.getItem('translateCount')) || '',
     dataWeight : localStorageUser('dataWeight') || [],
     dataDate: localStorageUser('dataDate') || [],
     perfectWeight: localStorageUser('perfectWeight') || '',

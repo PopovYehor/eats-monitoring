@@ -35,8 +35,8 @@ position: relative;
           box-sizing: border-box;
           img {
             position: absolute;
-            min-width: $profile-avatar-size;
-            max-height: $profile-avatar-size;
+            width: $profile-avatar-size;
+            height: $profile-avatar-size;
             border-radius: 50%;
             padding: 10px;
             box-shadow: 0px 0px 20px rgba($base-text-color, .15);
@@ -177,11 +177,9 @@ position: relative;
         .changeBtn{
           width: 90px;
           height: 27px;
+          @include save_btn_style;
           border-radius: 10px;
           font-size: 16px;
-          background-color: #bcf9ce;
-          box-shadow: 0 0px 16px -3px #bcf9ce;
-          font-weight: bold;
           margin-top: 10px;
           cursor: pointer;
         }
@@ -226,10 +224,7 @@ position: relative;
         visibility: hidden;
         opacity: 0;
       
-        -webkit-transition: opacity 0.4s;
-        -o-transition: opacity 0.4s;
-        -moz-transition: opacity 0.4s;
-        transition: opacity 0.4s;
+       @include slow_transition;
       }
       
       .alert-validate::after {
@@ -305,8 +300,8 @@ position: relative;
       }
     }
     
-    .view_details {position: absolute; top: -5000px; left: -5000px;}
-    label {display: block; cursor: pointer; background: rgb(230 230 235 / 80%);border-radius: 50%;}
+    .view_details {display: none; position: absolute; top: -5000px; left: -5000px;}
+    .view-label {display: none; cursor: pointer; background: rgb(230 230 235 / 80%);border-radius: 50%;}
     
     
   }
@@ -315,9 +310,7 @@ position: relative;
     width: 100%;
     height: 100%;
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include obj-center;
     background: #fff;
     .lds-spinner div:after{
       background: #333633;
@@ -363,8 +356,8 @@ position: relative;
     margin: 0 !important;
   }
   .img-profile, .label-change{
-    min-width: 120px !important;
-    max-height: 120px !important;
+    width: 120px !important;
+    height: 120px !important;
   }
   .label-change.active{
     width: 120px !important;
@@ -415,6 +408,7 @@ position: relative;
   .toggle{
     display: block !important;
   }
+  .view-label{display: block !important;}
   .account-container-wrap{
     flex-direction: column;
   }
@@ -426,8 +420,8 @@ position: relative;
     }
   }
   .img-profile, .label-change{
-    min-width: 120px !important;
-    max-height: 120px !important;
+    width: 120px !important;
+    height: 120px !important;
   }
   .label-change.active{
     width: 120px !important;

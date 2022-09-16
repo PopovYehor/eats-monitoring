@@ -12,13 +12,12 @@ const wantDayNumberToMoment = () =>{
 }
 
 const signUpData = ()=>{
-    
     const data = {
         'id': Date.now(),
         'userName' : loginData(),
         'password': passwordData(),
-        'name':nameData(),
-        'surname':surnameData(),
+        'name':nameData().charAt(0).toUpperCase() + nameData().slice(1),
+        'surname':surnameData().charAt(0).toUpperCase() + surnameData().slice(1),
         'email': formsData().email.value,
         'age': yearData(),
         'weight': defWeight(),
@@ -36,7 +35,7 @@ const signUpData = ()=>{
         'dateRegist': moment().format('DD/MM/YY'),
         'dataDate': [moment().format('DD/MM/YY')],
         'wantDate': wantDayNumberToMoment(),
-        'translateCount': localStorage.getItem('translateCount'),
+        'translateCount': JSON.parse(localStorage.getItem('translateCount')),
         'dataDateCalories': [],
         'dataCalories': [],
         'dataFats' : [],

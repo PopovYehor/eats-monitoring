@@ -35,18 +35,18 @@ const config = {
 }
 const createFatPercentChartAccount = ()=>{
 
-  let paramLabel = ''
-  let weightFat = ''
+  let paramLabel 
+  let weightFat 
   const weightParam = localStorageUser('weightParam')
   const fatWeight = localStorageUser('fatWeight')
   const fatPercent = localStorageUser('fatPercent')
   const sex = localStorageUser('sex')
   if( weightParam == 'pounds'){
     weightFat = (Number(fatWeight)*2.2).toFixed(0)
-    paramLabel = TranslateTexts(getLang(), 'pound')
+    paramLabel = TranslateTexts(getLang(), 'pound').toLowerCase()
   }else{
     weightFat = Number(fatWeight)
-    paramLabel = TranslateTexts(getLang(), 'kg')
+    paramLabel = TranslateTexts(getLang(), 'kg').toLowerCase()
   }
 
   const title = TranslateTexts(getLang(), 'PercentageOfBodyFat')

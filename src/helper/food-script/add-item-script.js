@@ -22,6 +22,7 @@ const defaultItem = (data, perscent, input)=>{
     }
     return defaultItem
 }
+
 const changeCountsFoodsItems = (item, data, dataItem, perscent)=>{
     let changeCalories = localStorage.getItem(item)
     changeCalories = changeCalories - data[dataItem]*perscent

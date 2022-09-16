@@ -1,3 +1,5 @@
+@import "style/var";
+
 .select-choise-param{
     width: 26%;
     border: none;
@@ -5,12 +7,12 @@
     position: absolute;
     top: 10px;
     right: 0;
-    font-size: 15px;
+    font-size: $text-font;
     line-height: 1.2;
 }
 .span-choise-param::after {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-size: $text-font;
     color: #999999;
     line-height: 1.2;
   
@@ -21,11 +23,7 @@
     top: 33px;
     left: 0px;
     padding-left: 5px;
-  
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+    @include slow_transition;
   }
 
 .result-input{
@@ -42,15 +40,13 @@
             width: 100%;
             tr{
                 width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                @include obj-center;
                 td{
                     align-self: center;
                     padding: 10px;
                     width: 50%;
                     height: 100%;
-                    font-size: 15px;
+                    font-size: $text-font;
                     
                 }
                 .table-center{
@@ -98,17 +94,9 @@
     left: 0;
     width: 0;
     height: 2px;
-
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
-
-    background: #d9c10e;
-    background: -webkit-linear-gradient(left, #e1e138, #45da48);
-    background: -o-linear-gradient(left, #80807e, #f9fffc);
-    background: -moz-linear-gradient(left, #80807e, #f9fffc);
-    background: linear-gradient(left, #80807e, #f9fffc);
+    @include slow_transition;
+    @include linear-backgrund;
+    
     }
     .select-item::after{
         content: "";
@@ -119,10 +107,7 @@
     left: 0px;
     padding-left: 5px;
 
-    -webkit-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    transition: all 0.4s;
+    @include slow_transition;
     }
     .has-val.input + .select-item::before{
         width: 100%;

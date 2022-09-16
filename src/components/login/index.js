@@ -15,14 +15,14 @@ const LoginComponent = ()=>{
             </span>
             
             <div class="wrap-input validate-input" id = 'login-input' key = "enterLogin" data-validate="${TranslateTexts(getLang(), 'enterLoginValidate')}">
-              <input class="input" type="text" name="login">
+              <input class="input" type="text" name="loginLogin">
               <span class="focus-input" key='login' data-placeholder="${TranslateTexts(getLang(), 'logins')}"></span>
             </div>
             <div class="wrap-input validate-input" id = 'password-input' key = "enterPass" data-validate="${TranslateTexts(getLang(), 'enterPassValidate')}">
               <button class="btn-show-pass" type="button">
-                <img class="eyes-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
+                <img class="eyes-pass first-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
               </button>
-              <input class="input" type="password" name="pass">
+              <input class="input" type="password" name="passLogin">
               <span class="focus-input" key='password' data-placeholder="${TranslateTexts(getLang(), 'password')}"></span>
             </div>
             <div class="txt3">

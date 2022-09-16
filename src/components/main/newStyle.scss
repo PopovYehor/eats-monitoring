@@ -1,3 +1,5 @@
+@import "style/var";
+
 .limiter{
     display: flex;
     flex-direction: row;
@@ -16,11 +18,6 @@
         flex-direction: row;
         justify-content: center;
         padding: 15px;
-        background: rgb(141,210,133);
-        background: -moz-radial-gradient(circle, rgba(141,210,133,0) 0%, rgba(197,233,4,0) 100%);
-        background: -webkit-radial-gradient(circle, rgba(141,210,133,0) 0%, rgba(197,233,4,0) 100%);
-        background: radial-gradient(circle, rgba(141,210,133,0) 0%, rgba(197,233,4,0) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#8dd285",endColorstr="#c5e904",GradientType=1);
         .wrap-main {
             width: 490px;
             height: 715px;
@@ -29,12 +26,7 @@
             border-radius: 10px;
             overflow: hidden;
             padding: 47px 55px 33px 55px;
-          
-            box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-            -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-            -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
-            -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+            @include form_shadow;
             .login-form {
                 width: 100%;
                 .login-form-title {
@@ -99,11 +91,7 @@
                         top: 16px;
                         left: 0px;
                         padding-left: 5px;
-                      
-                        -webkit-transition: all 0.4s;
-                        -o-transition: all 0.4s;
-                        -moz-transition: all 0.4s;
-                        transition: all 0.4s;
+                        @include slow_transition;
                       }
                       .focus-input-param::before, .focus-input::before,.select-item::before, .progress-input::before{
                         content: "";
@@ -114,16 +102,8 @@
                         width: var(--width) or 0;
                         height: 2px;
                       
-                        -webkit-transition: all 0.4s;
-                        -o-transition: all 0.4s;
-                        -moz-transition: all 0.4s;
-                        transition: all 0.4s;
-                      
-                        background: #d9c10e;
-                        background: -webkit-linear-gradient(left, #e1e138, #45da48);
-                        background: -o-linear-gradient(left, #80807e, #f9fffc);
-                        background: -moz-linear-gradient(left, #80807e, #f9fffc);
-                        background: linear-gradient(left, #80807e, #f9fffc);
+                        @include slow_transition;
+                        @include linear-backgrund;
                       }
                       .input:focus + .focus-input::after {
                         top: -10px;
@@ -177,10 +157,7 @@
                         right: 0;
                         padding-right: 5px;
                         cursor: pointer;
-                        -webkit-transition: all 0.4s;
-                        -o-transition: all 0.4s;
-                        -moz-transition: all 0.4s;
-                        transition: all 0.4s;
+                        @include slow_transition;
                         .eyes-pass{
                             position: absolute;
                             width: 15px;
@@ -279,6 +256,7 @@
                             z-index: -1;
                             width: 300%;
                             height: 100%;
+                            
                             background: #1dc76c;
                             background: -webkit-linear-gradient(right, #9c9e52, #aab947, #1dc76c, #f0f004);
                             background: -o-linear-gradient(right, #9c9e52, #aab947, #1dc76c, #f0f004);
@@ -286,11 +264,8 @@
                             background: linear-gradient(right, #9c9e52, #aab947, #1dc76c, #f0f004);
                             top: 0;
                             left: -100%;
-                          
-                            -webkit-transition: all 0.4s;
-                            -o-transition: all 0.4s;
-                            -moz-transition: all 0.4s;
-                            transition: all 0.4s;
+                            @include slow_transition;
+                            
                         }
                         .login-form-btn {
                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, fontAwesome;
@@ -312,9 +287,13 @@
                             height: 50px;
                           }
                           
-                          .wrap-login-form-btn:hover .login-form-bgbtn {
-                            left: 0;
-                          }
+                          
+                    }
+                    .wrap-login-form-btn:hover  {
+                      .login-form-bgbtn{
+                        left: 0;
+                      }
+                      
                     }
                     .register-massage-wrap{
                         width: 90%;

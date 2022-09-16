@@ -1,7 +1,6 @@
 import { formsData } from "../form-canculate/formTranformationData"
 import { signUpData } from "./singUp"
 import { valueVer } from "../validation/main-form-validation"
-import { user } from "../account-scripts/user-data"
 import { account } from "../../components/account/profile"
 import { sameHeightTable } from "../account-scripts/table-script"
 import {createAllChartsUser} from "../../components/account/charts/createAllChartsUser"
@@ -20,40 +19,44 @@ const API = `${cors}${urlData}`
 const logIn = ()=>{
     const btn = document.querySelector('.login-form-btn')
     btn.addEventListener('click', (e)=>{
-        const formLogin = formsData().login.value
-        const formPass = formsData().pass.value
+        const formLogin = formsData().loginLogin.value
+        const formPass = formsData().passLogin.value
+        const loginWrap = document.getElementById('login-input')
+        const passWrap = document.getElementById('password-input')
+
         fetch(urlData)
             .then(res => res)
                 .then(res =>res.json())
                     .then(json=>{
-                        [json[1]].forEach((elem) =>{
-                            if (formLogin == elem.userName && formPass == elem.password){
-                            let key = Object.keys(elem)
-                            let value = Object.values(elem)
-                            const lastWeighingIndex = elem.dataDate.length - 1
-                            localStorage.setItem('lastWeighing', JSON.stringify(elem.dataDate[lastWeighingIndex]))
-                            for (let j = 0; j<key.length; j++){
-                                user[key[j]] = value[j]
-                                localStorage.setItem(key[j], JSON.stringify(value[j]))
-                            }
-                            onHandleRoute(e)
-                            const preloader = document.querySelector('.preload-account-page')
-                            if (preloader) preloader.remove()
-                            account()
-                            caloriesFormulaAccount()
-                            fatWeightAccount()
-                            createAllChartsUser()
-                            }else{
-                                const loginWrap = document.getElementById('login-input')
-                                loginWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
-                                loginWrap.classList.add('alert-validate')
-
-                                const passWrap = document.getElementById('password-input')
-                                passWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
-                                passWrap.classList.add('alert-validate')
-                            }
-                        })
                         
+                        if (json.some(elem => (elem.userName == formLogin && elem.password == formPass))){
+                            let user
+                            json.forEach((elem) =>{
+                                if (formLogin == elem.userName && formPass == elem.password){
+                                    return user = elem
+                                }})
+                                let key = Object.keys(user)
+                                let value = Object.values(user)
+                                const lastWeighingIndex = user.dataDate.length - 1
+                                localStorage.setItem('lastWeighing', JSON.stringify(user.dataDate[lastWeighingIndex]))
+                                for (let j = 0; j<key.length; j++){
+                                    user[key[j]] = value[j]
+                                    localStorage.setItem(key[j], JSON.stringify(value[j]))
+                                }
+                                onHandleRoute(e)
+                                const preloader = document.querySelector('.preload-account-page')
+                                if (preloader) preloader.remove()
+                                account()
+                                caloriesFormulaAccount()
+                                fatWeightAccount()
+                                createAllChartsUser()
+                        }else{
+                            loginWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
+                            loginWrap.classList.add('alert-validate')
+
+                            passWrap.dataset.validate = TranslateTexts(getLang(), 'incorectLogin')
+                            passWrap.classList.add('alert-validate')
+                        }
                     })
     })
 }
@@ -96,10 +99,6 @@ const postSignUp = ()=>{
                             wrapLogin.classList.add('alert-validate')
                         }
                     })
-
-
-
-            
         }   
     })
 }

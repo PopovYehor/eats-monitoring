@@ -1,3 +1,4 @@
+@import "style/var";
 .food-wrap{
     width: 100%;
     height: auto;
@@ -33,18 +34,11 @@
                 position: absolute;
                 bottom: -145px;
                 left: -20px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                
                 width: 130px;
                 height: 30px;
                 border-radius: 10px;
-                font-size: 15px;
-                background-color: #bcf9ce;
-                box-shadow: 0 0px 16px -3px #bcf9ce;
-                font-weight: bold;
-                text-decoration: none;
-                color: rgba(0, 0, 0, 0.671);
+                @include save_btn_style;
             }
             .canvas-title{
                 font-size: 22px;
@@ -76,9 +70,7 @@
         flex-direction: column;
         .food-pagination-wrap{
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include obj-center;
             flex-direction: row;
             margin-bottom: 20px;
             .page-count{
@@ -106,7 +98,7 @@
             align-items: center;
             justify-content: center;
             margin-top: 30px;
-            box-shadow: 0 0px 20px -3px #b7b7b7;
+            @include food_shadow;
             border-radius: 10px;
             
         }

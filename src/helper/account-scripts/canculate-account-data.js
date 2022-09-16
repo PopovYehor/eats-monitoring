@@ -1,5 +1,5 @@
 import { localStorageUser } from "./user-data"
-
+import { fromTodayToWantDate } from "../../components/account/charts/progresChartAcc/dataForProgresChart"
 const caloriesFormulaAccount = ()=>{
     const sex = localStorageUser('sex')
     let weight = Number(localStorageUser('weight'))

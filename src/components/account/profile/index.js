@@ -14,11 +14,11 @@ const account = ()=>{
             </label>
         </figure>
         <div class="title-name">
-            <h1 class="profile-item" id="name" data-validate = "${TranslateTexts(getLang(), 'nameSurmaneValidation')}</h1>
+            <h1 class="profile-item" id="name" data-validate = "${TranslateTexts(getLang(), 'nameSurmaneValidation')}"</h1>
         </div>
         <div class="toggle">
             <input class="view_details dropdown-toggle" id="view_details" type="checkbox">
-            <label for="view_details">☰</label>
+            <label class="view-label" for="view_details">☰</label>
         </div>
         <div class="mainen active">
             <dl class="list">

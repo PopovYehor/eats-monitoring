@@ -1,6 +1,7 @@
 import { arrLangText } from "./translate-array"
 
-const translateText = (index, textUK, TextEn)=> index == 'uk' ? textUK : TextEn
+const translateText = (index, textUK, TextEn)=> index ==`"uk"` ? textUK : TextEn
+
     
 const getLang = ()=>localStorage.getItem('translateCount')
 

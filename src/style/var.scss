@@ -8,8 +8,61 @@ $base-hover-color: darken($base-link-color, 20);
 $profile-card-size: 305px;
 $profile-avatar-size: 150px;
 
+$text-font: 15px;
+
+$food_shadow_color: #b7b7b7;
 @mixin obj-center {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin linear-backgrund {
+    background: #d9c10e;
+    background: -webkit-linear-gradient(left, #e1e138, #45da48);
+    background: -o-linear-gradient(left, #e1e138, #45da48);
+    background: -moz-linear-gradient(left, #e1e138, #45da48);
+    background: linear-gradient(left, #e1e138, #45da48);
+}
+
+
+@mixin form_shadow {
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+@mixin food_shadow {
+    box-shadow: 0 0px 20px -3px #b7b7b7;
+    -moz-box-shadow: 0 0px 20px -3px #b7b7b7;
+    -webkit-box-shadow: 0 0px 20px -3px #b7b7b7;
+    -o-box-shadow: 0 0px 20px -3px #b7b7b7;
+    -ms-box-shadow: 0 0px 20px -3px #b7b7b7;
+}
+
+@mixin save_btn_shadow {
+    background-color: #bcf9ce;
+    box-shadow: 0 0px 16px -3px #bcf9ce;
+    -moz-box-shadow: 0 0px 16px -3px #bcf9ce;
+    -webkit-box-shadow: 0 0px 16px -3px #bcf9ce;
+    -o-box-shadow: 0 0px 16px -3px #bcf9ce;
+    -ms-box-shadow: 0 0px 16px -3px #bcf9ce;
+}
+@mixin slow_transition {
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+@mixin save_btn_style {
+    @include obj-center;
+    font-size: $text-font;
+    background-color: #bcf9ce;
+    box-shadow: 0 0px 16px -3px #bcf9ce;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.671);
 }

@@ -1,3 +1,4 @@
+@import "style/var";
 .food-item-wrap{
     margin-top: 20px;
     .food-item-container{
@@ -7,13 +8,13 @@
         flex-direction: row;
         align-items: center;
         background-color: #f9f9f9;
-        box-shadow: 0 0px 11px 0px #b7b7b7;
+        box-shadow: 0 0px 11px 0px $food_shadow_color;
         .food-item-img-wrap{
             width: 80px;
             height: 80px;
             border-radius: 10px;
             margin: 0 20px;
-            box-shadow: 0 0px 13px -4px #b7b7b7;
+            box-shadow: 0 0px 13px -4px $food_shadow_color;
             .food-item-img{
                 width: 100%;
                 height: 100%;
@@ -46,7 +47,7 @@
                 justify-content: space-between;
                 align-items: center;
                 .caloties-item-title{
-                    font-size: 15px;
+                    font-size: $text-font;
                 }
                 .caloties-item-title::after{
                     content: ':';
@@ -67,9 +68,7 @@
             width: 120px;
             height: 60px;
             display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
+            @include obj-center;
             margin-right: 30px;
             position: relative;
             .calories-input{
@@ -80,7 +79,7 @@
                 height: 50%;
                 margin-right: 10px;
                 border: 1px solid #e9e9e9;
-                box-shadow: 0 0px 20px -7px #b7b7b7;
+                box-shadow: 0 0px 20px -7px $food_shadow_color;
                 border-radius: 6px;
             }
             .calories-input-desc{
@@ -112,11 +111,11 @@
                 background-color: white;
                 font-family: Verdana, FontAwesome;
                 font-size: 25px;
-                box-shadow: 0 0px 20px -7px #b7b7b7;
+                box-shadow: 0 0px 20px -7px $food_shadow_color;
                 transition: all .3s;
             }
             .calories-add-btn:active{
-                background-color: #b7b7b7;
+                background-color: $food_shadow_color;
             }
         }
         .calories-delete-btn-wrap{
@@ -132,8 +131,7 @@
                 font-family: Verdana, FontAwesome;
                 font-size: 18px;
                 &.change{
-                    background-color: #bcf9ce;
-                    box-shadow: 0 0px 16px -3px #bcf9ce;
+                    @include save_btn_shadow;
                }
                &.delete{
                 background-color: #f8acac;

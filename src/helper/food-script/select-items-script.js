@@ -50,9 +50,9 @@ const getAllFood = (filter = null) =>{
             res.filter(elem =>{
                 const paginationWrap = document.querySelector('.food-pagination-wrap')
                 paginationWrap.innerHTML = ""
-                if(getLang() == 'uk' && elem.ukText.toLowerCase() == searchInput.toLocaleLowerCase()){
+                if(getLang() == `"uk"` && elem.ukText.toLowerCase() == searchInput.toLocaleLowerCase()){
                     createFoodItem(elem, wrap)
-                }else if (getLang() == 'en' && elem.enText.toLowerCase() == searchInput.toLocaleLowerCase()){
+                }else if (getLang() == `"en"` && elem.enText.toLowerCase() == searchInput.toLocaleLowerCase()){
                     createFoodItem(elem, wrap)
                 }
             })

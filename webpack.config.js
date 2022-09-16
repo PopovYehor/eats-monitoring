@@ -48,7 +48,7 @@ module.exports = {
             components: path.resolve(__dirname, 'src/components'),
             helper: path.resolve(__dirname, 'src/helper'),
             views: path.resolve(__dirname, 'src/views'),
-            styles: path.resolve(__dirname, 'src/styles'),
+            style: path.resolve(__dirname, 'src/style'),
         }
     },
     plugins: [

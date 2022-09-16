@@ -3,7 +3,7 @@ import { changeFoodItem, deleteFoodItem } from "../../../helper/food-script/bask
 import { validationFoodCount } from "../../../helper/validation/main-form-validation";
 import { TranslateTexts, getLang } from "../../../helper/translate/translateText";
 const basketItem = (data, id)=> {
-    const elemName = getLang() == 'uk' ? data.ukText : data.enText;
+    const elemName = getLang() == `"uk"` ? data.ukText : data.enText;
     const element = `
     <div class = "food-item-container">
         <div class= "food-item-img-wrap">

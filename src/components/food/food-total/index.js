@@ -16,7 +16,6 @@ const TotalFood = ()=>{
     let carbohydrates = localStorage.getItem('totalCarbohydrates')
 
     const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
-    console.log(selectedItem.length)
     if(selectedItem.length > 0) {
         calories = total(selectedItem, 'calories')
         protein = total(selectedItem, 'protein')
@@ -28,19 +27,19 @@ const TotalFood = ()=>{
     <div class="total-food-container">
         <div class="total-item" id="total-calories">
             <sapn class="total-text">${TranslateTexts(getLang(), 'TotalCalories')}</sapn>
-            <sapn class="total-count" id="total-calories">${calories}</sapn>
+            <sapn class="total-count" id="total-calories">${calories || 0}</sapn>
         </div>
         <div class="total-item" id="total-calories">
             <sapn class="total-text">${TranslateTexts(getLang(), 'Proteins')}</sapn>
-            <sapn class="total-count" id="total-protein">${protein}</sapn>
+            <sapn class="total-count" id="total-protein">${protein || 0}</sapn>
         </div>
         <div class="total-item" id="total-calories">
             <sapn class="total-text" >${TranslateTexts(getLang(), 'Fats')}</sapn>
-            <sapn class="total-count" id="total-fats">${fats}</sapn>
+            <sapn class="total-count" id="total-fats">${fats || 0}</sapn>
         </div>
         <div class="total-item" id="total-calories">
             <sapn class="total-text">${TranslateTexts(getLang(), 'Carbohydrates')}</sapn>
-            <sapn class="total-count" id="total-carbohydrates">${carbohydrates}</sapn>
+            <sapn class="total-count" id="total-carbohydrates">${carbohydrates || 0}</sapn>
         </div>
     </div>
     `

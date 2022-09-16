@@ -1,7 +1,9 @@
+
+@import "style/var";
 .total-food-items{
     width: 700px;
     height: 50px;
-    box-shadow: 0 0px 11px 0px #b7b7b7;
+    box-shadow: 0 0px 11px 0px $food_shadow_color;
     margin-bottom: 20px;
     .total-food-container{
         width: 100%;
