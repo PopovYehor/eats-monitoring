@@ -4,7 +4,7 @@ import FoodItem from "../../components/food/food-item"
 import { createBasketItems } from "./basket-script"
 import { paginationFood, paginationCreatingElement } from "./paginationFood"
 import { getLang } from "../translate/translateText"
-
+import Error from "../../views/error/Error"
 
 const apiFoodSelect = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const apiAllFoods = 'https://api.json-generator.com/templates/CLp6e4tG98eK/data'
@@ -25,6 +25,11 @@ const getFoodSelect = (item)=>{
         res[item].map(elem =>{
             createFoodItem(elem, wrap)
         })
+    })
+    .catch(()=>{
+        root.innerHTML = ''
+        window.history.pushState({}, '', '/error')
+        window.route = Error()
     })
 }
 
@@ -57,6 +62,11 @@ const getAllFood = (filter = null) =>{
                 }
             })
         }
+    })
+    .catch(()=>{
+        root.innerHTML = ''
+        window.history.pushState({}, '', '/error')
+        window.route = Error()
     })
 }
 

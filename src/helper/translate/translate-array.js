@@ -125,7 +125,7 @@ const arrLangText = {
         'Bread': 'Хлібні вироби',
         'Selected': 'Обрані продукти',
         'Find': 'Знайди продукт',
-
+        'error': 'Щось пішло не так',
     },
     en:{
         'title': 'Sing Up',
@@ -252,7 +252,9 @@ const arrLangText = {
         'AddedCarb': 'Added carb',
 
         'saveChange': 'Save changes',
-        'leavePAge': 'To Main'
+        'leavePAge': 'To Main',
+
+        'error': 'Something went wrong',
     }
 }
 const arrLangPlaceholder = {

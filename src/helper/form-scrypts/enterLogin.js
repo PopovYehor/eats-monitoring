@@ -8,6 +8,7 @@ import { trueSignUpBtn } from "../../components/signUp/trueSignUpBtn"
 import { getLang, TranslateTexts } from "../translate/translateText"
 import { onHandleRoute } from "../route"
 import { caloriesFormulaAccount, fatWeightAccount } from "../account-scripts/canculate-account-data"
+import Error from "../../views/error/Error"
 
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
@@ -58,6 +59,11 @@ const logIn = ()=>{
                             passWrap.classList.add('alert-validate')
                         }
                     })
+                    .catch(()=>{
+                        root.innerHTML = ''
+                        window.history.pushState({}, '', '/error')
+                        window.route = Error()
+                    })
     })
 }
 
@@ -99,6 +105,11 @@ const postSignUp = ()=>{
                             wrapLogin.classList.add('alert-validate')
                         }
                     })
+                    .catch(()=>{
+                        root.innerHTML = ''
+                        window.history.pushState({}, '', '/error')
+                        window.route = Error()
+                    })
         }   
     })
 }
@@ -123,6 +134,11 @@ fetch(`${urlData}/${id}`, {
         caloriesFormulaAccount()
         fatWeightAccount()
         createAllChartsUser()
+    })
+    .catch(()=>{
+        root.innerHTML = ''
+        window.history.pushState({}, '', '/error')
+        window.route = Error()
     })  
 }
 

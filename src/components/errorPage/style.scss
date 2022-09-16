@@ -1,0 +1,29 @@
+@import "style/var";
+.error-wrap{
+    width: 100%;
+    height: 90%;
+    .error-page-wrap{
+        width: 100%;
+        height: 100%;
+        @include obj-center;
+        .error-page-text{
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+}
+.error-page-wrap::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url("../../assets/preloader-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1; 
+}
