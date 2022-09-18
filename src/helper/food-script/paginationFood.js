@@ -41,7 +41,7 @@ const paginationCreatingElement = ()=>{
         foodElementsWrap.innerHTML = ''
         const sliceRes = paginationFood.item.slice((paginationFood.offset-paginationFood.limit), paginationFood.offset)
         sliceRes.map(element =>createFoodItem(element, foodElementsWrap))
-        window.scrollTo({top:0, left: 0, behavior: 'smooth'})
+        window.scrollTo({top:0, left: `${window.innerWidth/2}px`, behavior: 'smooth'})
     }))
 }
 
