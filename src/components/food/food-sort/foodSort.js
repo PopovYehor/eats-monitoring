@@ -4,6 +4,7 @@ import { getLang, TranslateTexts } from "../../../helper/translate/translateText
 import "./style"
 const FoodSort = ()=>{
     const element = `
+    <p class = "sort-title">${TranslateTexts(getLang(), 'sortBy')}</p>
     <select class= "food-sort-select">
     <option value = "textFromStart">${TranslateTexts(getLang(), 'textFromStart')}</option>
     <option value = "textFromEnd" >${TranslateTexts(getLang(), 'textFromEnd')}</option>
@@ -19,7 +20,7 @@ const FoodSort = ()=>{
     `
     const wrap = document.querySelector('.food-sort-wrap')
     wrap.innerHTML = element
-    
+
     const select = document.querySelector('.food-sort-select')
     const selectFoodItems = document.querySelector('.food-select-item')
     

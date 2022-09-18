@@ -130,17 +130,17 @@ const arrLangText = {
 
 
         //food sort
-
-        'textFromStart': 'Назва А-Я',
-        'textFromEnd': 'Назва Я-А',
-        'caloriesFromStart': 'Калорії від більшого',
-        'caloriesFromEnd': 'Калорії від меншого',
-        'fatsFromStart':'Жири від більшого',
-        'fatsFromEnd': 'Жири від меншого',
-        'proteinFromStart': 'Білки від більшого',
-        'proteinFromEnd': 'Білки від меншого',
-        'carbFromStart': 'Вуглеводи від більшого',
-        'carbFromEnd': 'Вуглеводи від меншого',
+        'sortBy': 'Сортування за',
+        'textFromStart': 'назвою А-Я',
+        'textFromEnd': 'назвою Я-А',
+        'caloriesFromStart': 'зростанням калорій',
+        'caloriesFromEnd': 'зменшенням калорій',
+        'fatsFromStart':'зростанням жирів',
+        'fatsFromEnd': 'зменшенням жирів',
+        'proteinFromStart': 'зростанням білків',
+        'proteinFromEnd': 'зменшенням білків',
+        'carbFromStart': 'зростанням вуглеводів',
+        'carbFromEnd': 'зменшенням вуглеводів',
 
     },
     en:{
@@ -274,16 +274,17 @@ const arrLangText = {
         'error': 'Something went wrong',
 
         //food sort
-        'textFromStart': 'Name А-Z',
-        'textFromEnd': 'Name Z-А',
-        'caloriesFromStart': 'Calories from more',
-        'caloriesFromEnd': 'Calories from less',
-        'fatsFromStart':'Fats from more',
-        'fatsFromEnd': 'Fats from less',
-        'proteinFromStart': 'Proteins from more',
-        'proteinFromEnd': 'Proteins from less',
-        'carbFromStart': 'Carbohydrates from more',
-        'carbFromEnd': 'Carbohydrates from less',
+        'sortBy': 'Sort by',
+        'textFromStart': 'name А-Z',
+        'textFromEnd': 'name Z-А',
+        'caloriesFromStart': 'calories: highest first',
+        'caloriesFromEnd': 'calories: lowest first',
+        'fatsFromStart':'fats: highest first',
+        'fatsFromEnd': 'fats: lowest first',
+        'proteinFromStart': 'proteins: highest first',
+        'proteinFromEnd': 'proteins: lowest first',
+        'carbFromStart': 'carbohydrates: highest first',
+        'carbFromEnd': 'carbohydrates: lowest first',
     }
 }
 const arrLangPlaceholder = {

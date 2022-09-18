@@ -25,11 +25,6 @@ const LoginComponent = ()=>{
               <input class="input" type="password" name="passLogin" value="qwertY21">
               <span class="focus-input" key='password' data-placeholder="${TranslateTexts(getLang(), 'password')}"></span>
             </div>
-            <div class="txt3">
-            <a class="txt2 lang" key="forGetPass" href="#">
-            ${TranslateTexts(getLang(), 'forGetPass')}
-            </a>
-            </div>
             <div class="container-login-form-btn">
               <div class="wrap-login-form-btn">
                 <div class="login-form-bgbtn"></div>
