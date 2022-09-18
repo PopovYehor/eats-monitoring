@@ -36,18 +36,12 @@ const config = {
 const createFatPercentChartAccount = ()=>{
 
   let paramLabel 
-  let weightFat 
+
   const weightParam = localStorageUser('weightParam')
   const fatWeight = localStorageUser('fatWeight')
   const fatPercent = localStorageUser('fatPercent')
   const sex = localStorageUser('sex')
-  if( weightParam == 'pounds'){
-    weightFat = (Number(fatWeight)*2.2).toFixed(0)
-    paramLabel = TranslateTexts(getLang(), 'pound').toLowerCase()
-  }else{
-    weightFat = Number(fatWeight)
-    paramLabel = TranslateTexts(getLang(), 'kg').toLowerCase()
-  }
+  weightParam == 'pounds' ? paramLabel = TranslateTexts(getLang(), 'pound').toLowerCase() : paramLabel = TranslateTexts(getLang(), 'kg').toLowerCase()
 
   const title = TranslateTexts(getLang(), 'PercentageOfBodyFat')
   const canvasContainer = document.querySelector('.account-charts-wrap')
@@ -61,7 +55,7 @@ const createFatPercentChartAccount = ()=>{
   const labelWrap = createElem('div', 'label-wrap', null, chartWrap)
   
   const labelItem = `
-  <span class = "chart-label fat-index">  ${fatPercent} % (${weightFat} ${paramLabel}) 
+  <span class = "chart-label fat-index">  ${fatPercent} % (${fatWeight} ${paramLabel}) 
   <span class = "chart-label-desription">${fatPercentDescription(sex, fatPercent)}</span>
   </span
   `

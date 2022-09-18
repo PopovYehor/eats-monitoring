@@ -17,12 +17,12 @@ const caloriesFormulaAccount = ()=>{
     const years = Number(localStorageUser('age'))
     const active = Number(localStorageUser('activeCoef'))
 
-    let calcCalories = ''
+    let calcCalories 
     sex == 'female' ? calcCalories = (((10*weight) + (6.25*height) + (5*years) - 161)*active) : calcCalories = (((10*weight) + (6.25*height) + (5*years) + 5)*active)
     localStorage.setItem('caloriesFormula', calcCalories)
-    let wantResult = ''
+    let wantResult 
     wantWeight < weight ? wantResult = (calcCalories - ((7700*( weight-wantWeight))/fromTodayToWantDate())) : wantResult = (calcCalories + ((7700*(wantWeight - weight))/fromTodayToWantDate()))
-    
+
     localStorage.setItem('needCalories', Math.round(wantResult))
     localStorage.setItem('calories', Math.round(wantResult))
 
@@ -56,7 +56,7 @@ const fatPercentAccount = ()=>{
     const sex = localStorageUser('sex')
     const years = Number(localStorageUser('age'))
 
-    let fatPercent = ''
+    let fatPercent 
     sex == 'male' ? fatPercent = Math.round((1.2*weightIndexAccount())+(0.23*years)-16.2) : fatPercent = Math.round((1.2*weightIndexAccount())+(0.23*years)-5.4)
 
     localStorage.setItem('fatPercent', fatPercent)
@@ -67,7 +67,7 @@ const fatWeightAccount = ()=>{
     let weight = Number(localStorageUser('weight'))
     const weightParam = localStorageUser('weightParam')
 
-    let fatWeight = ''
+    let fatWeight 
     weightParam == 'pounds' ? fatWeight = Math.floor((weight * (fatPercentAccount()/100))*2.54) : fatWeight = Math.floor(weight * (fatPercentAccount()/100))
 
     localStorage.setItem('fatWeight', fatWeight)

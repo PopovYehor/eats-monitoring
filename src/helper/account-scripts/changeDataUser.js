@@ -46,11 +46,11 @@ const addInputForChange = ()=>{
     createInput('input', 'height-item-input item-input', null, localStorageUser('height'), heightItem, 'height')
     createSelectParam('weight-choise-param', heightItem, 'sm', 'inches', TranslateTexts(getLang(), 'sm'),TranslateTexts(getLang(), 'inches'),localStorageUser('heightParam'), 'heightParam')
     createInput('input', 'weight-item-input item-input', null, localStorageUser('weight'), weightItem, 'weight')
-    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), localStorageUser('weightParam'), 'weightParam' )
+    createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'poundParam'), localStorageUser('weightParam'), 'weightParam' )
     createInput('input', 'login-item-input item-input', null, localStorageUser('userName'), loginItem, 'userName')
     createInput('input', 'age-item-input item-input', null, localStorageUser('age'), ageItem, 'age')
     createInput('input', 'want-weight-input item-input', null, localStorageUser('wantWeight'), wantWeightItem, 'wantWeight')
-    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'pound'), localStorageUser('wantWeightParam'), 'wantWeightParam' )
+    createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'poundParam'), localStorageUser('wantWeightParam'), 'wantWeightParam' )
     createInput('input', 'want-day-input item-input', null, localStorageUser('wantDate'), wantDate, 'wantDate')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')

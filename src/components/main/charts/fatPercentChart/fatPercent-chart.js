@@ -33,16 +33,9 @@ const config = {
   return config
 }
 const createFatPercentChart = ()=>{
-  let paramLabel = ''
-  let weightFat = ''
+  let paramLabel 
   const choiseWeightOption = selectParam(formsData().choiseWeight)
-  if( choiseWeightOption.value == 'pounds'){
-    weightFat = (Number(fatWeight())*2.2).toFixed(0)
-    paramLabel = TranslateTexts(getLang(), 'pound')
-  }else{
-    weightFat = Number(fatWeight())
-    paramLabel = TranslateTexts(getLang(), 'kg')
-  }
+  choiseWeightOption.value == 'pounds' ? paramLabel = TranslateTexts(getLang(), 'pound') : paramLabel = TranslateTexts(getLang(), 'kg')
 
   const title = TranslateTexts(getLang(), 'PercentageOfBodyFat')
   const wrap = document.getElementById('canvas-index-wrap')
@@ -53,7 +46,7 @@ const createFatPercentChart = ()=>{
   const labelWrap = createElem('div', 'label-wrap', null, chartWrap)
   
   const labelItem = `
-  <span class = "chart-label fat-index">  ${fatPercent()} % (${weightFat} ${paramLabel}) 
+  <span class = "chart-label fat-index">  ${fatPercent()} % (${Number(fatWeight()).toFixed(0)} ${paramLabel}) 
   <span class = "chart-label-desription">${fatPercentDescription(sexData(), fatPercent())}</span>
   </span
   `
