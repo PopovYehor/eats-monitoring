@@ -1,3 +1,4 @@
+import moment from "moment"
 import { formsData } from "../form-canculate/formTranformationData"
 import { getLang,TranslateTexts } from "../translate/translateText"
 
@@ -31,7 +32,7 @@ const veref = (elem, id, item)=>{
         const verefFunction = ()=>{
             const form = document.getElementById(id)
             let flag 
-            findReg(item).test(element.value) ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false, form, item), flag = false)
+            findReg(item).test(element.value) ? (addOrRemoveAlertValidate(true, form), flag = true) : (addOrRemoveAlertValidate(false, form), flag = false)
             if(flag == false) {
                 addEvent(element, verefFunction, form.classList.contains('alert-validate'))
                 if(element.value == "") form.dataset.validate = TranslateTexts(getLang(), 'requiredField')
@@ -47,7 +48,7 @@ const verefSelect = (elem,id, item)=>{
         const verefecationFunction = ()=>{
             let flag 
             const form = document.getElementById(id)
-            element.value != 'choise' ? (addOrRemoveAlertValidate(true, form, item), flag = true) : (addOrRemoveAlertValidate(false,form, item), flag = false)
+            element.value != 'choise' ? (addOrRemoveAlertValidate(true, form), flag = true) : (addOrRemoveAlertValidate(false,form), flag = false)
         }
         addBlur(element, verefecationFunction)
     }
@@ -60,10 +61,36 @@ if (repeatPassword){
     const vereficationRepeatPassword = ()=>{
         const repeatPasswordForm = document.getElementById('repeat-password-input')
         let flag 
-        repeatPassword.value == formsData().pass.value ? (addOrRemoveAlertValidate(true, repeatPasswordForm, 'repeatPassword'), flag = true) : (addOrRemoveAlertValidate(false, repeatPasswordForm, 'repeatPassword'), flag = false);
+        repeatPassword.value == formsData().pass.value ? (addOrRemoveAlertValidate(true, repeatPasswordForm), flag = true) : (addOrRemoveAlertValidate(false, repeatPasswordForm), flag = false);
         if (flag == false)addEvent(repeatPassword, vereficationRepeatPassword, repeatPasswordForm.classList.contains('alert-validate'))
     }
     addBlur(repeatPassword, vereficationRepeatPassword)
+    }
+}
+
+//validation data select
+const verDateSelect = (item, formID, condition1, condition2, minus = false)=>{
+    if (item){
+        const vereficationDateSelect = ()=>{
+        let form = document.getElementById(formID)
+        let flag
+            if (item.nodeType == 1){
+                let diffDate = moment().diff(item.value, 'days')
+                if (diffDate < 0 && minus == true) diffDate*=(-1)
+                diffDate >= condition1 && diffDate <= condition2 ? (addOrRemoveAlertValidate(true, form), flag = true) : (addOrRemoveAlertValidate(false, form), flag = false);
+                if (flag == false)addEvent(item, vereficationDateSelect, form.classList.contains('alert-validate')) 
+            }else{
+                let diffDate = moment().diff(item.target.value, 'days')
+                if (diffDate < 0 && minus) diffDate*=(-1)
+                diffDate >= condition1 && diffDate <= condition2 ? (addOrRemoveAlertValidate(true, form), flag = true) : (addOrRemoveAlertValidate(false, form), flag = false);
+                if (flag == false)addEvent(item.target, vereficationDateSelect, form.classList.contains('alert-validate'))
+            }
+        }
+        if (item.nodeType == 1){
+            addBlur(item, vereficationDateSelect)
+        }else{
+            addBlur(item.target, vereficationDateSelect)
+        }
     }
 }
 
@@ -76,10 +103,12 @@ const verAll = ()=>{
     veref(formsData().userName, 'name-input', 'name')
     veref(formsData().surname, 'surname-input', 'name')
     veref(formsData().age, 'age-input', 'age')
+    verDateSelect(formsData().birdth, 'birdth-input', 1095, 36500)
     veref(formsData().height, 'height-input', 'height')
     veref(formsData().weight, 'weight-input', 'weight')
     veref(formsData().wantWeight, 'want-weight-input', 'wantWeight')
     veref(formsData().wantDay, 'want-day-input', 'wantDay')
+    verDateSelect(formsData().wantDate, 'want-date-item', 1, 365, true)
     verefSelect(formsData().activeLevel, 'activ-input', 'activ')
     verefSelect(formsData().sex, 'sex-input', 'sex')
 }
@@ -90,12 +119,14 @@ const validationAccount = ()=>{
     veref(findSelector('.name-item-input'), 'name', 'name')
     veref(findSelector('.surname-item-input'), 'name', 'name')
     veref(findSelector('.login-item-input'), 'login-item', 'login')
-    veref(findSelector('.age-item-input'), 'age-item', 'age')
     veref(findSelector('.height-item-input'), 'height-item', 'height')
     veref(findSelector('.weight-item-input'), 'weight-item', 'weight')
     veref(findSelector('.want-weight-input'), 'want-weight-item', 'weight')
     veref(findSelector('.regist-day-input'), 'regist-day-item', 'date')
     veref(findSelector('.want-day-input'), 'want-day-item', 'date')
+
+    verDateSelect(findSelector('.age-item-input'), 'age-item', 1095, 36500)
+    verDateSelect(findSelector('.want-day-input'), 'want-day-item', 1, 365, true)
 }
 //validation food count input
 const validationFoodCount = (id)=>{

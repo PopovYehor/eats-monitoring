@@ -1,3 +1,4 @@
+import moment from 'moment'
 import { onHandleRoute } from '../../helper/route'
 import { getLang, TranslateTexts } from '../../helper/translate/translateText'
 import "./style"
@@ -60,9 +61,9 @@ const signUpComponent = ()=>{
             </div>
             <!--Возраст-->
             <div class="wrap-row">
-            <div class="wrap-input validate-input wrap-input-row" id = 'age-input' key = 'age' data-validate="${TranslateTexts(getLang(), 'ageValidate')}">
-              <input class="input" type="text" name="age" value = "${sessionStorage.getItem('age') || ''}" required> 
-              <span class="focus-input" key = 'age' data-placeholder=${TranslateTexts(getLang(), 'age')}></span>
+            <div class="wrap-input validate-input wrap-input-row" id = 'birdth-input' key = 'birdth' data-validate="${TranslateTexts(getLang(), 'dateValidation')}">
+              <input class="input" type="date" name="birdth" value = "${moment().format('YYYY-MM-DD')}" required> 
+              <span class="focus-input" key = 'birdth' data-placeholder="${TranslateTexts(getLang(), 'birdth')}"></span>
             </div>
             <!--пол-->
             <div class="wrap-input validate-input wrap-input-row" id = 'sex-input' key = 'sex' data-validate="${TranslateTexts(getLang(), 'sexValidate')}">
@@ -105,9 +106,9 @@ const signUpComponent = ()=>{
               </select>
             </div>
             <!--желаемое количество дней-->
-            <div class="wrap-input validate-input wrap-input-row" id = 'want-day-input' key = 'wantDay' data-validate="${TranslateTexts(getLang(), 'wantDayValidate')}">
-              <input class="input" type="text" name="wantDay" value = "${sessionStorage.getItem('wantDay') || ''}" required>
-              <span class="focus-input" key = 'wantDay' data-placeholder="${TranslateTexts(getLang(), 'wantDayNumber')}"></span>
+            <div class="wrap-input validate-input wrap-input-row" id = 'want-date-input' key = 'wantDate' data-validate="${TranslateTexts(getLang(), 'dateValidation')}">
+              <input class="input" type="date" name="wantDate" value = "${moment().add(sessionStorage.getItem('wantDay'), 'days').format('YYYY-MM-DD') || moment().format('YYYY-MM-DD')}" required>
+              <span class="focus-input" key = 'wantDate' data-placeholder="${TranslateTexts(getLang(), 'wantDate')}"></span>
             </div>
           </div>
             <!--Уровень активности-->

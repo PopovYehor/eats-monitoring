@@ -1,5 +1,6 @@
 import { localStorageUser } from "./user-data"
 import { fromTodayToWantDate } from "../../components/account/charts/progresChartAcc/dataForProgresChart"
+import moment from "moment"
 const caloriesFormulaAccount = ()=>{
     const sex = localStorageUser('sex')
     let weight = Number(localStorageUser('weight'))
@@ -13,8 +14,8 @@ const caloriesFormulaAccount = ()=>{
     let height = Number(localStorageUser('height'))
     const heightParam = localStorageUser('heightParam')
     if (heightParam == 'inches') height = height*2.54
-
-    const years = Number(localStorageUser('age'))
+    const birth = moment(localStorageUser('age'), 'DD/MM/YYYY')
+    const years = Number(moment().diff(birth, 'years'))
     const active = Number(localStorageUser('activeCoef'))
 
     let calcCalories 
@@ -54,7 +55,9 @@ const weightIndexAccount = ()=>{
 
 const fatPercentAccount = ()=>{
     const sex = localStorageUser('sex')
-    const years = Number(localStorageUser('age'))
+    
+    const birth = moment(localStorageUser('age'), 'DD/MM/YYYY')
+    const years = Number(moment().diff(birth, 'years'))
 
     let fatPercent 
     sex == 'male' ? fatPercent = Math.round((1.2*weightIndexAccount())+(0.23*years)-16.2) : fatPercent = Math.round((1.2*weightIndexAccount())+(0.23*years)-5.4)

@@ -3,14 +3,6 @@ import { perfectWeight } from "../form-canculate/formCalculate-index"
 import { selectParam } from "../form-canculate/formChangeParametr"
 import {  wantDay, yearData, defheight, defWeight, defWantWeight, sexData, loginData, passwordData, nameData, surnameData, activData, formsData } from "../form-canculate/formTranformationData"
 
-const wantDayNumberToMoment = () =>{
-    let dateArr = [] 
-    for (let i = 0; i < wantDay() ; i++){
-       dateArr.push((moment().add(i,'d').format('DD/MM/YY')))
-    }
-    return dateArr[dateArr.length-1]
-}
-
 const signUpData = ()=>{
     const data = {
         'id': Date.now(),
@@ -19,22 +11,21 @@ const signUpData = ()=>{
         'name':nameData().charAt(0).toUpperCase() + nameData().slice(1),
         'surname':surnameData().charAt(0).toUpperCase() + surnameData().slice(1),
         'email': formsData().email.value,
-        'age': yearData(),
+        'age': moment(formsData().birdth.value, 'YYYY-MM-DD').format('DD/MM/YY'),
         'weight': defWeight(),
         'wantWight':defWantWeight(),
         'wantWeightParam': selectParam(formsData().wantWeightSelect).value,
-        'wantDay':wantDay(),
         'height': defheight(),
         'heightParam' : selectParam(formsData().choiseHeight).value,
         'sex': sexData(),
-        'active': activData(),
+        'active': selectParam(formsData().activeLevel).value,
         'img': 'https://i.ibb.co/G5VTwDZ/1625890.png',
         'perfectWeight' : perfectWeight(),
         'dataWeight' : [defWeight()],
         'weightParam' : selectParam(formsData().choiseWeight).value,
         'dateRegist': moment().format('DD/MM/YY'),
         'dataDate': [moment().format('DD/MM/YY')],
-        'wantDate': wantDayNumberToMoment(),
+        'wantDate': moment(formsData().wantDate.value, 'YYYY-MM-DD').format('DD/MM/YY'),
         'translateCount': JSON.parse(localStorage.getItem('translateCount')),
         'dataDateCalories': [],
         'dataCalories': [],

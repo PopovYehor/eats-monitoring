@@ -48,10 +48,10 @@ const addInputForChange = ()=>{
     createInput('input', 'weight-item-input item-input', null, localStorageUser('weight'), weightItem, 'weight')
     createSelectParam('weight-choise-param', weightItem, 'kg', 'pounds', TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'poundParam'), localStorageUser('weightParam'), 'weightParam' )
     createInput('input', 'login-item-input item-input', null, localStorageUser('userName'), loginItem, 'userName')
-    createInput('input', 'age-item-input item-input', null, localStorageUser('age'), ageItem, 'age')
+    createInput('input', 'age-item-input item-input', null, moment(localStorageUser('age'), 'DD/MM/YYYY').format('YYYY-MM-DD') , ageItem, 'age', 'date')
     createInput('input', 'want-weight-input item-input', null, localStorageUser('wantWeight'), wantWeightItem, 'wantWeight')
     createSelectParam('want-weight-choise-param', wantWeightItem, 'kg', 'pounds',TranslateTexts(getLang(), 'kg'),TranslateTexts(getLang(), 'poundParam'), localStorageUser('wantWeightParam'), 'wantWeightParam' )
-    createInput('input', 'want-day-input item-input', null, localStorageUser('wantDate'), wantDate, 'wantDate')
+    createInput('input', 'want-day-input item-input', null, moment(localStorageUser('wantDate'), 'DD/MM/YYYY').format('YYYY-MM-DD'), wantDate, 'wantDate', 'date')
     
     let selectSex = createInput('select', 'select-sex select-item', null, null, sexItem, 'sex')
     arrSex().value.forEach((elem, i) => createOption('sex-item lang', elem, arrSex().text[i], selectSex, localStorageUser('sex')))
@@ -99,6 +99,7 @@ const saveWeight = (wightInput)=>{
 
 const saveInputData = (child, i)=>{
     const keyInput = child[i].getAttribute('key')
+    console.log(keyInput)
     const valueInput = child[i].value
     user[keyInput] = valueInput   
     localStorage.setItem(keyInput, JSON.stringify(valueInput))
@@ -125,6 +126,13 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
             }
 
         })
+            const birth = document.querySelector('.age-item-input').value
+            const momentBirth = moment(birth, 'YYYY-MM-DD').format('DD/MM/YY')
+            localStorage.setItem('age',JSON.stringify(momentBirth))
+
+            const wantDate = document.querySelector('.want-day-input').value
+            const momentWantDate = moment(wantDate, 'YYYY-MM-DD').format('DD/MM/YY')
+            localStorage.setItem('wantDate',JSON.stringify(momentWantDate))
             localStorage.setItem('selectedItem', JSON.stringify([]))
             localStorage.setItem('plateCount', JSON.stringify(0))
             profile.innerHTML = ''

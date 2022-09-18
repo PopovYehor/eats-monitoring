@@ -3,30 +3,11 @@ import { TranslateTexts, getLang } from "../translate/translateText"
 import { arrActiv } from "./changeDataUser"
 
 const sameHeightTable = ()=>{
-    const profileDescription = document.querySelectorAll('.profile-description')
-    
-    const profileItem = document.querySelectorAll('.profile-item')
-    profileDescription.forEach((elem , i) => {
-        const lastWeightItem = document.getElementById('last-weight-item')
-        const lastWeightDescription = document.getElementById('last-weight')
-        
+    const sameDesc = document.querySelectorAll('.same-height-description')
+    const sameItem = document.querySelectorAll('.same-height-item')
+    sameItem.forEach((elem , i) => {
         setTimeout(()=>{
-            if (elem==lastWeightDescription)
-                if (window.innerWidth > 1440){
-                    lastWeightDescription.style.height = 55 + 'px'
-                    lastWeightItem.style.height = 55 + 'px'
-                }
-                if (window.innerWidth <= 1440){
-                    lastWeightDescription.style.height = 50 + 'px'
-                    lastWeightItem.style.height = 50 + 'px'
-                }
-                if (window.innerWidth <= 1300){
-                    lastWeightDescription.style.height = 40 + 'px'
-                    lastWeightItem.style.height = 40 + 'px'
-                }
-             else{
-            elem.style.height = profileItem[i+1].getBoundingClientRect().height + 'px'
-             }
+             elem.style.height = sameDesc[i].getBoundingClientRect().height + 'px'
         }, 250)
         
     })

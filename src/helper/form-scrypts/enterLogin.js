@@ -10,6 +10,7 @@ import { onHandleRoute } from "../route"
 import { caloriesFormulaAccount, fatWeightAccount } from "../account-scripts/canculate-account-data"
 import Error from "../../views/error/Error"
 
+
 const cors = 'https://cors-anywhere.herokuapp.com/'
 const urlData = 'https://my-json-server.typicode.com/PopovYehor/data/posts'
 
@@ -74,6 +75,7 @@ const postSignUp = ()=>{
     const btnWrap = document.querySelector('.wrap-login-form-btn')
 
     btn.addEventListener('click', ()=>{
+        
         if (valueVer(inputes) && dontValid.length == 0){
             const formLogin = formsData().login.value
             fetch(urlData)

@@ -33,6 +33,7 @@ const arrLangText = {
         'dataRegistr': 'Дата реєстрації',
         'wantDay': 'Бажана дата схуднення',
         'age': 'Вік',
+        'birdth': 'Дата народження',
         'sex' : 'Стать',
         'height': 'Зріст',
         'weight' : 'Вага',
@@ -64,8 +65,9 @@ const arrLangText = {
         'haveUser': 'Такий користувач вже існує',
         'wantDayValidate': 'Некоректна кількість днів',
         'wantDayNumber': 'Кількість днів до цілі',
+        'wantDate': 'Цільова дата',
         'requiredField' : `Обов'язкове поле`,
-        'dateValidation': 'Не вірний формат (ДД/ММ/РР)',
+        'dateValidation': 'Некоректна дата',
         'Prev': 'Назад',
         'Next': 'Далі',
         //chart
@@ -176,6 +178,7 @@ const arrLangText = {
         'dataRegistr': 'Date of registration',
         'wantDay': 'Desired date to lose weight',
         'age': 'Age',
+        'birdth': 'Date of birth',
         'sex' : 'Sex',
         'height': 'Height',
         'weight' : 'Weight',
@@ -207,8 +210,9 @@ const arrLangText = {
         'incorectLogin': 'The login or password is incorrect',
         'haveUser': 'This username already exists',
         'wantDayNumber': 'Number of desired days',
+        'wantDate': 'Purpose date',
         'requiredField' : `Required field`,
-        'dateValidation': 'Invalid format (DD/MM/YY)',
+        'dateValidation': 'Incorrect date',
         'Prev': 'Prev',
         'Next': 'Next',
         //charts
@@ -295,11 +299,14 @@ const arrLangPlaceholder = {
         'name': "Ім'я",
         'surname': "Прізвище",
         'age': "Вік",
+        'birdth': 'Дата народження',
+        'wantDate': 'Цільова дата',
         'height': "Зріст",
         'weight': "Вага",
         'wantDay': 'Кількість днів до цілі',
         'wantWeight': 'Бажана вага',
         'email': 'Email',
+        
     },
     'en':{
         'login': 'Login',
@@ -308,11 +315,14 @@ const arrLangPlaceholder = {
         'name': "Name",
         'surname': "Surname",
         'age': "Age",
+        'birdth': 'Date of birth',
+        'wantDate': 'Purpose date',
         'height': "Height",
         'weight': "Weight",
         'wantDay': 'Number of desired days',
         'wantWeight': 'Desired weight',
         'email': 'Email',
+        
     },
 }
 
@@ -331,7 +341,8 @@ const arrLangValidate = {
         'enterLogin': 'Введіть логін',
         'enterPass': 'Введіть пароль',
         'emailValidate': 'Некоректний email',
-        'wantDay': 'Некоректна кількість днів'
+        'wantDay': 'Некоректна кількість днів',
+        'requiredField' : `Обов'язкове поле`,
     },
     'en': {
         'login': 'The login must be longer than 6 characters and must not contain any special characters (!@#$%^&*?/,.)',
@@ -348,6 +359,7 @@ const arrLangValidate = {
         'enterPass': 'Enter your password',
         'emailValidate': 'Incorrect email',
         'wantDay':'Incorrect number of days',
+        'requiredField' : `Required field`,
     }
 }
 
