@@ -1,2 +1,2 @@
-Username for login page: TestUser_1 / TestUser_2
-Password for login page: qwertY21 
+1.Username for login page: TestUser_1 / TestUser_2
+2.Password for login page: qwertY21 
