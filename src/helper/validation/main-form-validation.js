@@ -11,7 +11,7 @@ const addOrRemoveAlertValidate = (flag, elem)=>flag == false ? elem.classList.ad
 //regular expressions
 const regArr = {
     login : /(?=[a-zа-яёі0-9]{6,})/im,
-    password: /((?=.*([a-z]|[а-яё]))(?=.*([A-Z]|[А-ЯЁ]))(?=.*\d)(?=.*[!@#$%^&*]{0,})){8,}/,
+    password: /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]{0,}).{8,}$/,
     name: /^([a-z]{1,}$)|^([а-яёіїє]{1,}$)/i,
     age: /^[3-9]$|^[1-9][0-9]$/,
     height: /^([3-9][0-9])$|^1([0-9][0-9])$|^2([0-4][0-9])$|^250$/,

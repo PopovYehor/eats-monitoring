@@ -5,6 +5,7 @@ import { createBasketItems } from "./basket-script"
 import { paginationFood, paginationCreatingElement } from "./paginationFood"
 import { getLang } from "../translate/translateText"
 import Error from "../../views/error/Error"
+import FoodSort from "../../components/food/food-sort/foodSort"
 
 const apiFoodSelect = 'https://api.json-generator.com/templates/RwH9OiVQglAB/data/'
 const apiAllFoods = 'https://api.json-generator.com/templates/CLp6e4tG98eK/data'
@@ -14,6 +15,52 @@ const createFoodItem =(elem,wrap)=>{
     createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)
     FoodItem(elem, elem.id)
 }
+
+const switchSortFood = (res)=>{
+    const foodSortSelect = document.querySelector('.food-sort-select')
+    switch(selectParam(foodSortSelect).value){
+        case 'textFromStart':
+            if (getLang() == `"uk"`){
+                res.sort((a, b)=>{if(a.ukText < b.ukText) return -1})
+            } else{
+                res.sort((a, b)=>{if(a.enText < b.enText) return -1})
+            }
+            break
+        case 'textFromEnd' :
+            if (getLang() == `"uk"`){
+                res.sort((a, b)=>{if(b.ukText < a.ukText) return -1})
+            } else{
+                res.sort((a, b)=>{if(b.enText < a.enText) return -1})
+            }
+            break
+        case 'caloriesFromStart' :
+            res.sort((a,b)=> b.calories - a.calories)
+            break
+        case 'caloriesFromEnd' :
+            res.sort((a,b)=> a.calories - b.calories)
+            break
+        case 'fatsFromStart' :
+            res.sort((a,b)=> b.fats - a.fats)
+            break
+        case 'fatsFromEnd' :
+            res.sort((a,b)=> a.fats - b.fats)
+            break
+        case 'proteinFromStart' :
+            res.sort((a,b)=> b.protein - a.protein)
+            break
+        case 'proteinFromEnd' :
+            res.sort((a,b)=> a.protein - b.protein)
+            break
+        case 'carbFromStart' :
+            res.sort((a,b)=> b.carbonaries - a.carbonaries)
+            break
+        case 'carbFromEnd' :
+            res.sort((a,b)=> a.carbonaries - b.carbonaries)
+            break
+    }
+    return res
+}
+
 const getFoodSelect = (item)=>{
     fetch(`${apiFoodSelect}?access_token=${token}`)
     .then(res => res.json())
@@ -22,6 +69,11 @@ const getFoodSelect = (item)=>{
         wrap.innerHTML = ''
         const paginationWrap = document.querySelector('.food-pagination-wrap')
         paginationWrap.innerHTML = ''
+
+        const selectFoodItem = document.querySelector('.food-select-item')
+        const selectFoodItemValue = selectParam(selectFoodItem).value
+        if (selectFoodItemValue != 'selected') switchSortFood(res[item])
+
         res[item].map(elem =>{
             createFoodItem(elem, wrap)
         })
@@ -33,6 +85,8 @@ const getFoodSelect = (item)=>{
     })
 }
 
+
+
 const getAllFood = (filter = null) =>{
     fetch(`${apiAllFoods}?access_token=${token}`)
     .then(res => res.json())
@@ -40,6 +94,8 @@ const getAllFood = (filter = null) =>{
         const wrap = document.querySelector('.food-element-wrap')
         const searchInput = document.querySelector('.search-food-input').value
         wrap.innerHTML = ''
+        
+        if (!filter)switchSortFood(res)
 
         paginationFood.item = res
         paginationFood.page = 1
@@ -76,6 +132,14 @@ const getSelected = ()=>{
     select.addEventListener('change', ()=>{
         const paginationWrap = document.querySelector('.food-pagination-wrap')
         paginationWrap.innerHTML = ""
+
+        const sortFoodWrap = document.querySelector('.food-sort-wrap')
+        if (!sortFoodWrap){
+            const foodSelectContainer = document.querySelector('.food-select-container')
+            createElem('div', 'food-sort-wrap', null, foodSelectContainer)
+            FoodSort()
+        } 
+
         const selectValue = selectParam(select).value
 
         selectValue == 'selected' ? createBasketItems() : selectValue == 'choise' ? getAllFood() : getFoodSelect(selectValue)
@@ -83,4 +147,4 @@ const getSelected = ()=>{
 }
 
 
-export {getSelected, getAllFood, createFoodItem}
+export {getSelected, getAllFood, createFoodItem, getFoodSelect, switchSortFood}

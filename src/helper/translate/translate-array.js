@@ -126,6 +126,21 @@ const arrLangText = {
         'Selected': 'Обрані продукти',
         'Find': 'Знайди продукт',
         'error': 'Щось пішло не так',
+
+
+        //food sort
+
+        'textFromStart': 'Назва А-Я',
+        'textFromEnd': 'Назва Я-А',
+        'caloriesFromStart': 'Калорії від більшого',
+        'caloriesFromEnd': 'Калорії від меншого',
+        'fatsFromStart':'Жири від більшого',
+        'fatsFromEnd': 'Жири від меншого',
+        'proteinFromStart': 'Білки від більшого',
+        'proteinFromEnd': 'Білки від меншого',
+        'carbFromStart': 'Вуглеводи від більшого',
+        'carbFromEnd': 'Вуглеводи від меншого',
+
     },
     en:{
         'title': 'Sing Up',
@@ -255,6 +270,18 @@ const arrLangText = {
         'leavePAge': 'To Main',
 
         'error': 'Something went wrong',
+
+        //food sort
+        'textFromStart': 'Name А-Z',
+        'textFromEnd': 'Name Z-А',
+        'caloriesFromStart': 'Calories from more',
+        'caloriesFromEnd': 'Calories from less',
+        'fatsFromStart':'Fats from more',
+        'fatsFromEnd': 'Fats from less',
+        'proteinFromStart': 'Proteins from more',
+        'proteinFromEnd': 'Proteins from less',
+        'carbFromStart': 'Carbohydrates from more',
+        'carbFromEnd': 'Carbohydrates from less',
     }
 }
 const arrLangPlaceholder = {

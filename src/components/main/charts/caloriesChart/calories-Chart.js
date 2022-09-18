@@ -11,9 +11,10 @@ const NUMBER_CFG = {count: DATA_COUNT, min: 0, max: 100};
 const CaloriesChartData = ()=>{
   const wantCalories = Number(calculateWantCalories()).toFixed(0)
   let remainder = wantCalories - caloriesFormula()
-  if (remainder < 0) remainder = remainder*(-1)
   let betweenLabel = ''
   remainder > 0 ? betweenLabel = TranslateTexts(getLang(), 'extraCalories') : betweenLabel = TranslateTexts(getLang(), 'remainderCalories')
+  if (remainder < 0) remainder = remainder*(-1)
+  
   const labelCaloriesCount = TranslateTexts(getLang(), 'yourCalorieCount')
   const labelCalTotal = TranslateTexts(getLang(), 'totalCalories')
 

@@ -100,7 +100,7 @@
             margin-top: 30px;
             @include food_shadow;
             border-radius: 10px;
-            
+            position: relative;
         }
     }
     .food-element-wrap{

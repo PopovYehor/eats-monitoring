@@ -2,6 +2,7 @@
 import { getAllFood, getSelected } from "../../../helper/food-script/select-items-script"
 import {  TranslateTexts, getLang } from "../../../helper/translate/translateText"
 import foodCount from "../food-count"
+import FoodSort from "../food-sort/foodSort"
 import "./style"
 
 const foodSelect = ()=>{
@@ -33,11 +34,14 @@ const foodSelect = ()=>{
      </div>
      <div class= "plate-wrap">
      </div>
+     <div class= "food-sort-wrap">
+     </div>
     `
     const wrap = document.querySelector('.food-select-container')
     wrap.innerHTML = elem
     getSelected()
     foodCount()
+    FoodSort()
     const btn = document.querySelector('.find-btn')
     btn.addEventListener('click', ()=>{
         const select = document.querySelector('.food-select-item')

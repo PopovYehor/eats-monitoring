@@ -87,10 +87,15 @@ const createBasketItems = ()=>{
     const selectedItem = JSON.parse(localStorage.getItem('selectedItem'))
     const wrap = document.querySelector('.food-element-wrap')
     const select = document.querySelector('.food-select-item')
+
     if (selectedItem.length > 0){
+        const sortFoodWrap = document.querySelector('.food-sort-wrap')
+        if (sortFoodWrap) sortFoodWrap.remove()
+
         wrap.innerHTML = ''
         const paginationWrap = document.querySelector('.food-pagination-wrap')
         paginationWrap.innerHTML = ""
+
         selectedItem.map(elem =>{
             select.value = 'selected'
             createElem('div', 'food-item-wrap', null, wrap, 'id', `food-item-${elem.id}`)

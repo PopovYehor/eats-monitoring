@@ -19,7 +19,7 @@ const caloriesFormulaAccount = ()=>{
 
     let calcCalories = ''
     sex == 'female' ? calcCalories = (((10*weight) + (6.25*height) + (5*years) - 161)*active) : calcCalories = (((10*weight) + (6.25*height) + (5*years) + 5)*active)
-
+    localStorage.setItem('caloriesFormula', calcCalories)
     let wantResult = ''
     wantWeight < weight ? wantResult = (calcCalories - ((7700*( weight-wantWeight))/fromTodayToWantDate())) : wantResult = (calcCalories + ((7700*(wantWeight - weight))/fromTodayToWantDate()))
     

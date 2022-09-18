@@ -4,8 +4,11 @@ import { TranslateTexts, getLang } from '../../../../helper/translate/translateT
 import { localStorageUser } from '../../../../helper/account-scripts/user-data';
 
 const caloriesData = ()=>{
-  const labelCalories= TranslateTexts(getLang(), 'remainderCalories')
   const labelNeedCalories= TranslateTexts(getLang(), 'AddedCalories')
+
+  let remainder = Number(localStorageUser('calories')) - Number(localStorageUser('caloriesFormula'))
+  let labelCalories 
+  remainder > 0 ? labelCalories = TranslateTexts(getLang(), 'extraCalories') : labelCalories = TranslateTexts(getLang(), 'remainderCalories')
 
   let needCalories = Number(localStorageUser('calories'))
   const normal = Number(localStorageUser('needCalories'))
