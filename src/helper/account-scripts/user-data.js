@@ -27,7 +27,7 @@ const user = {
     dataDate: localStorageUser('dataDate')|| [],
     perfectWeight: localStorageUser('perfectWeight'),
     lastWeighing: localStorageUser('lastWeighing'),
-    dataDateCalories: localStorageUser('dataDateCalories'),
+    dataDateCalories: localStorageUser('dataDateCalories') || [],
     dataCalories: localStorageUser('dataCalories') || [],
     dataFats: localStorageUser('dataFats') || [],
     dataProtein: localStorageUser('dataProtein') || [],
