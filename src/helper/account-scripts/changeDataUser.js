@@ -111,11 +111,13 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
         profile.classList.remove('change')
         labelChangePhoto.classList.remove('active')
         changeBtn.textContent = 'Change'
+
         if (addImgInput){ addImgInput.removeEventListener('change', (e)=>loadFile(e))}
         const wightInput = document.querySelector('.weight-item-input').value
         if (wightInput != localStorageUser('weight')) {
             saveWeight(wightInput)
         }
+
         profileItem.forEach(elem=> {
             const child = elem.childNodes
             if(child[0].nodeName == 'INPUT' || child[0].nodeName == 'SELECT'){
@@ -126,6 +128,7 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
             }
 
         })
+        
             const birth = document.querySelector('.age-item-input').value
             const momentBirth = moment(birth, 'YYYY-MM-DD').format('DD/MM/YY')
             localStorage.setItem('age',JSON.stringify(momentBirth))
@@ -135,6 +138,7 @@ const saveProfileData = (profile, labelChangePhoto, changeBtn, profileItem, addI
             localStorage.setItem('wantDate',JSON.stringify(momentWantDate))
             localStorage.setItem('selectedItem', JSON.stringify([]))
             localStorage.setItem('plateCount', JSON.stringify(0))
+
             profile.innerHTML = ''
             const preloaderWrap = createElem('div', 'profile-preloader-wrap', null, profile)
             Preloader(preloaderWrap)

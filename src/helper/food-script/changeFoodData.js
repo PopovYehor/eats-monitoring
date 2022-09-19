@@ -8,7 +8,6 @@ const lastDataArrUser  = (data, arr) =>  data[arr][data[arr].length-1]
 const changeFoodData = (e, id)=>{
     if (localStorageUser('userName')){
     const today = moment().format("DD/MM/YY")
-    console.log(user.dataDateCalories)
     if ((user.dataDateCalories.length > 0 && lastDataArrUser(user,'dataDateCalories') != today) || user.dataDateCalories.length == 0){
         user.dataDateCalories.push(today)
         user.dataCalories.push(localStorageUser('addCalories'))

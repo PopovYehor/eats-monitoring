@@ -23,16 +23,16 @@ const user = {
     dateRegist: localStorageUser('dateRegist'),
     wantDate: localStorageUser('wantDate'),
     translateCount:JSON.parse(localStorage.getItem('translateCount')),
-    dataWeight : localStorageUser('dataWeight'),
-    dataDate: localStorageUser('dataDate'),
+    dataWeight : localStorageUser('dataWeight') || [],
+    dataDate: localStorageUser('dataDate')|| [],
     perfectWeight: localStorageUser('perfectWeight'),
     lastWeighing: localStorageUser('lastWeighing'),
     dataDateCalories: localStorageUser('dataDateCalories'),
-    dataCalories: localStorageUser('dataCalories'),
-    dataFats: localStorageUser('dataFats'),
-    dataProtein: localStorageUser('dataProtein'),
-    dataCarb: localStorageUser('dataCarb'),
-    dataFoodSelects: localStorageUser('dataFoodSelects')
+    dataCalories: localStorageUser('dataCalories') || [],
+    dataFats: localStorageUser('dataFats') || [],
+    dataProtein: localStorageUser('dataProtein') || [],
+    dataCarb: localStorageUser('dataCarb') || [],
+    dataFoodSelects: localStorageUser('dataFoodSelects') || [],
 }
 
 const userObjectValue = (keys)=> user[keys]
