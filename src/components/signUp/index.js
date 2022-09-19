@@ -1,4 +1,5 @@
 import moment from 'moment'
+import { formsData } from '../../helper/form-canculate/formTranformationData'
 import { onHandleRoute } from '../../helper/route'
 import { getLang, TranslateTexts } from '../../helper/translate/translateText'
 import "./style"
@@ -164,7 +165,7 @@ const signUpComponent = ()=>{
     const selectWeightParam = document.querySelector('.choise-weight')
     checkSelectParam('selectWeight', selectWeightParam)
 
-    const selectWantWeightParam = document.querySelector('.choise-height')
+    const selectWantWeightParam = formsData().wantWeightSelect
     checkSelectParam('selectWantWeight', selectWantWeightParam)
 }
 
