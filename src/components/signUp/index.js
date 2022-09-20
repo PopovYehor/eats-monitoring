@@ -18,7 +18,7 @@ const signUpComponent = ()=>{
         <div class="wrap-main" id = "wrap-signUp">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
             <span class="login-form-title p-b-26 lang" key = 'title'>
-              Реєстрація
+              ${TranslateTexts(getLang(), 'title')}
             </span>
             <!--Логин-->
             <div class="wrap-input validate-input" id = 'login-input' key = 'login' data-validate="${TranslateTexts(getLang(), 'loginValidate')}">
