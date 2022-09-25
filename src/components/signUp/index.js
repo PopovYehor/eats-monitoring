@@ -18,7 +18,7 @@ const signUpComponent = ()=>{
         <div class="wrap-main" id = "wrap-signUp">
           <form class="login-form validate-form" id = 'singUpForm' name = 'singUpForm'>
             <span class="login-form-title p-b-26 lang" key = 'title'>
-              Реєстрація
+            ${TranslateTexts(getLang(), 'title')}
             </span>
             <!--Логин-->
             <div class="wrap-input validate-input" id = 'login-input' key = 'login' data-validate="${TranslateTexts(getLang(), 'loginValidate')}">
@@ -120,7 +120,7 @@ const signUpComponent = ()=>{
                 <option class="lang" value="low" key = 'low' >${TranslateTexts(getLang(), 'low')}</option>
                 <option class="lang" value="middle" key = 'middle'>${TranslateTexts(getLang(), 'middle')}</option>
                 <option class="lang" value="hight" key = 'higth'>${TranslateTexts(getLang(), 'higth')}</option>
-                <option class="lang" value="very hight" key = 'veryHight'>${TranslateTexts(getLang(), 'higth')}</option>
+                <option class="lang" value="very hight" key = 'veryHight'>${TranslateTexts(getLang(), 'veryHight')}</option>
               </select>
               <span class= 'select-item'></span>
             </div>

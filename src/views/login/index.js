@@ -13,7 +13,7 @@ const Login = ()=>{
         localStorage.removeItem('plateCount')
         localStorage.removeItem('selectedItem')
     }
-
+    
     Header()
     const root = document.getElementById('root')
     createElem('div', 'limiter', null, root)

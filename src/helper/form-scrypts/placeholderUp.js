@@ -17,9 +17,9 @@ const placeholderUp = ()=>{
 const selectHasVal = ()=>{
     const select = document.querySelectorAll('.select-input')
     select.forEach(elem =>{
-        elem.value != 'choise' ? elem.classList.add('has-val') : null
+        if (elem.value != 'choise') elem.classList.add('has-val');
         elem.addEventListener('change', ()=>{
-            elem.value != 'choise' ? elem.classList.add('has-val') : null
+            if (elem.value != 'choise') elem.classList.add('has-val')
         })
     })
 }

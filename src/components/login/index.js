@@ -1,55 +1,45 @@
 import { onHandleRoute } from "../../helper/route"
 import { getLang, TranslateTexts } from "../../helper/translate/translateText"
+import { createElem } from "../../helper/createElement"
+import formWrap from "../formItem/formWrap"
+import formInput from "../formItem/formInput"
 import "./style"
 
 const LoginComponent = ()=>{
-    const elem = `
-      <div class="container-login">
-        <div class="wrap-main" id = "wrap-login">
-          <form class="login-form validate-form" name = 'singUpForm'>
-            <span class="login-form-title p-b-26">
-              Eats Monitoring
-            </span>
-            <span class="login-form-title p-b-48">
-              <i href = '#'><img src="https://i.ibb.co/2cjMbjh/title.png" alt="" width="80px" height="80px"></i>
-            </span>
-            
-            <div class="wrap-input validate-input" id = 'login-input' key = "enterLogin" data-validate="${TranslateTexts(getLang(), 'enterLoginValidate')}">
-              <input class="input" type="text" name="loginLogin" value="TestUser_1">
-              <span class="focus-input" key='login' data-placeholder="${TranslateTexts(getLang(), 'logins')}"></span>
-            </div>
-            <div class="wrap-input validate-input" id = 'password-input' key = "enterPass" data-validate="${TranslateTexts(getLang(), 'enterPassValidate')}">
-              <button class="btn-show-pass" type="button">
-                <img class="eyes-pass first-pass" src="https://i.ibb.co/YNDnt4y/eye2.png" alt="eye">
-              </button>
-              <input class="input" type="password" name="passLogin" value="qwertY21">
-              <span class="focus-input" key='password' data-placeholder="${TranslateTexts(getLang(), 'password')}"></span>
-            </div>
-            <div class="container-login-form-btn">
-              <div class="wrap-login-form-btn">
-                <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn lang" key="login" type="button" href = "/account">
-                ${TranslateTexts(getLang(), 'login')}
-                </button>
-              </div>
-            </div>
-
-            <div class="text-center p-t-115">
-              <span class="trueSignUp lang" key="havntAcc">
-              ${TranslateTexts(getLang(), 'havntAcc')}
-              </span>
-              <a class="trueSignUp lang" key="SingUp" href="/signUp" id = "signUpBtnLogin">
-              ${TranslateTexts(getLang(), 'regist')}
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-    
-    `
+    //form
     const wrap = document.querySelector('.limiter')
-    wrap.innerHTML= elem
-    
+    const mainContainer = createElem('div', 'container-login', null, wrap)
+    const mainWrap = createElem('div', 'wrap-main', null, mainContainer, 'id', 'wrap-login')
+    const form  = createElem ('form', 'login-form validate-form', null, mainWrap, 'id', 'singUpForm')
+    form.setAttribute('name', 'singUpForm')
+    createElem('span', 'login-form-title', 'Eats Monitoring', form)
+    const titleImgWrap = createElem('span', 'login-form-title', null, form, 'id', 'titleImg')
+    const titleImg = `<i href = '/'><img src="https://i.ibb.co/2cjMbjh/title.png" alt="" width="80px" height="80px"></i>`
+    titleImgWrap.innerHTML = titleImg
+    //login
+    const loginWrapper = createElem('div', null, null, form, 'id', 'loginWrapper')
+    const loginWrap = formWrap('login-input', 'enterLogin', 'enterLoginValidate', loginWrapper, 'logins', true)
+    formInput('loginLogin', loginWrap, 'TestUser_1')
+    //password
+    const passwordWrapper = createElem('div', null, null, form, 'id', 'passwordWrapper')
+    const passwordWrap = formWrap('password-input', 'enterPass', 'enterPassValidate', passwordWrapper, 'password', true)
+    const eyeBtn = createElem('button', 'btn-show-pass', null, passwordWrap, 'type', 'button')
+    createElem('img', 'eyes-pass first-pass', null, eyeBtn, 'src', 'https://i.ibb.co/YNDnt4y/eye2.png')
+    formInput('passLogin', passwordWrap, 'qwertY21', true)
+    //loginBtn
+    const containerLoginFormBtn = createElem('div', 'container-login-form-btn', null, form)
+    const wrapLoginFormBtn = createElem('div', 'wrap-login-form-btn', null, containerLoginFormBtn)
+    createElem('div', 'login-form-bgbtn', null, wrapLoginFormBtn)
+    const loginBtn = createElem('button', 'login-form-btn lang', TranslateTexts(getLang(), 'login'),wrapLoginFormBtn , 'key', 'login')
+    loginBtn.type = 'button'
+    loginBtn.setAttribute('href', '/account')
+    //bottom text
+    const bottomTextWrap = createElem('div', 'text-center', null, containerLoginFormBtn)
+    const bottomText = `
+    <span class="trueSignUp lang" key="havntAcc">${TranslateTexts(getLang(), 'havntAcc')}</span>
+    <a class="trueSignUp lang" key="SingUp" href="/signUp" id = "signUpBtnLogin">${TranslateTexts(getLang(), 'regist')}</a>`
+    bottomTextWrap.innerHTML = bottomText
+
     const signUpBtn = document.getElementById('signUpBtnLogin')
     signUpBtn.addEventListener('click', (e)=>onHandleRoute(e))
 }

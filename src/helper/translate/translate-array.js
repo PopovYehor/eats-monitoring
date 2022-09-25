@@ -9,7 +9,7 @@ const arrLangText = {
         'none': 'Малорухливий спосіб життя',
         'low': 'Мала активність (1-3 тренування на тиждень)',
         'middle': 'Середня активність (3-5 тренувань на тиждень)',
-        'higth': 'Висока активність (5-7 тренувань на тиждень)',
+        'hight': 'Висока активність (5-7 тренувань на тиждень)',
         'veryHight': 'Дуже висока активність',
         "SingUp": 'Зареєструватися',
         "haveAcc": 'Вже маєте акаунт?',
@@ -50,6 +50,7 @@ const arrLangText = {
         'nameValidate': "Некоректне ім'я",
         'nameSurmaneValidation': `Некоректне ім'я або прізвище`,
         'name': "Ім'я",
+        //validation
         'surnameValidate': "Некоректне прізвище",
         'ageValidate': "Некоректний вік",
         'sexValidate': 'Оберіть стать',
@@ -154,7 +155,7 @@ const arrLangText = {
         'none': 'Sedentary lifestyle',
         'low': 'Low activity (1-3 workouts per week)',
         'middle': 'Moderate activity (3-5 training sessions per week)',
-        'higth': 'High activity (5-7 training sessions per week)',
+        'hight': 'High activity (5-7 training sessions per week)',
         'veryHight': 'Very high activity',
         "SingUp": 'Sign Up',
         "haveAcc": 'Already have an account?',
@@ -306,7 +307,8 @@ const arrLangPlaceholder = {
         'wantDay': 'Кількість днів до цілі',
         'wantWeight': 'Бажана вага',
         'email': 'Email',
-        
+        'wantDayNumber': 'Кількість днів до цілі',
+        "logins": 'Логін',
     },
     'en':{
         'login': 'Login',
@@ -322,7 +324,8 @@ const arrLangPlaceholder = {
         'wantDay': 'Number of desired days',
         'wantWeight': 'Desired weight',
         'email': 'Email',
-        
+        'wantDayNumber': 'Number of desired days',
+        "logins": 'Login',
     },
 }
 
