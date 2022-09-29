@@ -14,7 +14,7 @@ const onHandleRoute = (e) => {
 const routes = {
     '/signUp': SignUp,
     '/login': Login,
-    '/': Login,
+    '/': Main,
     '/food': Foods,
     '/account': Account,
     '/error': Error,
